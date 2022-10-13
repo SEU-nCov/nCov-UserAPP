@@ -1,43 +1,46 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/index/index"
+			"path": "pages/INFO/nCoVinfo"
 		},
 		{
-			"path": "pages/INFO/nCoVinfo"
+			"path": "pages/index/index"
 		},
 		{
 			"path": "pages/MESSAGE/message"
 		},
 		{
 			"path": "pages/SELF/selfinfo"
-		}
-	],
+		},
+		{
+            "path" : "pages/INFO/identitycard"
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
+		"navigationBarTitleText": "防疫宝",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
 		"color": "#7A7E83",
-		"selectedColor": "#3cc51f",
+		"selectedColor": "#3c9cff",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"list": [
 			{
 				"pagePath": "pages/INFO/nCoVinfo",
-				"iconPath": "static/logo.png",
+				"iconPath": "static/shouye.png",
 				"text": "疫情信息"
 			},
 			{
 				"pagePath": "pages/MESSAGE/message",
-				"iconPath": "static/logo.png",
+				"iconPath": "static/xiaoxi.png",
 				"text": "消息"
 			},
 			{
 				"pagePath": "pages/SELF/selfinfo",
-				"iconPath": "static/logo.png",
+				"iconPath": "static/wode.png",
 				"text": "我的"
 			}
 		]
