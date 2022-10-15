@@ -2,7 +2,7 @@
 	<view class="content">
 		<image class="logo" src="/static/logo.png"></image>
 		<view class="text-area">
-			<text class="title">{{title}}</text>
+			<text class="title">{{this.title}}</text>
 		</view>
 	</view>
 </template>
@@ -11,14 +11,25 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				timer: '',
 			}
 		},
 		onLoad() {
-
+			this.timer=setInterval(()=>{this.gotopages()}, 2000);
+		},
+		onUnload() {
+			clearInterval(this.timer);
 		},
 		methods: {
-
+			gotopages(){
+				uni.redirectTo({
+					url:"/pages/LOGIN/login"
+				})
+				/*uni.switchTab({
+					url:"/pages/INFO/nCoVinfo"
+				})*/
+			}
 		}
 	}
 </script>
@@ -32,12 +43,13 @@
 	}
 
 	.logo {
-		height: 200rpx;
-		width: 200rpx;
+		height: 350rpx;
+		width: 350rpx;
 		margin-top: 200rpx;
 		margin-left: auto;
 		margin-right: auto;
-		margin-bottom: 50rpx;
+		margin-bottom: 100rpx;
+		border-radius: 50%;
 	}
 
 	.text-area {

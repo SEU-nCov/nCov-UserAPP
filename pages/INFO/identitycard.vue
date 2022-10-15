@@ -10,11 +10,12 @@
 				<view style="display:flex;align-items:center;justify-content:center;padding-top: 150rpx;">
 					<view class="square" style="display:inline-block;text-align:center;">
 						<view style="display:inline-block;height:200rpx;line-height:200rpx;font-size:23px;font-weight: 600;">{{this.timer}}</view>
-						<view style="display:inline-block;">
-							<view style="position:absolute;background-color:#89B1E4;width:460rpx;height:460rpx;border-radius:5px;margin-left:-22rpx;margin-top:-22rpx;;"></view>
-							<view><uqrcode ref="uqrcode" canvas-id="qrcode" :value="identitynum" :options="{ margin:10 }"></uqrcode></view>
+						<view>
+							<!--view style="position:absolute;background-color:#89B1E4;width:460rpx;height:460rpx;border-radius:5px;margin-left:-22rpx;margin-top:-22rpx;;"></view-->
+							<view style="display:inline-block;background-color:#89B1E4;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-65rpx;"></view>
+							<view style="display:inline-block;margin-top:-400rpx;"><uqrcode ref="uqrcode" canvas-id="qrcode" :value="identitynum" :options="{ margin:10 }"></uqrcode></view>
 						</view>
-						<view style="display:block;text-align:center;font-size:15px;padding-top:65rpx;"><text style="color:red;">*</text><text>请展示身份码</text></view>
+						<view style="display:inline-block;text-align:center;font-size:15px;padding-top:65rpx;"><text style="color:red;">*</text><text>请展示身份码</text></view>
 						<view class="tail" @click="save"><u-icon name="download" color="#3c9cff" size="20"></u-icon><text style="font-size:16px;color:#3c9cff;">下载保存</text></view>
 					</view>
 				</view>
