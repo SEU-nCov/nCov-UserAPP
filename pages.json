@@ -4,7 +4,22 @@
 			"path": "pages/index/index"
 		},
 		{
-			"path": "pages/INFO/nCoVinfo"
+			"path": "pages/INFO/nCoVinfo",
+			"style": {
+				"navigationBarTitleText": "疫情总计"
+			}
+		},
+		{
+			"path": "pages/INFO/txt",
+			"style": {
+				"navigationBarTitleText": "数据来源"
+			}
+		},
+		{
+			"path": "pages/INFO/coronavirus",
+			"style": {
+				"navigationBarTitleText": "地区数据"
+			}
 		},
 		{
 			"path": "pages/MESSAGE/message"

@@ -4,16 +4,16 @@
 		<view class="bg">
 			<view class="cover">
 				<div style="height:70rpx"></div>
-				<div><text class="name">姓名：宗琦薇</text></div>
+				<div><text class="name">姓名：{{this.name}}</text></div>
 				<div style="height:15rpx"></div>
-				<div><text class="identity">身份证：{{this.identitynum | hide}}</text></div>
+				<div><text class="identity">身份证：{{this.identity | hide}}</text></div>
 				<view style="display:flex;align-items:center;justify-content:center;padding-top: 150rpx;">
 					<view class="square" style="display:inline-block;text-align:center;">
 						<view style="display:inline-block;height:200rpx;line-height:200rpx;font-size:23px;font-weight: 600;">{{this.timer}}</view>
 						<view>
 							<!--view style="position:absolute;background-color:#89B1E4;width:460rpx;height:460rpx;border-radius:5px;margin-left:-22rpx;margin-top:-22rpx;;"></view-->
-							<view style="display:inline-block;background-color:#89B1E4;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-65rpx;"></view>
-							<view style="display:inline-block;margin-top:-400rpx;"><uqrcode ref="uqrcode" canvas-id="qrcode" :value="identitynum" :options="{ margin:10 }"></uqrcode></view>
+							<view style="display:inline-block;background-color:#89B1E4;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-70rpx;"></view><!--view>给她看改成-70rpx,实装用-65rpx</view-->
+							<view style="display:inline-block;margin-top:-400rpx;"><uqrcode ref="uqrcode" canvas-id="qrcode" :value="this.identity" :options="{ margin:10 }"></uqrcode></view>
 						</view>
 						<view style="display:inline-block;text-align:center;font-size:15px;padding-top:65rpx;"><text style="color:red;">*</text><text>请展示身份码</text></view>
 						<view class="tail" @click="save"><u-icon name="download" color="#3c9cff" size="20"></u-icon><text style="font-size:16px;color:#3c9cff;">下载保存</text></view>
@@ -37,8 +37,9 @@
 		data() {
 			return {
 				notice:'温馨提示：请注意核对当前展码用户信息，是否与核酸检测用户一致，以免发生错误。',
-				identitynum: '321088200012018529',
+				identity: '321088200012018529',
 				timer: '',
+				name:'宗琦薇',
 			}
 		},
 		methods: {
