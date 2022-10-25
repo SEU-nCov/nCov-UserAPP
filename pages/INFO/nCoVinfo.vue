@@ -2,25 +2,23 @@
 	<view>
 		<div>
 			<u-grid :border="false" col="4"  >
-				<u-grid-item v-for="(listItem,listIndex) in titlelist" :key="listIndex" bgColor="#3c9cff" @click="typechange">
+				<u-grid-item v-for="(listItem,listIndex) in titlelist" :key="listIndex" bgColor="#3490FD" @click="typechange">
 					<u-icon
 						:customStyle="{paddingTop:20+'rpx',height:80+'rpx'}"
 						:name="listItem.name"
 						:size="25"
-						:key="listIndex"
 						color="white"
 					></u-icon>
 			        <text class="grid-text">{{listItem.title}}</text>
 			    </u-grid-item>
 			</u-grid>
 		</div>
-		<div style="background-color:#3c9cff;">
-			<u-subsection :list="infolist" :key="curNow" :current="curNow" bgColor="#3c9cff" fontSize="14px" inactiveColor="white" @change="sectionChange"></u-subsection>
+		<div style="background-color:#3490FD;border-bottom: 1px solid lightgray;">
+			<u-subsection :list="infolist" :current="curNow" bgColor="#3490FD" fontSize="14px" inactiveColor="white" height="200" @change="sectionChange"></u-subsection>
 		</div>
 		<view v-if="curNow==0">
 			<view class="content" :class="daytime?'daytime':'nightime'">
 			    <view class="top-box">
-			        <view class="top-box-zqw" @click="switchMode">深色模式</view>
 			        <view class="top-box-bg"></view>
 			        <view class="top-box-title">
 			            新型冠状病毒肺炎
@@ -82,7 +80,7 @@
 			                <view class="t_item-nownum" style="color: #4e5a65;">{{mydata.chinaTotal.dead}}</view>
 			                <view class="t_item-nowtxt">累计死亡</view>
 			            </view>
-			            <view class="t_item" style="background-color: #ffffff;">
+			            <view class="t_item" style="background-color: #EBF4FA;">
 			                <view class="t_item-addnum">较昨日：<text style="color: #10aeb5;"><text
 			                            v-if="mydata.chinaAdd.heal > 0">+</text>{{mydata.chinaAdd.heal}}</text></view>
 			                <view class="t_item-nownum" style="color: #10aeb5;">{{mydata.chinaTotal.heal}}</view>
@@ -127,14 +125,18 @@
 			                    <view class="item" @click="advSearch(index,item, 2)">
 			                        {{item.total.nowConfirm}}
 			                    </view>
-			                    
-			                    <view class="item" @click="advSearch(index,item, 2)">
+			                    <view class="item" @click="advSearch(index,item, 2)" v-if="item.today.confirm>=1000" style="margin-top:-2rpx;">
 			                        {{item.total.confirm}}
 			                        <view class="item-confirm">
-			                            <view v-if="item.today.confirm >100" style="line-height:15rpx;"><text style="line-height: 30rpx;">较昨日：+{{item.today.confirm}}</text></view>
-										<view  v-else-if="item.today.confirm >0 "><text>较昨日：+</text>{{item.today.confirm}}</view>
+			                            <view style="margin-top:-5rpx;"><text>较昨日：+{{item.today.confirm}}</text></view>
 			                        </view>
 			                    </view>
+								<view class="item" @click="advSearch(index,item, 2)" v-else-if="item.today.confirm>0" style="margin-top:2rpx;">
+								    {{item.total.confirm}}
+								    <view class="item-confirm">
+										<view><text>较昨日：+</text>{{item.today.confirm}}</view>
+								    </view>
+								</view>
 			                    <view class="item" @click="advSearch(index,item, 2)">
 			                        {{item.total.heal}}
 			                    </view>
@@ -240,7 +242,7 @@
 				mydata: {},
 				time: {},
 				flag:[],
-				daytime:'',
+				daytime:true,
 				arealist:[],
 				middlelist:[],
 				heightlist:[],
@@ -251,7 +253,7 @@
 		},
 		onShow() {
 		    let that = this;
-		    that.daytime = uni.getStorageSync('daytime');
+		    //that.daytime = uni.getStorageSync('daytime');
 		    uni.setNavigationBarColor({
 		        frontColor: that.daytime?'#000000':'#ffffff',
 		        backgroundColor: that.daytime?'#EDEEED':'#0E0E0E',
@@ -350,55 +352,6 @@
 			    };
 			    return forMatDate;
 			},
-			switchMode(){
-			    let that = this;
-			    let daytime = uni.getStorageSync('daytime')?'开启':'关闭' // 取反值
-			    uni.showModal({
-			        title: '提示',
-			        content: '是否'+ daytime+'深色模式',
-			        confirmText: '确认',
-			        success: function(res) {
-			            if (res.confirm) {
-			                if(daytime =='开启'){
-			                    uni.setStorageSync('daytime',false)
-			                    that.daytime = false
-			                    uni.setNavigationBarColor({
-			                        frontColor: that.daytime?'#000000':'#ffffff',
-			                        backgroundColor: that.daytime?'#ffffff':'#131313',
-			                        animation: {
-			                            duration: 1,
-			                            timingFunc: 'easeIn'
-			                        }
-			                    })
-			                    uni.setTabBarStyle({
-			                      color: that.daytime?'#666666':'#ADADAD',
-			                      selectedColor: '#00BEBE',
-			                      backgroundColor: that.daytime?'#f7f7f7':'#181818',
-			                      borderStyle: 'white'
-			                    })
-			                }else {
-			                    uni.setStorageSync('daytime',true)
-			                    that.daytime = true;
-			                    uni.setNavigationBarColor({
-			                        frontColor: that.daytime?'#000000':'#ffffff',
-			                        backgroundColor: that.daytime?'#ffffff':'#0E0E0E',
-			                        animation: {
-			                            duration: 1,
-			                            timingFunc: 'easeIn'
-			                        }
-			                    })
-			                    uni.setTabBarStyle({
-			                      color: that.daytime?'#666666':'#ADADAD',
-			                      selectedColor: '#00BEBE',
-			                      backgroundColor: that.daytime?'#f7f7f7':'#181818',
-			                      borderStyle: 'white'
-			                    })
-			                }
-			            } else if (res.cancel) {
-			            }
-			        }
-			    });
-			},
 		}
 	}
 </script>
@@ -476,6 +429,7 @@
 	}
 	
 	.t_item-addnum {
+	padding-top: 3px;
 	float: left;
 	width: 100%;
 	color: #666;
@@ -544,7 +498,7 @@
 	width: 16%;
 	}
 	.citylist-title .item:last-child {
-	width: 10%;
+	width: 11%;
 	}
 	
 	.citylist-box {
@@ -564,7 +518,7 @@
 	
 	.citylist-box-item .item:first-child {
 	color: #4180f1;
-	font-size: 16px;
+	font-size: 15px;
 	}
 	
 	.citylist-box-item .item {
@@ -583,7 +537,7 @@
 	width: 20%;
 	}
 	.citylist-box-item .item:last-child {
-	width: 10%;
+	width: 11%;
 	}
 	
 	.citylist-box-item .item:nth-child(1),
@@ -617,7 +571,7 @@
 	color: #737373;
 	font-size: 22rpx;
 	font-weight: 400;
-	margin-top: 5rpx;
+	margin-top: 8rpx;
 	}
 	
 	.product-box-left-item {
@@ -659,22 +613,8 @@
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url(../../static/head_bg_new.png);
+	background-image: url(../../static/head_bg.png);
 	background-size: 100% 100%;
-	}
-	.top-box-zqw {
-	position: absolute;
-	left: 20rpx;
-	top: 10rpx;
-	height: 46rpx;
-	line-height: 46rpx;
-	color: #fff;
-	font-size: 28rpx;
-	border-radius: 20rpx;
-	border: 2rpx solid #fff;
-	z-index: 99;
-	padding: 0 20rpx;
-	
 	}
 	.top-box-title {
 	position: absolute;

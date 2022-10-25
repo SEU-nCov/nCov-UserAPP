@@ -212,13 +212,14 @@ export default {
     @include flex;
     position: relative;
     overflow: hidden;
+	height:200rpx;
 	/* #ifndef APP-NVUE */
 	width: 100%;
 	box-sizing: border-box;
 	/* #endif */
 
     &--button {
-        height: 32px;
+        height: 35px;
         background-color: rgb(238, 238, 239);
         padding: 3px;
         border-radius: 3px;

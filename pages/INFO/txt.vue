@@ -20,7 +20,7 @@
         },
         data() {
             return {
-                daytime: {},
+                daytime: true,
                 txtList: [],
             }
         },
@@ -28,12 +28,12 @@
 
         },
         onShow() {
-            this.getLocalShop()
-            let that = this;
-            that.daytime = uni.getStorageSync('daytime');
+            this.getLocalShop();
+            //let that = this;
+            //that.daytime = uni.getStorageSync('daytime');
             uni.setNavigationBarColor({
-                frontColor: that.daytime ? '#000000' : '#ffffff',
-                backgroundColor: that.daytime ? '#EDEEED' : '#0E0E0E',
+                frontColor: this.daytime ? '#000000' : '#ffffff',
+                backgroundColor: this.daytime ? '#EDEEED' : '#0E0E0E',
                 animation: {
                     duration: 1,
                     timingFunc: 'easeIn'
@@ -48,7 +48,7 @@
                     method: 'GET',
                     success: res => {
                         that.txtList = res.data.data.datashows.data;
-                        console.log('数据', that.txtList)
+                        //console.log('数据', that.txtList)
                     },
                     fail() {
 

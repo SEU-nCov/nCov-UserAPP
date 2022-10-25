@@ -5,7 +5,7 @@
             <view class="top-box-title">
                 新型冠状病毒肺炎
             </view>
-            <view class="top-box-right">
+            <view class="top-box-right" v-if="mydatas.areaTree!=null">
                <picker @change="bindPickerChange($event)" :value="index" range-key="name" :range="mydatas.areaTree[0].children">
                     <!-- <view class="uni-input">切换：{{mydatas.areaTree[0].children[index].name}}</view> -->
                     <view class="uni-input">切换省市</view>
@@ -39,24 +39,28 @@
                     <view class="t_item-nownum" style="color: #ae3ac6;">{{mydata.total.wzz}}</view>
                     <view class="t_item-nowtxt">本土无症状</view>
                 </view>
-                <view class="t_item" style="background-color: #fff8f8;">
-                    <view class="t_item-addnum">较昨日：<text style="color: #be2121;"><text v-if="mydata.today.confirm > 0">+</text>{{mydata.today.confirm}}</text></view>
-                    <view class="t_item-nownum" style="color: #be2121;">{{mydata.total.confirm}}</view>
-                    <view class="t_item-nowtxt">累计确诊</view>
-                </view>
-                <view class="t_item" style="background-color: #f3f6f8;">
-                    <view class="t_item-addnum">较昨日：<text style="color: #4e5a65;"><text v-if="mydata.today.confirmCuts > 0">+</text>{{mydata.today.confirmCuts}}</text></view>
-                    <view class="t_item-nownum" style="color: #4e5a65;">{{mydata.total.dead}}</view>
-                    <view class="t_item-nowtxt">累计死亡</view>
-                </view>
             </view>
         </view>
+		<view class="t_item-top" style="padding-bottom: 20px;" :class="daytime?'daytime16':'nightime16'" v-if="mydata.total!=null">
+			<view class="t_item-box">
+				<view class="t_item" style="background-color: #fff8f8;">
+				    <view class="t_item-addnum">较昨日：<text style="color: #be2121;"><text v-if="mydata.today.confirm > 0">+</text>{{mydata.today.confirm}}</text></view>
+				    <view class="t_item-nownum" style="color: #be2121;">{{mydata.total.confirm}}</view>
+				    <view class="t_item-nowtxt">累计确诊</view>
+				</view>
+				<view class="t_item" style="background-color: #f3f6f8;">
+				    <view class="t_item-addnum">较昨日：<text style="color: #4e5a65;"><text v-if="mydata.today.confirmCuts > 0">+</text>{{mydata.today.confirmCuts}}</text></view>
+				    <view class="t_item-nownum" style="color: #4e5a65;">{{mydata.total.dead}}</view>
+				    <view class="t_item-nowtxt">累计死亡</view>
+				</view>
+			</view>
+		</view>
         <view class="citylist" :class="daytime?'daytimetop16':'nightimetop16'">
             <view class="citylist-title">
                 <text class="item" style="background-color: #f5f5f5; color: #222222;">地区</text>
                 
                 <text class="item" style="background-color: #fcf2e8; color: #ff5d00;">新增确诊</text>
-                <text class="item" style="background-color: #fcf2e8; color: #ff5d00;">现有确诊</text>
+                <text class="item" style="background-color: #fff5ee; color: #ff5d00;">现有确诊</text>
                 <text class="item" style="background-color: #fdeeee; color: #f55253;">累计确诊</text>
                 <text class="item" style="background-color: #e9f7ec; color: #178b05;">治愈</text>
                 <text class="item" style="background-color: #f3f6f8; color: #4e5a65;">死亡</text>
@@ -110,13 +114,14 @@
         },
         data() {
             return {
-                daytime:'',
+                daytime:true,
                 index: 0,
                 mydata:{},
                 mydatas:{}
             }
         },
         onLoad(option) {
+			this.getLocalShop()
             let that = this;
             let item = JSON.parse(decodeURIComponent(option.item));
             that.mydata = item;
@@ -126,9 +131,8 @@
             }) 
         },
         onShow() {
-            this.getLocalShop()
             let that = this;
-            that.daytime = uni.getStorageSync('daytime');
+            //that.daytime = uni.getStorageSync('daytime');
             uni.setNavigationBarColor({
                 frontColor: that.daytime?'#000000':'#ffffff',
                 backgroundColor: that.daytime?'#EDEEED':'#0E0E0E',
@@ -141,9 +145,6 @@
         methods: {
             bindPickerChange: function(e) {
                 let that = this
-                
-            
-            
                 that.index = e.target.value
                 that.mydata = that.mydatas.areaTree[0].children[e.target.value];
                 uni.setNavigationBarTitle({
@@ -183,7 +184,7 @@
                   seconds: seconds
                 };
                 return forMatDate;
-              }
+            }
         }
     }
 </script>
@@ -232,7 +233,7 @@
         height: auto;
         overflow: hidden;
         background-color: #fff;
-        padding-bottom: 50rpx;
+        padding-bottom: 10rpx;
     }
     .t_item-box-title {
         width: 100%;
@@ -246,13 +247,13 @@
     .t_item-box {
         width: 100%;
         height: auto;
-        
-        padding: 0 30rpx;
+        padding: 0 10rpx;
         box-sizing: border-box;
     }
     .t_item {
+		border-radius: 5px;
         float: left;
-        width: 24.4%;
+        width: 49%;
         height: 150rpx;
         text-align: center;
         background-color: #fff;
@@ -285,7 +286,7 @@
         float: left;
         width: 100%;
         height: auto;
-        padding: 0 18rpx;
+        //padding: 0 18rpx;
         box-sizing: border-box;
         background-color: #fff;
     }
@@ -305,6 +306,24 @@
         font-size: 28rpx;
         background-color: #fff;
     }
+	.citylist-title .item:nth-child(1) {
+	width: 19%;
+	}
+	.citylist-title .item:nth-child(2) {
+	width: 18%;
+	}
+	.citylist-title .item:nth-child(3) {
+	width: 20%;
+	}
+	.citylist-title .item:nth-child(4) {
+	width: 16%;
+	}
+	.citylist-title .item:nth-child(5) {
+	width: 16%;
+	}
+	.citylist-title .item:last-child {
+	width: 11%;
+	}
     .citylist-box {
         width: 100%;
         overflow: hidden;
@@ -321,7 +340,7 @@
     }
     .citylist-box-item .item:first-child {
         color: #4180f1;
-        font-size: 30rpx;
+        font-size: 25rpx;
     }
     .citylist-box-item .item .item-name {
         display:table-cell;
@@ -329,11 +348,23 @@
     }
     .citylist-box-item .item {
         float: left;
-        width: 16.6%;
+        width: 16%;
         height: 100rpx;
         text-align: center;
         display:table;
     }
+	.citylist-box-item .item:nth-child(1) {
+	width: 19%;
+	}
+	.citylist-box-item .item:nth-child(2) {
+	width: 18%;
+	}
+	.citylist-box-item .item:nth-child(3) {
+	width: 20%;
+	}
+	.citylist-box-item .item:last-child {
+	width: 11%;
+	}
     .top-box-title {
         position: absolute;
         left: 44rpx;
@@ -352,7 +383,7 @@
             line-height: 60rpx;
             text-align: center;
             font-size: 36rpx;
-            border-radius: 20rpx;
+            border-radius: 15rpx;
             border: 2rpx solid #fff;
     }
     .top-box-but {

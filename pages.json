@@ -4,10 +4,7 @@
 			"path": "pages/index/index"
 		},
 		{
-			"path": "pages/INFO/nCoVinfo",
-			"style": {
-				"navigationBarTitleText": "疫情总计"
-			}
+			"path": "pages/INFO/nCoVinfo"
 		},
 		{
 			"path": "pages/INFO/txt",

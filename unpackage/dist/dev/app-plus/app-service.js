@@ -386,12 +386,11 @@ var render = function() {
               "u-grid-item",
               {
                 key: _vm._$s(3, "f", { forIndex: $20, key: listIndex }),
-                attrs: { bgColor: "#3c9cff", _i: "3-" + $30 },
+                attrs: { bgColor: "#3490FD", _i: "3-" + $30 },
                 on: { click: _vm.typechange }
               },
               [
                 _c("u-icon", {
-                  key: _vm._$s("4-" + $30, "a-key", listIndex),
                   attrs: {
                     customStyle: { paddingTop: 20 + "rpx", height: 80 + "rpx" },
                     name: listItem.name,
@@ -421,13 +420,13 @@ var render = function() {
       "div",
       [
         _c("u-subsection", {
-          key: _vm._$s(7, "a-key", _vm.curNow),
           attrs: {
             list: _vm.infolist,
             current: _vm.curNow,
-            bgColor: "#3c9cff",
+            bgColor: "#3490FD",
             fontSize: "14px",
             inactiveColor: "white",
+            height: "200",
             _i: 7
           },
           on: { change: _vm.sectionChange }
@@ -453,37 +452,32 @@ var render = function() {
                 },
                 [
                   _c("view", {
-                    staticClass: _vm._$s(11, "sc", "top-box-zqw"),
-                    attrs: { _i: 11 },
-                    on: { click: _vm.switchMode }
+                    staticClass: _vm._$s(11, "sc", "top-box-bg"),
+                    attrs: { _i: 11 }
                   }),
                   _c("view", {
-                    staticClass: _vm._$s(12, "sc", "top-box-bg"),
+                    staticClass: _vm._$s(12, "sc", "top-box-title"),
                     attrs: { _i: 12 }
                   }),
                   _c("view", {
-                    staticClass: _vm._$s(13, "sc", "top-box-title"),
+                    staticClass: _vm._$s(13, "sc", "top-box-but"),
                     attrs: { _i: 13 }
-                  }),
-                  _c("view", {
-                    staticClass: _vm._$s(14, "sc", "top-box-but"),
-                    attrs: { _i: 14 }
                   }),
                   _c(
                     "view",
                     {
-                      staticClass: _vm._$s(15, "sc", "top-box-bot"),
-                      attrs: { _i: 15 }
+                      staticClass: _vm._$s(14, "sc", "top-box-bot"),
+                      attrs: { _i: 14 }
                     },
                     [
                       _c("image", {
                         attrs: {
                           src: _vm._$s(
-                            16,
+                            15,
                             "a-src",
                             __webpack_require__(/*! ../../static/yiwen.png */ 51)
                           ),
-                          _i: 16
+                          _i: 15
                         },
                         on: { click: _vm.gocortxt }
                       })
@@ -494,59 +488,83 @@ var render = function() {
               _c(
                 "view",
                 {
-                  staticClass: _vm._$s(17, "sc", "t_item-top"),
+                  staticClass: _vm._$s(16, "sc", "t_item-top"),
                   class: _vm._$s(
-                    17,
+                    16,
                     "c",
                     _vm.daytime ? "daytime16" : "nightime16"
                   ),
-                  attrs: { _i: 17 }
+                  attrs: { _i: 16 }
                 },
                 [
                   _vm._$s(
-                    18,
+                    17,
                     "i",
                     _vm.mydata.chinaAdd != null && _vm.mydata.chinaTotal != null
                   )
                     ? _c(
                         "view",
                         {
-                          staticClass: _vm._$s(18, "sc", "t_item-box"),
-                          attrs: { _i: 18 }
+                          staticClass: _vm._$s(17, "sc", "t_item-box"),
+                          attrs: { _i: 17 }
                         },
                         [
                           _c(
                             "view",
                             {
                               staticClass: _vm._$s(
-                                19,
+                                18,
                                 "sc",
                                 "t_item-box-title"
                               ),
-                              attrs: { _i: 19 }
+                              attrs: { _i: 18 }
                             },
                             [
                               _c(
                                 "text",
                                 {
                                   class: _vm._$s(
-                                    20,
+                                    19,
                                     "c",
                                     _vm.daytime ? "daytimetext" : "nightimetext"
                                   ),
-                                  attrs: { _i: 20 }
+                                  attrs: { _i: 19 }
                                 },
                                 [
                                   _vm._v(
                                     _vm._$s(
-                                      20,
+                                      19,
                                       "t0-0",
                                       _vm._s(_vm.mydata.lastUpdateTime)
                                     )
                                   )
                                 ]
                               ),
-                              _vm._$s(21, "i", _vm.time.days > 0)
+                              _vm._$s(20, "i", _vm.time.days > 0)
+                                ? _c(
+                                    "text",
+                                    {
+                                      class: _vm._$s(
+                                        20,
+                                        "c",
+                                        _vm.daytime
+                                          ? "daytimetext"
+                                          : "nightimetext"
+                                      ),
+                                      attrs: { _i: 20 }
+                                    },
+                                    [
+                                      _vm._v(
+                                        _vm._$s(
+                                          20,
+                                          "t0-0",
+                                          _vm._s(_vm.time.days)
+                                        )
+                                      )
+                                    ]
+                                  )
+                                : _vm._e(),
+                              _vm._$s(21, "i", _vm.time.hours > 0)
                                 ? _c(
                                     "text",
                                     {
@@ -564,30 +582,6 @@ var render = function() {
                                         _vm._$s(
                                           21,
                                           "t0-0",
-                                          _vm._s(_vm.time.days)
-                                        )
-                                      )
-                                    ]
-                                  )
-                                : _vm._e(),
-                              _vm._$s(22, "i", _vm.time.hours > 0)
-                                ? _c(
-                                    "text",
-                                    {
-                                      class: _vm._$s(
-                                        22,
-                                        "c",
-                                        _vm.daytime
-                                          ? "daytimetext"
-                                          : "nightimetext"
-                                      ),
-                                      attrs: { _i: 22 }
-                                    },
-                                    [
-                                      _vm._v(
-                                        _vm._$s(
-                                          22,
-                                          "t0-0",
                                           _vm._s(_vm.time.hours)
                                         )
                                       )
@@ -598,16 +592,16 @@ var render = function() {
                                 "text",
                                 {
                                   class: _vm._$s(
-                                    23,
+                                    22,
                                     "c",
                                     _vm.daytime ? "daytimetext" : "nightimetext"
                                   ),
-                                  attrs: { _i: 23 }
+                                  attrs: { _i: 22 }
                                 },
                                 [
                                   _vm._v(
                                     _vm._$s(
-                                      23,
+                                      22,
                                       "t0-0",
                                       _vm._s(_vm.time.minutes)
                                     )
@@ -619,24 +613,24 @@ var render = function() {
                           _c(
                             "view",
                             {
-                              staticClass: _vm._$s(24, "sc", "t_item"),
-                              attrs: { _i: 24 }
+                              staticClass: _vm._$s(23, "sc", "t_item"),
+                              attrs: { _i: 23 }
                             },
                             [
                               _c(
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    25,
+                                    24,
                                     "sc",
                                     "t_item-addnum"
                                   ),
-                                  attrs: { _i: 25 }
+                                  attrs: { _i: 24 }
                                 },
                                 [
                                   _c("text", [
                                     _vm._$s(
-                                      27,
+                                      26,
                                       "i",
                                       _vm.mydata.chinaAdd.localConfirmH5 > 0
                                     )
@@ -644,7 +638,7 @@ var render = function() {
                                       : _vm._e(),
                                     _vm._v(
                                       _vm._$s(
-                                        26,
+                                        25,
                                         "t1-0",
                                         _vm._s(
                                           _vm.mydata.chinaAdd.localConfirmH5
@@ -658,16 +652,16 @@ var render = function() {
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    28,
+                                    27,
                                     "sc",
                                     "t_item-nownum"
                                   ),
-                                  attrs: { _i: 28 }
+                                  attrs: { _i: 27 }
                                 },
                                 [
                                   _vm._v(
                                     _vm._$s(
-                                      28,
+                                      27,
                                       "t0-0",
                                       _vm._s(_vm.mydata.chinaTotal.localConfirm)
                                     )
@@ -675,32 +669,32 @@ var render = function() {
                                 ]
                               ),
                               _c("view", {
-                                staticClass: _vm._$s(29, "sc", "t_item-nowtxt"),
-                                attrs: { _i: 29 }
+                                staticClass: _vm._$s(28, "sc", "t_item-nowtxt"),
+                                attrs: { _i: 28 }
                               })
                             ]
                           ),
                           _c(
                             "view",
                             {
-                              staticClass: _vm._$s(30, "sc", "t_item"),
-                              attrs: { _i: 30 }
+                              staticClass: _vm._$s(29, "sc", "t_item"),
+                              attrs: { _i: 29 }
                             },
                             [
                               _c(
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    31,
+                                    30,
                                     "sc",
                                     "t_item-addnum"
                                   ),
-                                  attrs: { _i: 31 }
+                                  attrs: { _i: 30 }
                                 },
                                 [
                                   _c("text", [
                                     _vm._$s(
-                                      33,
+                                      32,
                                       "i",
                                       _vm.mydata.chinaAdd.nowConfirm > 0
                                     )
@@ -708,7 +702,7 @@ var render = function() {
                                       : _vm._e(),
                                     _vm._v(
                                       _vm._$s(
-                                        32,
+                                        31,
                                         "t1-0",
                                         _vm._s(_vm.mydata.chinaAdd.nowConfirm)
                                       )
@@ -720,16 +714,16 @@ var render = function() {
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    34,
+                                    33,
                                     "sc",
                                     "t_item-nownum"
                                   ),
-                                  attrs: { _i: 34 }
+                                  attrs: { _i: 33 }
                                 },
                                 [
                                   _vm._v(
                                     _vm._$s(
-                                      34,
+                                      33,
                                       "t0-0",
                                       _vm._s(_vm.mydata.chinaTotal.nowConfirm)
                                     )
@@ -737,32 +731,32 @@ var render = function() {
                                 ]
                               ),
                               _c("view", {
-                                staticClass: _vm._$s(35, "sc", "t_item-nowtxt"),
-                                attrs: { _i: 35 }
+                                staticClass: _vm._$s(34, "sc", "t_item-nowtxt"),
+                                attrs: { _i: 34 }
                               })
                             ]
                           ),
                           _c(
                             "view",
                             {
-                              staticClass: _vm._$s(36, "sc", "t_item"),
-                              attrs: { _i: 36 }
+                              staticClass: _vm._$s(35, "sc", "t_item"),
+                              attrs: { _i: 35 }
                             },
                             [
                               _c(
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    37,
+                                    36,
                                     "sc",
                                     "t_item-addnum"
                                   ),
-                                  attrs: { _i: 37 }
+                                  attrs: { _i: 36 }
                                 },
                                 [
                                   _c("text", [
                                     _vm._$s(
-                                      39,
+                                      38,
                                       "i",
                                       _vm.mydata.chinaAdd.confirm > 0
                                     )
@@ -770,7 +764,7 @@ var render = function() {
                                       : _vm._e(),
                                     _vm._v(
                                       _vm._$s(
-                                        38,
+                                        37,
                                         "t1-0",
                                         _vm._s(_vm.mydata.chinaAdd.confirm)
                                       )
@@ -782,16 +776,16 @@ var render = function() {
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    40,
+                                    39,
                                     "sc",
                                     "t_item-nownum"
                                   ),
-                                  attrs: { _i: 40 }
+                                  attrs: { _i: 39 }
                                 },
                                 [
                                   _vm._v(
                                     _vm._$s(
-                                      40,
+                                      39,
                                       "t0-0",
                                       _vm._s(_vm.mydata.chinaTotal.confirm)
                                     )
@@ -799,32 +793,32 @@ var render = function() {
                                 ]
                               ),
                               _c("view", {
-                                staticClass: _vm._$s(41, "sc", "t_item-nowtxt"),
-                                attrs: { _i: 41 }
+                                staticClass: _vm._$s(40, "sc", "t_item-nowtxt"),
+                                attrs: { _i: 40 }
                               })
                             ]
                           ),
                           _c(
                             "view",
                             {
-                              staticClass: _vm._$s(42, "sc", "t_item"),
-                              attrs: { _i: 42 }
+                              staticClass: _vm._$s(41, "sc", "t_item"),
+                              attrs: { _i: 41 }
                             },
                             [
                               _c(
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    43,
+                                    42,
                                     "sc",
                                     "t_item-addnum"
                                   ),
-                                  attrs: { _i: 43 }
+                                  attrs: { _i: 42 }
                                 },
                                 [
                                   _c("text", [
                                     _vm._$s(
-                                      45,
+                                      44,
                                       "i",
                                       _vm.mydata.chinaAdd.noInfect > 0
                                     )
@@ -832,7 +826,7 @@ var render = function() {
                                       : _vm._e(),
                                     _vm._v(
                                       _vm._$s(
-                                        44,
+                                        43,
                                         "t1-0",
                                         _vm._s(_vm.mydata.chinaAdd.noInfect)
                                       )
@@ -844,16 +838,16 @@ var render = function() {
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    46,
+                                    45,
                                     "sc",
                                     "t_item-nownum"
                                   ),
-                                  attrs: { _i: 46 }
+                                  attrs: { _i: 45 }
                                 },
                                 [
                                   _vm._v(
                                     _vm._$s(
-                                      46,
+                                      45,
                                       "t0-0",
                                       _vm._s(_vm.mydata.chinaTotal.noInfect)
                                     )
@@ -861,32 +855,32 @@ var render = function() {
                                 ]
                               ),
                               _c("view", {
-                                staticClass: _vm._$s(47, "sc", "t_item-nowtxt"),
-                                attrs: { _i: 47 }
+                                staticClass: _vm._$s(46, "sc", "t_item-nowtxt"),
+                                attrs: { _i: 46 }
                               })
                             ]
                           ),
                           _c(
                             "view",
                             {
-                              staticClass: _vm._$s(48, "sc", "t_item"),
-                              attrs: { _i: 48 }
+                              staticClass: _vm._$s(47, "sc", "t_item"),
+                              attrs: { _i: 47 }
                             },
                             [
                               _c(
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    49,
+                                    48,
                                     "sc",
                                     "t_item-addnum"
                                   ),
-                                  attrs: { _i: 49 }
+                                  attrs: { _i: 48 }
                                 },
                                 [
                                   _c("text", [
                                     _vm._$s(
-                                      51,
+                                      50,
                                       "i",
                                       _vm.mydata.chinaAdd.nowSevere > 0
                                     )
@@ -894,7 +888,7 @@ var render = function() {
                                       : _vm._e(),
                                     _vm._v(
                                       _vm._$s(
-                                        50,
+                                        49,
                                         "t1-0",
                                         _vm._s(_vm.mydata.chinaAdd.nowSevere)
                                       )
@@ -906,16 +900,16 @@ var render = function() {
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    52,
+                                    51,
                                     "sc",
                                     "t_item-nownum"
                                   ),
-                                  attrs: { _i: 52 }
+                                  attrs: { _i: 51 }
                                 },
                                 [
                                   _vm._v(
                                     _vm._$s(
-                                      52,
+                                      51,
                                       "t0-0",
                                       _vm._s(_vm.mydata.chinaTotal.nowSevere)
                                     )
@@ -923,32 +917,32 @@ var render = function() {
                                 ]
                               ),
                               _c("view", {
-                                staticClass: _vm._$s(53, "sc", "t_item-nowtxt"),
-                                attrs: { _i: 53 }
+                                staticClass: _vm._$s(52, "sc", "t_item-nowtxt"),
+                                attrs: { _i: 52 }
                               })
                             ]
                           ),
                           _c(
                             "view",
                             {
-                              staticClass: _vm._$s(54, "sc", "t_item"),
-                              attrs: { _i: 54 }
+                              staticClass: _vm._$s(53, "sc", "t_item"),
+                              attrs: { _i: 53 }
                             },
                             [
                               _c(
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    55,
+                                    54,
                                     "sc",
                                     "t_item-addnum"
                                   ),
-                                  attrs: { _i: 55 }
+                                  attrs: { _i: 54 }
                                 },
                                 [
                                   _c("text", [
                                     _vm._$s(
-                                      57,
+                                      56,
                                       "i",
                                       _vm.mydata.chinaAdd.importedCase > 0
                                     )
@@ -956,7 +950,7 @@ var render = function() {
                                       : _vm._e(),
                                     _vm._v(
                                       _vm._$s(
-                                        56,
+                                        55,
                                         "t1-0",
                                         _vm._s(_vm.mydata.chinaAdd.importedCase)
                                       )
@@ -968,16 +962,16 @@ var render = function() {
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    58,
+                                    57,
                                     "sc",
                                     "t_item-nownum"
                                   ),
-                                  attrs: { _i: 58 }
+                                  attrs: { _i: 57 }
                                 },
                                 [
                                   _vm._v(
                                     _vm._$s(
-                                      58,
+                                      57,
                                       "t0-0",
                                       _vm._s(_vm.mydata.chinaTotal.importedCase)
                                     )
@@ -985,32 +979,32 @@ var render = function() {
                                 ]
                               ),
                               _c("view", {
-                                staticClass: _vm._$s(59, "sc", "t_item-nowtxt"),
-                                attrs: { _i: 59 }
+                                staticClass: _vm._$s(58, "sc", "t_item-nowtxt"),
+                                attrs: { _i: 58 }
                               })
                             ]
                           ),
                           _c(
                             "view",
                             {
-                              staticClass: _vm._$s(60, "sc", "t_item"),
-                              attrs: { _i: 60 }
+                              staticClass: _vm._$s(59, "sc", "t_item"),
+                              attrs: { _i: 59 }
                             },
                             [
                               _c(
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    61,
+                                    60,
                                     "sc",
                                     "t_item-addnum"
                                   ),
-                                  attrs: { _i: 61 }
+                                  attrs: { _i: 60 }
                                 },
                                 [
                                   _c("text", [
                                     _vm._$s(
-                                      63,
+                                      62,
                                       "i",
                                       _vm.mydata.chinaAdd.dead > 0
                                     )
@@ -1018,7 +1012,7 @@ var render = function() {
                                       : _vm._e(),
                                     _vm._v(
                                       _vm._$s(
-                                        62,
+                                        61,
                                         "t1-0",
                                         _vm._s(_vm.mydata.chinaAdd.dead)
                                       )
@@ -1030,16 +1024,16 @@ var render = function() {
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    64,
+                                    63,
                                     "sc",
                                     "t_item-nownum"
                                   ),
-                                  attrs: { _i: 64 }
+                                  attrs: { _i: 63 }
                                 },
                                 [
                                   _vm._v(
                                     _vm._$s(
-                                      64,
+                                      63,
                                       "t0-0",
                                       _vm._s(_vm.mydata.chinaTotal.dead)
                                     )
@@ -1047,32 +1041,32 @@ var render = function() {
                                 ]
                               ),
                               _c("view", {
-                                staticClass: _vm._$s(65, "sc", "t_item-nowtxt"),
-                                attrs: { _i: 65 }
+                                staticClass: _vm._$s(64, "sc", "t_item-nowtxt"),
+                                attrs: { _i: 64 }
                               })
                             ]
                           ),
                           _c(
                             "view",
                             {
-                              staticClass: _vm._$s(66, "sc", "t_item"),
-                              attrs: { _i: 66 }
+                              staticClass: _vm._$s(65, "sc", "t_item"),
+                              attrs: { _i: 65 }
                             },
                             [
                               _c(
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    67,
+                                    66,
                                     "sc",
                                     "t_item-addnum"
                                   ),
-                                  attrs: { _i: 67 }
+                                  attrs: { _i: 66 }
                                 },
                                 [
                                   _c("text", [
                                     _vm._$s(
-                                      69,
+                                      68,
                                       "i",
                                       _vm.mydata.chinaAdd.heal > 0
                                     )
@@ -1080,7 +1074,7 @@ var render = function() {
                                       : _vm._e(),
                                     _vm._v(
                                       _vm._$s(
-                                        68,
+                                        67,
                                         "t1-0",
                                         _vm._s(_vm.mydata.chinaAdd.heal)
                                       )
@@ -1092,16 +1086,16 @@ var render = function() {
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    70,
+                                    69,
                                     "sc",
                                     "t_item-nownum"
                                   ),
-                                  attrs: { _i: 70 }
+                                  attrs: { _i: 69 }
                                 },
                                 [
                                   _vm._v(
                                     _vm._$s(
-                                      70,
+                                      69,
                                       "t0-0",
                                       _vm._s(_vm.mydata.chinaTotal.heal)
                                     )
@@ -1109,32 +1103,32 @@ var render = function() {
                                 ]
                               ),
                               _c("view", {
-                                staticClass: _vm._$s(71, "sc", "t_item-nowtxt"),
-                                attrs: { _i: 71 }
+                                staticClass: _vm._$s(70, "sc", "t_item-nowtxt"),
+                                attrs: { _i: 70 }
                               })
                             ]
                           ),
                           _c(
                             "view",
                             {
-                              staticClass: _vm._$s(72, "sc", "t_item"),
-                              attrs: { _i: 72 }
+                              staticClass: _vm._$s(71, "sc", "t_item"),
+                              attrs: { _i: 71 }
                             },
                             [
                               _c(
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    73,
+                                    72,
                                     "sc",
                                     "t_item-addnum"
                                   ),
-                                  attrs: { _i: 73 }
+                                  attrs: { _i: 72 }
                                 },
                                 [
                                   _c("text", [
                                     _vm._$s(
-                                      75,
+                                      74,
                                       "i",
                                       _vm.mydata.chinaAdd.suspect > 0
                                     )
@@ -1142,7 +1136,7 @@ var render = function() {
                                       : _vm._e(),
                                     _vm._v(
                                       _vm._$s(
-                                        74,
+                                        73,
                                         "t1-0",
                                         _vm._s(_vm.mydata.chinaAdd.suspect)
                                       )
@@ -1154,16 +1148,16 @@ var render = function() {
                                 "view",
                                 {
                                   staticClass: _vm._$s(
-                                    76,
+                                    75,
                                     "sc",
                                     "t_item-nownum"
                                   ),
-                                  attrs: { _i: 76 }
+                                  attrs: { _i: 75 }
                                 },
                                 [
                                   _vm._v(
                                     _vm._$s(
-                                      76,
+                                      75,
                                       "t0-0",
                                       _vm._s(_vm.mydata.chinaTotal.suspect)
                                     )
@@ -1171,8 +1165,8 @@ var render = function() {
                                 ]
                               ),
                               _c("view", {
-                                staticClass: _vm._$s(77, "sc", "t_item-nowtxt"),
-                                attrs: { _i: 77 }
+                                staticClass: _vm._$s(76, "sc", "t_item-nowtxt"),
+                                attrs: { _i: 76 }
                               })
                             ]
                           )
@@ -1184,47 +1178,47 @@ var render = function() {
               _c(
                 "view",
                 {
-                  staticClass: _vm._$s(78, "sc", "citylist"),
+                  staticClass: _vm._$s(77, "sc", "citylist"),
                   class: _vm._$s(
-                    78,
+                    77,
                     "c",
                     _vm.daytime ? "daytimetop16" : "nightimetop16"
                   ),
-                  attrs: { _i: 78 }
+                  attrs: { _i: 77 }
                 },
                 [
                   _c(
                     "view",
                     {
-                      staticClass: _vm._$s(79, "sc", "citylist-name"),
-                      attrs: { _i: 79 }
+                      staticClass: _vm._$s(78, "sc", "citylist-name"),
+                      attrs: { _i: 78 }
                     },
                     [
                       _c(
                         "view",
                         {
-                          staticClass: _vm._$s(80, "sc", "citylist-name-left"),
-                          attrs: { _i: 80 }
+                          staticClass: _vm._$s(79, "sc", "citylist-name-left"),
+                          attrs: { _i: 79 }
                         },
                         [
                           _c("view", {
-                            staticClass: _vm._$s(81, "sc", "title"),
+                            staticClass: _vm._$s(80, "sc", "title"),
                             class: _vm._$s(
-                              81,
+                              80,
                               "c",
                               _vm.daytime ? "daytimetext" : "nightimetext"
                             ),
-                            attrs: { _i: 81 }
+                            attrs: { _i: 80 }
                           }),
                           _c("view", {
-                            staticClass: _vm._$s(82, "sc", "txt"),
-                            attrs: { _i: 82 }
+                            staticClass: _vm._$s(81, "sc", "txt"),
+                            attrs: { _i: 81 }
                           })
                         ]
                       ),
                       _c("view", {
-                        staticClass: _vm._$s(83, "sc", "citylist-name-right"),
-                        attrs: { _i: 83 },
+                        staticClass: _vm._$s(82, "sc", "citylist-name-right"),
+                        attrs: { _i: 82 },
                         on: { click: _vm.openCommon }
                       })
                     ]
@@ -1232,10 +1226,14 @@ var render = function() {
                   _c(
                     "view",
                     {
-                      staticClass: _vm._$s(84, "sc", "citylist-title"),
-                      attrs: { _i: 84 }
+                      staticClass: _vm._$s(83, "sc", "citylist-title"),
+                      attrs: { _i: 83 }
                     },
                     [
+                      _c("text", {
+                        staticClass: _vm._$s(84, "sc", "item"),
+                        attrs: { _i: 84 }
+                      }),
                       _c("text", {
                         staticClass: _vm._$s(85, "sc", "item"),
                         attrs: { _i: 85 }
@@ -1255,23 +1253,19 @@ var render = function() {
                       _c("text", {
                         staticClass: _vm._$s(89, "sc", "item"),
                         attrs: { _i: 89 }
-                      }),
-                      _c("text", {
-                        staticClass: _vm._$s(90, "sc", "item"),
-                        attrs: { _i: 90 }
                       })
                     ]
                   ),
-                  _vm._$s(91, "i", _vm.mydata.areaTree != null)
+                  _vm._$s(90, "i", _vm.mydata.areaTree != null)
                     ? _c(
                         "view",
                         {
-                          staticClass: _vm._$s(91, "sc", "citylist-box"),
-                          attrs: { _i: 91 }
+                          staticClass: _vm._$s(90, "sc", "citylist-box"),
+                          attrs: { _i: 90 }
                         },
                         [
                           _vm._l(
-                            _vm._$s(92, "f", {
+                            _vm._$s(91, "f", {
                               forItems: _vm.mydata.areaTree[0].children
                             }),
                             function(item, index, $21, $31) {
@@ -1279,26 +1273,51 @@ var render = function() {
                                 _c(
                                   "view",
                                   {
-                                    key: _vm._$s(92, "f", {
+                                    key: _vm._$s(91, "f", {
                                       forIndex: $21,
                                       keyIndex: 0,
                                       key: index + "_0"
                                     }),
                                     staticClass: _vm._$s(
-                                      "93-" + $31,
+                                      "92-" + $31,
                                       "sc",
                                       "citylist-box-item"
                                     ),
                                     class: _vm._$s(
-                                      "93-" + $31,
+                                      "92-" + $31,
                                       "c",
                                       _vm.daytime
                                         ? "daytimebot16"
                                         : " nightimebot16"
                                     ),
-                                    attrs: { _i: "93-" + $31 }
+                                    attrs: { _i: "92-" + $31 }
                                   },
                                   [
+                                    _c(
+                                      "view",
+                                      {
+                                        staticClass: _vm._$s(
+                                          "93-" + $31,
+                                          "sc",
+                                          "item"
+                                        ),
+                                        attrs: { _i: "93-" + $31 },
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.advSearch(index, item, 2)
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          _vm._$s(
+                                            "93-" + $31,
+                                            "t0-0",
+                                            _vm._s(item.name)
+                                          )
+                                        )
+                                      ]
+                                    ),
                                     _c(
                                       "view",
                                       {
@@ -1319,80 +1338,59 @@ var render = function() {
                                           _vm._$s(
                                             "94-" + $31,
                                             "t0-0",
-                                            _vm._s(item.name)
-                                          )
-                                        )
-                                      ]
-                                    ),
-                                    _c(
-                                      "view",
-                                      {
-                                        staticClass: _vm._$s(
-                                          "95-" + $31,
-                                          "sc",
-                                          "item"
-                                        ),
-                                        attrs: { _i: "95-" + $31 },
-                                        on: {
-                                          click: function($event) {
-                                            return _vm.advSearch(index, item, 2)
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _vm._v(
-                                          _vm._$s(
-                                            "95-" + $31,
-                                            "t0-0",
                                             _vm._s(item.total.nowConfirm)
                                           )
                                         )
                                       ]
                                     ),
-                                    _c(
-                                      "view",
-                                      {
-                                        staticClass: _vm._$s(
-                                          "96-" + $31,
-                                          "sc",
-                                          "item"
-                                        ),
-                                        attrs: { _i: "96-" + $31 },
-                                        on: {
-                                          click: function($event) {
-                                            return _vm.advSearch(index, item, 2)
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _vm._v(
-                                          _vm._$s(
-                                            "96-" + $31,
-                                            "t0-0",
-                                            _vm._s(item.total.confirm)
-                                          )
-                                        ),
-                                        _c(
+                                    _vm._$s(
+                                      "95-" + $31,
+                                      "i",
+                                      item.today.confirm >= 1000
+                                    )
+                                      ? _c(
                                           "view",
                                           {
                                             staticClass: _vm._$s(
-                                              "97-" + $31,
+                                              "95-" + $31,
                                               "sc",
-                                              "item-confirm"
+                                              "item"
                                             ),
-                                            attrs: { _i: "97-" + $31 }
+                                            attrs: { _i: "95-" + $31 },
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.advSearch(
+                                                  index,
+                                                  item,
+                                                  2
+                                                )
+                                              }
+                                            }
                                           },
                                           [
-                                            _vm._$s(
-                                              "98-" + $31,
-                                              "i",
-                                              item.today.confirm > 100
-                                            )
-                                              ? _c("view", [
+                                            _vm._v(
+                                              _vm._$s(
+                                                "95-" + $31,
+                                                "t0-0",
+                                                _vm._s(item.total.confirm)
+                                              )
+                                            ),
+                                            _c(
+                                              "view",
+                                              {
+                                                staticClass: _vm._$s(
+                                                  "96-" + $31,
+                                                  "sc",
+                                                  "item-confirm"
+                                                ),
+                                                attrs: { _i: "96-" + $31 }
+                                              },
+                                              [
+                                                _c("view", [
                                                   _c("text", [
                                                     _vm._v(
                                                       _vm._$s(
-                                                        "99-" + $31,
+                                                        "98-" + $31,
                                                         "t0-0",
                                                         _vm._s(
                                                           item.today.confirm
@@ -1401,51 +1399,68 @@ var render = function() {
                                                     )
                                                   ])
                                                 ])
-                                              : _vm._$s(
-                                                  "100-" + $31,
-                                                  "e",
-                                                  item.today.confirm > 0
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      : _vm._$s(
+                                          "99-" + $31,
+                                          "e",
+                                          item.today.confirm > 0
+                                        )
+                                      ? _c(
+                                          "view",
+                                          {
+                                            staticClass: _vm._$s(
+                                              "99-" + $31,
+                                              "sc",
+                                              "item"
+                                            ),
+                                            attrs: { _i: "99-" + $31 },
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.advSearch(
+                                                  index,
+                                                  item,
+                                                  2
                                                 )
-                                              ? _c("view", [
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              _vm._$s(
+                                                "99-" + $31,
+                                                "t0-0",
+                                                _vm._s(item.total.confirm)
+                                              )
+                                            ),
+                                            _c(
+                                              "view",
+                                              {
+                                                staticClass: _vm._$s(
+                                                  "100-" + $31,
+                                                  "sc",
+                                                  "item-confirm"
+                                                ),
+                                                attrs: { _i: "100-" + $31 }
+                                              },
+                                              [
+                                                _c("view", [
                                                   _c("text"),
                                                   _vm._v(
                                                     _vm._$s(
-                                                      "100-" + $31,
+                                                      "101-" + $31,
                                                       "t1-0",
                                                       _vm._s(item.today.confirm)
                                                     )
                                                   )
                                                 ])
-                                              : _vm._e()
+                                              ]
+                                            )
                                           ]
                                         )
-                                      ]
-                                    ),
-                                    _c(
-                                      "view",
-                                      {
-                                        staticClass: _vm._$s(
-                                          "102-" + $31,
-                                          "sc",
-                                          "item"
-                                        ),
-                                        attrs: { _i: "102-" + $31 },
-                                        on: {
-                                          click: function($event) {
-                                            return _vm.advSearch(index, item, 2)
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _vm._v(
-                                          _vm._$s(
-                                            "102-" + $31,
-                                            "t0-0",
-                                            _vm._s(item.total.heal)
-                                          )
-                                        )
-                                      ]
-                                    ),
+                                      : _vm._e(),
                                     _c(
                                       "view",
                                       {
@@ -1466,6 +1481,31 @@ var render = function() {
                                           _vm._$s(
                                             "103-" + $31,
                                             "t0-0",
+                                            _vm._s(item.total.heal)
+                                          )
+                                        )
+                                      ]
+                                    ),
+                                    _c(
+                                      "view",
+                                      {
+                                        staticClass: _vm._$s(
+                                          "104-" + $31,
+                                          "sc",
+                                          "item"
+                                        ),
+                                        attrs: { _i: "104-" + $31 },
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.advSearch(index, item, 2)
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          _vm._$s(
+                                            "104-" + $31,
+                                            "t0-0",
                                             _vm._s(item.total.dead)
                                           )
                                         )
@@ -1473,11 +1513,11 @@ var render = function() {
                                     ),
                                     _c("view", {
                                       staticClass: _vm._$s(
-                                        "104-" + $31,
+                                        "105-" + $31,
                                         "sc",
                                         "item"
                                       ),
-                                      attrs: { _i: "104-" + $31 },
+                                      attrs: { _i: "105-" + $31 },
                                       on: {
                                         click: function($event) {
                                           return _vm.gocopay(item)
@@ -1486,25 +1526,25 @@ var render = function() {
                                     })
                                   ]
                                 ),
-                                _vm._$s("105-" + $31, "i", _vm.flag[index])
+                                _vm._$s("106-" + $31, "i", _vm.flag[index])
                                   ? _c(
                                       "view",
                                       {
-                                        key: _vm._$s(92, "f", {
+                                        key: _vm._$s(91, "f", {
                                           forIndex: $21,
                                           keyIndex: 1,
                                           key: index + "_1"
                                         }),
                                         staticClass: _vm._$s(
-                                          "105-" + $31,
+                                          "106-" + $31,
                                           "sc",
                                           "product-box-left-item-sub"
                                         ),
-                                        attrs: { _i: "105-" + $31 }
+                                        attrs: { _i: "106-" + $31 }
                                       },
                                       [
                                         _vm._l(
-                                          _vm._$s(106 + "-" + $31, "f", {
+                                          _vm._$s(107 + "-" + $31, "f", {
                                             forItems: item.children
                                           }),
                                           function(items, indexs, $22, $32) {
@@ -1513,7 +1553,7 @@ var render = function() {
                                                 "view",
                                                 {
                                                   key: _vm._$s(
-                                                    106 + "-" + $31,
+                                                    107 + "-" + $31,
                                                     "f",
                                                     {
                                                       forIndex: $22,
@@ -1522,54 +1562,22 @@ var render = function() {
                                                     }
                                                   ),
                                                   staticClass: _vm._$s(
-                                                    "107-" + $31 + "-" + $32,
+                                                    "108-" + $31 + "-" + $32,
                                                     "sc",
                                                     "product-box-left-item"
                                                   ),
                                                   class: _vm._$s(
-                                                    "107-" + $31 + "-" + $32,
+                                                    "108-" + $31 + "-" + $32,
                                                     "c",
                                                     _vm.daytime
                                                       ? "daytimebot16"
                                                       : " nightimebot16"
                                                   ),
                                                   attrs: {
-                                                    _i: "107-" + $31 + "-" + $32
+                                                    _i: "108-" + $31 + "-" + $32
                                                   }
                                                 },
                                                 [
-                                                  _c(
-                                                    "view",
-                                                    {
-                                                      staticClass: _vm._$s(
-                                                        "108-" +
-                                                          $31 +
-                                                          "-" +
-                                                          $32,
-                                                        "sc",
-                                                        "product-box-left-item-item"
-                                                      ),
-                                                      attrs: {
-                                                        _i:
-                                                          "108-" +
-                                                          $31 +
-                                                          "-" +
-                                                          $32
-                                                      }
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        _vm._$s(
-                                                          "108-" +
-                                                            $31 +
-                                                            "-" +
-                                                            $32,
-                                                          "t0-0",
-                                                          _vm._s(items.name)
-                                                        )
-                                                      )
-                                                    ]
-                                                  ),
                                                   _c(
                                                     "view",
                                                     {
@@ -1597,10 +1605,7 @@ var render = function() {
                                                             "-" +
                                                             $32,
                                                           "t0-0",
-                                                          _vm._s(
-                                                            items.total
-                                                              .nowConfirm
-                                                          )
+                                                          _vm._s(items.name)
                                                         )
                                                       )
                                                     ]
@@ -1633,7 +1638,8 @@ var render = function() {
                                                             $32,
                                                           "t0-0",
                                                           _vm._s(
-                                                            items.total.confirm
+                                                            items.total
+                                                              .nowConfirm
                                                           )
                                                         )
                                                       )
@@ -1667,7 +1673,7 @@ var render = function() {
                                                             $32,
                                                           "t0-0",
                                                           _vm._s(
-                                                            items.total.heal
+                                                            items.total.confirm
                                                           )
                                                         )
                                                       )
@@ -1701,6 +1707,40 @@ var render = function() {
                                                             $32,
                                                           "t0-0",
                                                           _vm._s(
+                                                            items.total.heal
+                                                          )
+                                                        )
+                                                      )
+                                                    ]
+                                                  ),
+                                                  _c(
+                                                    "view",
+                                                    {
+                                                      staticClass: _vm._$s(
+                                                        "113-" +
+                                                          $31 +
+                                                          "-" +
+                                                          $32,
+                                                        "sc",
+                                                        "product-box-left-item-item"
+                                                      ),
+                                                      attrs: {
+                                                        _i:
+                                                          "113-" +
+                                                          $31 +
+                                                          "-" +
+                                                          $32
+                                                      }
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._$s(
+                                                          "113-" +
+                                                            $31 +
+                                                            "-" +
+                                                            $32,
+                                                          "t0-0",
+                                                          _vm._s(
                                                             items.total.dead
                                                           )
                                                         )
@@ -1724,13 +1764,13 @@ var render = function() {
                       )
                     : _vm._e(),
                   _c("view", {
-                    staticClass: _vm._$s(113, "sc", "zqw"),
+                    staticClass: _vm._$s(114, "sc", "zqw"),
                     class: _vm._$s(
-                      113,
+                      114,
                       "c",
                       _vm.daytime ? "daytimetop16" : "nightimetop16"
                     ),
-                    attrs: { _i: 113 },
+                    attrs: { _i: 114 },
                     on: { click: _vm.popzqw }
                   })
                 ]
@@ -1739,68 +1779,68 @@ var render = function() {
                 "uni-popup",
                 {
                   ref: "popup",
-                  staticClass: _vm._$s(114, "sc", "popup-center"),
-                  attrs: { type: "center", _i: 114 }
+                  staticClass: _vm._$s(115, "sc", "popup-center"),
+                  attrs: { type: "center", _i: 115 }
                 },
                 [
                   _c(
                     "view",
                     {
-                      staticClass: _vm._$s(115, "sc", "popup-box"),
-                      attrs: { _i: 115 }
+                      staticClass: _vm._$s(116, "sc", "popup-box"),
+                      attrs: { _i: 116 }
                     },
                     [
                       _c("image", {
-                        staticClass: _vm._$s(116, "sc", "pop-coles"),
+                        staticClass: _vm._$s(117, "sc", "pop-coles"),
                         attrs: {
                           src: _vm._$s(
-                            116,
+                            117,
                             "a-src",
                             __webpack_require__(/*! ../../static/pop-coles.png */ 52)
                           ),
-                          _i: 116
+                          _i: 117
                         },
                         on: { click: _vm.closeCommon }
                       }),
                       _c("view", {
-                        staticClass: _vm._$s(117, "sc", "popup-box-top"),
-                        attrs: { _i: 117 }
+                        staticClass: _vm._$s(118, "sc", "popup-box-top"),
+                        attrs: { _i: 118 }
                       }),
                       _c(
                         "scroll-view",
                         {
-                          staticClass: _vm._$s(118, "sc", "popup-box-box"),
+                          staticClass: _vm._$s(119, "sc", "popup-box-box"),
                           class: _vm._$s(
-                            118,
+                            119,
                             "c",
                             _vm.daytime ? "daytime16" : "nightime16"
                           ),
-                          attrs: { _i: 118 }
+                          attrs: { _i: 119 }
                         },
                         [
                           _c(
                             "view",
                             {
-                              staticClass: _vm._$s(119, "sc", "zqw-box"),
-                              attrs: { _i: 119 }
+                              staticClass: _vm._$s(120, "sc", "zqw-box"),
+                              attrs: { _i: 120 }
                             },
                             [
                               _c("view"),
-                              _vm._$s(121, "i", _vm.heightlist)
+                              _vm._$s(122, "i", _vm.heightlist)
                                 ? _c(
                                     "view",
                                     {
                                       staticClass: _vm._$s(
-                                        121,
+                                        122,
                                         "sc",
                                         "height-title"
                                       ),
-                                      attrs: { _i: 121 }
+                                      attrs: { _i: 122 }
                                     },
                                     [
                                       _vm._v(
                                         _vm._$s(
-                                          121,
+                                          122,
                                           "t0-0",
                                           _vm._s(_vm.heightlist.length)
                                         )
@@ -1813,25 +1853,25 @@ var render = function() {
                           _c(
                             "view",
                             {
-                              staticClass: _vm._$s(122, "sc", "zqw-box"),
-                              attrs: { _i: 122 }
+                              staticClass: _vm._$s(123, "sc", "zqw-box"),
+                              attrs: { _i: 123 }
                             },
                             [
-                              _vm._$s(123, "i", _vm.middlelist)
+                              _vm._$s(124, "i", _vm.middlelist)
                                 ? _c(
                                     "view",
                                     {
                                       staticClass: _vm._$s(
-                                        123,
+                                        124,
                                         "sc",
                                         "middle-title"
                                       ),
-                                      attrs: { _i: 123 }
+                                      attrs: { _i: 124 }
                                     },
                                     [
                                       _vm._v(
                                         _vm._$s(
-                                          123,
+                                          124,
                                           "t0-0",
                                           _vm._s(_vm.middlelist.length)
                                         )
@@ -1841,11 +1881,11 @@ var render = function() {
                                 : _vm._e()
                             ]
                           ),
-                          _vm._$s(124, "i", _vm.mydata.chinaTotal)
+                          _vm._$s(125, "i", _vm.mydata.chinaTotal)
                             ? _c("view", [
                                 _vm._v(
                                   _vm._$s(
-                                    124,
+                                    125,
                                     "t0-0",
                                     _vm._s(_vm.mydata.chinaTotal.mRiskTime)
                                   )
@@ -1863,9 +1903,9 @@ var render = function() {
           )
         ])
       : _vm._e(),
-    _vm._$s(125, "i", _vm.curNow === 1) ? _c("view") : _vm._e(),
-    _vm._$s(126, "i", _vm.curNow === 2) ? _c("view") : _vm._e(),
-    _vm._$s(127, "i", _vm.curNow === 3) ? _c("view") : _vm._e()
+    _vm._$s(126, "i", _vm.curNow === 1) ? _c("view") : _vm._e(),
+    _vm._$s(127, "i", _vm.curNow === 2) ? _c("view") : _vm._e(),
+    _vm._$s(128, "i", _vm.curNow === 3) ? _c("view") : _vm._e()
   ])
 }
 var recyclableRender = false
@@ -3189,7 +3229,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Dow
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvar _props = _interopRequireDefault(__webpack_require__(/*! ./props.js */ 38));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n/**\r\n * Subsection 分段器\r\n * @description 该分段器一般用于用户从几个选项中选择某一个的场景\r\n * @tutorial https://www.uviewui.com/components/subsection.html\r\n * @property {Array}\t\t\tlist\t\t\ttab的数据\r\n * @property {String ｜ Number}\tcurrent\t\t\t当前活动的tab的index（默认 0 ）\r\n * @property {String}\t\t\tactiveColor\t\t激活时的颜色（默认 '#3c9cff' ）\r\n * @property {String}\t\t\tinactiveColor\t未激活时的颜色（默认 '#303133' ）\r\n * @property {String}\t\t\tmode\t\t\t模式选择，mode=button为按钮形式，mode=subsection时为分段模式（默认 'button' ）\r\n * @property {String ｜ Number}\tfontSize\t\t字体大小，单位px（默认 12 ）\r\n * @property {Boolean}\t\t\tbold\t\t\t激活选项的字体是否加粗（默认 true ）\r\n * @property {String}\t\t\tbgColor\t\t\t组件背景颜色，mode为button时有效（默认 '#eeeeef' ）\r\n * @property {Object}\t\t\tcustomStyle\t\t定义需要用到的外部样式\r\n * @property {String}\t        keyName\t        从`list`元素对象中读取的键名（默认 'name' ）\r\n *\r\n * @event {Function} change\t\t分段器选项发生改变时触发  回调 index：选项的index索引值，从0开始\r\n * @example <u-subsection :list=\"list\" :current=\"curNow\" @change=\"sectionChange\"></u-subsection>\r\n */var _default = { name: \"u-subsection\", mixins: [uni.$u.mpMixin, uni.$u.mixin, _props.default], data: function data() {return { // 组件尺寸\n      itemRect: { width: 0, height: 0 } };}, watch: { list: function list(newValue, oldValue) {this.init();}, current: { immediate: true, handler: function handler(n) {} } }, computed: { wrapperStyle: function wrapperStyle() {var style = {}; // button模式时，设置背景色\n      if (this.mode === \"button\") {style.backgroundColor = this.bgColor;}return style;}, // 滑块的样式\n    barStyle: function barStyle() {var style = {};\n      style.width = \"\".concat(this.itemRect.width, \"px\");\n      style.height = \"\".concat(this.itemRect.height, \"px\");\n      // 通过translateX移动滑块，其移动的距离为索引*item的宽度\n\n      style.transform = \"translateX(\".concat(\n      this.current * this.itemRect.width, \"px)\");\n\n\n      if (this.mode === \"subsection\") {\n        // 在subsection模式下，需要动态设置滑块的圆角，因为移动滑块使用的是translateX，无法通过父元素设置overflow: hidden隐藏滑块的直角\n        style.backgroundColor = this.activeColor;\n      }\n      return style;\n    },\n    // 分段器item的样式\n    itemStyle: function itemStyle(index) {var _this = this;\n      return function (index) {\n        var style = {};\n        if (_this.mode === \"subsection\") {\n          // 设置border的样式\n          style.borderColor = _this.activeColor;\n          style.borderWidth = \"1px\";\n          style.borderStyle = \"solid\";\n        }\n        return style;\n      };\n    },\n    // 分段器文字颜色\n    textStyle: function textStyle(index) {var _this2 = this;\n      return function (index) {\n        var style = {};\n        style.fontWeight =\n        _this2.bold && _this2.current === index ? \"bold\" : \"normal\";\n        style.fontSize = uni.$u.addUnit(_this2.fontSize);\n        // subsection模式下，激活时默认为白色的文字\n        if (_this2.mode === \"subsection\") {\n          style.color =\n          _this2.current === index ? \"#fff\" : _this2.inactiveColor;\n        } else {\n          // button模式下，激活时文字颜色默认为activeColor\n          style.color =\n          _this2.current === index ?\n          _this2.activeColor :\n          _this2.inactiveColor;\n        }\n        return style;\n      };\n    } },\n\n  mounted: function mounted() {\n    this.init();\n  },\n  methods: {\n    init: function init() {var _this3 = this;\n      uni.$u.sleep().then(function () {return _this3.getRect();});\n    },\n    // 判断展示文本\n    getText: function getText(item) {\n      return typeof item === 'object' ? item[this.keyName] : item;\n    },\n    // 获取组件的尺寸\n    getRect: function getRect() {var _this4 = this;\n\n      this.$uGetRect(\".u-subsection__item--0\").then(function (size) {\n        _this4.itemRect = size;\n      });\n\n\n\n\n\n\n\n\n\n    },\n    clickHandler: function clickHandler(index) {\n      this.$emit(\"change\", index);\n    } } };exports.default = _default;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vdW5pX21vZHVsZXMvdXZpZXctdWkvY29tcG9uZW50cy91LXN1YnNlY3Rpb24vdS1zdWJzZWN0aW9uLnZ1ZSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFzREEsK0U7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFDQTs7Ozs7Ozs7Ozs7Ozs7Ozs7a0JBa0JBLEVBQ0Esb0JBREEsRUFFQSxzREFGQSxFQUdBLElBSEEsa0JBR0EsQ0FDQSxTQUNBO0FBQ0Esa0JBQ0EsUUFEQSxFQUVBLFNBRkEsRUFGQSxHQU9BLENBWEEsRUFZQSxTQUNBLElBREEsZ0JBQ0EsUUFEQSxFQUNBLFFBREEsRUFDQSxDQUNBLFlBQ0EsQ0FIQSxFQUlBLFdBQ0EsZUFEQSxFQUVBLE9BRkEsbUJBRUEsQ0FGQSxFQUVBLENBa0JBLENBcEJBLEVBSkEsRUFaQSxFQXVDQSxZQUNBLFlBREEsMEJBQ0EsQ0FDQSxlQURBLENBRUE7QUFDQSxtQ0FDQSxxQ0FDQSxDQUNBLGFBQ0EsQ0FSQSxFQVNBO0FBQ0EsWUFWQSxzQkFVQSxDQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVBO0FBQ0Esd0NBREE7OztBQUlBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxLQXpCQTtBQTBCQTtBQUNBLGFBM0JBLHFCQTJCQSxLQTNCQSxFQTJCQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLE9BVEE7QUFVQSxLQXRDQTtBQXVDQTtBQUNBLGFBeENBLHFCQXdDQSxLQXhDQSxFQXdDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLG1FQURBO0FBRUE7QUFDQTtBQUNBO0FBQ0E7QUFDQSxrRUFEQTtBQUVBLFNBSEEsTUFHQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLDRCQURBO0FBRUEsOEJBSEE7QUFJQTtBQUNBO0FBQ0EsT0FqQkE7QUFrQkEsS0EzREEsRUF2Q0E7O0FBb0dBLFNBcEdBLHFCQW9HQTtBQUNBO0FBQ0EsR0F0R0E7QUF1R0E7QUFDQSxRQURBLGtCQUNBO0FBQ0E7QUFDQSxLQUhBO0FBSUE7QUFDQSxXQUxBLG1CQUtBLElBTEEsRUFLQTtBQUNBO0FBQ0EsS0FQQTtBQVFBO0FBQ0EsV0FUQSxxQkFTQTs7QUFFQTtBQUNBO0FBQ0EsT0FGQTs7Ozs7Ozs7OztBQVlBLEtBdkJBO0FBd0JBLGdCQXhCQSx3QkF3QkEsS0F4QkEsRUF3QkE7QUFDQTtBQUNBLEtBMUJBLEVBdkdBLEUiLCJmaWxlIjoiMzcuanMiLCJzb3VyY2VzQ29udGVudCI6WyI8dGVtcGxhdGU+XHJcbiAgICA8dmlld1xyXG4gICAgICAgIGNsYXNzPVwidS1zdWJzZWN0aW9uXCJcclxuICAgICAgICByZWY9XCJ1LXN1YnNlY3Rpb25cIlxyXG4gICAgICAgIDpjbGFzcz1cIltgdS1zdWJzZWN0aW9uLS0ke21vZGV9YF1cIlxyXG4gICAgICAgIDpzdHlsZT1cIlskdS5hZGRTdHlsZShjdXN0b21TdHlsZSksIHdyYXBwZXJTdHlsZV1cIlxyXG4gICAgPlxyXG4gICAgICAgIDx2aWV3XHJcbiAgICAgICAgICAgIGNsYXNzPVwidS1zdWJzZWN0aW9uX19iYXJcIlxyXG4gICAgICAgICAgICByZWY9XCJ1LXN1YnNlY3Rpb25fX2JhclwiXHJcbiAgICAgICAgICAgIDpzdHlsZT1cIltiYXJTdHlsZV1cIlxyXG4gICAgICAgICAgICA6Y2xhc3M9XCJbXHJcbiAgICAgICAgICAgICAgICBtb2RlID09PSAnYnV0dG9uJyAmJiAndS1zdWJzZWN0aW9uLS1idXR0b25fX2JhcicsXHJcbiAgICAgICAgICAgICAgICBjdXJyZW50ID09PSAwICYmXHJcbiAgICAgICAgICAgICAgICAgICAgbW9kZSA9PT0gJ3N1YnNlY3Rpb24nICYmXHJcbiAgICAgICAgICAgICAgICAgICAgJ3Utc3Vic2VjdGlvbl9fYmFyLS1maXJzdCcsXHJcbiAgICAgICAgICAgICAgICBjdXJyZW50ID4gMCAmJlxyXG4gICAgICAgICAgICAgICAgICAgIGN1cnJlbnQgPCBsaXN0Lmxlbmd0aCAtIDEgJiZcclxuICAgICAgICAgICAgICAgICAgICBtb2RlID09PSAnc3Vic2VjdGlvbicgJiZcclxuICAgICAgICAgICAgICAgICAgICAndS1zdWJzZWN0aW9uX19iYXItLWNlbnRlcicsXHJcbiAgICAgICAgICAgICAgICBjdXJyZW50ID09PSBsaXN0Lmxlbmd0aCAtIDEgJiZcclxuICAgICAgICAgICAgICAgICAgICBtb2RlID09PSAnc3Vic2VjdGlvbicgJiZcclxuICAgICAgICAgICAgICAgICAgICAndS1zdWJzZWN0aW9uX19iYXItLWxhc3QnLFxyXG4gICAgICAgICAgICBdXCJcclxuICAgICAgICA+PC92aWV3PlxyXG4gICAgICAgIDx2aWV3XHJcbiAgICAgICAgICAgIGNsYXNzPVwidS1zdWJzZWN0aW9uX19pdGVtXCJcclxuICAgICAgICAgICAgOmNsYXNzPVwiW1xyXG4gICAgICAgICAgICAgICAgYHUtc3Vic2VjdGlvbl9faXRlbS0tJHtpbmRleH1gLFxyXG4gICAgICAgICAgICAgICAgaW5kZXggPCBsaXN0Lmxlbmd0aCAtIDEgJiZcclxuICAgICAgICAgICAgICAgICAgICAndS1zdWJzZWN0aW9uX19pdGVtLS1uby1ib3JkZXItcmlnaHQnLFxyXG4gICAgICAgICAgICAgICAgaW5kZXggPT09IDAgJiYgJ3Utc3Vic2VjdGlvbl9faXRlbS0tZmlyc3QnLFxyXG4gICAgICAgICAgICAgICAgaW5kZXggPT09IGxpc3QubGVuZ3RoIC0gMSAmJiAndS1zdWJzZWN0aW9uX19pdGVtLS1sYXN0JyxcclxuICAgICAgICAgICAgXVwiXHJcbiAgICAgICAgICAgIDpyZWY9XCJgdS1zdWJzZWN0aW9uX19pdGVtLS0ke2luZGV4fWBcIlxyXG4gICAgICAgICAgICA6c3R5bGU9XCJbaXRlbVN0eWxlKGluZGV4KV1cIlxyXG4gICAgICAgICAgICBAdGFwPVwiY2xpY2tIYW5kbGVyKGluZGV4KVwiXHJcbiAgICAgICAgICAgIHYtZm9yPVwiKGl0ZW0sIGluZGV4KSBpbiBsaXN0XCJcclxuICAgICAgICAgICAgOmtleT1cImluZGV4XCJcclxuICAgICAgICA+XHJcbiAgICAgICAgICAgIDx0ZXh0XHJcbiAgICAgICAgICAgICAgICBjbGFzcz1cInUtc3Vic2VjdGlvbl9faXRlbV9fdGV4dFwiXHJcbiAgICAgICAgICAgICAgICA6c3R5bGU9XCJbdGV4dFN0eWxlKGluZGV4KV1cIlxyXG4gICAgICAgICAgICAgICAgPnt7IGdldFRleHQoaXRlbSkgfX08L3RleHRcclxuICAgICAgICAgICAgPlxyXG4gICAgICAgIDwvdmlldz5cclxuICAgIDwvdmlldz5cclxuPC90ZW1wbGF0ZT5cclxuXHJcbjxzY3JpcHQ+XHJcbi8vICNpZmRlZiBBUFAtTlZVRVxyXG5jb25zdCBkb20gPSB1bmkucmVxdWlyZU5hdGl2ZVBsdWdpbihcImRvbVwiKTtcclxuY29uc3QgYW5pbWF0aW9uID0gdW5pLnJlcXVpcmVOYXRpdmVQbHVnaW4oXCJhbmltYXRpb25cIik7XHJcbi8vICNlbmRpZlxyXG5pbXBvcnQgcHJvcHMgZnJvbSBcIi4vcHJvcHMuanNcIjtcclxuLyoqXHJcbiAqIFN1YnNlY3Rpb24g5YiG5q615ZmoXHJcbiAqIEBkZXNjcmlwdGlvbiDor6XliIbmrrXlmajkuIDoiKznlKjkuo7nlKjmiLfku47lh6DkuKrpgInpobnkuK3pgInmi6nmn5DkuIDkuKrnmoTlnLrmma9cclxuICogQHR1dG9yaWFsIGh0dHBzOi8vd3d3LnV2aWV3dWkuY29tL2NvbXBvbmVudHMvc3Vic2VjdGlvbi5odG1sXHJcbiAqIEBwcm9wZXJ0eSB7QXJyYXl9XHRcdFx0bGlzdFx0XHRcdHRhYueahOaVsOaNrlxyXG4gKiBAcHJvcGVydHkge1N0cmluZyDvvZwgTnVtYmVyfVx0Y3VycmVudFx0XHRcdOW9k+WJjea0u+WKqOeahHRhYueahGluZGV477yI6buY6K6kIDAg77yJXHJcbiAqIEBwcm9wZXJ0eSB7U3RyaW5nfVx0XHRcdGFjdGl2ZUNvbG9yXHRcdOa/gOa0u+aXtueahOminOiJsu+8iOm7mOiupCAnIzNjOWNmZicg77yJXHJcbiAqIEBwcm9wZXJ0eSB7U3RyaW5nfVx0XHRcdGluYWN0aXZlQ29sb3JcdOacqua/gOa0u+aXtueahOminOiJsu+8iOm7mOiupCAnIzMwMzEzMycg77yJXHJcbiAqIEBwcm9wZXJ0eSB7U3RyaW5nfVx0XHRcdG1vZGVcdFx0XHTmqKHlvI/pgInmi6nvvIxtb2RlPWJ1dHRvbuS4uuaMiemSruW9ouW8j++8jG1vZGU9c3Vic2VjdGlvbuaXtuS4uuWIhuauteaooeW8j++8iOm7mOiupCAnYnV0dG9uJyDvvIlcclxuICogQHByb3BlcnR5IHtTdHJpbmcg772cIE51bWJlcn1cdGZvbnRTaXplXHRcdOWtl+S9k+Wkp+Wwj++8jOWNleS9jXB477yI6buY6K6kIDEyIO+8iVxyXG4gKiBAcHJvcGVydHkge0Jvb2xlYW59XHRcdFx0Ym9sZFx0XHRcdOa/gOa0u+mAiemhueeahOWtl+S9k+aYr+WQpuWKoOeyl++8iOm7mOiupCB0cnVlIO+8iVxyXG4gKiBAcHJvcGVydHkge1N0cmluZ31cdFx0XHRiZ0NvbG9yXHRcdFx057uE5Lu26IOM5pmv6aKc6Imy77yMbW9kZeS4umJ1dHRvbuaXtuacieaViO+8iOm7mOiupCAnI2VlZWVlZicg77yJXHJcbiAqIEBwcm9wZXJ0eSB7T2JqZWN0fVx0XHRcdGN1c3RvbVN0eWxlXHRcdOWumuS5iemcgOimgeeUqOWIsOeahOWklumDqOagt+W8j1xyXG4gKiBAcHJvcGVydHkge1N0cmluZ31cdCAgICAgICAga2V5TmFtZVx0ICAgICAgICDku45gbGlzdGDlhYPntKDlr7nosaHkuK3or7vlj5bnmoTplK7lkI3vvIjpu5jorqQgJ25hbWUnIO+8iVxyXG4gKlxyXG4gKiBAZXZlbnQge0Z1bmN0aW9ufSBjaGFuZ2VcdFx05YiG5q615Zmo6YCJ6aG55Y+R55Sf5pS55Y+Y5pe26Kem5Y+RICDlm57osIMgaW5kZXjvvJrpgInpobnnmoRpbmRleOe0ouW8leWAvO+8jOS7jjDlvIDlp4tcclxuICogQGV4YW1wbGUgPHUtc3Vic2VjdGlvbiA6bGlzdD1cImxpc3RcIiA6Y3VycmVudD1cImN1ck5vd1wiIEBjaGFuZ2U9XCJzZWN0aW9uQ2hhbmdlXCI+PC91LXN1YnNlY3Rpb24+XHJcbiAqL1xyXG5leHBvcnQgZGVmYXVsdCB7XHJcbiAgICBuYW1lOiBcInUtc3Vic2VjdGlvblwiLFxyXG4gICAgbWl4aW5zOiBbdW5pLiR1Lm1wTWl4aW4sIHVuaS4kdS5taXhpbiwgcHJvcHNdLFxyXG4gICAgZGF0YSgpIHtcclxuICAgICAgICByZXR1cm4ge1xyXG4gICAgICAgICAgICAvLyDnu4Tku7blsLrlr7hcclxuICAgICAgICAgICAgaXRlbVJlY3Q6IHtcclxuICAgICAgICAgICAgICAgIHdpZHRoOiAwLFxyXG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAwLFxyXG4gICAgICAgICAgICB9LFxyXG4gICAgICAgIH07XHJcbiAgICB9LFxyXG4gICAgd2F0Y2g6IHtcclxuICAgICAgICBsaXN0KG5ld1ZhbHVlLCBvbGRWYWx1ZSkge1xyXG4gICAgICAgICAgICB0aGlzLmluaXQoKTtcclxuICAgICAgICB9LFxyXG4gICAgICAgIGN1cnJlbnQ6IHtcclxuICAgICAgICAgICAgaW1tZWRpYXRlOiB0cnVlLFxyXG4gICAgICAgICAgICBoYW5kbGVyKG4pIHtcclxuICAgICAgICAgICAgICAgIC8vICNpZmRlZiBBUFAtTlZVRVxyXG4gICAgICAgICAgICAgICAgLy8g5Zyo5a6J5Y2TbnZ1ZeS4iu+8jOWmguaenOmAmui/h3RyYW5zbGF0ZVjov5vooYzkvY3np7vvvIzliLDmnIDlkI7kuIDkuKrml7bvvIzkvJrlr7zoh7Tlj7Pkvqfml6Dms5Xnu5jliLblnIbop5JcclxuICAgICAgICAgICAgICAgIC8vIOaVheeUqGFuaW1hdGlvbuaooeWdl+i/m+ihjOS9jeenu1xyXG4gICAgICAgICAgICAgICAgY29uc3QgcmVmID0gdGhpcy4kcmVmcz8uW1widS1zdWJzZWN0aW9uX19iYXJcIl0/LnJlZjtcclxuICAgICAgICAgICAgICAgIC8vIOS4jeWtmOWcqHJlZueahOaXtuWAmSjnkIbop6PkuLrnrKzkuIDmrKHliJ3lp4vljJbml7bvvIzpnIDopoHmuLLmn5Nkb23vvIzov5vooYzkuIDlrprlu7bml7blho3ojrflj5ZyZWYp77yM6L+Z6YeM55qEMTAwbXPmmK/nu4/ov4fmtYvor5Xlvpflh7rnmoTnu5Pmnpwo5p+Q5Lqb5a6J5Y2T6ZyA6KaB5bu25pe25LmF5LiA54K5Ke+8jOWLv+maj+aEj+S/ruaUuVxyXG4gICAgICAgICAgICAgICAgdW5pLiR1LnNsZWVwKHJlZiA/IDAgOiAxMDApLnRoZW4oKCkgPT4ge1xyXG4gICAgICAgICAgICAgICAgICAgIGFuaW1hdGlvbi50cmFuc2l0aW9uKHRoaXMuJHJlZnNbXCJ1LXN1YnNlY3Rpb25fX2JhclwiXS5yZWYsIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgc3R5bGVzOiB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IGB0cmFuc2xhdGVYKCR7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbiAqIHRoaXMuaXRlbVJlY3Qud2lkdGhcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIH1weClgLFxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgdHJhbnNmb3JtT3JpZ2luOiBcImNlbnRlciBjZW50ZXJcIixcclxuICAgICAgICAgICAgICAgICAgICAgICAgfSxcclxuICAgICAgICAgICAgICAgICAgICAgICAgZHVyYXRpb246IDMwMCxcclxuICAgICAgICAgICAgICAgICAgICB9KTtcclxuICAgICAgICAgICAgICAgIH0pO1xyXG4gICAgICAgICAgICAgICAgLy8gI2VuZGlmXHJcbiAgICAgICAgICAgIH0sXHJcbiAgICAgICAgfSxcclxuICAgIH0sXHJcbiAgICBjb21wdXRlZDoge1xyXG4gICAgICAgIHdyYXBwZXJTdHlsZSgpIHtcclxuICAgICAgICAgICAgY29uc3Qgc3R5bGUgPSB7fTtcclxuICAgICAgICAgICAgLy8gYnV0dG9u5qih5byP5pe277yM6K6+572u6IOM5pmv6ImyXHJcbiAgICAgICAgICAgIGlmICh0aGlzLm1vZGUgPT09IFwiYnV0dG9uXCIpIHtcclxuICAgICAgICAgICAgICAgIHN0eWxlLmJhY2tncm91bmRDb2xvciA9IHRoaXMuYmdDb2xvcjtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICByZXR1cm4gc3R5bGU7XHJcbiAgICAgICAgfSxcclxuICAgICAgICAvLyDmu5HlnZfnmoTmoLflvI9cclxuICAgICAgICBiYXJTdHlsZSgpIHtcclxuICAgICAgICAgICAgY29uc3Qgc3R5bGUgPSB7fTtcclxuICAgICAgICAgICAgc3R5bGUud2lkdGggPSBgJHt0aGlzLml0ZW1SZWN0LndpZHRofXB4YDtcclxuICAgICAgICAgICAgc3R5bGUuaGVpZ2h0ID0gYCR7dGhpcy5pdGVtUmVjdC5oZWlnaHR9cHhgO1xyXG4gICAgICAgICAgICAvLyDpgJrov4d0cmFuc2xhdGVY56e75Yqo5ruR5Z2X77yM5YW256e75Yqo55qE6Led56a75Li657Si5byVKml0ZW3nmoTlrr3luqZcclxuICAgICAgICAgICAgLy8gI2lmbmRlZiBBUFAtTlZVRVxyXG4gICAgICAgICAgICBzdHlsZS50cmFuc2Zvcm0gPSBgdHJhbnNsYXRlWCgke1xyXG4gICAgICAgICAgICAgICAgdGhpcy5jdXJyZW50ICogdGhpcy5pdGVtUmVjdC53aWR0aFxyXG4gICAgICAgICAgICB9cHgpYDtcclxuICAgICAgICAgICAgLy8gI2VuZGlmXHJcbiAgICAgICAgICAgIGlmICh0aGlzLm1vZGUgPT09IFwic3Vic2VjdGlvblwiKSB7XHJcbiAgICAgICAgICAgICAgICAvLyDlnKhzdWJzZWN0aW9u5qih5byP5LiL77yM6ZyA6KaB5Yqo5oCB6K6+572u5ruR5Z2X55qE5ZyG6KeS77yM5Zug5Li656e75Yqo5ruR5Z2X5L2/55So55qE5pivdHJhbnNsYXRlWO+8jOaXoOazlemAmui/h+eItuWFg+e0oOiuvue9rm92ZXJmbG93OiBoaWRkZW7pmpDol4/mu5HlnZfnmoTnm7Top5JcclxuICAgICAgICAgICAgICAgIHN0eWxlLmJhY2tncm91bmRDb2xvciA9IHRoaXMuYWN0aXZlQ29sb3I7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgcmV0dXJuIHN0eWxlO1xyXG4gICAgICAgIH0sXHJcbiAgICAgICAgLy8g5YiG5q615ZmoaXRlbeeahOagt+W8j1xyXG4gICAgICAgIGl0ZW1TdHlsZShpbmRleCkge1xyXG4gICAgICAgICAgICByZXR1cm4gKGluZGV4KSA9PiB7XHJcbiAgICAgICAgICAgICAgICBjb25zdCBzdHlsZSA9IHt9O1xyXG4gICAgICAgICAgICAgICAgaWYgKHRoaXMubW9kZSA9PT0gXCJzdWJzZWN0aW9uXCIpIHtcclxuICAgICAgICAgICAgICAgICAgICAvLyDorr7nva5ib3JkZXLnmoTmoLflvI9cclxuICAgICAgICAgICAgICAgICAgICBzdHlsZS5ib3JkZXJDb2xvciA9IHRoaXMuYWN0aXZlQ29sb3I7XHJcbiAgICAgICAgICAgICAgICAgICAgc3R5bGUuYm9yZGVyV2lkdGggPSBcIjFweFwiO1xyXG4gICAgICAgICAgICAgICAgICAgIHN0eWxlLmJvcmRlclN0eWxlID0gXCJzb2xpZFwiO1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgcmV0dXJuIHN0eWxlO1xyXG4gICAgICAgICAgICB9O1xyXG4gICAgICAgIH0sXHJcbiAgICAgICAgLy8g5YiG5q615Zmo5paH5a2X6aKc6ImyXHJcbiAgICAgICAgdGV4dFN0eWxlKGluZGV4KSB7XHJcbiAgICAgICAgICAgIHJldHVybiAoaW5kZXgpID0+IHtcclxuICAgICAgICAgICAgICAgIGNvbnN0IHN0eWxlID0ge307XHJcbiAgICAgICAgICAgICAgICBzdHlsZS5mb250V2VpZ2h0ID1cclxuICAgICAgICAgICAgICAgICAgICB0aGlzLmJvbGQgJiYgdGhpcy5jdXJyZW50ID09PSBpbmRleCA/IFwiYm9sZFwiIDogXCJub3JtYWxcIjtcclxuICAgICAgICAgICAgICAgIHN0eWxlLmZvbnRTaXplID0gdW5pLiR1LmFkZFVuaXQodGhpcy5mb250U2l6ZSk7XHJcbiAgICAgICAgICAgICAgICAvLyBzdWJzZWN0aW9u5qih5byP5LiL77yM5r+A5rS75pe26buY6K6k5Li655m96Imy55qE5paH5a2XXHJcbiAgICAgICAgICAgICAgICBpZiAodGhpcy5tb2RlID09PSBcInN1YnNlY3Rpb25cIikge1xyXG4gICAgICAgICAgICAgICAgICAgIHN0eWxlLmNvbG9yID1cclxuICAgICAgICAgICAgICAgICAgICAgICAgdGhpcy5jdXJyZW50ID09PSBpbmRleCA/IFwiI2ZmZlwiIDogdGhpcy5pbmFjdGl2ZUNvbG9yO1xyXG4gICAgICAgICAgICAgICAgfSBlbHNlIHtcclxuICAgICAgICAgICAgICAgICAgICAvLyBidXR0b27mqKHlvI/kuIvvvIzmv4DmtLvml7bmloflrZfpopzoibLpu5jorqTkuLphY3RpdmVDb2xvclxyXG4gICAgICAgICAgICAgICAgICAgIHN0eWxlLmNvbG9yID1cclxuICAgICAgICAgICAgICAgICAgICAgICAgdGhpcy5jdXJyZW50ID09PSBpbmRleFxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPyB0aGlzLmFjdGl2ZUNvbG9yXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA6IHRoaXMuaW5hY3RpdmVDb2xvcjtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIHJldHVybiBzdHlsZTtcclxuICAgICAgICAgICAgfTtcclxuICAgICAgICB9LFxyXG4gICAgfSxcclxuICAgIG1vdW50ZWQoKSB7XHJcbiAgICAgICAgdGhpcy5pbml0KCk7XHJcbiAgICB9LFxyXG4gICAgbWV0aG9kczoge1xyXG4gICAgICAgIGluaXQoKSB7XHJcbiAgICAgICAgICAgIHVuaS4kdS5zbGVlcCgpLnRoZW4oKCkgPT4gdGhpcy5nZXRSZWN0KCkpO1xyXG4gICAgICAgIH0sXHJcblx0XHQvLyDliKTmlq3lsZXnpLrmlofmnKxcclxuXHRcdGdldFRleHQoaXRlbSkge1xyXG5cdFx0XHRyZXR1cm4gdHlwZW9mIGl0ZW0gPT09ICdvYmplY3QnID8gaXRlbVt0aGlzLmtleU5hbWVdIDogaXRlbVxyXG5cdFx0fSxcclxuICAgICAgICAvLyDojrflj5bnu4Tku7bnmoTlsLrlr7hcclxuICAgICAgICBnZXRSZWN0KCkge1xyXG4gICAgICAgICAgICAvLyAjaWZuZGVmIEFQUC1OVlVFXHJcbiAgICAgICAgICAgIHRoaXMuJHVHZXRSZWN0KFwiLnUtc3Vic2VjdGlvbl9faXRlbS0tMFwiKS50aGVuKChzaXplKSA9PiB7XHJcbiAgICAgICAgICAgICAgICB0aGlzLml0ZW1SZWN0ID0gc2l6ZTtcclxuICAgICAgICAgICAgfSk7XHJcbiAgICAgICAgICAgIC8vICNlbmRpZlxyXG5cclxuICAgICAgICAgICAgLy8gI2lmZGVmIEFQUC1OVlVFXHJcbiAgICAgICAgICAgIGNvbnN0IHJlZiA9IHRoaXMuJHJlZnNbXCJ1LXN1YnNlY3Rpb25fX2l0ZW0tLTBcIl1bMF07XHJcbiAgICAgICAgICAgIHJlZiAmJlxyXG4gICAgICAgICAgICAgICAgZG9tLmdldENvbXBvbmVudFJlY3QocmVmLCAocmVzKSA9PiB7XHJcbiAgICAgICAgICAgICAgICAgICAgdGhpcy5pdGVtUmVjdCA9IHJlcy5zaXplO1xyXG4gICAgICAgICAgICAgICAgfSk7XHJcbiAgICAgICAgICAgIC8vICNlbmRpZlxyXG4gICAgICAgIH0sXHJcbiAgICAgICAgY2xpY2tIYW5kbGVyKGluZGV4KSB7XHJcbiAgICAgICAgICAgIHRoaXMuJGVtaXQoXCJjaGFuZ2VcIiwgaW5kZXgpO1xyXG4gICAgICAgIH0sXHJcbiAgICB9LFxyXG59O1xyXG48L3NjcmlwdD5cclxuXHJcbjxzdHlsZSBsYW5nPVwic2Nzc1wiIHNjb3BlZD5cclxuQGltcG9ydCBcIi4uLy4uL2xpYnMvY3NzL2NvbXBvbmVudHMuc2Nzc1wiO1xyXG5cclxuLnUtc3Vic2VjdGlvbiB7XHJcbiAgICBAaW5jbHVkZSBmbGV4O1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuXHQvKiAjaWZuZGVmIEFQUC1OVlVFICovXHJcblx0d2lkdGg6IDEwMCU7XHJcblx0Ym94LXNpemluZzogYm9yZGVyLWJveDtcclxuXHQvKiAjZW5kaWYgKi9cclxuXHJcbiAgICAmLS1idXR0b24ge1xyXG4gICAgICAgIGhlaWdodDogMzJweDtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjM4LCAyMzgsIDIzOSk7XHJcbiAgICAgICAgcGFkZGluZzogM3B4O1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDNweDtcclxuICAgICAgICBhbGlnbi1pdGVtczogc3RyZXRjaDtcclxuXHJcbiAgICAgICAgJl9fYmFyIHtcclxuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcclxuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogM3B4ICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgICYtLXN1YnNlY3Rpb24ge1xyXG4gICAgICAgIGhlaWdodDogMzBweDtcclxuICAgIH1cclxuXHJcbiAgICAmX19iYXIge1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICAvKiAjaWZuZGVmIEFQUC1OVlVFICovXHJcbiAgICAgICAgdHJhbnNpdGlvbi1wcm9wZXJ0eTogdHJhbnNmb3JtLCBjb2xvcjtcclxuICAgICAgICB0cmFuc2l0aW9uLWR1cmF0aW9uOiAwLjNzO1xyXG4gICAgICAgIHRyYW5zaXRpb24tdGltaW5nLWZ1bmN0aW9uOiBlYXNlLWluLW91dDtcclxuICAgICAgICAvKiAjZW5kaWYgKi9cclxuXHJcbiAgICAgICAgJi0tZmlyc3Qge1xyXG4gICAgICAgICAgICBib3JkZXItdG9wLWxlZnQtcmFkaXVzOiAzcHg7XHJcbiAgICAgICAgICAgIGJvcmRlci1ib3R0b20tbGVmdC1yYWRpdXM6IDNweDtcclxuICAgICAgICAgICAgYm9yZGVyLXRvcC1yaWdodC1yYWRpdXM6IDBweDtcclxuICAgICAgICAgICAgYm9yZGVyLWJvdHRvbS1yaWdodC1yYWRpdXM6IDBweDtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgICYtLWNlbnRlciB7XHJcbiAgICAgICAgICAgIGJvcmRlci10b3AtbGVmdC1yYWRpdXM6IDBweDtcclxuICAgICAgICAgICAgYm9yZGVyLWJvdHRvbS1sZWZ0LXJhZGl1czogMHB4O1xyXG4gICAgICAgICAgICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogMHB4O1xyXG4gICAgICAgICAgICBib3JkZXItYm90dG9tLXJpZ2h0LXJhZGl1czogMHB4O1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgJi0tbGFzdCB7XHJcbiAgICAgICAgICAgIGJvcmRlci10b3AtbGVmdC1yYWRpdXM6IDBweDtcclxuICAgICAgICAgICAgYm9yZGVyLWJvdHRvbS1sZWZ0LXJhZGl1czogMHB4O1xyXG4gICAgICAgICAgICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogM3B4O1xyXG4gICAgICAgICAgICBib3JkZXItYm90dG9tLXJpZ2h0LXJhZGl1czogM3B4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAmX19pdGVtIHtcclxuICAgICAgICBAaW5jbHVkZSBmbGV4O1xyXG4gICAgICAgIGZsZXg6IDE7XHJcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgICAgICAvLyB2dWXnjq/looPkuIvvvIzpnIDopoHorr7nva7nm7jlr7nlrprkvY3vvIzlm6DkuLrmu5HlnZfkuLrnu53lr7nlrprkvY3vvIxpdGVt6ZyA6KaB5Zyo5ruR5Z2X55qE5LiK6Z2iXHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG5cclxuICAgICAgICAmLS1uby1ib3JkZXItcmlnaHQge1xyXG4gICAgICAgICAgICBib3JkZXItcmlnaHQtd2lkdGg6IDAgIWltcG9ydGFudDtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgICYtLWZpcnN0IHtcclxuICAgICAgICAgICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogM3B4O1xyXG4gICAgICAgICAgICBib3JkZXItYm90dG9tLWxlZnQtcmFkaXVzOiAzcHg7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAmLS1sYXN0IHtcclxuICAgICAgICAgICAgYm9yZGVyLXRvcC1yaWdodC1yYWRpdXM6IDNweDtcclxuICAgICAgICAgICAgYm9yZGVyLWJvdHRvbS1yaWdodC1yYWRpdXM6IDNweDtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgICZfX3RleHQge1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxMnB4O1xyXG4gICAgICAgICAgICBAaW5jbHVkZSBmbGV4O1xyXG4gICAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgICAgICAgICB0cmFuc2l0aW9uLXByb3BlcnR5OiBjb2xvcjtcclxuICAgICAgICAgICAgdHJhbnNpdGlvbi1kdXJhdGlvbjogMC4zcztcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxuPC9zdHlsZT5cclxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///37\n");
+eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvar _props = _interopRequireDefault(__webpack_require__(/*! ./props.js */ 38));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n/**\r\n * Subsection 分段器\r\n * @description 该分段器一般用于用户从几个选项中选择某一个的场景\r\n * @tutorial https://www.uviewui.com/components/subsection.html\r\n * @property {Array}\t\t\tlist\t\t\ttab的数据\r\n * @property {String ｜ Number}\tcurrent\t\t\t当前活动的tab的index（默认 0 ）\r\n * @property {String}\t\t\tactiveColor\t\t激活时的颜色（默认 '#3c9cff' ）\r\n * @property {String}\t\t\tinactiveColor\t未激活时的颜色（默认 '#303133' ）\r\n * @property {String}\t\t\tmode\t\t\t模式选择，mode=button为按钮形式，mode=subsection时为分段模式（默认 'button' ）\r\n * @property {String ｜ Number}\tfontSize\t\t字体大小，单位px（默认 12 ）\r\n * @property {Boolean}\t\t\tbold\t\t\t激活选项的字体是否加粗（默认 true ）\r\n * @property {String}\t\t\tbgColor\t\t\t组件背景颜色，mode为button时有效（默认 '#eeeeef' ）\r\n * @property {Object}\t\t\tcustomStyle\t\t定义需要用到的外部样式\r\n * @property {String}\t        keyName\t        从`list`元素对象中读取的键名（默认 'name' ）\r\n *\r\n * @event {Function} change\t\t分段器选项发生改变时触发  回调 index：选项的index索引值，从0开始\r\n * @example <u-subsection :list=\"list\" :current=\"curNow\" @change=\"sectionChange\"></u-subsection>\r\n */var _default = { name: \"u-subsection\", mixins: [uni.$u.mpMixin, uni.$u.mixin, _props.default], data: function data() {return { // 组件尺寸\n      itemRect: { width: 0, height: 0 } };}, watch: { list: function list(newValue, oldValue) {this.init();}, current: { immediate: true, handler: function handler(n) {} } }, computed: { wrapperStyle: function wrapperStyle() {var style = {}; // button模式时，设置背景色\n      if (this.mode === \"button\") {style.backgroundColor = this.bgColor;}return style;}, // 滑块的样式\n    barStyle: function barStyle() {var style = {};\n      style.width = \"\".concat(this.itemRect.width, \"px\");\n      style.height = \"\".concat(this.itemRect.height, \"px\");\n      // 通过translateX移动滑块，其移动的距离为索引*item的宽度\n\n      style.transform = \"translateX(\".concat(\n      this.current * this.itemRect.width, \"px)\");\n\n\n      if (this.mode === \"subsection\") {\n        // 在subsection模式下，需要动态设置滑块的圆角，因为移动滑块使用的是translateX，无法通过父元素设置overflow: hidden隐藏滑块的直角\n        style.backgroundColor = this.activeColor;\n      }\n      return style;\n    },\n    // 分段器item的样式\n    itemStyle: function itemStyle(index) {var _this = this;\n      return function (index) {\n        var style = {};\n        if (_this.mode === \"subsection\") {\n          // 设置border的样式\n          style.borderColor = _this.activeColor;\n          style.borderWidth = \"1px\";\n          style.borderStyle = \"solid\";\n        }\n        return style;\n      };\n    },\n    // 分段器文字颜色\n    textStyle: function textStyle(index) {var _this2 = this;\n      return function (index) {\n        var style = {};\n        style.fontWeight =\n        _this2.bold && _this2.current === index ? \"bold\" : \"normal\";\n        style.fontSize = uni.$u.addUnit(_this2.fontSize);\n        // subsection模式下，激活时默认为白色的文字\n        if (_this2.mode === \"subsection\") {\n          style.color =\n          _this2.current === index ? \"#fff\" : _this2.inactiveColor;\n        } else {\n          // button模式下，激活时文字颜色默认为activeColor\n          style.color =\n          _this2.current === index ?\n          _this2.activeColor :\n          _this2.inactiveColor;\n        }\n        return style;\n      };\n    } },\n\n  mounted: function mounted() {\n    this.init();\n  },\n  methods: {\n    init: function init() {var _this3 = this;\n      uni.$u.sleep().then(function () {return _this3.getRect();});\n    },\n    // 判断展示文本\n    getText: function getText(item) {\n      return typeof item === 'object' ? item[this.keyName] : item;\n    },\n    // 获取组件的尺寸\n    getRect: function getRect() {var _this4 = this;\n\n      this.$uGetRect(\".u-subsection__item--0\").then(function (size) {\n        _this4.itemRect = size;\n      });\n\n\n\n\n\n\n\n\n\n    },\n    clickHandler: function clickHandler(index) {\n      this.$emit(\"change\", index);\n    } } };exports.default = _default;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vdW5pX21vZHVsZXMvdXZpZXctdWkvY29tcG9uZW50cy91LXN1YnNlY3Rpb24vdS1zdWJzZWN0aW9uLnZ1ZSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFzREEsK0U7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFDQTs7Ozs7Ozs7Ozs7Ozs7Ozs7a0JBa0JBLEVBQ0Esb0JBREEsRUFFQSxzREFGQSxFQUdBLElBSEEsa0JBR0EsQ0FDQSxTQUNBO0FBQ0Esa0JBQ0EsUUFEQSxFQUVBLFNBRkEsRUFGQSxHQU9BLENBWEEsRUFZQSxTQUNBLElBREEsZ0JBQ0EsUUFEQSxFQUNBLFFBREEsRUFDQSxDQUNBLFlBQ0EsQ0FIQSxFQUlBLFdBQ0EsZUFEQSxFQUVBLE9BRkEsbUJBRUEsQ0FGQSxFQUVBLENBa0JBLENBcEJBLEVBSkEsRUFaQSxFQXVDQSxZQUNBLFlBREEsMEJBQ0EsQ0FDQSxlQURBLENBRUE7QUFDQSxtQ0FDQSxxQ0FDQSxDQUNBLGFBQ0EsQ0FSQSxFQVNBO0FBQ0EsWUFWQSxzQkFVQSxDQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVBO0FBQ0Esd0NBREE7OztBQUlBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxLQXpCQTtBQTBCQTtBQUNBLGFBM0JBLHFCQTJCQSxLQTNCQSxFQTJCQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLE9BVEE7QUFVQSxLQXRDQTtBQXVDQTtBQUNBLGFBeENBLHFCQXdDQSxLQXhDQSxFQXdDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLG1FQURBO0FBRUE7QUFDQTtBQUNBO0FBQ0E7QUFDQSxrRUFEQTtBQUVBLFNBSEEsTUFHQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLDRCQURBO0FBRUEsOEJBSEE7QUFJQTtBQUNBO0FBQ0EsT0FqQkE7QUFrQkEsS0EzREEsRUF2Q0E7O0FBb0dBLFNBcEdBLHFCQW9HQTtBQUNBO0FBQ0EsR0F0R0E7QUF1R0E7QUFDQSxRQURBLGtCQUNBO0FBQ0E7QUFDQSxLQUhBO0FBSUE7QUFDQSxXQUxBLG1CQUtBLElBTEEsRUFLQTtBQUNBO0FBQ0EsS0FQQTtBQVFBO0FBQ0EsV0FUQSxxQkFTQTs7QUFFQTtBQUNBO0FBQ0EsT0FGQTs7Ozs7Ozs7OztBQVlBLEtBdkJBO0FBd0JBLGdCQXhCQSx3QkF3QkEsS0F4QkEsRUF3QkE7QUFDQTtBQUNBLEtBMUJBLEVBdkdBLEUiLCJmaWxlIjoiMzcuanMiLCJzb3VyY2VzQ29udGVudCI6WyI8dGVtcGxhdGU+XHJcbiAgICA8dmlld1xyXG4gICAgICAgIGNsYXNzPVwidS1zdWJzZWN0aW9uXCJcclxuICAgICAgICByZWY9XCJ1LXN1YnNlY3Rpb25cIlxyXG4gICAgICAgIDpjbGFzcz1cIltgdS1zdWJzZWN0aW9uLS0ke21vZGV9YF1cIlxyXG4gICAgICAgIDpzdHlsZT1cIlskdS5hZGRTdHlsZShjdXN0b21TdHlsZSksIHdyYXBwZXJTdHlsZV1cIlxyXG4gICAgPlxyXG4gICAgICAgIDx2aWV3XHJcbiAgICAgICAgICAgIGNsYXNzPVwidS1zdWJzZWN0aW9uX19iYXJcIlxyXG4gICAgICAgICAgICByZWY9XCJ1LXN1YnNlY3Rpb25fX2JhclwiXHJcbiAgICAgICAgICAgIDpzdHlsZT1cIltiYXJTdHlsZV1cIlxyXG4gICAgICAgICAgICA6Y2xhc3M9XCJbXHJcbiAgICAgICAgICAgICAgICBtb2RlID09PSAnYnV0dG9uJyAmJiAndS1zdWJzZWN0aW9uLS1idXR0b25fX2JhcicsXHJcbiAgICAgICAgICAgICAgICBjdXJyZW50ID09PSAwICYmXHJcbiAgICAgICAgICAgICAgICAgICAgbW9kZSA9PT0gJ3N1YnNlY3Rpb24nICYmXHJcbiAgICAgICAgICAgICAgICAgICAgJ3Utc3Vic2VjdGlvbl9fYmFyLS1maXJzdCcsXHJcbiAgICAgICAgICAgICAgICBjdXJyZW50ID4gMCAmJlxyXG4gICAgICAgICAgICAgICAgICAgIGN1cnJlbnQgPCBsaXN0Lmxlbmd0aCAtIDEgJiZcclxuICAgICAgICAgICAgICAgICAgICBtb2RlID09PSAnc3Vic2VjdGlvbicgJiZcclxuICAgICAgICAgICAgICAgICAgICAndS1zdWJzZWN0aW9uX19iYXItLWNlbnRlcicsXHJcbiAgICAgICAgICAgICAgICBjdXJyZW50ID09PSBsaXN0Lmxlbmd0aCAtIDEgJiZcclxuICAgICAgICAgICAgICAgICAgICBtb2RlID09PSAnc3Vic2VjdGlvbicgJiZcclxuICAgICAgICAgICAgICAgICAgICAndS1zdWJzZWN0aW9uX19iYXItLWxhc3QnLFxyXG4gICAgICAgICAgICBdXCJcclxuICAgICAgICA+PC92aWV3PlxyXG4gICAgICAgIDx2aWV3XHJcbiAgICAgICAgICAgIGNsYXNzPVwidS1zdWJzZWN0aW9uX19pdGVtXCJcclxuICAgICAgICAgICAgOmNsYXNzPVwiW1xyXG4gICAgICAgICAgICAgICAgYHUtc3Vic2VjdGlvbl9faXRlbS0tJHtpbmRleH1gLFxyXG4gICAgICAgICAgICAgICAgaW5kZXggPCBsaXN0Lmxlbmd0aCAtIDEgJiZcclxuICAgICAgICAgICAgICAgICAgICAndS1zdWJzZWN0aW9uX19pdGVtLS1uby1ib3JkZXItcmlnaHQnLFxyXG4gICAgICAgICAgICAgICAgaW5kZXggPT09IDAgJiYgJ3Utc3Vic2VjdGlvbl9faXRlbS0tZmlyc3QnLFxyXG4gICAgICAgICAgICAgICAgaW5kZXggPT09IGxpc3QubGVuZ3RoIC0gMSAmJiAndS1zdWJzZWN0aW9uX19pdGVtLS1sYXN0JyxcclxuICAgICAgICAgICAgXVwiXHJcbiAgICAgICAgICAgIDpyZWY9XCJgdS1zdWJzZWN0aW9uX19pdGVtLS0ke2luZGV4fWBcIlxyXG4gICAgICAgICAgICA6c3R5bGU9XCJbaXRlbVN0eWxlKGluZGV4KV1cIlxyXG4gICAgICAgICAgICBAdGFwPVwiY2xpY2tIYW5kbGVyKGluZGV4KVwiXHJcbiAgICAgICAgICAgIHYtZm9yPVwiKGl0ZW0sIGluZGV4KSBpbiBsaXN0XCJcclxuICAgICAgICAgICAgOmtleT1cImluZGV4XCJcclxuICAgICAgICA+XHJcbiAgICAgICAgICAgIDx0ZXh0XHJcbiAgICAgICAgICAgICAgICBjbGFzcz1cInUtc3Vic2VjdGlvbl9faXRlbV9fdGV4dFwiXHJcbiAgICAgICAgICAgICAgICA6c3R5bGU9XCJbdGV4dFN0eWxlKGluZGV4KV1cIlxyXG4gICAgICAgICAgICAgICAgPnt7IGdldFRleHQoaXRlbSkgfX08L3RleHRcclxuICAgICAgICAgICAgPlxyXG4gICAgICAgIDwvdmlldz5cclxuICAgIDwvdmlldz5cclxuPC90ZW1wbGF0ZT5cclxuXHJcbjxzY3JpcHQ+XHJcbi8vICNpZmRlZiBBUFAtTlZVRVxyXG5jb25zdCBkb20gPSB1bmkucmVxdWlyZU5hdGl2ZVBsdWdpbihcImRvbVwiKTtcclxuY29uc3QgYW5pbWF0aW9uID0gdW5pLnJlcXVpcmVOYXRpdmVQbHVnaW4oXCJhbmltYXRpb25cIik7XHJcbi8vICNlbmRpZlxyXG5pbXBvcnQgcHJvcHMgZnJvbSBcIi4vcHJvcHMuanNcIjtcclxuLyoqXHJcbiAqIFN1YnNlY3Rpb24g5YiG5q615ZmoXHJcbiAqIEBkZXNjcmlwdGlvbiDor6XliIbmrrXlmajkuIDoiKznlKjkuo7nlKjmiLfku47lh6DkuKrpgInpobnkuK3pgInmi6nmn5DkuIDkuKrnmoTlnLrmma9cclxuICogQHR1dG9yaWFsIGh0dHBzOi8vd3d3LnV2aWV3dWkuY29tL2NvbXBvbmVudHMvc3Vic2VjdGlvbi5odG1sXHJcbiAqIEBwcm9wZXJ0eSB7QXJyYXl9XHRcdFx0bGlzdFx0XHRcdHRhYueahOaVsOaNrlxyXG4gKiBAcHJvcGVydHkge1N0cmluZyDvvZwgTnVtYmVyfVx0Y3VycmVudFx0XHRcdOW9k+WJjea0u+WKqOeahHRhYueahGluZGV477yI6buY6K6kIDAg77yJXHJcbiAqIEBwcm9wZXJ0eSB7U3RyaW5nfVx0XHRcdGFjdGl2ZUNvbG9yXHRcdOa/gOa0u+aXtueahOminOiJsu+8iOm7mOiupCAnIzNjOWNmZicg77yJXHJcbiAqIEBwcm9wZXJ0eSB7U3RyaW5nfVx0XHRcdGluYWN0aXZlQ29sb3JcdOacqua/gOa0u+aXtueahOminOiJsu+8iOm7mOiupCAnIzMwMzEzMycg77yJXHJcbiAqIEBwcm9wZXJ0eSB7U3RyaW5nfVx0XHRcdG1vZGVcdFx0XHTmqKHlvI/pgInmi6nvvIxtb2RlPWJ1dHRvbuS4uuaMiemSruW9ouW8j++8jG1vZGU9c3Vic2VjdGlvbuaXtuS4uuWIhuauteaooeW8j++8iOm7mOiupCAnYnV0dG9uJyDvvIlcclxuICogQHByb3BlcnR5IHtTdHJpbmcg772cIE51bWJlcn1cdGZvbnRTaXplXHRcdOWtl+S9k+Wkp+Wwj++8jOWNleS9jXB477yI6buY6K6kIDEyIO+8iVxyXG4gKiBAcHJvcGVydHkge0Jvb2xlYW59XHRcdFx0Ym9sZFx0XHRcdOa/gOa0u+mAiemhueeahOWtl+S9k+aYr+WQpuWKoOeyl++8iOm7mOiupCB0cnVlIO+8iVxyXG4gKiBAcHJvcGVydHkge1N0cmluZ31cdFx0XHRiZ0NvbG9yXHRcdFx057uE5Lu26IOM5pmv6aKc6Imy77yMbW9kZeS4umJ1dHRvbuaXtuacieaViO+8iOm7mOiupCAnI2VlZWVlZicg77yJXHJcbiAqIEBwcm9wZXJ0eSB7T2JqZWN0fVx0XHRcdGN1c3RvbVN0eWxlXHRcdOWumuS5iemcgOimgeeUqOWIsOeahOWklumDqOagt+W8j1xyXG4gKiBAcHJvcGVydHkge1N0cmluZ31cdCAgICAgICAga2V5TmFtZVx0ICAgICAgICDku45gbGlzdGDlhYPntKDlr7nosaHkuK3or7vlj5bnmoTplK7lkI3vvIjpu5jorqQgJ25hbWUnIO+8iVxyXG4gKlxyXG4gKiBAZXZlbnQge0Z1bmN0aW9ufSBjaGFuZ2VcdFx05YiG5q615Zmo6YCJ6aG55Y+R55Sf5pS55Y+Y5pe26Kem5Y+RICDlm57osIMgaW5kZXjvvJrpgInpobnnmoRpbmRleOe0ouW8leWAvO+8jOS7jjDlvIDlp4tcclxuICogQGV4YW1wbGUgPHUtc3Vic2VjdGlvbiA6bGlzdD1cImxpc3RcIiA6Y3VycmVudD1cImN1ck5vd1wiIEBjaGFuZ2U9XCJzZWN0aW9uQ2hhbmdlXCI+PC91LXN1YnNlY3Rpb24+XHJcbiAqL1xyXG5leHBvcnQgZGVmYXVsdCB7XHJcbiAgICBuYW1lOiBcInUtc3Vic2VjdGlvblwiLFxyXG4gICAgbWl4aW5zOiBbdW5pLiR1Lm1wTWl4aW4sIHVuaS4kdS5taXhpbiwgcHJvcHNdLFxyXG4gICAgZGF0YSgpIHtcclxuICAgICAgICByZXR1cm4ge1xyXG4gICAgICAgICAgICAvLyDnu4Tku7blsLrlr7hcclxuICAgICAgICAgICAgaXRlbVJlY3Q6IHtcclxuICAgICAgICAgICAgICAgIHdpZHRoOiAwLFxyXG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAwLFxyXG4gICAgICAgICAgICB9LFxyXG4gICAgICAgIH07XHJcbiAgICB9LFxyXG4gICAgd2F0Y2g6IHtcclxuICAgICAgICBsaXN0KG5ld1ZhbHVlLCBvbGRWYWx1ZSkge1xyXG4gICAgICAgICAgICB0aGlzLmluaXQoKTtcclxuICAgICAgICB9LFxyXG4gICAgICAgIGN1cnJlbnQ6IHtcclxuICAgICAgICAgICAgaW1tZWRpYXRlOiB0cnVlLFxyXG4gICAgICAgICAgICBoYW5kbGVyKG4pIHtcclxuICAgICAgICAgICAgICAgIC8vICNpZmRlZiBBUFAtTlZVRVxyXG4gICAgICAgICAgICAgICAgLy8g5Zyo5a6J5Y2TbnZ1ZeS4iu+8jOWmguaenOmAmui/h3RyYW5zbGF0ZVjov5vooYzkvY3np7vvvIzliLDmnIDlkI7kuIDkuKrml7bvvIzkvJrlr7zoh7Tlj7Pkvqfml6Dms5Xnu5jliLblnIbop5JcclxuICAgICAgICAgICAgICAgIC8vIOaVheeUqGFuaW1hdGlvbuaooeWdl+i/m+ihjOS9jeenu1xyXG4gICAgICAgICAgICAgICAgY29uc3QgcmVmID0gdGhpcy4kcmVmcz8uW1widS1zdWJzZWN0aW9uX19iYXJcIl0/LnJlZjtcclxuICAgICAgICAgICAgICAgIC8vIOS4jeWtmOWcqHJlZueahOaXtuWAmSjnkIbop6PkuLrnrKzkuIDmrKHliJ3lp4vljJbml7bvvIzpnIDopoHmuLLmn5Nkb23vvIzov5vooYzkuIDlrprlu7bml7blho3ojrflj5ZyZWYp77yM6L+Z6YeM55qEMTAwbXPmmK/nu4/ov4fmtYvor5Xlvpflh7rnmoTnu5Pmnpwo5p+Q5Lqb5a6J5Y2T6ZyA6KaB5bu25pe25LmF5LiA54K5Ke+8jOWLv+maj+aEj+S/ruaUuVxyXG4gICAgICAgICAgICAgICAgdW5pLiR1LnNsZWVwKHJlZiA/IDAgOiAxMDApLnRoZW4oKCkgPT4ge1xyXG4gICAgICAgICAgICAgICAgICAgIGFuaW1hdGlvbi50cmFuc2l0aW9uKHRoaXMuJHJlZnNbXCJ1LXN1YnNlY3Rpb25fX2JhclwiXS5yZWYsIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgc3R5bGVzOiB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IGB0cmFuc2xhdGVYKCR7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbiAqIHRoaXMuaXRlbVJlY3Qud2lkdGhcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIH1weClgLFxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgdHJhbnNmb3JtT3JpZ2luOiBcImNlbnRlciBjZW50ZXJcIixcclxuICAgICAgICAgICAgICAgICAgICAgICAgfSxcclxuICAgICAgICAgICAgICAgICAgICAgICAgZHVyYXRpb246IDMwMCxcclxuICAgICAgICAgICAgICAgICAgICB9KTtcclxuICAgICAgICAgICAgICAgIH0pO1xyXG4gICAgICAgICAgICAgICAgLy8gI2VuZGlmXHJcbiAgICAgICAgICAgIH0sXHJcbiAgICAgICAgfSxcclxuICAgIH0sXHJcbiAgICBjb21wdXRlZDoge1xyXG4gICAgICAgIHdyYXBwZXJTdHlsZSgpIHtcclxuICAgICAgICAgICAgY29uc3Qgc3R5bGUgPSB7fTtcclxuICAgICAgICAgICAgLy8gYnV0dG9u5qih5byP5pe277yM6K6+572u6IOM5pmv6ImyXHJcbiAgICAgICAgICAgIGlmICh0aGlzLm1vZGUgPT09IFwiYnV0dG9uXCIpIHtcclxuICAgICAgICAgICAgICAgIHN0eWxlLmJhY2tncm91bmRDb2xvciA9IHRoaXMuYmdDb2xvcjtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICByZXR1cm4gc3R5bGU7XHJcbiAgICAgICAgfSxcclxuICAgICAgICAvLyDmu5HlnZfnmoTmoLflvI9cclxuICAgICAgICBiYXJTdHlsZSgpIHtcclxuICAgICAgICAgICAgY29uc3Qgc3R5bGUgPSB7fTtcclxuICAgICAgICAgICAgc3R5bGUud2lkdGggPSBgJHt0aGlzLml0ZW1SZWN0LndpZHRofXB4YDtcclxuICAgICAgICAgICAgc3R5bGUuaGVpZ2h0ID0gYCR7dGhpcy5pdGVtUmVjdC5oZWlnaHR9cHhgO1xyXG4gICAgICAgICAgICAvLyDpgJrov4d0cmFuc2xhdGVY56e75Yqo5ruR5Z2X77yM5YW256e75Yqo55qE6Led56a75Li657Si5byVKml0ZW3nmoTlrr3luqZcclxuICAgICAgICAgICAgLy8gI2lmbmRlZiBBUFAtTlZVRVxyXG4gICAgICAgICAgICBzdHlsZS50cmFuc2Zvcm0gPSBgdHJhbnNsYXRlWCgke1xyXG4gICAgICAgICAgICAgICAgdGhpcy5jdXJyZW50ICogdGhpcy5pdGVtUmVjdC53aWR0aFxyXG4gICAgICAgICAgICB9cHgpYDtcclxuICAgICAgICAgICAgLy8gI2VuZGlmXHJcbiAgICAgICAgICAgIGlmICh0aGlzLm1vZGUgPT09IFwic3Vic2VjdGlvblwiKSB7XHJcbiAgICAgICAgICAgICAgICAvLyDlnKhzdWJzZWN0aW9u5qih5byP5LiL77yM6ZyA6KaB5Yqo5oCB6K6+572u5ruR5Z2X55qE5ZyG6KeS77yM5Zug5Li656e75Yqo5ruR5Z2X5L2/55So55qE5pivdHJhbnNsYXRlWO+8jOaXoOazlemAmui/h+eItuWFg+e0oOiuvue9rm92ZXJmbG93OiBoaWRkZW7pmpDol4/mu5HlnZfnmoTnm7Top5JcclxuICAgICAgICAgICAgICAgIHN0eWxlLmJhY2tncm91bmRDb2xvciA9IHRoaXMuYWN0aXZlQ29sb3I7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgcmV0dXJuIHN0eWxlO1xyXG4gICAgICAgIH0sXHJcbiAgICAgICAgLy8g5YiG5q615ZmoaXRlbeeahOagt+W8j1xyXG4gICAgICAgIGl0ZW1TdHlsZShpbmRleCkge1xyXG4gICAgICAgICAgICByZXR1cm4gKGluZGV4KSA9PiB7XHJcbiAgICAgICAgICAgICAgICBjb25zdCBzdHlsZSA9IHt9O1xyXG4gICAgICAgICAgICAgICAgaWYgKHRoaXMubW9kZSA9PT0gXCJzdWJzZWN0aW9uXCIpIHtcclxuICAgICAgICAgICAgICAgICAgICAvLyDorr7nva5ib3JkZXLnmoTmoLflvI9cclxuICAgICAgICAgICAgICAgICAgICBzdHlsZS5ib3JkZXJDb2xvciA9IHRoaXMuYWN0aXZlQ29sb3I7XHJcbiAgICAgICAgICAgICAgICAgICAgc3R5bGUuYm9yZGVyV2lkdGggPSBcIjFweFwiO1xyXG4gICAgICAgICAgICAgICAgICAgIHN0eWxlLmJvcmRlclN0eWxlID0gXCJzb2xpZFwiO1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgcmV0dXJuIHN0eWxlO1xyXG4gICAgICAgICAgICB9O1xyXG4gICAgICAgIH0sXHJcbiAgICAgICAgLy8g5YiG5q615Zmo5paH5a2X6aKc6ImyXHJcbiAgICAgICAgdGV4dFN0eWxlKGluZGV4KSB7XHJcbiAgICAgICAgICAgIHJldHVybiAoaW5kZXgpID0+IHtcclxuICAgICAgICAgICAgICAgIGNvbnN0IHN0eWxlID0ge307XHJcbiAgICAgICAgICAgICAgICBzdHlsZS5mb250V2VpZ2h0ID1cclxuICAgICAgICAgICAgICAgICAgICB0aGlzLmJvbGQgJiYgdGhpcy5jdXJyZW50ID09PSBpbmRleCA/IFwiYm9sZFwiIDogXCJub3JtYWxcIjtcclxuICAgICAgICAgICAgICAgIHN0eWxlLmZvbnRTaXplID0gdW5pLiR1LmFkZFVuaXQodGhpcy5mb250U2l6ZSk7XHJcbiAgICAgICAgICAgICAgICAvLyBzdWJzZWN0aW9u5qih5byP5LiL77yM5r+A5rS75pe26buY6K6k5Li655m96Imy55qE5paH5a2XXHJcbiAgICAgICAgICAgICAgICBpZiAodGhpcy5tb2RlID09PSBcInN1YnNlY3Rpb25cIikge1xyXG4gICAgICAgICAgICAgICAgICAgIHN0eWxlLmNvbG9yID1cclxuICAgICAgICAgICAgICAgICAgICAgICAgdGhpcy5jdXJyZW50ID09PSBpbmRleCA/IFwiI2ZmZlwiIDogdGhpcy5pbmFjdGl2ZUNvbG9yO1xyXG4gICAgICAgICAgICAgICAgfSBlbHNlIHtcclxuICAgICAgICAgICAgICAgICAgICAvLyBidXR0b27mqKHlvI/kuIvvvIzmv4DmtLvml7bmloflrZfpopzoibLpu5jorqTkuLphY3RpdmVDb2xvclxyXG4gICAgICAgICAgICAgICAgICAgIHN0eWxlLmNvbG9yID1cclxuICAgICAgICAgICAgICAgICAgICAgICAgdGhpcy5jdXJyZW50ID09PSBpbmRleFxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPyB0aGlzLmFjdGl2ZUNvbG9yXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA6IHRoaXMuaW5hY3RpdmVDb2xvcjtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIHJldHVybiBzdHlsZTtcclxuICAgICAgICAgICAgfTtcclxuICAgICAgICB9LFxyXG4gICAgfSxcclxuICAgIG1vdW50ZWQoKSB7XHJcbiAgICAgICAgdGhpcy5pbml0KCk7XHJcbiAgICB9LFxyXG4gICAgbWV0aG9kczoge1xyXG4gICAgICAgIGluaXQoKSB7XHJcbiAgICAgICAgICAgIHVuaS4kdS5zbGVlcCgpLnRoZW4oKCkgPT4gdGhpcy5nZXRSZWN0KCkpO1xyXG4gICAgICAgIH0sXHJcblx0XHQvLyDliKTmlq3lsZXnpLrmlofmnKxcclxuXHRcdGdldFRleHQoaXRlbSkge1xyXG5cdFx0XHRyZXR1cm4gdHlwZW9mIGl0ZW0gPT09ICdvYmplY3QnID8gaXRlbVt0aGlzLmtleU5hbWVdIDogaXRlbVxyXG5cdFx0fSxcclxuICAgICAgICAvLyDojrflj5bnu4Tku7bnmoTlsLrlr7hcclxuICAgICAgICBnZXRSZWN0KCkge1xyXG4gICAgICAgICAgICAvLyAjaWZuZGVmIEFQUC1OVlVFXHJcbiAgICAgICAgICAgIHRoaXMuJHVHZXRSZWN0KFwiLnUtc3Vic2VjdGlvbl9faXRlbS0tMFwiKS50aGVuKChzaXplKSA9PiB7XHJcbiAgICAgICAgICAgICAgICB0aGlzLml0ZW1SZWN0ID0gc2l6ZTtcclxuICAgICAgICAgICAgfSk7XHJcbiAgICAgICAgICAgIC8vICNlbmRpZlxyXG5cclxuICAgICAgICAgICAgLy8gI2lmZGVmIEFQUC1OVlVFXHJcbiAgICAgICAgICAgIGNvbnN0IHJlZiA9IHRoaXMuJHJlZnNbXCJ1LXN1YnNlY3Rpb25fX2l0ZW0tLTBcIl1bMF07XHJcbiAgICAgICAgICAgIHJlZiAmJlxyXG4gICAgICAgICAgICAgICAgZG9tLmdldENvbXBvbmVudFJlY3QocmVmLCAocmVzKSA9PiB7XHJcbiAgICAgICAgICAgICAgICAgICAgdGhpcy5pdGVtUmVjdCA9IHJlcy5zaXplO1xyXG4gICAgICAgICAgICAgICAgfSk7XHJcbiAgICAgICAgICAgIC8vICNlbmRpZlxyXG4gICAgICAgIH0sXHJcbiAgICAgICAgY2xpY2tIYW5kbGVyKGluZGV4KSB7XHJcbiAgICAgICAgICAgIHRoaXMuJGVtaXQoXCJjaGFuZ2VcIiwgaW5kZXgpO1xyXG4gICAgICAgIH0sXHJcbiAgICB9LFxyXG59O1xyXG48L3NjcmlwdD5cclxuXHJcbjxzdHlsZSBsYW5nPVwic2Nzc1wiIHNjb3BlZD5cclxuQGltcG9ydCBcIi4uLy4uL2xpYnMvY3NzL2NvbXBvbmVudHMuc2Nzc1wiO1xyXG5cclxuLnUtc3Vic2VjdGlvbiB7XHJcbiAgICBAaW5jbHVkZSBmbGV4O1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuXHRoZWlnaHQ6MjAwcnB4O1xyXG5cdC8qICNpZm5kZWYgQVBQLU5WVUUgKi9cclxuXHR3aWR0aDogMTAwJTtcclxuXHRib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG5cdC8qICNlbmRpZiAqL1xyXG5cclxuICAgICYtLWJ1dHRvbiB7XHJcbiAgICAgICAgaGVpZ2h0OiAzNXB4O1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyMzgsIDIzOCwgMjM5KTtcclxuICAgICAgICBwYWRkaW5nOiAzcHg7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogM3B4O1xyXG4gICAgICAgIGFsaWduLWl0ZW1zOiBzdHJldGNoO1xyXG5cclxuICAgICAgICAmX19iYXIge1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmO1xyXG4gICAgICAgICAgICBib3JkZXItcmFkaXVzOiAzcHggIWltcG9ydGFudDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgJi0tc3Vic2VjdGlvbiB7XHJcbiAgICAgICAgaGVpZ2h0OiAzMHB4O1xyXG4gICAgfVxyXG5cclxuICAgICZfX2JhciB7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIC8qICNpZm5kZWYgQVBQLU5WVUUgKi9cclxuICAgICAgICB0cmFuc2l0aW9uLXByb3BlcnR5OiB0cmFuc2Zvcm0sIGNvbG9yO1xyXG4gICAgICAgIHRyYW5zaXRpb24tZHVyYXRpb246IDAuM3M7XHJcbiAgICAgICAgdHJhbnNpdGlvbi10aW1pbmctZnVuY3Rpb246IGVhc2UtaW4tb3V0O1xyXG4gICAgICAgIC8qICNlbmRpZiAqL1xyXG5cclxuICAgICAgICAmLS1maXJzdCB7XHJcbiAgICAgICAgICAgIGJvcmRlci10b3AtbGVmdC1yYWRpdXM6IDNweDtcclxuICAgICAgICAgICAgYm9yZGVyLWJvdHRvbS1sZWZ0LXJhZGl1czogM3B4O1xyXG4gICAgICAgICAgICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogMHB4O1xyXG4gICAgICAgICAgICBib3JkZXItYm90dG9tLXJpZ2h0LXJhZGl1czogMHB4O1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgJi0tY2VudGVyIHtcclxuICAgICAgICAgICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMHB4O1xyXG4gICAgICAgICAgICBib3JkZXItYm90dG9tLWxlZnQtcmFkaXVzOiAwcHg7XHJcbiAgICAgICAgICAgIGJvcmRlci10b3AtcmlnaHQtcmFkaXVzOiAwcHg7XHJcbiAgICAgICAgICAgIGJvcmRlci1ib3R0b20tcmlnaHQtcmFkaXVzOiAwcHg7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAmLS1sYXN0IHtcclxuICAgICAgICAgICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMHB4O1xyXG4gICAgICAgICAgICBib3JkZXItYm90dG9tLWxlZnQtcmFkaXVzOiAwcHg7XHJcbiAgICAgICAgICAgIGJvcmRlci10b3AtcmlnaHQtcmFkaXVzOiAzcHg7XHJcbiAgICAgICAgICAgIGJvcmRlci1ib3R0b20tcmlnaHQtcmFkaXVzOiAzcHg7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgICZfX2l0ZW0ge1xyXG4gICAgICAgIEBpbmNsdWRlIGZsZXg7XHJcbiAgICAgICAgZmxleDogMTtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgICAgIC8vIHZ1ZeeOr+Wig+S4i++8jOmcgOimgeiuvue9ruebuOWvueWumuS9je+8jOWboOS4uua7keWdl+S4uue7neWvueWumuS9je+8jGl0ZW3pnIDopoHlnKjmu5HlnZfnmoTkuIrpnaJcclxuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcblxyXG4gICAgICAgICYtLW5vLWJvcmRlci1yaWdodCB7XHJcbiAgICAgICAgICAgIGJvcmRlci1yaWdodC13aWR0aDogMCAhaW1wb3J0YW50O1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgJi0tZmlyc3Qge1xyXG4gICAgICAgICAgICBib3JkZXItdG9wLWxlZnQtcmFkaXVzOiAzcHg7XHJcbiAgICAgICAgICAgIGJvcmRlci1ib3R0b20tbGVmdC1yYWRpdXM6IDNweDtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgICYtLWxhc3Qge1xyXG4gICAgICAgICAgICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogM3B4O1xyXG4gICAgICAgICAgICBib3JkZXItYm90dG9tLXJpZ2h0LXJhZGl1czogM3B4O1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgJl9fdGV4dCB7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDEycHg7XHJcbiAgICAgICAgICAgIEBpbmNsdWRlIGZsZXg7XHJcbiAgICAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICAgICAgICAgIHRyYW5zaXRpb24tcHJvcGVydHk6IGNvbG9yO1xyXG4gICAgICAgICAgICB0cmFuc2l0aW9uLWR1cmF0aW9uOiAwLjNzO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxufVxyXG48L3N0eWxlPlxyXG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///37\n");
 
 /***/ }),
 /* 38 */
@@ -3527,7 +3567,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Dow
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("/* WEBPACK VAR INJECTION */(function(__f__) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0; //\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\nvar _default =\n\n{\n  data: function data() {\n    return {\n      infolist: ['国内疫情', '国外疫情', '核酸检测点', '防疫政策'],\n      curNow: 0,\n      titlelist: [{\n        name: 'scan',\n        title: '扫一扫' },\n\n      {\n        name: 'grid',\n        title: '身份码' },\n\n      {\n        name: 'star',\n        title: '健康码' },\n\n      {\n        name: 'hourglass',\n        title: '行程卡' }],\n\n\n      scrollTop: 0,\n      old: {\n        scrollTop: 0 },\n\n      mydata: {},\n      time: {},\n      flag: [],\n      daytime: '',\n      arealist: [],\n      middlelist: [],\n      heightlist: [] };\n\n  },\n  onLoad: function onLoad() {\n    this.getLocalShop();\n  },\n  onShow: function onShow() {\n    var that = this;\n    that.daytime = uni.getStorageSync('daytime');\n    uni.setNavigationBarColor({\n      frontColor: that.daytime ? '#000000' : '#ffffff',\n      backgroundColor: that.daytime ? '#EDEEED' : '#0E0E0E',\n      animation: {\n        duration: 1,\n        timingFunc: 'easeIn' } });\n\n\n  },\n  methods: {\n    sectionChange: function sectionChange(index) {\n      this.curNow = index;\n    },\n    typechange: function typechange(name) {\n      switch (name) {\n        case 0:{\n            __f__(\"log\", \"扫一扫\", \" at pages/INFO/nCoVinfo.vue:271\");\n            uni.scanCode({ success: function success(res) {\n                __f__(\"log\", '条码类型：' + res.scanType, \" at pages/INFO/nCoVinfo.vue:273\");\n                __f__(\"log\", '条码内容：' + res.result, \" at pages/INFO/nCoVinfo.vue:274\");} });\n            break;\n          }case 1:{\n            __f__(\"log\", \"身份码\", \" at pages/INFO/nCoVinfo.vue:277\");\n            uni.navigateTo({\n              url: \"../../pages/INFO/identitycard\" });\n\n            break;\n          }case 2:{\n            __f__(\"log\", \"健康码\", \" at pages/INFO/nCoVinfo.vue:283\");\n            break;\n          }case 3:{\n            __f__(\"log\", \"行程卡\", \" at pages/INFO/nCoVinfo.vue:286\");\n            break;\n          }}\n\n    },\n    closeCommon: function closeCommon() {\n      this.$refs.popup.close();\n    },\n    openCommon: function openCommon() {\n      this.$refs.popup.open('center');\n    },\n    gocortxt: function gocortxt() {\n      uni.navigateTo({\n        url: 'txt' });\n\n    },\n    advSearch: function advSearch(index, item, level) {\n      if (item.children.length >= 1) {\n        this.flag[index] = !this.flag[index];\n        this.$forceUpdate();\n      }\n    },\n    popzqw: function popzqw() {\n      uni.showToast({\n        title: '愿你我都能守住岁月，待到春光灿烂之时。',\n        icon: 'none',\n        duration: 2500 });\n\n      return;\n    },\n    gocopay: function gocopay(zqw) {\n      var item = encodeURIComponent(JSON.stringify(zqw));\n      uni.navigateTo({\n        url: 'coronavirus?item=' + item });\n\n    },\n    getLocalShop: function getLocalShop() {var _this = this;\n      var that = this;\n      uni.request({\n        url: 'https://api.inews.qq.com/newsqa/v1/query/inner/publish/modules/list?modules=statisGradeCityDetail,diseaseh5Shelf',\n        method: 'POST',\n        success: function success(res) {\n          that.mydata = res.data.data.diseaseh5Shelf;\n          that.middlelist.length = that.mydata.chinaTotal.mediumRiskAreaNum;\n          that.heightlist.length = that.mydata.chinaTotal.highRiskAreaNum;\n          var timestamp = (Date.parse(new Date()) - new Date(that.mydata.lastUpdateTime).\n          valueOf()) / 1000;\n          that.time = _this.formatSecond(timestamp);\n        },\n        fail: function fail() {\n\n        } });\n\n    },\n    formatSecond: function formatSecond(second) {\n      var days = Math.floor(second / 86400);\n      var hours = Math.floor(second % 86400 / 3600);\n      var minutes = Math.floor(second % 86400 % 3600 / 60);\n      var seconds = Math.floor(second % 86400 % 3600 % 60);\n      var forMatDate = {\n        days: days,\n        hours: hours,\n        minutes: minutes,\n        seconds: seconds };\n\n      return forMatDate;\n    },\n    switchMode: function switchMode() {\n      var that = this;\n      var daytime = uni.getStorageSync('daytime') ? '开启' : '关闭'; // 取反值\n      uni.showModal({\n        title: '提示',\n        content: '是否' + daytime + '深色模式',\n        confirmText: '确认',\n        success: function success(res) {\n          if (res.confirm) {\n            if (daytime == '开启') {\n              uni.setStorageSync('daytime', false);\n              that.daytime = false;\n              uni.setNavigationBarColor({\n                frontColor: that.daytime ? '#000000' : '#ffffff',\n                backgroundColor: that.daytime ? '#ffffff' : '#131313',\n                animation: {\n                  duration: 1,\n                  timingFunc: 'easeIn' } });\n\n\n              uni.setTabBarStyle({\n                color: that.daytime ? '#666666' : '#ADADAD',\n                selectedColor: '#00BEBE',\n                backgroundColor: that.daytime ? '#f7f7f7' : '#181818',\n                borderStyle: 'white' });\n\n            } else {\n              uni.setStorageSync('daytime', true);\n              that.daytime = true;\n              uni.setNavigationBarColor({\n                frontColor: that.daytime ? '#000000' : '#ffffff',\n                backgroundColor: that.daytime ? '#ffffff' : '#0E0E0E',\n                animation: {\n                  duration: 1,\n                  timingFunc: 'easeIn' } });\n\n\n              uni.setTabBarStyle({\n                color: that.daytime ? '#666666' : '#ADADAD',\n                selectedColor: '#00BEBE',\n                backgroundColor: that.daytime ? '#f7f7f7' : '#181818',\n                borderStyle: 'white' });\n\n            }\n          } else if (res.cancel) {\n          }\n        } });\n\n    } } };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/lib/format-log.js */ 55)[\"default\"]))//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vcGFnZXMvSU5GTy9uQ29WaW5mby52dWUiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBcU5BO0FBQ0EsTUFEQSxrQkFDQTtBQUNBO0FBQ0EsaURBREE7QUFFQSxlQUZBO0FBR0E7QUFDQSxvQkFEQTtBQUVBLG9CQUZBOztBQUlBO0FBQ0Esb0JBREE7QUFFQSxvQkFGQSxFQUpBOztBQVFBO0FBQ0Esb0JBREE7QUFFQSxvQkFGQSxFQVJBOztBQVlBO0FBQ0EseUJBREE7QUFFQSxvQkFGQSxFQVpBLENBSEE7OztBQW9CQSxrQkFwQkE7QUFxQkE7QUFDQSxvQkFEQSxFQXJCQTs7QUF3QkEsZ0JBeEJBO0FBeUJBLGNBekJBO0FBMEJBLGNBMUJBO0FBMkJBLGlCQTNCQTtBQTRCQSxrQkE1QkE7QUE2QkEsb0JBN0JBO0FBOEJBLG9CQTlCQTs7QUFnQ0EsR0FsQ0E7QUFtQ0EsUUFuQ0Esb0JBbUNBO0FBQ0E7QUFDQSxHQXJDQTtBQXNDQSxRQXRDQSxvQkFzQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxzREFEQTtBQUVBLDJEQUZBO0FBR0E7QUFDQSxtQkFEQTtBQUVBLDRCQUZBLEVBSEE7OztBQVFBLEdBakRBO0FBa0RBO0FBQ0EsaUJBREEseUJBQ0EsS0FEQSxFQUNBO0FBQ0E7QUFDQSxLQUhBO0FBSUEsY0FKQSxzQkFJQSxJQUpBLEVBSUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsdUZBRkE7QUFHQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLGtEQURBOztBQUdBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsV0FuQkE7O0FBcUJBLEtBMUJBO0FBMkJBLGVBM0JBLHlCQTJCQTtBQUNBO0FBQ0EsS0E3QkE7QUE4QkEsY0E5QkEsd0JBOEJBO0FBQ0E7QUFDQSxLQWhDQTtBQWlDQSxZQWpDQSxzQkFpQ0E7QUFDQTtBQUNBLGtCQURBOztBQUdBLEtBckNBO0FBc0NBLGFBdENBLHFCQXNDQSxLQXRDQSxFQXNDQSxJQXRDQSxFQXNDQSxLQXRDQSxFQXNDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsS0EzQ0E7QUE0Q0EsVUE1Q0Esb0JBNENBO0FBQ0E7QUFDQSxvQ0FEQTtBQUVBLG9CQUZBO0FBR0Esc0JBSEE7O0FBS0E7QUFDQSxLQW5EQTtBQW9EQSxXQXBEQSxtQkFvREEsR0FwREEsRUFvREE7QUFDQTtBQUNBO0FBQ0EsdUNBREE7O0FBR0EsS0F6REE7QUEwREEsZ0JBMURBLDBCQTBEQTtBQUNBO0FBQ0E7QUFDQSwrSEFEQTtBQUVBLHNCQUZBO0FBR0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLGlCQURBLE1BQ0EsSUFEQTtBQUVBO0FBQ0EsU0FWQTtBQVdBLFlBWEEsa0JBV0E7O0FBRUEsU0FiQTs7QUFlQSxLQTNFQTtBQTRFQSxnQkE1RUEsd0JBNEVBLE1BNUVBLEVBNEVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLGtCQURBO0FBRUEsb0JBRkE7QUFHQSx3QkFIQTtBQUlBLHdCQUpBOztBQU1BO0FBQ0EsS0F4RkE7QUF5RkEsY0F6RkEsd0JBeUZBO0FBQ0E7QUFDQSxnRUFGQSxDQUVBO0FBQ0E7QUFDQSxtQkFEQTtBQUVBLHdDQUZBO0FBR0EseUJBSEE7QUFJQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxnRUFEQTtBQUVBLHFFQUZBO0FBR0E7QUFDQSw2QkFEQTtBQUVBLHNDQUZBLEVBSEE7OztBQVFBO0FBQ0EsMkRBREE7QUFFQSx3Q0FGQTtBQUdBLHFFQUhBO0FBSUEsb0NBSkE7O0FBTUEsYUFqQkEsTUFpQkE7QUFDQTtBQUNBO0FBQ0E7QUFDQSxnRUFEQTtBQUVBLHFFQUZBO0FBR0E7QUFDQSw2QkFEQTtBQUVBLHNDQUZBLEVBSEE7OztBQVFBO0FBQ0EsMkRBREE7QUFFQSx3Q0FGQTtBQUdBLHFFQUhBO0FBSUEsb0NBSkE7O0FBTUE7QUFDQSxXQXBDQSxNQW9DQTtBQUNBO0FBQ0EsU0EzQ0E7O0FBNkNBLEtBeklBLEVBbERBLEUiLCJmaWxlIjoiNTQuanMiLCJzb3VyY2VzQ29udGVudCI6WyI8dGVtcGxhdGU+XHJcblx0PHZpZXc+XHJcblx0XHQ8ZGl2PlxyXG5cdFx0XHQ8dS1ncmlkIDpib3JkZXI9XCJmYWxzZVwiIGNvbD1cIjRcIiAgPlxyXG5cdFx0XHRcdDx1LWdyaWQtaXRlbSB2LWZvcj1cIihsaXN0SXRlbSxsaXN0SW5kZXgpIGluIHRpdGxlbGlzdFwiIDprZXk9XCJsaXN0SW5kZXhcIiBiZ0NvbG9yPVwiIzNjOWNmZlwiIEBjbGljaz1cInR5cGVjaGFuZ2VcIj5cclxuXHRcdFx0XHRcdDx1LWljb25cclxuXHRcdFx0XHRcdFx0OmN1c3RvbVN0eWxlPVwie3BhZGRpbmdUb3A6MjArJ3JweCcsaGVpZ2h0OjgwKydycHgnfVwiXHJcblx0XHRcdFx0XHRcdDpuYW1lPVwibGlzdEl0ZW0ubmFtZVwiXHJcblx0XHRcdFx0XHRcdDpzaXplPVwiMjVcIlxyXG5cdFx0XHRcdFx0XHQ6a2V5PVwibGlzdEluZGV4XCJcclxuXHRcdFx0XHRcdFx0Y29sb3I9XCJ3aGl0ZVwiXHJcblx0XHRcdFx0XHQ+PC91LWljb24+XHJcblx0XHRcdCAgICAgICAgPHRleHQgY2xhc3M9XCJncmlkLXRleHRcIj57e2xpc3RJdGVtLnRpdGxlfX08L3RleHQ+XHJcblx0XHRcdCAgICA8L3UtZ3JpZC1pdGVtPlxyXG5cdFx0XHQ8L3UtZ3JpZD5cclxuXHRcdDwvZGl2PlxyXG5cdFx0PGRpdiBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6IzNjOWNmZjtcIj5cclxuXHRcdFx0PHUtc3Vic2VjdGlvbiA6bGlzdD1cImluZm9saXN0XCIgOmtleT1cImN1ck5vd1wiIDpjdXJyZW50PVwiY3VyTm93XCIgYmdDb2xvcj1cIiMzYzljZmZcIiBmb250U2l6ZT1cIjE0cHhcIiBpbmFjdGl2ZUNvbG9yPVwid2hpdGVcIiBAY2hhbmdlPVwic2VjdGlvbkNoYW5nZVwiPjwvdS1zdWJzZWN0aW9uPlxyXG5cdFx0PC9kaXY+XHJcblx0XHQ8dmlldyB2LWlmPVwiY3VyTm93PT0wXCI+XHJcblx0XHRcdDx2aWV3IGNsYXNzPVwiY29udGVudFwiIDpjbGFzcz1cImRheXRpbWU/J2RheXRpbWUnOiduaWdodGltZSdcIj5cclxuXHRcdFx0ICAgIDx2aWV3IGNsYXNzPVwidG9wLWJveFwiPlxyXG5cdFx0XHQgICAgICAgIDx2aWV3IGNsYXNzPVwidG9wLWJveC16cXdcIiBAY2xpY2s9XCJzd2l0Y2hNb2RlXCI+5rex6Imy5qih5byPPC92aWV3PlxyXG5cdFx0XHQgICAgICAgIDx2aWV3IGNsYXNzPVwidG9wLWJveC1iZ1wiPjwvdmlldz5cclxuXHRcdFx0ICAgICAgICA8dmlldyBjbGFzcz1cInRvcC1ib3gtdGl0bGVcIj5cclxuXHRcdFx0ICAgICAgICAgICAg5paw5Z6L5Yag54q255eF5q+S6IK654KOXHJcblx0XHRcdCAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgIDx2aWV3IGNsYXNzPVwidG9wLWJveC1idXRcIj5cclxuXHRcdFx0ICAgICAgICAgICAg55ar5oOF5a6e5pe26L+96LiqXHJcblx0XHRcdCAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgIDx2aWV3IGNsYXNzPVwidG9wLWJveC1ib3RcIj5cclxuXHRcdFx0ICAgICAgICAgICAg5pWw5o2u5p2l5rqQ77ya5Zu95a625Y+K5ZCE5Zyw5Y2r5YGl5aeU5q+P5pel5L+h5oGv5Y+R5biDPGltYWdlIEBjbGljaz1cImdvY29ydHh0XCIgc3JjPVwiLi4vLi4vc3RhdGljL3lpd2VuLnBuZ1wiIG1vZGU9XCJcIj48L2ltYWdlPlxyXG5cdFx0XHQgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgIDwvdmlldz5cclxuXHRcdFx0ICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLXRvcFwiIDpjbGFzcz1cImRheXRpbWU/J2RheXRpbWUxNic6J25pZ2h0aW1lMTYnXCI+XHJcblx0XHRcdCAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tYm94XCIgdi1pZj1cIm15ZGF0YS5jaGluYUFkZCE9bnVsbCAmJiBteWRhdGEuY2hpbmFUb3RhbCE9bnVsbFwiPlxyXG5cdFx0XHQgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1ib3gtdGl0bGVcIiA+XHJcblx0XHRcdCAgICAgICAgICAgICAgICDnu5/orqHmiKrmraI8dGV4dCA6Y2xhc3M9XCJkYXl0aW1lPydkYXl0aW1ldGV4dCc6J25pZ2h0aW1ldGV4dCdcIj57e215ZGF0YS5sYXN0VXBkYXRlVGltZX19PC90ZXh0PiDvvJvmm7TmlrDkuo48dGV4dCB2LWlmPVwidGltZS5kYXlzID4wXCIgOmNsYXNzPVwiZGF5dGltZT8nZGF5dGltZXRleHQnOiduaWdodGltZXRleHQnXCI+e3t0aW1lLmRheXN9feWkqTwvdGV4dD48dGV4dCB2LWlmPVwidGltZS5ob3Vycz4wXCIgOmNsYXNzPVwiZGF5dGltZT8nZGF5dGltZXRleHQnOiduaWdodGltZXRleHQnXCI+e3t0aW1lLmhvdXJzfX3lsI/ml7Y8L3RleHQ+ICA8dGV4dCA6Y2xhc3M9XCJkYXl0aW1lPydkYXl0aW1ldGV4dCc6J25pZ2h0aW1ldGV4dCdcIj57e3RpbWUubWludXRlc3195YiG6ZKfPC90ZXh0PuWJjVxyXG5cdFx0XHQgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtXCIgc3R5bGU9XCJiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmYWY3O1wiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tYWRkbnVtXCI+6L6D5pio5pel77yaPHRleHQgc3R5bGU9XCJjb2xvcjogI2U1NzYzMTtcIj48dGV4dFxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgdi1pZj1cIm15ZGF0YS5jaGluYUFkZC5sb2NhbENvbmZpcm1INSA+IDBcIj4rPC90ZXh0PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICB7e215ZGF0YS5jaGluYUFkZC5sb2NhbENvbmZpcm1INX19PC90ZXh0Pjwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLW5vd251bVwiIHN0eWxlPVwiY29sb3I6ICNlNTc2MzE7XCI+e3tteWRhdGEuY2hpbmFUb3RhbC5sb2NhbENvbmZpcm19fTwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLW5vd3R4dFwiPuacrOWcn+eOsOacieehruivijwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2ZmZjhmODtcIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLWFkZG51bVwiPui+g+aYqOaXpe+8mjx0ZXh0IHN0eWxlPVwiY29sb3I6ICNlNjFjMWQ7XCI+IDx0ZXh0XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICB2LWlmPVwibXlkYXRhLmNoaW5hQWRkLm5vd0NvbmZpcm0gPiAwXCI+KzwvdGV4dD57e215ZGF0YS5jaGluYUFkZC5ub3dDb25maXJtfX08L3RleHQ+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1ub3dudW1cIiBzdHlsZT1cImNvbG9yOiAjZTYxYzFkO1wiPnt7bXlkYXRhLmNoaW5hVG90YWwubm93Q29uZmlybX19PC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tbm93dHh0XCI+546w5pyJ56Gu6K+KPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtXCIgc3R5bGU9XCJiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmOGY4O1wiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tYWRkbnVtXCI+6L6D5pio5pel77yaPHRleHQgc3R5bGU9XCJjb2xvcjogI2JlMjEyMTtcIj48dGV4dFxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgdi1pZj1cIm15ZGF0YS5jaGluYUFkZC5jb25maXJtID4gMFwiPis8L3RleHQ+e3tteWRhdGEuY2hpbmFBZGQuY29uZmlybX19PC90ZXh0Pjwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLW5vd251bVwiIHN0eWxlPVwiY29sb3I6ICNiZTIxMjE7XCI+e3tteWRhdGEuY2hpbmFUb3RhbC5jb25maXJtfX08L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1ub3d0eHRcIj7ntK/orqHnoa7or4o8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW1cIiBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6ICNmZWY3ZmY7XCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1hZGRudW1cIj7ovoPmmKjml6XvvJo8dGV4dCBzdHlsZT1cImNvbG9yOiAjYWUzYWM2O1wiPjx0ZXh0XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICB2LWlmPVwibXlkYXRhLmNoaW5hQWRkLm5vSW5mZWN0ID4gMFwiPis8L3RleHQ+e3tteWRhdGEuY2hpbmFBZGQubm9JbmZlY3R9fTwvdGV4dD48L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1ub3dudW1cIiBzdHlsZT1cImNvbG9yOiAjYWUzYWM2O1wiPnt7bXlkYXRhLmNoaW5hVG90YWwubm9JbmZlY3R9fTwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLW5vd3R4dFwiPuaXoOeXh+eKtuaEn+afk+iAhTwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2Y4ZmFmZjtcIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLWFkZG51bVwiPui+g+aYqOaXpe+8mjx0ZXh0IHN0eWxlPVwiY29sb3I6ICMwMDAwMDA7XCI+PHRleHRcclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgIHYtaWY9XCJteWRhdGEuY2hpbmFBZGQubm93U2V2ZXJlID4gMFwiPis8L3RleHQ+e3tteWRhdGEuY2hpbmFBZGQubm93U2V2ZXJlfX08L3RleHQ+PC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tbm93bnVtXCIgc3R5bGU9XCJjb2xvcjogIzAwMDAwMDtcIj57e215ZGF0YS5jaGluYVRvdGFsLm5vd1NldmVyZX19PC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tbm93dHh0XCI+546w5pyJ6YeN55eHPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtXCIgc3R5bGU9XCJiYWNrZ3JvdW5kLWNvbG9yOiAjZjFmNWZmO1wiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tYWRkbnVtXCI+6L6D5pio5pel77yaPHRleHQgc3R5bGU9XCJjb2xvcjogIzRlOGJlNjtcIj48dGV4dFxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgdi1pZj1cIm15ZGF0YS5jaGluYUFkZC5pbXBvcnRlZENhc2UgPiAwXCI+KzwvdGV4dD57e215ZGF0YS5jaGluYUFkZC5pbXBvcnRlZENhc2V9fTwvdGV4dD5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLW5vd251bVwiIHN0eWxlPVwiY29sb3I6ICM0ZThiZTY7XCI+e3tteWRhdGEuY2hpbmFUb3RhbC5pbXBvcnRlZENhc2V9fTwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLW5vd3R4dFwiPuWig+Wklui+k+WFpTwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2YzZjZmODtcIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLWFkZG51bVwiPui+g+aYqOaXpe+8mjx0ZXh0IHN0eWxlPVwiY29sb3I6ICM0ZTVhNjU7XCI+PHRleHRcclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgIHYtaWY9XCJteWRhdGEuY2hpbmFBZGQuZGVhZCA+IDBcIj4rPC90ZXh0Pnt7bXlkYXRhLmNoaW5hQWRkLmRlYWR9fTwvdGV4dD48L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1ub3dudW1cIiBzdHlsZT1cImNvbG9yOiAjNGU1YTY1O1wiPnt7bXlkYXRhLmNoaW5hVG90YWwuZGVhZH19PC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tbm93dHh0XCI+57Sv6K6h5q275LqhPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtXCIgc3R5bGU9XCJiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmO1wiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tYWRkbnVtXCI+6L6D5pio5pel77yaPHRleHQgc3R5bGU9XCJjb2xvcjogIzEwYWViNTtcIj48dGV4dFxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgdi1pZj1cIm15ZGF0YS5jaGluYUFkZC5oZWFsID4gMFwiPis8L3RleHQ+e3tteWRhdGEuY2hpbmFBZGQuaGVhbH19PC90ZXh0Pjwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLW5vd251bVwiIHN0eWxlPVwiY29sb3I6ICMxMGFlYjU7XCI+e3tteWRhdGEuY2hpbmFUb3RhbC5oZWFsfX08L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1ub3d0eHRcIj7ntK/orqHmsrvmhIg8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW1cIiBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6ICNmZmZhZmE7XCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1hZGRudW1cIj7ovoPmmKjml6XvvJo8dGV4dCBzdHlsZT1cImNvbG9yOiAjZmQ4MTM3O1wiPjx0ZXh0XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICB2LWlmPVwibXlkYXRhLmNoaW5hQWRkLnN1c3BlY3QgPiAwXCI+KzwvdGV4dD57e215ZGF0YS5jaGluYUFkZC5zdXNwZWN0fX08L3RleHQ+PC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tbm93bnVtXCIgc3R5bGU9XCJjb2xvcjogI2ZkODEzNztcIj57e215ZGF0YS5jaGluYVRvdGFsLnN1c3BlY3R9fTwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLW5vd3R4dFwiPueOsOacieeWkeS8vDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgIDwvdmlldz5cclxuXHRcdFx0ICAgIDx2aWV3IGNsYXNzPVwiY2l0eWxpc3RcIiA6Y2xhc3M9XCJkYXl0aW1lPydkYXl0aW1ldG9wMTYnOiduaWdodGltZXRvcDE2J1wiPlxyXG5cdFx0XHQgICAgICAgIDx2aWV3IGNsYXNzPVwiY2l0eWxpc3QtbmFtZVwiPlxyXG5cdFx0XHQgICAgICAgICAgICA8dmlldyBjbGFzcz1cImNpdHlsaXN0LW5hbWUtbGVmdFwiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0aXRsZVwiIHN0eWxlPVwicGFkZGluZy1sZWZ0OjE1cnB4O1wiIDpjbGFzcz1cImRheXRpbWU/J2RheXRpbWV0ZXh0JzonbmlnaHRpbWV0ZXh0J1wiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgIOS4reWbveeWq+aDhe+8iOWMheaLrOa4r+a+s+WPsO+8iVxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0eHRcIiBzdHlsZT1cInBhZGRpbmctbGVmdDoxNXJweDtcIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICA3OjAwLTEwOjAw5Li65pu05paw6auY5bOw77yM5pWw5o2u5aaC5pyJ5rue5ZCO6K+36LCF6Kej44CCXHJcblx0XHRcdCAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJjaXR5bGlzdC1uYW1lLXJpZ2h0XCIgQGNsaWNrPVwib3BlbkNvbW1vblwiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAg6aOO6Zmp5Zyw5Yy6XHJcblx0XHRcdCAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgPHZpZXcgY2xhc3M9XCJjaXR5bGlzdC10aXRsZVwiPlxyXG5cdFx0XHQgICAgICAgICAgICA8dGV4dCBjbGFzcz1cIml0ZW1cIiBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6ICNmNWY1ZjU7IGNvbG9yOiAjMjIyMjIyO1wiPuWcsOWMujwvdGV4dD5cclxuXHRcdFx0ICAgICAgICAgICAgPHRleHQgY2xhc3M9XCJpdGVtXCIgc3R5bGU9XCJiYWNrZ3JvdW5kLWNvbG9yOiAjZmNmMmU4OyBjb2xvcjogI2ZmNWQwMDtcIj7njrDmnIk8L3RleHQ+XHJcblx0XHRcdCAgICAgICAgICAgIDx0ZXh0IGNsYXNzPVwiaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2ZkZWVlZTsgY29sb3I6ICNmNTUyNTM7XCI+57Sv6K6hPC90ZXh0PlxyXG5cdFx0XHQgICAgICAgICAgICA8dGV4dCBjbGFzcz1cIml0ZW1cIiBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6ICNlOWY3ZWM7IGNvbG9yOiAjMTc4YjA1O1wiPuayu+aEiDwvdGV4dD5cclxuXHRcdFx0ICAgICAgICAgICAgPHRleHQgY2xhc3M9XCJpdGVtXCIgc3R5bGU9XCJiYWNrZ3JvdW5kLWNvbG9yOiAjZjNmNmY4OyBjb2xvcjogIzRlNWE2NTtcIj7mrbvkuqE8L3RleHQ+XHJcblx0XHRcdCAgICAgICAgICAgIDx0ZXh0IGNsYXNzPVwiaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2Y1ZjVmNTsgY29sb3I6ICMyMjIyMjI7XCI+6K+m5oOFPC90ZXh0PlxyXG5cdFx0XHQgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICA8dmlldyBjbGFzcz1cImNpdHlsaXN0LWJveFwiIHYtaWY9XCJteWRhdGEuYXJlYVRyZWUhPW51bGxcIj5cclxuXHRcdFx0ICAgICAgICAgICAgPGJsb2NrIHYtZm9yPVwiKGl0ZW0sIGluZGV4KSBpbiBteWRhdGEuYXJlYVRyZWVbMF0uY2hpbGRyZW5cIiA6a2V5PSdpbmRleCc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cImNpdHlsaXN0LWJveC1pdGVtXCIgOmNsYXNzPVwiZGF5dGltZT8nZGF5dGltZWJvdDE2JzonIG5pZ2h0aW1lYm90MTYnXCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJpdGVtXCIgQGNsaWNrPVwiYWR2U2VhcmNoKGluZGV4LGl0ZW0sIDIpXCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgIHt7aXRlbS5uYW1lfX1cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJpdGVtXCIgQGNsaWNrPVwiYWR2U2VhcmNoKGluZGV4LGl0ZW0sIDIpXCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgIHt7aXRlbS50b3RhbC5ub3dDb25maXJtfX1cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgXHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJpdGVtXCIgQGNsaWNrPVwiYWR2U2VhcmNoKGluZGV4LGl0ZW0sIDIpXCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgIHt7aXRlbS50b3RhbC5jb25maXJtfX1cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJpdGVtLWNvbmZpcm1cIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx2aWV3IHYtaWY9XCJpdGVtLnRvZGF5LmNvbmZpcm0gPjEwMFwiIHN0eWxlPVwibGluZS1oZWlnaHQ6MTVycHg7XCI+PHRleHQgc3R5bGU9XCJsaW5lLWhlaWdodDogMzBycHg7XCI+6L6D5pio5pel77yaK3t7aXRlbS50b2RheS5jb25maXJtfX08L3RleHQ+PC92aWV3PlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdDx2aWV3ICB2LWVsc2UtaWY9XCJpdGVtLnRvZGF5LmNvbmZpcm0gPjAgXCI+PHRleHQ+6L6D5pio5pel77yaKzwvdGV4dD57e2l0ZW0udG9kYXkuY29uZmlybX19PC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwiaXRlbVwiIEBjbGljaz1cImFkdlNlYXJjaChpbmRleCxpdGVtLCAyKVwiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICB7e2l0ZW0udG90YWwuaGVhbH19XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwiaXRlbVwiIEBjbGljaz1cImFkdlNlYXJjaChpbmRleCxpdGVtLCAyKVwiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICB7e2l0ZW0udG90YWwuZGVhZH19XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwiaXRlbVwiIHN0eWxlPVwiY29sb3I6ICMwM0E5RjQ7XCIgQGNsaWNrPVwiZ29jb3BheShpdGVtKVwiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICDor6bmg4VcclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICBcclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwicHJvZHVjdC1ib3gtbGVmdC1pdGVtLXN1YlwiIHYtaWY9XCJmbGFnW2luZGV4XVwiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgIDxibG9jayB2LWZvcj1cIihpdGVtcywgaW5kZXhzKSBpbiBpdGVtLmNoaWxkcmVuXCIgOmtleT1cImluZGV4c1wiID5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJwcm9kdWN0LWJveC1sZWZ0LWl0ZW1cIiA6Y2xhc3M9XCJkYXl0aW1lPydkYXl0aW1lYm90MTYnOicgbmlnaHRpbWVib3QxNidcIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwicHJvZHVjdC1ib3gtbGVmdC1pdGVtLWl0ZW1cIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7e2l0ZW1zLm5hbWV9fVxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJwcm9kdWN0LWJveC1sZWZ0LWl0ZW0taXRlbVwiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHt7aXRlbXMudG90YWwubm93Q29uZmlybX19XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInByb2R1Y3QtYm94LWxlZnQtaXRlbS1pdGVtXCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge3tpdGVtcy50b3RhbC5jb25maXJtfX1cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwicHJvZHVjdC1ib3gtbGVmdC1pdGVtLWl0ZW1cIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7e2l0ZW1zLnRvdGFsLmhlYWx9fVxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJwcm9kdWN0LWJveC1sZWZ0LWl0ZW0taXRlbVwiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHt7aXRlbXMudG90YWwuZGVhZH19XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICA8L2Jsb2NrPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPC92aWV3PiAgICBcclxuXHRcdFx0ICAgICAgICAgICAgPC9ibG9jaz5cclxuXHRcdFx0ICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgPHZpZXcgY2xhc3M9XCJ6cXdcIiA6Y2xhc3M9XCJkYXl0aW1lPydkYXl0aW1ldG9wMTYnOiduaWdodGltZXRvcDE2J1wiIEBjbGljaz1cInBvcHpxd1wiPlxyXG5cdFx0XHQgICAgICAgICAgICDmhL/nlqvmg4Xml6nml6XmlaPljrvvvIzlsbHmsrPml6DmgZnvvIzlpKnkuIvlpKrlubPjgIJcclxuXHRcdFx0ICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICBcclxuXHRcdFx0ICAgIFxyXG5cdFx0XHQgICAgPHVuaS1wb3B1cCByZWY9XCJwb3B1cFwiIHR5cGU9XCJjZW50ZXJcIiBjbGFzcz1cInBvcHVwLWNlbnRlclwiPlxyXG5cdFx0XHQgICAgICAgIDx2aWV3IGNsYXNzPVwicG9wdXAtYm94XCI+XHJcblx0XHRcdCAgICAgICAgICAgIDxpbWFnZSBjbGFzcz1cInBvcC1jb2xlc1wiIHNyYz1cIi4uLy4uL3N0YXRpYy9wb3AtY29sZXMucG5nXCIgbW9kZT1cIlwiIEBjbGljaz1cImNsb3NlQ29tbW9uXCI+PC9pbWFnZT5cclxuXHRcdFx0ICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJwb3B1cC1ib3gtdG9wXCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICDlhajlm73nlqvmg4XkuK3pq5jpo47pmanlnLDljLrmlbDph49cclxuXHRcdFx0ICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICA8c2Nyb2xsLXZpZXcgOmNsYXNzPVwiZGF5dGltZT8nZGF5dGltZTE2JzonbmlnaHRpbWUxNidcIiBzY3JvbGwteT1cInRydWVcIiBjbGFzcz1cInBvcHVwLWJveC1ib3hcIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwienF3LWJveFwiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgIDx2aWV3IHN0eWxlPVwiZmxvYXQ6IGxlZnQ7IHdpZHRoOiAxMDAlOyBoZWlnaHQ6IDEwMHJweDtcIj48L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJoZWlnaHQtdGl0bGVcIiB2LWlmPVwiaGVpZ2h0bGlzdFwiPumrmOmjjumZqeWcsOWMuiB7e2hlaWdodGxpc3QubGVuZ3RofX3kuKo8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInpxdy1ib3hcIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cIm1pZGRsZS10aXRsZVwiIHYtaWY9XCJtaWRkbGVsaXN0XCI+5Lit6aOO6Zmp5Zyw5Yy6IHt7bWlkZGxlbGlzdC5sZW5ndGh9feS4qjwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IHYtaWY9XCJteWRhdGEuY2hpbmFUb3RhbFwiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgIOabtOaWsOaXtumXtO+8mnt7bXlkYXRhLmNoaW5hVG90YWwubVJpc2tUaW1lfX1cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgPC9zY3JvbGwtdmlldz5cclxuXHRcdFx0ICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICA8L3VuaS1wb3B1cD5cclxuXHRcdFx0PC92aWV3PlxyXG5cdFx0PC92aWV3PlxyXG5cdFx0PHZpZXcgdi1pZj1cImN1ck5vdz09PTFcIj5cclxuXHRcdFx0MVxyXG5cdFx0PC92aWV3PlxyXG5cdFx0PHZpZXcgdi1pZj1cImN1ck5vdz09PTJcIj5cclxuXHRcdFx0MlxyXG5cdFx0PC92aWV3PlxyXG5cdFx0PHZpZXcgdi1pZj1cImN1ck5vdz09PTNcIj5cclxuXHRcdFx0M1xyXG5cdFx0PC92aWV3PlxyXG5cdDwvdmlldz5cclxuPC90ZW1wbGF0ZT5cclxuXHJcbjxzY3JpcHQ+XHJcblx0XHJcblx0ZXhwb3J0IGRlZmF1bHQge1xyXG5cdFx0ZGF0YSgpIHtcclxuXHRcdFx0cmV0dXJuIHtcclxuXHRcdFx0XHRpbmZvbGlzdDogWyflm73lhoXnlqvmg4UnLCAn5Zu95aSW55ar5oOFJywgJ+aguOmFuOajgOa1i+eCuScsJ+mYsueWq+aUv+etliddLFxyXG5cdFx0XHRcdGN1ck5vdzogMCxcclxuXHRcdFx0XHR0aXRsZWxpc3Q6IFt7XHJcblx0XHRcdFx0XHRcdG5hbWU6ICdzY2FuJyxcclxuXHRcdFx0XHRcdFx0dGl0bGU6ICfmiavkuIDmiasnXHJcblx0XHRcdFx0XHR9LFxyXG5cdFx0XHRcdFx0e1xyXG5cdFx0XHRcdFx0XHRuYW1lOiAnZ3JpZCcsXHJcblx0XHRcdFx0XHRcdHRpdGxlOiAn6Lqr5Lu956CBJ1xyXG5cdFx0XHRcdFx0fSxcclxuXHRcdFx0XHRcdHtcclxuXHRcdFx0XHRcdFx0bmFtZTogJ3N0YXInLFxyXG5cdFx0XHRcdFx0XHR0aXRsZTogJ+WBpeW6t+eggSdcclxuXHRcdFx0XHRcdH0sXHJcblx0XHRcdFx0XHR7XHJcblx0XHRcdFx0XHRcdG5hbWU6ICdob3VyZ2xhc3MnLFxyXG5cdFx0XHRcdFx0XHR0aXRsZTogJ+ihjOeoi+WNoSdcclxuXHRcdFx0XHRcdH0sXHJcblx0XHRcdFx0XSxcclxuXHRcdFx0XHRzY3JvbGxUb3A6IDAsXHJcblx0XHRcdFx0b2xkOntcclxuXHRcdFx0XHQgICAgc2Nyb2xsVG9wOjBcclxuXHRcdFx0XHR9LFxyXG5cdFx0XHRcdG15ZGF0YToge30sXHJcblx0XHRcdFx0dGltZToge30sXHJcblx0XHRcdFx0ZmxhZzpbXSxcclxuXHRcdFx0XHRkYXl0aW1lOicnLFxyXG5cdFx0XHRcdGFyZWFsaXN0OltdLFxyXG5cdFx0XHRcdG1pZGRsZWxpc3Q6W10sXHJcblx0XHRcdFx0aGVpZ2h0bGlzdDpbXSxcclxuXHRcdFx0fVxyXG5cdFx0fSxcclxuXHRcdG9uTG9hZCgpIHtcclxuXHRcdCAgICB0aGlzLmdldExvY2FsU2hvcCgpO1xyXG5cdFx0fSxcclxuXHRcdG9uU2hvdygpIHtcclxuXHRcdCAgICBsZXQgdGhhdCA9IHRoaXM7XHJcblx0XHQgICAgdGhhdC5kYXl0aW1lID0gdW5pLmdldFN0b3JhZ2VTeW5jKCdkYXl0aW1lJyk7XHJcblx0XHQgICAgdW5pLnNldE5hdmlnYXRpb25CYXJDb2xvcih7XHJcblx0XHQgICAgICAgIGZyb250Q29sb3I6IHRoYXQuZGF5dGltZT8nIzAwMDAwMCc6JyNmZmZmZmYnLFxyXG5cdFx0ICAgICAgICBiYWNrZ3JvdW5kQ29sb3I6IHRoYXQuZGF5dGltZT8nI0VERUVFRCc6JyMwRTBFMEUnLFxyXG5cdFx0ICAgICAgICBhbmltYXRpb246IHtcclxuXHRcdCAgICAgICAgICAgIGR1cmF0aW9uOiAxLFxyXG5cdFx0ICAgICAgICAgICAgdGltaW5nRnVuYzogJ2Vhc2VJbidcclxuXHRcdCAgICAgICAgfVxyXG5cdFx0ICAgIH0pXHJcblx0XHR9LFxyXG5cdFx0bWV0aG9kczoge1xyXG5cdFx0XHRzZWN0aW9uQ2hhbmdlKGluZGV4KSB7XHJcblx0XHRcdFx0dGhpcy5jdXJOb3cgPSBpbmRleDtcclxuXHRcdFx0fSxcclxuXHRcdFx0dHlwZWNoYW5nZShuYW1lKXtcclxuXHRcdFx0XHRzd2l0Y2ggKG5hbWUpe1xyXG5cdFx0XHRcdFx0Y2FzZSAwOntcclxuXHRcdFx0XHRcdFx0Y29uc29sZS5sb2coXCLmiavkuIDmiatcIik7XHJcblx0XHRcdFx0XHRcdHVuaS5zY2FuQ29kZSh7IHN1Y2Nlc3M6IGZ1bmN0aW9uIChyZXMpIHsgIFxyXG5cdFx0XHRcdFx0XHRcdGNvbnNvbGUubG9nKCfmnaHnoIHnsbvlnovvvJonICsgcmVzLnNjYW5UeXBlKTtcclxuXHRcdFx0XHRcdFx0XHRjb25zb2xlLmxvZygn5p2h56CB5YaF5a6577yaJyArIHJlcy5yZXN1bHQpOyB9fSk7XHJcblx0XHRcdFx0XHRcdGJyZWFrO1xyXG5cdFx0XHRcdFx0fWNhc2UgMTp7XHJcblx0XHRcdFx0XHRcdGNvbnNvbGUubG9nKFwi6Lqr5Lu956CBXCIpO1xyXG5cdFx0XHRcdFx0XHR1bmkubmF2aWdhdGVUbyh7XHJcblx0XHRcdFx0XHRcdFx0dXJsOlwiLi4vLi4vcGFnZXMvSU5GTy9pZGVudGl0eWNhcmRcIlxyXG5cdFx0XHRcdFx0XHR9KVxyXG5cdFx0XHRcdFx0XHRicmVhaztcclxuXHRcdFx0XHRcdH1jYXNlIDI6e1xyXG5cdFx0XHRcdFx0XHRjb25zb2xlLmxvZyhcIuWBpeW6t+eggVwiKTtcclxuXHRcdFx0XHRcdFx0YnJlYWs7XHJcblx0XHRcdFx0XHR9Y2FzZSAzOntcclxuXHRcdFx0XHRcdFx0Y29uc29sZS5sb2coXCLooYznqIvljaFcIik7XHJcblx0XHRcdFx0XHRcdGJyZWFrO1xyXG5cdFx0XHRcdFx0fVxyXG5cdFx0XHRcdH1cclxuXHRcdFx0fSxcclxuXHRcdFx0Y2xvc2VDb21tb24oKSB7XHJcblx0XHRcdCAgICB0aGlzLiRyZWZzLnBvcHVwLmNsb3NlKClcclxuXHRcdFx0fSxcclxuXHRcdFx0b3BlbkNvbW1vbigpe1xyXG5cdFx0XHQgICAgdGhpcy4kcmVmcy5wb3B1cC5vcGVuKCdjZW50ZXInKVxyXG5cdFx0XHR9LFxyXG5cdFx0XHRnb2NvcnR4dCgpe1xyXG5cdFx0XHQgICAgdW5pLm5hdmlnYXRlVG8oe1xyXG5cdFx0XHQgICAgICAgIHVybDondHh0J1xyXG5cdFx0XHQgICAgfSlcclxuXHRcdFx0fSxcclxuXHRcdFx0YWR2U2VhcmNoKGluZGV4LGl0ZW0sIGxldmVsKSB7XHJcblx0XHRcdCAgICBpZihpdGVtLmNoaWxkcmVuLmxlbmd0aCA+PSAxKXtcclxuXHRcdFx0ICAgICAgICB0aGlzLmZsYWdbaW5kZXhdID0gIXRoaXMuZmxhZ1tpbmRleF07XHJcblx0XHRcdCAgICAgICAgdGhpcy4kZm9yY2VVcGRhdGUoKTtcclxuXHRcdFx0ICAgIH1cclxuXHRcdFx0fSxcclxuXHRcdFx0cG9wenF3KCkge1xyXG5cdFx0XHQgICAgdW5pLnNob3dUb2FzdCh7XHJcblx0XHRcdCAgICAgICAgdGl0bGU6ICfmhL/kvaDmiJHpg73og73lrojkvY/lsoHmnIjvvIzlvoXliLDmmKXlhYnngb/ng4LkuYvml7bjgIInLFxyXG5cdFx0XHQgICAgICAgIGljb246ICdub25lJyxcclxuXHRcdFx0ICAgICAgICBkdXJhdGlvbjogMjUwMFxyXG5cdFx0XHQgICAgfSlcclxuXHRcdFx0ICAgIHJldHVybjtcclxuXHRcdFx0fSxcclxuXHRcdFx0Z29jb3BheSh6cXcpIHtcclxuXHRcdFx0ICAgIGxldCBpdGVtID0gZW5jb2RlVVJJQ29tcG9uZW50KEpTT04uc3RyaW5naWZ5KHpxdykpXHJcblx0XHRcdCAgICB1bmkubmF2aWdhdGVUbyh7XHJcblx0XHRcdCAgICAgICAgdXJsOiAnY29yb25hdmlydXM/aXRlbT0nICsgaXRlbVxyXG5cdFx0XHQgICAgfSlcclxuXHRcdFx0fSxcclxuXHRcdFx0Z2V0TG9jYWxTaG9wKCkge1xyXG5cdFx0XHQgICAgbGV0IHRoYXQgPSB0aGlzO1xyXG5cdFx0XHQgICAgdW5pLnJlcXVlc3Qoe1xyXG5cdFx0XHQgICAgICAgIHVybDogJ2h0dHBzOi8vYXBpLmluZXdzLnFxLmNvbS9uZXdzcWEvdjEvcXVlcnkvaW5uZXIvcHVibGlzaC9tb2R1bGVzL2xpc3Q/bW9kdWxlcz1zdGF0aXNHcmFkZUNpdHlEZXRhaWwsZGlzZWFzZWg1U2hlbGYnLFxyXG5cdFx0XHQgICAgICAgIG1ldGhvZDogJ1BPU1QnLFxyXG5cdFx0XHQgICAgICAgIHN1Y2Nlc3M6IHJlcyA9PiB7XHJcblx0XHRcdCAgICAgICAgICAgIHRoYXQubXlkYXRhID0gcmVzLmRhdGEuZGF0YS5kaXNlYXNlaDVTaGVsZjtcclxuXHRcdFx0ICAgICAgICAgICAgdGhhdC5taWRkbGVsaXN0Lmxlbmd0aCA9IHRoYXQubXlkYXRhLmNoaW5hVG90YWwubWVkaXVtUmlza0FyZWFOdW07XHJcblx0XHRcdCAgICAgICAgICAgIHRoYXQuaGVpZ2h0bGlzdC5sZW5ndGggPSB0aGF0Lm15ZGF0YS5jaGluYVRvdGFsLmhpZ2hSaXNrQXJlYU51bTtcclxuXHRcdFx0ICAgICAgICAgICAgbGV0IHRpbWVzdGFtcCA9ICgoRGF0ZS5wYXJzZShuZXcgRGF0ZSgpKSkgLSAobmV3IERhdGUodGhhdC5teWRhdGEubGFzdFVwZGF0ZVRpbWUpKVxyXG5cdFx0XHQgICAgICAgICAgICAgICAgLnZhbHVlT2YoKSkgLyAxMDAwO1xyXG5cdFx0XHQgICAgICAgICAgICB0aGF0LnRpbWUgPSB0aGlzLmZvcm1hdFNlY29uZCh0aW1lc3RhbXApXHJcblx0XHRcdCAgICAgICAgfSxcclxuXHRcdFx0ICAgICAgICBmYWlsKCkge1xyXG5cdFx0XHRcclxuXHRcdFx0ICAgICAgICB9XHJcblx0XHRcdCAgICB9KVxyXG5cdFx0XHR9LFxyXG5cdFx0XHRmb3JtYXRTZWNvbmQoc2Vjb25kKSB7XHJcblx0XHRcdCAgICBjb25zdCBkYXlzID0gTWF0aC5mbG9vcihzZWNvbmQgLyA4NjQwMCk7XHJcblx0XHRcdCAgICBjb25zdCBob3VycyA9IE1hdGguZmxvb3IoKHNlY29uZCAlIDg2NDAwKSAvIDM2MDApO1xyXG5cdFx0XHQgICAgY29uc3QgbWludXRlcyA9IE1hdGguZmxvb3IoKChzZWNvbmQgJSA4NjQwMCkgJSAzNjAwKSAvIDYwKTtcclxuXHRcdFx0ICAgIGNvbnN0IHNlY29uZHMgPSBNYXRoLmZsb29yKCgoc2Vjb25kICUgODY0MDApICUgMzYwMCkgJSA2MCk7XHJcblx0XHRcdCAgICBjb25zdCBmb3JNYXREYXRlID0ge1xyXG5cdFx0XHQgICAgICAgIGRheXM6IGRheXMsXHJcblx0XHRcdCAgICAgICAgaG91cnM6IGhvdXJzLFxyXG5cdFx0XHQgICAgICAgIG1pbnV0ZXM6IG1pbnV0ZXMsXHJcblx0XHRcdCAgICAgICAgc2Vjb25kczogc2Vjb25kc1xyXG5cdFx0XHQgICAgfTtcclxuXHRcdFx0ICAgIHJldHVybiBmb3JNYXREYXRlO1xyXG5cdFx0XHR9LFxyXG5cdFx0XHRzd2l0Y2hNb2RlKCl7XHJcblx0XHRcdCAgICBsZXQgdGhhdCA9IHRoaXM7XHJcblx0XHRcdCAgICBsZXQgZGF5dGltZSA9IHVuaS5nZXRTdG9yYWdlU3luYygnZGF5dGltZScpPyflvIDlkK8nOiflhbPpl60nIC8vIOWPluWPjeWAvFxyXG5cdFx0XHQgICAgdW5pLnNob3dNb2RhbCh7XHJcblx0XHRcdCAgICAgICAgdGl0bGU6ICfmj5DnpLonLFxyXG5cdFx0XHQgICAgICAgIGNvbnRlbnQ6ICfmmK/lkKYnKyBkYXl0aW1lKyfmt7HoibLmqKHlvI8nLFxyXG5cdFx0XHQgICAgICAgIGNvbmZpcm1UZXh0OiAn56Gu6K6kJyxcclxuXHRcdFx0ICAgICAgICBzdWNjZXNzOiBmdW5jdGlvbihyZXMpIHtcclxuXHRcdFx0ICAgICAgICAgICAgaWYgKHJlcy5jb25maXJtKSB7XHJcblx0XHRcdCAgICAgICAgICAgICAgICBpZihkYXl0aW1lID09J+W8gOWQrycpe1xyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgIHVuaS5zZXRTdG9yYWdlU3luYygnZGF5dGltZScsZmFsc2UpXHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgdGhhdC5kYXl0aW1lID0gZmFsc2VcclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICB1bmkuc2V0TmF2aWdhdGlvbkJhckNvbG9yKHtcclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgZnJvbnRDb2xvcjogdGhhdC5kYXl0aW1lPycjMDAwMDAwJzonI2ZmZmZmZicsXHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmRDb2xvcjogdGhhdC5kYXl0aW1lPycjZmZmZmZmJzonIzEzMTMxMycsXHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgIGFuaW1hdGlvbjoge1xyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgZHVyYXRpb246IDEsXHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICB0aW1pbmdGdW5jOiAnZWFzZUluJ1xyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICB9XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgfSlcclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICB1bmkuc2V0VGFiQmFyU3R5bGUoe1xyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgY29sb3I6IHRoYXQuZGF5dGltZT8nIzY2NjY2Nic6JyNBREFEQUQnLFxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgc2VsZWN0ZWRDb2xvcjogJyMwMEJFQkUnLFxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZENvbG9yOiB0aGF0LmRheXRpbWU/JyNmN2Y3ZjcnOicjMTgxODE4JyxcclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgIGJvcmRlclN0eWxlOiAnd2hpdGUnXHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgfSlcclxuXHRcdFx0ICAgICAgICAgICAgICAgIH1lbHNlIHtcclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICB1bmkuc2V0U3RvcmFnZVN5bmMoJ2RheXRpbWUnLHRydWUpXHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgdGhhdC5kYXl0aW1lID0gdHJ1ZTtcclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICB1bmkuc2V0TmF2aWdhdGlvbkJhckNvbG9yKHtcclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgZnJvbnRDb2xvcjogdGhhdC5kYXl0aW1lPycjMDAwMDAwJzonI2ZmZmZmZicsXHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmRDb2xvcjogdGhhdC5kYXl0aW1lPycjZmZmZmZmJzonIzBFMEUwRScsXHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgIGFuaW1hdGlvbjoge1xyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgZHVyYXRpb246IDEsXHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICB0aW1pbmdGdW5jOiAnZWFzZUluJ1xyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICB9XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgfSlcclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICB1bmkuc2V0VGFiQmFyU3R5bGUoe1xyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgY29sb3I6IHRoYXQuZGF5dGltZT8nIzY2NjY2Nic6JyNBREFEQUQnLFxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgc2VsZWN0ZWRDb2xvcjogJyMwMEJFQkUnLFxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZENvbG9yOiB0aGF0LmRheXRpbWU/JyNmN2Y3ZjcnOicjMTgxODE4JyxcclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgIGJvcmRlclN0eWxlOiAnd2hpdGUnXHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgfSlcclxuXHRcdFx0ICAgICAgICAgICAgICAgIH1cclxuXHRcdFx0ICAgICAgICAgICAgfSBlbHNlIGlmIChyZXMuY2FuY2VsKSB7XHJcblx0XHRcdCAgICAgICAgICAgIH1cclxuXHRcdFx0ICAgICAgICB9XHJcblx0XHRcdCAgICB9KTtcclxuXHRcdFx0fSxcclxuXHRcdH1cclxuXHR9XHJcbjwvc2NyaXB0PlxyXG5cclxuPHN0eWxlPlxyXG5cdC5ncmlkLXRleHQge1xyXG5cdFx0Zm9udC1zaXplOiAxNHB4O1xyXG5cdFx0Y29sb3I6IHdoaXRlO1xyXG5cdFx0cGFkZGluZzogMHJweCAwIDQwcnB4IDBycHg7XHJcblx0XHQvKiAjaWZuZGVmIEFQUC1QTFVTICovXHJcblx0XHRib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG5cdFx0LyogI2VuZGlmICovXHJcblx0fVxyXG5cdC5jb250ZW50IHtcclxuXHRwb3NpdGlvbjogcmVsYXRpdmU7XHJcblx0d2lkdGg6IDc1MHJweDtcclxuXHRoZWlnaHQ6IGF1dG87XHJcblx0bWFyZ2luOiAwO1xyXG5cdHBhZGRpbmc6IDA7XHJcblx0YmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxuXHRcclxuXHR9XHJcblx0XHJcblx0LmJveCB7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0aGVpZ2h0OiBhdXRvO1xyXG5cdC8qIG92ZXJmbG93OiBoaWRkZW47ICovXHJcblx0cGFkZGluZzogMCAzMHJweDtcclxuXHRib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG5cdGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcblx0fVxyXG5cdFxyXG5cdC50X2l0ZW0tdG9wIHtcclxuXHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0bGVmdDogMDtcclxuXHR0b3A6IDM1MnJweDtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRoZWlnaHQ6IGF1dG87XHJcblx0b3ZlcmZsb3c6IGhpZGRlbjtcclxuXHRiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG5cdHBhZGRpbmctYm90dG9tOiAzMHJweDtcclxuXHRib3JkZXItdG9wLWxlZnQtcmFkaXVzOiA1cHg7XHJcblx0Ym9yZGVyLXRvcC1yaWdodC1yYWRpdXM6IDVweDtcclxuXHRwYWRkaW5nLWJvdHRvbTogNTBycHg7XHJcblx0fVxyXG5cdFxyXG5cdC50X2l0ZW0tYm94LXRpdGxlIHtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRmb250LXNpemU6IDI4cnB4O1xyXG5cdGNvbG9yOiAjNjY2O1xyXG5cdHBhZGRpbmc6IDI1cnB4IDBycHg7XHJcblx0fVxyXG5cdFxyXG5cdC50X2l0ZW0tYm94LXRpdGxlIHRleHQge1xyXG5cdGNvbG9yOiAjMjIyO1xyXG5cdH1cclxuXHRcclxuXHQudF9pdGVtLWJveCB7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0aGVpZ2h0OiBhdXRvO1xyXG5cdHBhZGRpbmc6IDAgMzBycHg7XHJcblx0Ym94LXNpemluZzogYm9yZGVyLWJveDtcclxuXHR9XHJcblx0XHJcblx0LnRfaXRlbSB7XHJcblx0ZmxvYXQ6IGxlZnQ7XHJcblx0d2lkdGg6IDMyLjclO1xyXG5cdGhlaWdodDogMTUwcnB4O1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHRiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG5cdG1hcmdpbjogLjMlO1xyXG5cdHRyYW5zZm9ybTogc2NhbGUoLjk3KTtcclxuXHRib3JkZXItcmFkaXVzOiAxMnJweDtcclxuXHR9XHJcblx0XHJcblx0LnRfaXRlbS1hZGRudW0ge1xyXG5cdGZsb2F0OiBsZWZ0O1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGNvbG9yOiAjNjY2O1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHRmb250LXNpemU6IDI4cnB4O1xyXG5cdG1hcmdpbjogNXJweCBhdXRvIDA7XHJcblx0fVxyXG5cdFxyXG5cdC50X2l0ZW0tbm93bnVtIHtcclxuXHRmbG9hdDogbGVmdDtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRjb2xvcjogIzAwMDtcclxuXHR0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblx0Zm9udC1zaXplOiA0MHJweDtcclxuXHRmb250LXdlaWdodDogNTAwO1xyXG5cdH1cclxuXHQudF9pdGVtLW5vd3R4dCB7XHJcblx0ZmxvYXQ6IGxlZnQ7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0Y29sb3I6ICMwMDA7XHJcblx0dGV4dC1hbGlnbjogY2VudGVyO1xyXG5cdGZvbnQtc2l6ZTogMjhycHg7XHJcblx0fVxyXG5cdFxyXG5cdC5jaXR5bGlzdCB7XHJcblx0cG9zaXRpb246IGFic29sdXRlO1xyXG5cdGxlZnQ6IDA7XHJcblx0dG9wOiA5MzZycHg7XHJcblx0ZmxvYXQ6IGxlZnQ7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0aGVpZ2h0OiBhdXRvO1xyXG5cdGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcblx0Ym94LXNpemluZzogYm9yZGVyLWJveDtcclxuXHR9XHJcblx0XHJcblx0LmNpdHlsaXN0LXRpdGxlIHtcclxuXHRwb3NpdGlvbjogc3RpY2t5O1xyXG5cdHRvcDogMDtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRoZWlnaHQ6IDgwcnB4O1xyXG5cdGxpbmUtaGVpZ2h0OiA4MHJweDtcclxuXHR9XHJcblx0XHJcblx0LmNpdHlsaXN0LXRpdGxlIC5pdGVtIHtcclxuXHRmbG9hdDogbGVmdDtcclxuXHR3aWR0aDogMTUlO1xyXG5cdGhlaWdodDogODBycHg7XHJcblx0bGluZS1oZWlnaHQ6IDgwcnB4O1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHRiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG5cdH1cclxuXHRcclxuXHQuY2l0eWxpc3QtdGl0bGUgLml0ZW06bnRoLWNoaWxkKDEpIHtcclxuXHR3aWR0aDogMTklO1xyXG5cdH1cclxuXHQuY2l0eWxpc3QtdGl0bGUgLml0ZW06bnRoLWNoaWxkKDIpIHtcclxuXHR3aWR0aDogMTglO1xyXG5cdH1cclxuXHQuY2l0eWxpc3QtdGl0bGUgLml0ZW06bnRoLWNoaWxkKDMpIHtcclxuXHR3aWR0aDogMjAlO1xyXG5cdH1cclxuXHQuY2l0eWxpc3QtdGl0bGUgLml0ZW06bnRoLWNoaWxkKDQpIHtcclxuXHR3aWR0aDogMTYlO1xyXG5cdH1cclxuXHQuY2l0eWxpc3QtdGl0bGUgLml0ZW06bnRoLWNoaWxkKDUpIHtcclxuXHR3aWR0aDogMTYlO1xyXG5cdH1cclxuXHQuY2l0eWxpc3QtdGl0bGUgLml0ZW06bGFzdC1jaGlsZCB7XHJcblx0d2lkdGg6IDEwJTtcclxuXHR9XHJcblx0XHJcblx0LmNpdHlsaXN0LWJveCB7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0Ym94LXNpemluZzogYm9yZGVyLWJveDtcclxuXHR9XHJcblx0XHJcblx0LmNpdHlsaXN0LWJveC1pdGVtIHtcclxuXHRmbG9hdDogbGVmdDtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRoZWlnaHQ6IDEyNXJweDsvLzI5d1xyXG5cdGZvbnQtc2l6ZTogMjhycHg7XHJcblx0Ym9yZGVyLWJvdHRvbTogMXJweCBzb2xpZCAjZjNmM2YzO1xyXG5cdGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcblx0b3ZlcmZsb3c6IGhpZGRlbjtcclxuXHR9XHJcblx0XHJcblx0LmNpdHlsaXN0LWJveC1pdGVtIC5pdGVtOmZpcnN0LWNoaWxkIHtcclxuXHRjb2xvcjogIzQxODBmMTtcclxuXHRmb250LXNpemU6IDE2cHg7XHJcblx0fVxyXG5cdFxyXG5cdC5jaXR5bGlzdC1ib3gtaXRlbSAuaXRlbSB7XHJcblx0ZmxvYXQ6IGxlZnQ7XHJcblx0d2lkdGg6IDE2JTtcclxuXHR0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblx0fVxyXG5cclxuXHQuY2l0eWxpc3QtYm94LWl0ZW0gLml0ZW06bnRoLWNoaWxkKDEpIHtcclxuXHR3aWR0aDogMTklO1xyXG5cdH1cclxuXHQuY2l0eWxpc3QtYm94LWl0ZW0gLml0ZW06bnRoLWNoaWxkKDIpIHtcclxuXHR3aWR0aDogMTglO1xyXG5cdH1cclxuXHQuY2l0eWxpc3QtYm94LWl0ZW0gLml0ZW06bnRoLWNoaWxkKDMpIHtcclxuXHR3aWR0aDogMjAlO1xyXG5cdH1cclxuXHQuY2l0eWxpc3QtYm94LWl0ZW0gLml0ZW06bGFzdC1jaGlsZCB7XHJcblx0d2lkdGg6IDEwJTtcclxuXHR9XHJcblx0XHJcblx0LmNpdHlsaXN0LWJveC1pdGVtIC5pdGVtOm50aC1jaGlsZCgxKSxcclxuXHQuY2l0eWxpc3QtYm94LWl0ZW0gLml0ZW06bnRoLWNoaWxkKDIpLFxyXG5cdC5jaXR5bGlzdC1ib3gtaXRlbSAuaXRlbTpudGgtY2hpbGQoNCksXHJcblx0LmNpdHlsaXN0LWJveC1pdGVtIC5pdGVtOm50aC1jaGlsZCg1KSxcclxuXHQuY2l0eWxpc3QtYm94LWl0ZW0gLml0ZW06bnRoLWNoaWxkKDYpIHtcclxuXHRsaW5lLWhlaWdodDogMTIwcnB4O1xyXG5cdH1cclxuXHRcclxuXHQuY2l0eWxpc3QtYm94LWl0ZW0gLml0ZW06bnRoLWNoaWxkKDMpIHtcclxuXHRwYWRkaW5nLXRvcDogMjBycHg7XHJcblx0Ym94LXNpemluZzogYm9yZGVyLWJveDtcclxuXHR9XHJcblx0XHJcblx0LnpxdyB7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0aGVpZ2h0OiAxMjBycHg7XHJcblx0bGluZS1oZWlnaHQ6IDEyMHJweDtcclxuXHRmb250LXNpemU6IDI4cnB4O1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHRjb2xvcjogIzY2NjtcclxuXHRmbG9hdDogbGVmdDtcclxuXHRiYWNrZ3JvdW5kOiAjZmZmO1xyXG5cdG1hcmdpbi1ib3R0b206IDkwcnB4O1xyXG5cdH1cclxuXHRcclxuXHQuaXRlbS1jb25maXJtIHtcclxuXHR3aWR0aDogMTAwJTtcclxuXHR0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblx0Y29sb3I6ICM3MzczNzM7XHJcblx0Zm9udC1zaXplOiAyMnJweDtcclxuXHRmb250LXdlaWdodDogNDAwO1xyXG5cdG1hcmdpbi10b3A6IDVycHg7XHJcblx0fVxyXG5cdFxyXG5cdC5wcm9kdWN0LWJveC1sZWZ0LWl0ZW0ge1xyXG5cdGZsb2F0OiBsZWZ0O1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdG1pbi1oZWlnaHQ6IDYwcnB4O1xyXG5cdGxpbmUtaGVpZ2h0OiA2MHJweDtcclxuXHRmb250LXNpemU6IDI4cnB4O1xyXG5cdGNvbG9yOiAjNjY2O1xyXG5cdGJvcmRlci1ib3R0b206IDFycHggc29saWQgI2YyZjdmNztcclxuXHR9XHJcblx0LnByb2R1Y3QtYm94LWxlZnQtaXRlbS1pdGVtIHtcclxuXHRmbG9hdDogbGVmdDtcclxuXHR3aWR0aDogMTglO1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHR9XHJcblx0LnByb2R1Y3QtYm94LWxlZnQtaXRlbS1pdGVtOm50aC1jaGlsZCgxKXtcclxuXHR3aWR0aDogMTklO1xyXG5cdH1cclxuXHQucHJvZHVjdC1ib3gtbGVmdC1pdGVtLWl0ZW06bnRoLWNoaWxkKDMpe1xyXG5cdHdpZHRoOiAyMCU7XHJcblx0fVxyXG5cdC5wcm9kdWN0LWJveC1sZWZ0LWl0ZW0taXRlbTpudGgtY2hpbGQoNCl7XHJcblx0d2lkdGg6IDE2JTtcclxuXHR9XHJcblx0LnByb2R1Y3QtYm94LWxlZnQtaXRlbS1pdGVtOm50aC1jaGlsZCg1KXtcclxuXHR3aWR0aDogMTYlO1xyXG5cdH1cclxuXHQudG9wLWJveCB7XHJcblx0cG9zaXRpb246IHJlbGF0aXZlO1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGhlaWdodDogNDAwcnB4O1xyXG5cdC8qIG92ZXJmbG93OiBoaWRkZW47ICovXHJcblx0LyogYmFja2dyb3VuZC1zaXplOiBjb3ZlcjsgKi9cclxuXHR9XHJcblx0LnRvcC1ib3gtYmcge1xyXG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHRsZWZ0OiAwO1xyXG5cdHRvcDogMDtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRoZWlnaHQ6IDEwMCU7XHJcblx0YmFja2dyb3VuZC1pbWFnZTogdXJsKC4uLy4uL3N0YXRpYy9oZWFkX2JnX25ldy5wbmcpO1xyXG5cdGJhY2tncm91bmQtc2l6ZTogMTAwJSAxMDAlO1xyXG5cdH1cclxuXHQudG9wLWJveC16cXcge1xyXG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHRsZWZ0OiAyMHJweDtcclxuXHR0b3A6IDEwcnB4O1xyXG5cdGhlaWdodDogNDZycHg7XHJcblx0bGluZS1oZWlnaHQ6IDQ2cnB4O1xyXG5cdGNvbG9yOiAjZmZmO1xyXG5cdGZvbnQtc2l6ZTogMjhycHg7XHJcblx0Ym9yZGVyLXJhZGl1czogMjBycHg7XHJcblx0Ym9yZGVyOiAycnB4IHNvbGlkICNmZmY7XHJcblx0ei1pbmRleDogOTk7XHJcblx0cGFkZGluZzogMCAyMHJweDtcclxuXHRcclxuXHR9XHJcblx0LnRvcC1ib3gtdGl0bGUge1xyXG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHRsZWZ0OiA1MCU7XHJcblx0dG9wOiA2NnJweDtcclxuXHR3aWR0aDogMTAwJTtcclxuXHR0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblx0dHJhbnNmb3JtOiB0cmFuc2xhdGVYKC01MCUpO1xyXG5cdGNvbG9yOiAjZmZlOWFhO1xyXG5cdGZvbnQtc2l6ZTogNTZycHg7XHJcblx0fVxyXG5cdC50b3AtYm94LWJ1dCB7XHJcblx0cG9zaXRpb246IGFic29sdXRlO1xyXG5cdGxlZnQ6IDUwJTtcclxuXHR0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTUwJSk7XHJcblx0dG9wOiAxNDBycHg7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0dGV4dC1hbGlnbjogY2VudGVyO1xyXG5cdGNvbG9yOiAjZmZmO1xyXG5cdGZvbnQtc2l6ZTogNzJycHg7XHJcblx0Zm9udC13ZWlnaHQ6IGJvbGQ7XHJcblx0fVxyXG5cdC50b3AtYm94LWJvdCB7XHJcblx0cG9zaXRpb246IGFic29sdXRlO1xyXG5cdGxlZnQ6IDUwJTtcclxuXHR0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTUwJSk7XHJcblx0Ym90dG9tOiA5MHJweDtcclxuXHR3aWR0aDogMTAwJTtcclxuXHR0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblx0Y29sb3I6ICNmZmY7XHJcblx0Zm9udC1zaXplOiAyOHJweDtcclxuXHR9XHJcblx0LnRvcC1ib3gtYm90IGltYWdlIHtcclxuXHR3aWR0aDogMjhycHg7XHJcblx0aGVpZ2h0OiAyOHJweDtcclxuXHRtYXJnaW4tbGVmdDogMTJycHg7XHJcblx0fVxyXG5cdC5jaXR5bGlzdC1uYW1lIHtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRvdmVyZmxvdzogaGlkZGVuO1xyXG5cdH1cclxuXHQuY2l0eWxpc3QtbmFtZS1sZWZ0IHtcclxuXHRmbG9hdDogbGVmdDtcclxuXHRtYXJnaW46IDE0cnB4IDAgMzJycHggMDtcclxuXHR9XHJcblx0LmNpdHlsaXN0LW5hbWUtbGVmdCAudGl0bGUge1xyXG5cdGZvbnQtc2l6ZTogMzBycHg7XHJcblx0cGFkZGluZy10b3A6IDEwcnB4O1xyXG5cdGNvbG9yOiAjMDAwO1xyXG5cdH0gXHJcblx0LmNpdHlsaXN0LW5hbWUtbGVmdCAudHh0IHtcclxuXHRmb250LXNpemU6IDI4cnB4O1xyXG5cdGNvbG9yOiAjNjY2O1xyXG5cdH0gXHJcblx0LmNpdHlsaXN0LW5hbWUtcmlnaHQge1xyXG5cdGZsb2F0OiByaWdodDtcclxuXHR3aWR0aDogMTI0cnB4O1xyXG5cdGhlaWdodDogNTBycHg7XHJcblx0bGluZS1oZWlnaHQ6IDUwcnB4O1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHRjb2xvcjogIzQxODBmMTtcclxuXHRib3JkZXI6IDJycHggc29saWQgIzQxODBmMTtcclxuXHRib3JkZXItcmFkaXVzOiAzNnJweDtcclxuXHRmb250LXNpemU6IDI0cnB4O1xyXG5cdG1hcmdpbi10b3A6IDM1cnB4O1xyXG5cdG1hcmdpbi1yaWdodDoxNXJweDtcclxuXHR9XHJcblx0LnBvcHVwLWNlbnRlciB7XHJcblx0XHJcblx0fVxyXG5cdC5wb3B1cC1ib3gge1xyXG5cdHdpZHRoOiA2MDBycHg7XHJcblx0aGVpZ2h0OiBhdXRvO1xyXG5cdHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuXHR9XHJcblx0LnBvcHVwLWJveC1ib3gge1xyXG5cdCB3aWR0aDogMTAwJTtcclxuXHQgICAgICAgIGhlaWdodDogNDUwcnB4O1xyXG5cdCAgICAgICAgYm9yZGVyLXJhZGl1czogMTZycHg7XHJcblx0ICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG5cdCAgICAgICAgb3ZlcmZsb3cteDogaGlkZGVuO1xyXG5cdCAgICAgICAgb3ZlcmZsb3cteTogc2Nyb2xsO1xyXG5cdCAgICAgICAgei1pbmRleDogMjk7XHJcblx0ICAgICAgICBwYWRkaW5nOiA0MHJweDtcclxuXHQgICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcblx0fVxyXG5cdC5wb3B1cC1ib3gtYm94LWl0ZW0ge1xyXG5cdGZsb2F0OiBsZWZ0O1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGZvbnQtc2l6ZTogMjRycHg7XHJcblx0Zm9udC13ZWlnaHQ6IDQwMDtcclxuXHRtYXJnaW4tYm90dG9tOiAxNHJweDtcclxuXHR9XHJcblx0LmhlaWdodC10aXRsZSB7XHJcblx0ZmxvYXQ6IGxlZnQ7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0Zm9udC1zaXplOiAyOHJweDtcclxuXHRjb2xvcjogI2UwM2Q0MTtcclxuXHRtYXJnaW4tYm90dG9tOiAxNHJweDtcclxuXHR9XHJcblx0Lm1pZGRsZS10aXRsZSB7XHJcblx0ZmxvYXQ6IGxlZnQ7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0Zm9udC1zaXplOiAyOHJweDtcclxuXHRjb2xvcjogI2Y4MDtcclxuXHRtYXJnaW4tYm90dG9tOiAxNHJweDtcclxuXHR9XHJcblx0Lnpxdy1ib3gge1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdG92ZXJmbG93OiBoaWRkZW47XHJcblx0bWFyZ2luLWJvdHRvbTogNjBycHg7XHJcblx0fVxyXG5cdC5wb3B1cC1ib3gtdG9wIHtcclxuXHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0bGVmdDogMDtcclxuXHR0b3A6IDA7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0Y29sb3I6ICM0MTgwZjE7XHJcblx0Zm9udC1zaXplOiAzNnJweDtcclxuXHRoZWlnaHQ6IDEwMHJweDtcclxuXHRsaW5lLWhlaWdodDogMTAwcnB4O1xyXG5cdGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcblx0ei1pbmRleDogMzk7XHJcblx0cGFkZGluZzogMCAzNHJweDtcclxuXHRib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG5cdGJvcmRlci1yYWRpdXM6IDE2cnB4O1xyXG5cdH1cclxuXHQucG9wLWNvbGVzIHtcclxuXHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0dG9wOiAtOTJycHg7XHJcblx0cmlnaHQ6IDA7XHJcblx0d2lkdGg6IDgwcnB4O1xyXG5cdGhlaWdodDogODBycHg7XHJcblx0fVxyXG48L3N0eWxlPiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///54\n");
+eval("/* WEBPACK VAR INJECTION */(function(__f__) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0; //\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\nvar _default =\n\n{\n  data: function data() {\n    return {\n      infolist: ['国内疫情', '国外疫情', '核酸检测点', '防疫政策'],\n      curNow: 0,\n      titlelist: [{\n        name: 'scan',\n        title: '扫一扫' },\n\n      {\n        name: 'grid',\n        title: '身份码' },\n\n      {\n        name: 'star',\n        title: '健康码' },\n\n      {\n        name: 'hourglass',\n        title: '行程卡' }],\n\n\n      scrollTop: 0,\n      old: {\n        scrollTop: 0 },\n\n      mydata: {},\n      time: {},\n      flag: [],\n      daytime: true,\n      arealist: [],\n      middlelist: [],\n      heightlist: [] };\n\n  },\n  onLoad: function onLoad() {\n    this.getLocalShop();\n  },\n  onShow: function onShow() {\n    var that = this;\n    //that.daytime = uni.getStorageSync('daytime');\n    uni.setNavigationBarColor({\n      frontColor: that.daytime ? '#000000' : '#ffffff',\n      backgroundColor: that.daytime ? '#EDEEED' : '#0E0E0E',\n      animation: {\n        duration: 1,\n        timingFunc: 'easeIn' } });\n\n\n  },\n  methods: {\n    sectionChange: function sectionChange(index) {\n      this.curNow = index;\n    },\n    typechange: function typechange(name) {\n      switch (name) {\n        case 0:{\n            __f__(\"log\", \"扫一扫\", \" at pages/INFO/nCoVinfo.vue:273\");\n            uni.scanCode({ success: function success(res) {\n                __f__(\"log\", '条码类型：' + res.scanType, \" at pages/INFO/nCoVinfo.vue:275\");\n                __f__(\"log\", '条码内容：' + res.result, \" at pages/INFO/nCoVinfo.vue:276\");} });\n            break;\n          }case 1:{\n            __f__(\"log\", \"身份码\", \" at pages/INFO/nCoVinfo.vue:279\");\n            uni.navigateTo({\n              url: \"../../pages/INFO/identitycard\" });\n\n            break;\n          }case 2:{\n            __f__(\"log\", \"健康码\", \" at pages/INFO/nCoVinfo.vue:285\");\n            break;\n          }case 3:{\n            __f__(\"log\", \"行程卡\", \" at pages/INFO/nCoVinfo.vue:288\");\n            break;\n          }}\n\n    },\n    closeCommon: function closeCommon() {\n      this.$refs.popup.close();\n    },\n    openCommon: function openCommon() {\n      this.$refs.popup.open('center');\n    },\n    gocortxt: function gocortxt() {\n      uni.navigateTo({\n        url: 'txt' });\n\n    },\n    advSearch: function advSearch(index, item, level) {\n      if (item.children.length >= 1) {\n        this.flag[index] = !this.flag[index];\n        this.$forceUpdate();\n      }\n    },\n    popzqw: function popzqw() {\n      uni.showToast({\n        title: '愿你我都能守住岁月，待到春光灿烂之时。',\n        icon: 'none',\n        duration: 2500 });\n\n      return;\n    },\n    gocopay: function gocopay(zqw) {\n      var item = encodeURIComponent(JSON.stringify(zqw));\n      uni.navigateTo({\n        url: 'coronavirus?item=' + item });\n\n    },\n    getLocalShop: function getLocalShop() {var _this = this;\n      var that = this;\n      uni.request({\n        url: 'https://api.inews.qq.com/newsqa/v1/query/inner/publish/modules/list?modules=statisGradeCityDetail,diseaseh5Shelf',\n        method: 'POST',\n        success: function success(res) {\n          that.mydata = res.data.data.diseaseh5Shelf;\n          that.middlelist.length = that.mydata.chinaTotal.mediumRiskAreaNum;\n          that.heightlist.length = that.mydata.chinaTotal.highRiskAreaNum;\n          var timestamp = (Date.parse(new Date()) - new Date(that.mydata.lastUpdateTime).\n          valueOf()) / 1000;\n          that.time = _this.formatSecond(timestamp);\n        },\n        fail: function fail() {\n\n        } });\n\n    },\n    formatSecond: function formatSecond(second) {\n      var days = Math.floor(second / 86400);\n      var hours = Math.floor(second % 86400 / 3600);\n      var minutes = Math.floor(second % 86400 % 3600 / 60);\n      var seconds = Math.floor(second % 86400 % 3600 % 60);\n      var forMatDate = {\n        days: days,\n        hours: hours,\n        minutes: minutes,\n        seconds: seconds };\n\n      return forMatDate;\n    } } };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/lib/format-log.js */ 55)[\"default\"]))//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vcGFnZXMvSU5GTy9uQ29WaW5mby52dWUiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUF1TkE7QUFDQSxNQURBLGtCQUNBO0FBQ0E7QUFDQSxpREFEQTtBQUVBLGVBRkE7QUFHQTtBQUNBLG9CQURBO0FBRUEsb0JBRkE7O0FBSUE7QUFDQSxvQkFEQTtBQUVBLG9CQUZBLEVBSkE7O0FBUUE7QUFDQSxvQkFEQTtBQUVBLG9CQUZBLEVBUkE7O0FBWUE7QUFDQSx5QkFEQTtBQUVBLG9CQUZBLEVBWkEsQ0FIQTs7O0FBb0JBLGtCQXBCQTtBQXFCQTtBQUNBLG9CQURBLEVBckJBOztBQXdCQSxnQkF4QkE7QUF5QkEsY0F6QkE7QUEwQkEsY0ExQkE7QUEyQkEsbUJBM0JBO0FBNEJBLGtCQTVCQTtBQTZCQSxvQkE3QkE7QUE4QkEsb0JBOUJBOztBQWdDQSxHQWxDQTtBQW1DQSxRQW5DQSxvQkFtQ0E7QUFDQTtBQUNBLEdBckNBO0FBc0NBLFFBdENBLG9CQXNDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLHNEQURBO0FBRUEsMkRBRkE7QUFHQTtBQUNBLG1CQURBO0FBRUEsNEJBRkEsRUFIQTs7O0FBUUEsR0FqREE7QUFrREE7QUFDQSxpQkFEQSx5QkFDQSxLQURBLEVBQ0E7QUFDQTtBQUNBLEtBSEE7QUFJQSxjQUpBLHNCQUlBLElBSkEsRUFJQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSx1RkFGQTtBQUdBO0FBQ0E7QUFDQTtBQUNBO0FBQ0Esa0RBREE7O0FBR0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxXQW5CQTs7QUFxQkEsS0ExQkE7QUEyQkEsZUEzQkEseUJBMkJBO0FBQ0E7QUFDQSxLQTdCQTtBQThCQSxjQTlCQSx3QkE4QkE7QUFDQTtBQUNBLEtBaENBO0FBaUNBLFlBakNBLHNCQWlDQTtBQUNBO0FBQ0Esa0JBREE7O0FBR0EsS0FyQ0E7QUFzQ0EsYUF0Q0EscUJBc0NBLEtBdENBLEVBc0NBLElBdENBLEVBc0NBLEtBdENBLEVBc0NBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxLQTNDQTtBQTRDQSxVQTVDQSxvQkE0Q0E7QUFDQTtBQUNBLG9DQURBO0FBRUEsb0JBRkE7QUFHQSxzQkFIQTs7QUFLQTtBQUNBLEtBbkRBO0FBb0RBLFdBcERBLG1CQW9EQSxHQXBEQSxFQW9EQTtBQUNBO0FBQ0E7QUFDQSx1Q0FEQTs7QUFHQSxLQXpEQTtBQTBEQSxnQkExREEsMEJBMERBO0FBQ0E7QUFDQTtBQUNBLCtIQURBO0FBRUEsc0JBRkE7QUFHQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsaUJBREEsTUFDQSxJQURBO0FBRUE7QUFDQSxTQVZBO0FBV0EsWUFYQSxrQkFXQTs7QUFFQSxTQWJBOztBQWVBLEtBM0VBO0FBNEVBLGdCQTVFQSx3QkE0RUEsTUE1RUEsRUE0RUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0Esa0JBREE7QUFFQSxvQkFGQTtBQUdBLHdCQUhBO0FBSUEsd0JBSkE7O0FBTUE7QUFDQSxLQXhGQSxFQWxEQSxFIiwiZmlsZSI6IjU0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiPHRlbXBsYXRlPlxyXG5cdDx2aWV3PlxyXG5cdFx0PGRpdj5cclxuXHRcdFx0PHUtZ3JpZCA6Ym9yZGVyPVwiZmFsc2VcIiBjb2w9XCI0XCIgID5cclxuXHRcdFx0XHQ8dS1ncmlkLWl0ZW0gdi1mb3I9XCIobGlzdEl0ZW0sbGlzdEluZGV4KSBpbiB0aXRsZWxpc3RcIiA6a2V5PVwibGlzdEluZGV4XCIgYmdDb2xvcj1cIiMzNDkwRkRcIiBAY2xpY2s9XCJ0eXBlY2hhbmdlXCI+XHJcblx0XHRcdFx0XHQ8dS1pY29uXHJcblx0XHRcdFx0XHRcdDpjdXN0b21TdHlsZT1cIntwYWRkaW5nVG9wOjIwKydycHgnLGhlaWdodDo4MCsncnB4J31cIlxyXG5cdFx0XHRcdFx0XHQ6bmFtZT1cImxpc3RJdGVtLm5hbWVcIlxyXG5cdFx0XHRcdFx0XHQ6c2l6ZT1cIjI1XCJcclxuXHRcdFx0XHRcdFx0Y29sb3I9XCJ3aGl0ZVwiXHJcblx0XHRcdFx0XHQ+PC91LWljb24+XHJcblx0XHRcdCAgICAgICAgPHRleHQgY2xhc3M9XCJncmlkLXRleHRcIj57e2xpc3RJdGVtLnRpdGxlfX08L3RleHQ+XHJcblx0XHRcdCAgICA8L3UtZ3JpZC1pdGVtPlxyXG5cdFx0XHQ8L3UtZ3JpZD5cclxuXHRcdDwvZGl2PlxyXG5cdFx0PGRpdiBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6IzM0OTBGRDtib3JkZXItYm90dG9tOiAxcHggc29saWQgbGlnaHRncmF5O1wiPlxyXG5cdFx0XHQ8dS1zdWJzZWN0aW9uIDpsaXN0PVwiaW5mb2xpc3RcIiA6Y3VycmVudD1cImN1ck5vd1wiIGJnQ29sb3I9XCIjMzQ5MEZEXCIgZm9udFNpemU9XCIxNHB4XCIgaW5hY3RpdmVDb2xvcj1cIndoaXRlXCIgaGVpZ2h0PVwiMjAwXCIgQGNoYW5nZT1cInNlY3Rpb25DaGFuZ2VcIj48L3Utc3Vic2VjdGlvbj5cclxuXHRcdDwvZGl2PlxyXG5cdFx0PHZpZXcgdi1pZj1cImN1ck5vdz09MFwiPlxyXG5cdFx0XHQ8dmlldyBjbGFzcz1cImNvbnRlbnRcIiA6Y2xhc3M9XCJkYXl0aW1lPydkYXl0aW1lJzonbmlnaHRpbWUnXCI+XHJcblx0XHRcdCAgICA8dmlldyBjbGFzcz1cInRvcC1ib3hcIj5cclxuXHRcdFx0ICAgICAgICA8dmlldyBjbGFzcz1cInRvcC1ib3gtYmdcIj48L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgPHZpZXcgY2xhc3M9XCJ0b3AtYm94LXRpdGxlXCI+XHJcblx0XHRcdCAgICAgICAgICAgIOaWsOWei+WGoOeKtueXheavkuiCuueCjlxyXG5cdFx0XHQgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICA8dmlldyBjbGFzcz1cInRvcC1ib3gtYnV0XCI+XHJcblx0XHRcdCAgICAgICAgICAgIOeWq+aDheWunuaXtui/vei4qlxyXG5cdFx0XHQgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICA8dmlldyBjbGFzcz1cInRvcC1ib3gtYm90XCI+XHJcblx0XHRcdCAgICAgICAgICAgIOaVsOaNruadpea6kO+8muWbveWutuWPiuWQhOWcsOWNq+WBpeWnlOavj+aXpeS/oeaBr+WPkeW4gzxpbWFnZSBAY2xpY2s9XCJnb2NvcnR4dFwiIHNyYz1cIi4uLy4uL3N0YXRpYy95aXdlbi5wbmdcIiBtb2RlPVwiXCI+PC9pbWFnZT5cclxuXHRcdFx0ICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICA8dmlldyBjbGFzcz1cInRfaXRlbS10b3BcIiA6Y2xhc3M9XCJkYXl0aW1lPydkYXl0aW1lMTYnOiduaWdodGltZTE2J1wiPlxyXG5cdFx0XHQgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLWJveFwiIHYtaWY9XCJteWRhdGEuY2hpbmFBZGQhPW51bGwgJiYgbXlkYXRhLmNoaW5hVG90YWwhPW51bGxcIj5cclxuXHRcdFx0ICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tYm94LXRpdGxlXCIgPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAg57uf6K6h5oiq5q2iPHRleHQgOmNsYXNzPVwiZGF5dGltZT8nZGF5dGltZXRleHQnOiduaWdodGltZXRleHQnXCI+e3tteWRhdGEubGFzdFVwZGF0ZVRpbWV9fTwvdGV4dD4g77yb5pu05paw5LqOPHRleHQgdi1pZj1cInRpbWUuZGF5cyA+MFwiIDpjbGFzcz1cImRheXRpbWU/J2RheXRpbWV0ZXh0JzonbmlnaHRpbWV0ZXh0J1wiPnt7dGltZS5kYXlzfX3lpKk8L3RleHQ+PHRleHQgdi1pZj1cInRpbWUuaG91cnM+MFwiIDpjbGFzcz1cImRheXRpbWU/J2RheXRpbWV0ZXh0JzonbmlnaHRpbWV0ZXh0J1wiPnt7dGltZS5ob3Vyc3195bCP5pe2PC90ZXh0PiAgPHRleHQgOmNsYXNzPVwiZGF5dGltZT8nZGF5dGltZXRleHQnOiduaWdodGltZXRleHQnXCI+e3t0aW1lLm1pbnV0ZXN9feWIhumSnzwvdGV4dD7liY1cclxuXHRcdFx0ICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2ZmZmFmNztcIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLWFkZG51bVwiPui+g+aYqOaXpe+8mjx0ZXh0IHN0eWxlPVwiY29sb3I6ICNlNTc2MzE7XCI+PHRleHRcclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgIHYtaWY9XCJteWRhdGEuY2hpbmFBZGQubG9jYWxDb25maXJtSDUgPiAwXCI+KzwvdGV4dD5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAge3tteWRhdGEuY2hpbmFBZGQubG9jYWxDb25maXJtSDV9fTwvdGV4dD48L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1ub3dudW1cIiBzdHlsZT1cImNvbG9yOiAjZTU3NjMxO1wiPnt7bXlkYXRhLmNoaW5hVG90YWwubG9jYWxDb25maXJtfX08L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1ub3d0eHRcIj7mnKzlnJ/njrDmnInnoa7or4o8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW1cIiBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6ICNmZmY4Zjg7XCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1hZGRudW1cIj7ovoPmmKjml6XvvJo8dGV4dCBzdHlsZT1cImNvbG9yOiAjZTYxYzFkO1wiPiA8dGV4dFxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgdi1pZj1cIm15ZGF0YS5jaGluYUFkZC5ub3dDb25maXJtID4gMFwiPis8L3RleHQ+e3tteWRhdGEuY2hpbmFBZGQubm93Q29uZmlybX19PC90ZXh0PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tbm93bnVtXCIgc3R5bGU9XCJjb2xvcjogI2U2MWMxZDtcIj57e215ZGF0YS5jaGluYVRvdGFsLm5vd0NvbmZpcm19fTwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLW5vd3R4dFwiPueOsOacieehruivijwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2ZmZjhmODtcIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLWFkZG51bVwiPui+g+aYqOaXpe+8mjx0ZXh0IHN0eWxlPVwiY29sb3I6ICNiZTIxMjE7XCI+PHRleHRcclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgIHYtaWY9XCJteWRhdGEuY2hpbmFBZGQuY29uZmlybSA+IDBcIj4rPC90ZXh0Pnt7bXlkYXRhLmNoaW5hQWRkLmNvbmZpcm19fTwvdGV4dD48L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1ub3dudW1cIiBzdHlsZT1cImNvbG9yOiAjYmUyMTIxO1wiPnt7bXlkYXRhLmNoaW5hVG90YWwuY29uZmlybX19PC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tbm93dHh0XCI+57Sv6K6h56Gu6K+KPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtXCIgc3R5bGU9XCJiYWNrZ3JvdW5kLWNvbG9yOiAjZmVmN2ZmO1wiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tYWRkbnVtXCI+6L6D5pio5pel77yaPHRleHQgc3R5bGU9XCJjb2xvcjogI2FlM2FjNjtcIj48dGV4dFxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgdi1pZj1cIm15ZGF0YS5jaGluYUFkZC5ub0luZmVjdCA+IDBcIj4rPC90ZXh0Pnt7bXlkYXRhLmNoaW5hQWRkLm5vSW5mZWN0fX08L3RleHQ+PC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tbm93bnVtXCIgc3R5bGU9XCJjb2xvcjogI2FlM2FjNjtcIj57e215ZGF0YS5jaGluYVRvdGFsLm5vSW5mZWN0fX08L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1ub3d0eHRcIj7ml6Dnl4fnirbmhJ/mn5PogIU8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW1cIiBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6ICNmOGZhZmY7XCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1hZGRudW1cIj7ovoPmmKjml6XvvJo8dGV4dCBzdHlsZT1cImNvbG9yOiAjMDAwMDAwO1wiPjx0ZXh0XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICB2LWlmPVwibXlkYXRhLmNoaW5hQWRkLm5vd1NldmVyZSA+IDBcIj4rPC90ZXh0Pnt7bXlkYXRhLmNoaW5hQWRkLm5vd1NldmVyZX19PC90ZXh0Pjwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLW5vd251bVwiIHN0eWxlPVwiY29sb3I6ICMwMDAwMDA7XCI+e3tteWRhdGEuY2hpbmFUb3RhbC5ub3dTZXZlcmV9fTwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLW5vd3R4dFwiPueOsOaciemHjeeXhzwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2YxZjVmZjtcIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLWFkZG51bVwiPui+g+aYqOaXpe+8mjx0ZXh0IHN0eWxlPVwiY29sb3I6ICM0ZThiZTY7XCI+PHRleHRcclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgIHYtaWY9XCJteWRhdGEuY2hpbmFBZGQuaW1wb3J0ZWRDYXNlID4gMFwiPis8L3RleHQ+e3tteWRhdGEuY2hpbmFBZGQuaW1wb3J0ZWRDYXNlfX08L3RleHQ+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1ub3dudW1cIiBzdHlsZT1cImNvbG9yOiAjNGU4YmU2O1wiPnt7bXlkYXRhLmNoaW5hVG90YWwuaW1wb3J0ZWRDYXNlfX08L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1ub3d0eHRcIj7looPlpJbovpPlhaU8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW1cIiBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6ICNmM2Y2Zjg7XCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1hZGRudW1cIj7ovoPmmKjml6XvvJo8dGV4dCBzdHlsZT1cImNvbG9yOiAjNGU1YTY1O1wiPjx0ZXh0XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICB2LWlmPVwibXlkYXRhLmNoaW5hQWRkLmRlYWQgPiAwXCI+KzwvdGV4dD57e215ZGF0YS5jaGluYUFkZC5kZWFkfX08L3RleHQ+PC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tbm93bnVtXCIgc3R5bGU9XCJjb2xvcjogIzRlNWE2NTtcIj57e215ZGF0YS5jaGluYVRvdGFsLmRlYWR9fTwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLW5vd3R4dFwiPue0r+iuoeatu+S6oTwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLWFkZG51bVwiPui+g+aYqOaXpe+8mjx0ZXh0IHN0eWxlPVwiY29sb3I6ICMxMGFlYjU7XCI+PHRleHRcclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgIHYtaWY9XCJteWRhdGEuY2hpbmFBZGQuaGVhbCA+IDBcIj4rPC90ZXh0Pnt7bXlkYXRhLmNoaW5hQWRkLmhlYWx9fTwvdGV4dD48L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1ub3dudW1cIiBzdHlsZT1cImNvbG9yOiAjMTBhZWI1O1wiPnt7bXlkYXRhLmNoaW5hVG90YWwuaGVhbH19PC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tbm93dHh0XCI+57Sv6K6h5rK75oSIPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtXCIgc3R5bGU9XCJiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmYWZhO1wiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tYWRkbnVtXCI+6L6D5pio5pel77yaPHRleHQgc3R5bGU9XCJjb2xvcjogI2ZkODEzNztcIj48dGV4dFxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgdi1pZj1cIm15ZGF0YS5jaGluYUFkZC5zdXNwZWN0ID4gMFwiPis8L3RleHQ+e3tteWRhdGEuY2hpbmFBZGQuc3VzcGVjdH19PC90ZXh0Pjwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLW5vd251bVwiIHN0eWxlPVwiY29sb3I6ICNmZDgxMzc7XCI+e3tteWRhdGEuY2hpbmFUb3RhbC5zdXNwZWN0fX08L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1ub3d0eHRcIj7njrDmnInnlpHkvLw8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICA8dmlldyBjbGFzcz1cImNpdHlsaXN0XCIgOmNsYXNzPVwiZGF5dGltZT8nZGF5dGltZXRvcDE2JzonbmlnaHRpbWV0b3AxNidcIj5cclxuXHRcdFx0ICAgICAgICA8dmlldyBjbGFzcz1cImNpdHlsaXN0LW5hbWVcIj5cclxuXHRcdFx0ICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJjaXR5bGlzdC1uYW1lLWxlZnRcIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidGl0bGVcIiBzdHlsZT1cInBhZGRpbmctbGVmdDoxNXJweDtcIiA6Y2xhc3M9XCJkYXl0aW1lPydkYXl0aW1ldGV4dCc6J25pZ2h0aW1ldGV4dCdcIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICDkuK3lm73nlqvmg4XvvIjljIXmi6zmuK/mvrPlj7DvvIlcclxuXHRcdFx0ICAgICAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidHh0XCIgc3R5bGU9XCJwYWRkaW5nLWxlZnQ6MTVycHg7XCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgNzowMC0xMDowMOS4uuabtOaWsOmrmOWzsO+8jOaVsOaNruWmguaciea7nuWQjuivt+iwheino+OAglxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwiY2l0eWxpc3QtbmFtZS1yaWdodFwiIEBjbGljaz1cIm9wZW5Db21tb25cIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIOmjjumZqeWcsOWMulxyXG5cdFx0XHQgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgIDx2aWV3IGNsYXNzPVwiY2l0eWxpc3QtdGl0bGVcIj5cclxuXHRcdFx0ICAgICAgICAgICAgPHRleHQgY2xhc3M9XCJpdGVtXCIgc3R5bGU9XCJiYWNrZ3JvdW5kLWNvbG9yOiAjZjVmNWY1OyBjb2xvcjogIzIyMjIyMjtcIj7lnLDljLo8L3RleHQ+XHJcblx0XHRcdCAgICAgICAgICAgIDx0ZXh0IGNsYXNzPVwiaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2ZjZjJlODsgY29sb3I6ICNmZjVkMDA7XCI+546w5pyJPC90ZXh0PlxyXG5cdFx0XHQgICAgICAgICAgICA8dGV4dCBjbGFzcz1cIml0ZW1cIiBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6ICNmZGVlZWU7IGNvbG9yOiAjZjU1MjUzO1wiPue0r+iuoTwvdGV4dD5cclxuXHRcdFx0ICAgICAgICAgICAgPHRleHQgY2xhc3M9XCJpdGVtXCIgc3R5bGU9XCJiYWNrZ3JvdW5kLWNvbG9yOiAjZTlmN2VjOyBjb2xvcjogIzE3OGIwNTtcIj7msrvmhIg8L3RleHQ+XHJcblx0XHRcdCAgICAgICAgICAgIDx0ZXh0IGNsYXNzPVwiaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2YzZjZmODsgY29sb3I6ICM0ZTVhNjU7XCI+5q275LqhPC90ZXh0PlxyXG5cdFx0XHQgICAgICAgICAgICA8dGV4dCBjbGFzcz1cIml0ZW1cIiBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6ICNmNWY1ZjU7IGNvbG9yOiAjMjIyMjIyO1wiPuivpuaDhTwvdGV4dD5cclxuXHRcdFx0ICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgPHZpZXcgY2xhc3M9XCJjaXR5bGlzdC1ib3hcIiB2LWlmPVwibXlkYXRhLmFyZWFUcmVlIT1udWxsXCI+XHJcblx0XHRcdCAgICAgICAgICAgIDxibG9jayB2LWZvcj1cIihpdGVtLCBpbmRleCkgaW4gbXlkYXRhLmFyZWFUcmVlWzBdLmNoaWxkcmVuXCIgOmtleT0naW5kZXgnPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJjaXR5bGlzdC1ib3gtaXRlbVwiIDpjbGFzcz1cImRheXRpbWU/J2RheXRpbWVib3QxNic6JyBuaWdodGltZWJvdDE2J1wiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwiaXRlbVwiIEBjbGljaz1cImFkdlNlYXJjaChpbmRleCxpdGVtLCAyKVwiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICB7e2l0ZW0ubmFtZX19XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwiaXRlbVwiIEBjbGljaz1cImFkdlNlYXJjaChpbmRleCxpdGVtLCAyKVwiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICB7e2l0ZW0udG90YWwubm93Q29uZmlybX19XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwiaXRlbVwiIEBjbGljaz1cImFkdlNlYXJjaChpbmRleCxpdGVtLCAyKVwiIHYtaWY9XCJpdGVtLnRvZGF5LmNvbmZpcm0+PTEwMDBcIiBzdHlsZT1cIm1hcmdpbi10b3A6LTJycHg7XCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgIHt7aXRlbS50b3RhbC5jb25maXJtfX1cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJpdGVtLWNvbmZpcm1cIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx2aWV3IHN0eWxlPVwibWFyZ2luLXRvcDotNXJweDtcIj48dGV4dD7ovoPmmKjml6XvvJore3tpdGVtLnRvZGF5LmNvbmZpcm19fTwvdGV4dD48L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdFx0XHRcdFx0XHQ8dmlldyBjbGFzcz1cIml0ZW1cIiBAY2xpY2s9XCJhZHZTZWFyY2goaW5kZXgsaXRlbSwgMilcIiB2LWVsc2UtaWY9XCJpdGVtLnRvZGF5LmNvbmZpcm0+MFwiPlxyXG5cdFx0XHRcdFx0XHRcdFx0ICAgIHt7aXRlbS50b3RhbC5jb25maXJtfX1cclxuXHRcdFx0XHRcdFx0XHRcdCAgICA8dmlldyBjbGFzcz1cIml0ZW0tY29uZmlybVwiPlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdDx2aWV3Pjx0ZXh0Pui+g+aYqOaXpe+8mis8L3RleHQ+e3tpdGVtLnRvZGF5LmNvbmZpcm19fTwvdmlldz5cclxuXHRcdFx0XHRcdFx0XHRcdCAgICA8L3ZpZXc+XHJcblx0XHRcdFx0XHRcdFx0XHQ8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJpdGVtXCIgQGNsaWNrPVwiYWR2U2VhcmNoKGluZGV4LGl0ZW0sIDIpXCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgIHt7aXRlbS50b3RhbC5oZWFsfX1cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJpdGVtXCIgQGNsaWNrPVwiYWR2U2VhcmNoKGluZGV4LGl0ZW0sIDIpXCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgIHt7aXRlbS50b3RhbC5kZWFkfX1cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJpdGVtXCIgc3R5bGU9XCJjb2xvcjogIzAzQTlGNDtcIiBAY2xpY2s9XCJnb2NvcGF5KGl0ZW0pXCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgIOivpuaDhVxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIFxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJwcm9kdWN0LWJveC1sZWZ0LWl0ZW0tc3ViXCIgdi1pZj1cImZsYWdbaW5kZXhdXCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgPGJsb2NrIHYtZm9yPVwiKGl0ZW1zLCBpbmRleHMpIGluIGl0ZW0uY2hpbGRyZW5cIiA6a2V5PVwiaW5kZXhzXCIgPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInByb2R1Y3QtYm94LWxlZnQtaXRlbVwiIDpjbGFzcz1cImRheXRpbWU/J2RheXRpbWVib3QxNic6JyBuaWdodGltZWJvdDE2J1wiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJwcm9kdWN0LWJveC1sZWZ0LWl0ZW0taXRlbVwiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHt7aXRlbXMubmFtZX19XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInByb2R1Y3QtYm94LWxlZnQtaXRlbS1pdGVtXCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge3tpdGVtcy50b3RhbC5ub3dDb25maXJtfX1cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwicHJvZHVjdC1ib3gtbGVmdC1pdGVtLWl0ZW1cIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7e2l0ZW1zLnRvdGFsLmNvbmZpcm19fVxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJwcm9kdWN0LWJveC1sZWZ0LWl0ZW0taXRlbVwiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHt7aXRlbXMudG90YWwuaGVhbH19XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInByb2R1Y3QtYm94LWxlZnQtaXRlbS1pdGVtXCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge3tpdGVtcy50b3RhbC5kZWFkfX1cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgIDwvYmxvY2s+XHJcblx0XHRcdCAgICAgICAgICAgICAgICA8L3ZpZXc+ICAgIFxyXG5cdFx0XHQgICAgICAgICAgICA8L2Jsb2NrPlxyXG5cdFx0XHQgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICA8dmlldyBjbGFzcz1cInpxd1wiIDpjbGFzcz1cImRheXRpbWU/J2RheXRpbWV0b3AxNic6J25pZ2h0aW1ldG9wMTYnXCIgQGNsaWNrPVwicG9wenF3XCI+XHJcblx0XHRcdCAgICAgICAgICAgIOaEv+eWq+aDheaXqeaXpeaVo+WOu++8jOWxseays+aXoOaBme+8jOWkqeS4i+WkquW5s+OAglxyXG5cdFx0XHQgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgIDwvdmlldz5cclxuXHRcdFx0ICAgIFxyXG5cdFx0XHQgICAgXHJcblx0XHRcdCAgICA8dW5pLXBvcHVwIHJlZj1cInBvcHVwXCIgdHlwZT1cImNlbnRlclwiIGNsYXNzPVwicG9wdXAtY2VudGVyXCI+XHJcblx0XHRcdCAgICAgICAgPHZpZXcgY2xhc3M9XCJwb3B1cC1ib3hcIj5cclxuXHRcdFx0ICAgICAgICAgICAgPGltYWdlIGNsYXNzPVwicG9wLWNvbGVzXCIgc3JjPVwiLi4vLi4vc3RhdGljL3BvcC1jb2xlcy5wbmdcIiBtb2RlPVwiXCIgQGNsaWNrPVwiY2xvc2VDb21tb25cIj48L2ltYWdlPlxyXG5cdFx0XHQgICAgICAgICAgICA8dmlldyBjbGFzcz1cInBvcHVwLWJveC10b3BcIj5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIOWFqOWbveeWq+aDheS4remrmOmjjumZqeWcsOWMuuaVsOmHj1xyXG5cdFx0XHQgICAgICAgICAgICA8L3ZpZXc+XHJcblx0XHRcdCAgICAgICAgICAgIDxzY3JvbGwtdmlldyA6Y2xhc3M9XCJkYXl0aW1lPydkYXl0aW1lMTYnOiduaWdodGltZTE2J1wiIHNjcm9sbC15PVwidHJ1ZVwiIGNsYXNzPVwicG9wdXAtYm94LWJveFwiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ6cXctYm94XCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAgPHZpZXcgc3R5bGU9XCJmbG9hdDogbGVmdDsgd2lkdGg6IDEwMCU7IGhlaWdodDogMTAwcnB4O1wiPjwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cImhlaWdodC10aXRsZVwiIHYtaWY9XCJoZWlnaHRsaXN0XCI+6auY6aOO6Zmp5Zyw5Yy6IHt7aGVpZ2h0bGlzdC5sZW5ndGh9feS4qjwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwienF3LWJveFwiPlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwibWlkZGxlLXRpdGxlXCIgdi1pZj1cIm1pZGRsZWxpc3RcIj7kuK3po47pmanlnLDljLoge3ttaWRkbGVsaXN0Lmxlbmd0aH195LiqPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPHZpZXcgdi1pZj1cIm15ZGF0YS5jaGluYVRvdGFsXCI+XHJcblx0XHRcdCAgICAgICAgICAgICAgICAgICAg5pu05paw5pe26Ze077yae3tteWRhdGEuY2hpbmFUb3RhbC5tUmlza1RpbWV9fVxyXG5cdFx0XHQgICAgICAgICAgICAgICAgPC92aWV3PlxyXG5cdFx0XHQgICAgICAgICAgICA8L3Njcm9sbC12aWV3PlxyXG5cdFx0XHQgICAgICAgIDwvdmlldz5cclxuXHRcdFx0ICAgIDwvdW5pLXBvcHVwPlxyXG5cdFx0XHQ8L3ZpZXc+XHJcblx0XHQ8L3ZpZXc+XHJcblx0XHQ8dmlldyB2LWlmPVwiY3VyTm93PT09MVwiPlxyXG5cdFx0XHQxXHJcblx0XHQ8L3ZpZXc+XHJcblx0XHQ8dmlldyB2LWlmPVwiY3VyTm93PT09MlwiPlxyXG5cdFx0XHQyXHJcblx0XHQ8L3ZpZXc+XHJcblx0XHQ8dmlldyB2LWlmPVwiY3VyTm93PT09M1wiPlxyXG5cdFx0XHQzXHJcblx0XHQ8L3ZpZXc+XHJcblx0PC92aWV3PlxyXG48L3RlbXBsYXRlPlxyXG5cclxuPHNjcmlwdD5cclxuXHRcclxuXHRleHBvcnQgZGVmYXVsdCB7XHJcblx0XHRkYXRhKCkge1xyXG5cdFx0XHRyZXR1cm4ge1xyXG5cdFx0XHRcdGluZm9saXN0OiBbJ+WbveWGheeWq+aDhScsICflm73lpJbnlqvmg4UnLCAn5qC46YW45qOA5rWL54K5Jywn6Ziy55ar5pS/562WJ10sXHJcblx0XHRcdFx0Y3VyTm93OiAwLFxyXG5cdFx0XHRcdHRpdGxlbGlzdDogW3tcclxuXHRcdFx0XHRcdFx0bmFtZTogJ3NjYW4nLFxyXG5cdFx0XHRcdFx0XHR0aXRsZTogJ+aJq+S4gOaJqydcclxuXHRcdFx0XHRcdH0sXHJcblx0XHRcdFx0XHR7XHJcblx0XHRcdFx0XHRcdG5hbWU6ICdncmlkJyxcclxuXHRcdFx0XHRcdFx0dGl0bGU6ICfouqvku73noIEnXHJcblx0XHRcdFx0XHR9LFxyXG5cdFx0XHRcdFx0e1xyXG5cdFx0XHRcdFx0XHRuYW1lOiAnc3RhcicsXHJcblx0XHRcdFx0XHRcdHRpdGxlOiAn5YGl5bq356CBJ1xyXG5cdFx0XHRcdFx0fSxcclxuXHRcdFx0XHRcdHtcclxuXHRcdFx0XHRcdFx0bmFtZTogJ2hvdXJnbGFzcycsXHJcblx0XHRcdFx0XHRcdHRpdGxlOiAn6KGM56iL5Y2hJ1xyXG5cdFx0XHRcdFx0fSxcclxuXHRcdFx0XHRdLFxyXG5cdFx0XHRcdHNjcm9sbFRvcDogMCxcclxuXHRcdFx0XHRvbGQ6e1xyXG5cdFx0XHRcdCAgICBzY3JvbGxUb3A6MFxyXG5cdFx0XHRcdH0sXHJcblx0XHRcdFx0bXlkYXRhOiB7fSxcclxuXHRcdFx0XHR0aW1lOiB7fSxcclxuXHRcdFx0XHRmbGFnOltdLFxyXG5cdFx0XHRcdGRheXRpbWU6dHJ1ZSxcclxuXHRcdFx0XHRhcmVhbGlzdDpbXSxcclxuXHRcdFx0XHRtaWRkbGVsaXN0OltdLFxyXG5cdFx0XHRcdGhlaWdodGxpc3Q6W10sXHJcblx0XHRcdH1cclxuXHRcdH0sXHJcblx0XHRvbkxvYWQoKSB7XHJcblx0XHQgICAgdGhpcy5nZXRMb2NhbFNob3AoKTtcclxuXHRcdH0sXHJcblx0XHRvblNob3coKSB7XHJcblx0XHQgICAgbGV0IHRoYXQgPSB0aGlzO1xyXG5cdFx0ICAgIC8vdGhhdC5kYXl0aW1lID0gdW5pLmdldFN0b3JhZ2VTeW5jKCdkYXl0aW1lJyk7XHJcblx0XHQgICAgdW5pLnNldE5hdmlnYXRpb25CYXJDb2xvcih7XHJcblx0XHQgICAgICAgIGZyb250Q29sb3I6IHRoYXQuZGF5dGltZT8nIzAwMDAwMCc6JyNmZmZmZmYnLFxyXG5cdFx0ICAgICAgICBiYWNrZ3JvdW5kQ29sb3I6IHRoYXQuZGF5dGltZT8nI0VERUVFRCc6JyMwRTBFMEUnLFxyXG5cdFx0ICAgICAgICBhbmltYXRpb246IHtcclxuXHRcdCAgICAgICAgICAgIGR1cmF0aW9uOiAxLFxyXG5cdFx0ICAgICAgICAgICAgdGltaW5nRnVuYzogJ2Vhc2VJbidcclxuXHRcdCAgICAgICAgfVxyXG5cdFx0ICAgIH0pXHJcblx0XHR9LFxyXG5cdFx0bWV0aG9kczoge1xyXG5cdFx0XHRzZWN0aW9uQ2hhbmdlKGluZGV4KSB7XHJcblx0XHRcdFx0dGhpcy5jdXJOb3cgPSBpbmRleDtcclxuXHRcdFx0fSxcclxuXHRcdFx0dHlwZWNoYW5nZShuYW1lKXtcclxuXHRcdFx0XHRzd2l0Y2ggKG5hbWUpe1xyXG5cdFx0XHRcdFx0Y2FzZSAwOntcclxuXHRcdFx0XHRcdFx0Y29uc29sZS5sb2coXCLmiavkuIDmiatcIik7XHJcblx0XHRcdFx0XHRcdHVuaS5zY2FuQ29kZSh7IHN1Y2Nlc3M6IGZ1bmN0aW9uIChyZXMpIHsgIFxyXG5cdFx0XHRcdFx0XHRcdGNvbnNvbGUubG9nKCfmnaHnoIHnsbvlnovvvJonICsgcmVzLnNjYW5UeXBlKTtcclxuXHRcdFx0XHRcdFx0XHRjb25zb2xlLmxvZygn5p2h56CB5YaF5a6577yaJyArIHJlcy5yZXN1bHQpOyB9fSk7XHJcblx0XHRcdFx0XHRcdGJyZWFrO1xyXG5cdFx0XHRcdFx0fWNhc2UgMTp7XHJcblx0XHRcdFx0XHRcdGNvbnNvbGUubG9nKFwi6Lqr5Lu956CBXCIpO1xyXG5cdFx0XHRcdFx0XHR1bmkubmF2aWdhdGVUbyh7XHJcblx0XHRcdFx0XHRcdFx0dXJsOlwiLi4vLi4vcGFnZXMvSU5GTy9pZGVudGl0eWNhcmRcIlxyXG5cdFx0XHRcdFx0XHR9KVxyXG5cdFx0XHRcdFx0XHRicmVhaztcclxuXHRcdFx0XHRcdH1jYXNlIDI6e1xyXG5cdFx0XHRcdFx0XHRjb25zb2xlLmxvZyhcIuWBpeW6t+eggVwiKTtcclxuXHRcdFx0XHRcdFx0YnJlYWs7XHJcblx0XHRcdFx0XHR9Y2FzZSAzOntcclxuXHRcdFx0XHRcdFx0Y29uc29sZS5sb2coXCLooYznqIvljaFcIik7XHJcblx0XHRcdFx0XHRcdGJyZWFrO1xyXG5cdFx0XHRcdFx0fVxyXG5cdFx0XHRcdH1cclxuXHRcdFx0fSxcclxuXHRcdFx0Y2xvc2VDb21tb24oKSB7XHJcblx0XHRcdCAgICB0aGlzLiRyZWZzLnBvcHVwLmNsb3NlKClcclxuXHRcdFx0fSxcclxuXHRcdFx0b3BlbkNvbW1vbigpe1xyXG5cdFx0XHQgICAgdGhpcy4kcmVmcy5wb3B1cC5vcGVuKCdjZW50ZXInKVxyXG5cdFx0XHR9LFxyXG5cdFx0XHRnb2NvcnR4dCgpe1xyXG5cdFx0XHQgICAgdW5pLm5hdmlnYXRlVG8oe1xyXG5cdFx0XHQgICAgICAgIHVybDondHh0J1xyXG5cdFx0XHQgICAgfSlcclxuXHRcdFx0fSxcclxuXHRcdFx0YWR2U2VhcmNoKGluZGV4LGl0ZW0sIGxldmVsKSB7XHJcblx0XHRcdCAgICBpZihpdGVtLmNoaWxkcmVuLmxlbmd0aCA+PSAxKXtcclxuXHRcdFx0ICAgICAgICB0aGlzLmZsYWdbaW5kZXhdID0gIXRoaXMuZmxhZ1tpbmRleF07XHJcblx0XHRcdCAgICAgICAgdGhpcy4kZm9yY2VVcGRhdGUoKTtcclxuXHRcdFx0ICAgIH1cclxuXHRcdFx0fSxcclxuXHRcdFx0cG9wenF3KCkge1xyXG5cdFx0XHQgICAgdW5pLnNob3dUb2FzdCh7XHJcblx0XHRcdCAgICAgICAgdGl0bGU6ICfmhL/kvaDmiJHpg73og73lrojkvY/lsoHmnIjvvIzlvoXliLDmmKXlhYnngb/ng4LkuYvml7bjgIInLFxyXG5cdFx0XHQgICAgICAgIGljb246ICdub25lJyxcclxuXHRcdFx0ICAgICAgICBkdXJhdGlvbjogMjUwMFxyXG5cdFx0XHQgICAgfSlcclxuXHRcdFx0ICAgIHJldHVybjtcclxuXHRcdFx0fSxcclxuXHRcdFx0Z29jb3BheSh6cXcpIHtcclxuXHRcdFx0ICAgIGxldCBpdGVtID0gZW5jb2RlVVJJQ29tcG9uZW50KEpTT04uc3RyaW5naWZ5KHpxdykpXHJcblx0XHRcdCAgICB1bmkubmF2aWdhdGVUbyh7XHJcblx0XHRcdCAgICAgICAgdXJsOiAnY29yb25hdmlydXM/aXRlbT0nICsgaXRlbVxyXG5cdFx0XHQgICAgfSlcclxuXHRcdFx0fSxcclxuXHRcdFx0Z2V0TG9jYWxTaG9wKCkge1xyXG5cdFx0XHQgICAgbGV0IHRoYXQgPSB0aGlzO1xyXG5cdFx0XHQgICAgdW5pLnJlcXVlc3Qoe1xyXG5cdFx0XHQgICAgICAgIHVybDogJ2h0dHBzOi8vYXBpLmluZXdzLnFxLmNvbS9uZXdzcWEvdjEvcXVlcnkvaW5uZXIvcHVibGlzaC9tb2R1bGVzL2xpc3Q/bW9kdWxlcz1zdGF0aXNHcmFkZUNpdHlEZXRhaWwsZGlzZWFzZWg1U2hlbGYnLFxyXG5cdFx0XHQgICAgICAgIG1ldGhvZDogJ1BPU1QnLFxyXG5cdFx0XHQgICAgICAgIHN1Y2Nlc3M6IHJlcyA9PiB7XHJcblx0XHRcdCAgICAgICAgICAgIHRoYXQubXlkYXRhID0gcmVzLmRhdGEuZGF0YS5kaXNlYXNlaDVTaGVsZjtcclxuXHRcdFx0ICAgICAgICAgICAgdGhhdC5taWRkbGVsaXN0Lmxlbmd0aCA9IHRoYXQubXlkYXRhLmNoaW5hVG90YWwubWVkaXVtUmlza0FyZWFOdW07XHJcblx0XHRcdCAgICAgICAgICAgIHRoYXQuaGVpZ2h0bGlzdC5sZW5ndGggPSB0aGF0Lm15ZGF0YS5jaGluYVRvdGFsLmhpZ2hSaXNrQXJlYU51bTtcclxuXHRcdFx0ICAgICAgICAgICAgbGV0IHRpbWVzdGFtcCA9ICgoRGF0ZS5wYXJzZShuZXcgRGF0ZSgpKSkgLSAobmV3IERhdGUodGhhdC5teWRhdGEubGFzdFVwZGF0ZVRpbWUpKVxyXG5cdFx0XHQgICAgICAgICAgICAgICAgLnZhbHVlT2YoKSkgLyAxMDAwO1xyXG5cdFx0XHQgICAgICAgICAgICB0aGF0LnRpbWUgPSB0aGlzLmZvcm1hdFNlY29uZCh0aW1lc3RhbXApXHJcblx0XHRcdCAgICAgICAgfSxcclxuXHRcdFx0ICAgICAgICBmYWlsKCkge1xyXG5cdFx0XHRcclxuXHRcdFx0ICAgICAgICB9XHJcblx0XHRcdCAgICB9KVxyXG5cdFx0XHR9LFxyXG5cdFx0XHRmb3JtYXRTZWNvbmQoc2Vjb25kKSB7XHJcblx0XHRcdCAgICBjb25zdCBkYXlzID0gTWF0aC5mbG9vcihzZWNvbmQgLyA4NjQwMCk7XHJcblx0XHRcdCAgICBjb25zdCBob3VycyA9IE1hdGguZmxvb3IoKHNlY29uZCAlIDg2NDAwKSAvIDM2MDApO1xyXG5cdFx0XHQgICAgY29uc3QgbWludXRlcyA9IE1hdGguZmxvb3IoKChzZWNvbmQgJSA4NjQwMCkgJSAzNjAwKSAvIDYwKTtcclxuXHRcdFx0ICAgIGNvbnN0IHNlY29uZHMgPSBNYXRoLmZsb29yKCgoc2Vjb25kICUgODY0MDApICUgMzYwMCkgJSA2MCk7XHJcblx0XHRcdCAgICBjb25zdCBmb3JNYXREYXRlID0ge1xyXG5cdFx0XHQgICAgICAgIGRheXM6IGRheXMsXHJcblx0XHRcdCAgICAgICAgaG91cnM6IGhvdXJzLFxyXG5cdFx0XHQgICAgICAgIG1pbnV0ZXM6IG1pbnV0ZXMsXHJcblx0XHRcdCAgICAgICAgc2Vjb25kczogc2Vjb25kc1xyXG5cdFx0XHQgICAgfTtcclxuXHRcdFx0ICAgIHJldHVybiBmb3JNYXREYXRlO1xyXG5cdFx0XHR9LFxyXG5cdFx0fVxyXG5cdH1cclxuPC9zY3JpcHQ+XHJcblxyXG48c3R5bGU+XHJcblx0LmdyaWQtdGV4dCB7XHJcblx0XHRmb250LXNpemU6IDE0cHg7XHJcblx0XHRjb2xvcjogd2hpdGU7XHJcblx0XHRwYWRkaW5nOiAwcnB4IDAgNDBycHggMHJweDtcclxuXHRcdC8qICNpZm5kZWYgQVBQLVBMVVMgKi9cclxuXHRcdGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcblx0XHQvKiAjZW5kaWYgKi9cclxuXHR9XHJcblx0LmNvbnRlbnQge1xyXG5cdHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuXHR3aWR0aDogNzUwcnB4O1xyXG5cdGhlaWdodDogYXV0bztcclxuXHRtYXJnaW46IDA7XHJcblx0cGFkZGluZzogMDtcclxuXHRiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG5cdFxyXG5cdH1cclxuXHRcclxuXHQuYm94IHtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRoZWlnaHQ6IGF1dG87XHJcblx0Lyogb3ZlcmZsb3c6IGhpZGRlbjsgKi9cclxuXHRwYWRkaW5nOiAwIDMwcnB4O1xyXG5cdGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcblx0YmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxuXHR9XHJcblx0XHJcblx0LnRfaXRlbS10b3Age1xyXG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRsZWZ0OiAwO1xyXG5cdHRvcDogMzUycnB4O1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGhlaWdodDogYXV0bztcclxuXHRvdmVyZmxvdzogaGlkZGVuO1xyXG5cdGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcblx0cGFkZGluZy1ib3R0b206IDMwcnB4O1xyXG5cdGJvcmRlci10b3AtbGVmdC1yYWRpdXM6IDVweDtcclxuXHRib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogNXB4O1xyXG5cdHBhZGRpbmctYm90dG9tOiA1MHJweDtcclxuXHR9XHJcblx0XHJcblx0LnRfaXRlbS1ib3gtdGl0bGUge1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGZvbnQtc2l6ZTogMjhycHg7XHJcblx0Y29sb3I6ICM2NjY7XHJcblx0cGFkZGluZzogMjVycHggMHJweDtcclxuXHR9XHJcblx0XHJcblx0LnRfaXRlbS1ib3gtdGl0bGUgdGV4dCB7XHJcblx0Y29sb3I6ICMyMjI7XHJcblx0fVxyXG5cdFxyXG5cdC50X2l0ZW0tYm94IHtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRoZWlnaHQ6IGF1dG87XHJcblx0cGFkZGluZzogMCAzMHJweDtcclxuXHRib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG5cdH1cclxuXHRcclxuXHQudF9pdGVtIHtcclxuXHRmbG9hdDogbGVmdDtcclxuXHR3aWR0aDogMzIuNyU7XHJcblx0aGVpZ2h0OiAxNTBycHg7XHJcblx0dGV4dC1hbGlnbjogY2VudGVyO1xyXG5cdGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcblx0bWFyZ2luOiAuMyU7XHJcblx0dHJhbnNmb3JtOiBzY2FsZSguOTcpO1xyXG5cdGJvcmRlci1yYWRpdXM6IDEycnB4O1xyXG5cdH1cclxuXHRcclxuXHQudF9pdGVtLWFkZG51bSB7XHJcblx0ZmxvYXQ6IGxlZnQ7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0Y29sb3I6ICM2NjY7XHJcblx0dGV4dC1hbGlnbjogY2VudGVyO1xyXG5cdGZvbnQtc2l6ZTogMjhycHg7XHJcblx0bWFyZ2luOiA1cnB4IGF1dG8gMDtcclxuXHR9XHJcblx0XHJcblx0LnRfaXRlbS1ub3dudW0ge1xyXG5cdGZsb2F0OiBsZWZ0O1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGNvbG9yOiAjMDAwO1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHRmb250LXNpemU6IDQwcnB4O1xyXG5cdGZvbnQtd2VpZ2h0OiA1MDA7XHJcblx0fVxyXG5cdC50X2l0ZW0tbm93dHh0IHtcclxuXHRmbG9hdDogbGVmdDtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRjb2xvcjogIzAwMDtcclxuXHR0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblx0Zm9udC1zaXplOiAyOHJweDtcclxuXHR9XHJcblx0XHJcblx0LmNpdHlsaXN0IHtcclxuXHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0bGVmdDogMDtcclxuXHR0b3A6IDkzNnJweDtcclxuXHRmbG9hdDogbGVmdDtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRoZWlnaHQ6IGF1dG87XHJcblx0YmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxuXHRib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG5cdH1cclxuXHRcclxuXHQuY2l0eWxpc3QtdGl0bGUge1xyXG5cdHBvc2l0aW9uOiBzdGlja3k7XHJcblx0dG9wOiAwO1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGhlaWdodDogODBycHg7XHJcblx0bGluZS1oZWlnaHQ6IDgwcnB4O1xyXG5cdH1cclxuXHRcclxuXHQuY2l0eWxpc3QtdGl0bGUgLml0ZW0ge1xyXG5cdGZsb2F0OiBsZWZ0O1xyXG5cdHdpZHRoOiAxNSU7XHJcblx0aGVpZ2h0OiA4MHJweDtcclxuXHRsaW5lLWhlaWdodDogODBycHg7XHJcblx0dGV4dC1hbGlnbjogY2VudGVyO1xyXG5cdGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcblx0fVxyXG5cdFxyXG5cdC5jaXR5bGlzdC10aXRsZSAuaXRlbTpudGgtY2hpbGQoMSkge1xyXG5cdHdpZHRoOiAxOSU7XHJcblx0fVxyXG5cdC5jaXR5bGlzdC10aXRsZSAuaXRlbTpudGgtY2hpbGQoMikge1xyXG5cdHdpZHRoOiAxOCU7XHJcblx0fVxyXG5cdC5jaXR5bGlzdC10aXRsZSAuaXRlbTpudGgtY2hpbGQoMykge1xyXG5cdHdpZHRoOiAyMCU7XHJcblx0fVxyXG5cdC5jaXR5bGlzdC10aXRsZSAuaXRlbTpudGgtY2hpbGQoNCkge1xyXG5cdHdpZHRoOiAxNiU7XHJcblx0fVxyXG5cdC5jaXR5bGlzdC10aXRsZSAuaXRlbTpudGgtY2hpbGQoNSkge1xyXG5cdHdpZHRoOiAxNiU7XHJcblx0fVxyXG5cdC5jaXR5bGlzdC10aXRsZSAuaXRlbTpsYXN0LWNoaWxkIHtcclxuXHR3aWR0aDogMTElO1xyXG5cdH1cclxuXHRcclxuXHQuY2l0eWxpc3QtYm94IHtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG5cdH1cclxuXHRcclxuXHQuY2l0eWxpc3QtYm94LWl0ZW0ge1xyXG5cdGZsb2F0OiBsZWZ0O1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGhlaWdodDogMTI1cnB4Oy8vMjl3XHJcblx0Zm9udC1zaXplOiAyOHJweDtcclxuXHRib3JkZXItYm90dG9tOiAxcnB4IHNvbGlkICNmM2YzZjM7XHJcblx0Ym94LXNpemluZzogYm9yZGVyLWJveDtcclxuXHRvdmVyZmxvdzogaGlkZGVuO1xyXG5cdH1cclxuXHRcclxuXHQuY2l0eWxpc3QtYm94LWl0ZW0gLml0ZW06Zmlyc3QtY2hpbGQge1xyXG5cdGNvbG9yOiAjNDE4MGYxO1xyXG5cdGZvbnQtc2l6ZTogMTVweDtcclxuXHR9XHJcblx0XHJcblx0LmNpdHlsaXN0LWJveC1pdGVtIC5pdGVtIHtcclxuXHRmbG9hdDogbGVmdDtcclxuXHR3aWR0aDogMTYlO1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHR9XHJcblxyXG5cdC5jaXR5bGlzdC1ib3gtaXRlbSAuaXRlbTpudGgtY2hpbGQoMSkge1xyXG5cdHdpZHRoOiAxOSU7XHJcblx0fVxyXG5cdC5jaXR5bGlzdC1ib3gtaXRlbSAuaXRlbTpudGgtY2hpbGQoMikge1xyXG5cdHdpZHRoOiAxOCU7XHJcblx0fVxyXG5cdC5jaXR5bGlzdC1ib3gtaXRlbSAuaXRlbTpudGgtY2hpbGQoMykge1xyXG5cdHdpZHRoOiAyMCU7XHJcblx0fVxyXG5cdC5jaXR5bGlzdC1ib3gtaXRlbSAuaXRlbTpsYXN0LWNoaWxkIHtcclxuXHR3aWR0aDogMTElO1xyXG5cdH1cclxuXHRcclxuXHQuY2l0eWxpc3QtYm94LWl0ZW0gLml0ZW06bnRoLWNoaWxkKDEpLFxyXG5cdC5jaXR5bGlzdC1ib3gtaXRlbSAuaXRlbTpudGgtY2hpbGQoMiksXHJcblx0LmNpdHlsaXN0LWJveC1pdGVtIC5pdGVtOm50aC1jaGlsZCg0KSxcclxuXHQuY2l0eWxpc3QtYm94LWl0ZW0gLml0ZW06bnRoLWNoaWxkKDUpLFxyXG5cdC5jaXR5bGlzdC1ib3gtaXRlbSAuaXRlbTpudGgtY2hpbGQoNikge1xyXG5cdGxpbmUtaGVpZ2h0OiAxMjBycHg7XHJcblx0fVxyXG5cdFxyXG5cdC5jaXR5bGlzdC1ib3gtaXRlbSAuaXRlbTpudGgtY2hpbGQoMykge1xyXG5cdHBhZGRpbmctdG9wOiAyMHJweDtcclxuXHRib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG5cdH1cclxuXHRcclxuXHQuenF3IHtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRoZWlnaHQ6IDEyMHJweDtcclxuXHRsaW5lLWhlaWdodDogMTIwcnB4O1xyXG5cdGZvbnQtc2l6ZTogMjhycHg7XHJcblx0dGV4dC1hbGlnbjogY2VudGVyO1xyXG5cdGNvbG9yOiAjNjY2O1xyXG5cdGZsb2F0OiBsZWZ0O1xyXG5cdGJhY2tncm91bmQ6ICNmZmY7XHJcblx0bWFyZ2luLWJvdHRvbTogOTBycHg7XHJcblx0fVxyXG5cdFxyXG5cdC5pdGVtLWNvbmZpcm0ge1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHRjb2xvcjogIzczNzM3MztcclxuXHRmb250LXNpemU6IDIycnB4O1xyXG5cdGZvbnQtd2VpZ2h0OiA0MDA7XHJcblx0bWFyZ2luLXRvcDogOHJweDtcclxuXHR9XHJcblx0XHJcblx0LnByb2R1Y3QtYm94LWxlZnQtaXRlbSB7XHJcblx0ZmxvYXQ6IGxlZnQ7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0bWluLWhlaWdodDogNjBycHg7XHJcblx0bGluZS1oZWlnaHQ6IDYwcnB4O1xyXG5cdGZvbnQtc2l6ZTogMjhycHg7XHJcblx0Y29sb3I6ICM2NjY7XHJcblx0Ym9yZGVyLWJvdHRvbTogMXJweCBzb2xpZCAjZjJmN2Y3O1xyXG5cdH1cclxuXHQucHJvZHVjdC1ib3gtbGVmdC1pdGVtLWl0ZW0ge1xyXG5cdGZsb2F0OiBsZWZ0O1xyXG5cdHdpZHRoOiAxOCU7XHJcblx0dGV4dC1hbGlnbjogY2VudGVyO1xyXG5cdH1cclxuXHQucHJvZHVjdC1ib3gtbGVmdC1pdGVtLWl0ZW06bnRoLWNoaWxkKDEpe1xyXG5cdHdpZHRoOiAxOSU7XHJcblx0fVxyXG5cdC5wcm9kdWN0LWJveC1sZWZ0LWl0ZW0taXRlbTpudGgtY2hpbGQoMyl7XHJcblx0d2lkdGg6IDIwJTtcclxuXHR9XHJcblx0LnByb2R1Y3QtYm94LWxlZnQtaXRlbS1pdGVtOm50aC1jaGlsZCg0KXtcclxuXHR3aWR0aDogMTYlO1xyXG5cdH1cclxuXHQucHJvZHVjdC1ib3gtbGVmdC1pdGVtLWl0ZW06bnRoLWNoaWxkKDUpe1xyXG5cdHdpZHRoOiAxNiU7XHJcblx0fVxyXG5cdC50b3AtYm94IHtcclxuXHRwb3NpdGlvbjogcmVsYXRpdmU7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0aGVpZ2h0OiA0MDBycHg7XHJcblx0Lyogb3ZlcmZsb3c6IGhpZGRlbjsgKi9cclxuXHQvKiBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyOyAqL1xyXG5cdH1cclxuXHQudG9wLWJveC1iZyB7XHJcblx0cG9zaXRpb246IGFic29sdXRlO1xyXG5cdGxlZnQ6IDA7XHJcblx0dG9wOiAwO1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGhlaWdodDogMTAwJTtcclxuXHRiYWNrZ3JvdW5kLWltYWdlOiB1cmwoLi4vLi4vc3RhdGljL2hlYWRfYmcucG5nKTtcclxuXHRiYWNrZ3JvdW5kLXNpemU6IDEwMCUgMTAwJTtcclxuXHR9XHJcblx0LnRvcC1ib3gtdGl0bGUge1xyXG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHRsZWZ0OiA1MCU7XHJcblx0dG9wOiA2NnJweDtcclxuXHR3aWR0aDogMTAwJTtcclxuXHR0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblx0dHJhbnNmb3JtOiB0cmFuc2xhdGVYKC01MCUpO1xyXG5cdGNvbG9yOiAjZmZlOWFhO1xyXG5cdGZvbnQtc2l6ZTogNTZycHg7XHJcblx0fVxyXG5cdC50b3AtYm94LWJ1dCB7XHJcblx0cG9zaXRpb246IGFic29sdXRlO1xyXG5cdGxlZnQ6IDUwJTtcclxuXHR0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTUwJSk7XHJcblx0dG9wOiAxNDBycHg7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0dGV4dC1hbGlnbjogY2VudGVyO1xyXG5cdGNvbG9yOiAjZmZmO1xyXG5cdGZvbnQtc2l6ZTogNzJycHg7XHJcblx0Zm9udC13ZWlnaHQ6IGJvbGQ7XHJcblx0fVxyXG5cdC50b3AtYm94LWJvdCB7XHJcblx0cG9zaXRpb246IGFic29sdXRlO1xyXG5cdGxlZnQ6IDUwJTtcclxuXHR0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTUwJSk7XHJcblx0Ym90dG9tOiA5MHJweDtcclxuXHR3aWR0aDogMTAwJTtcclxuXHR0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblx0Y29sb3I6ICNmZmY7XHJcblx0Zm9udC1zaXplOiAyOHJweDtcclxuXHR9XHJcblx0LnRvcC1ib3gtYm90IGltYWdlIHtcclxuXHR3aWR0aDogMjhycHg7XHJcblx0aGVpZ2h0OiAyOHJweDtcclxuXHRtYXJnaW4tbGVmdDogMTJycHg7XHJcblx0fVxyXG5cdC5jaXR5bGlzdC1uYW1lIHtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRvdmVyZmxvdzogaGlkZGVuO1xyXG5cdH1cclxuXHQuY2l0eWxpc3QtbmFtZS1sZWZ0IHtcclxuXHRmbG9hdDogbGVmdDtcclxuXHRtYXJnaW46IDE0cnB4IDAgMzJycHggMDtcclxuXHR9XHJcblx0LmNpdHlsaXN0LW5hbWUtbGVmdCAudGl0bGUge1xyXG5cdGZvbnQtc2l6ZTogMzBycHg7XHJcblx0cGFkZGluZy10b3A6IDEwcnB4O1xyXG5cdGNvbG9yOiAjMDAwO1xyXG5cdH0gXHJcblx0LmNpdHlsaXN0LW5hbWUtbGVmdCAudHh0IHtcclxuXHRmb250LXNpemU6IDI4cnB4O1xyXG5cdGNvbG9yOiAjNjY2O1xyXG5cdH0gXHJcblx0LmNpdHlsaXN0LW5hbWUtcmlnaHQge1xyXG5cdGZsb2F0OiByaWdodDtcclxuXHR3aWR0aDogMTI0cnB4O1xyXG5cdGhlaWdodDogNTBycHg7XHJcblx0bGluZS1oZWlnaHQ6IDUwcnB4O1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHRjb2xvcjogIzQxODBmMTtcclxuXHRib3JkZXI6IDJycHggc29saWQgIzQxODBmMTtcclxuXHRib3JkZXItcmFkaXVzOiAzNnJweDtcclxuXHRmb250LXNpemU6IDI0cnB4O1xyXG5cdG1hcmdpbi10b3A6IDM1cnB4O1xyXG5cdG1hcmdpbi1yaWdodDoxNXJweDtcclxuXHR9XHJcblx0LnBvcHVwLWNlbnRlciB7XHJcblx0XHJcblx0fVxyXG5cdC5wb3B1cC1ib3gge1xyXG5cdHdpZHRoOiA2MDBycHg7XHJcblx0aGVpZ2h0OiBhdXRvO1xyXG5cdHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuXHR9XHJcblx0LnBvcHVwLWJveC1ib3gge1xyXG5cdCB3aWR0aDogMTAwJTtcclxuXHQgICAgICAgIGhlaWdodDogNDUwcnB4O1xyXG5cdCAgICAgICAgYm9yZGVyLXJhZGl1czogMTZycHg7XHJcblx0ICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG5cdCAgICAgICAgb3ZlcmZsb3cteDogaGlkZGVuO1xyXG5cdCAgICAgICAgb3ZlcmZsb3cteTogc2Nyb2xsO1xyXG5cdCAgICAgICAgei1pbmRleDogMjk7XHJcblx0ICAgICAgICBwYWRkaW5nOiA0MHJweDtcclxuXHQgICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcblx0fVxyXG5cdC5wb3B1cC1ib3gtYm94LWl0ZW0ge1xyXG5cdGZsb2F0OiBsZWZ0O1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGZvbnQtc2l6ZTogMjRycHg7XHJcblx0Zm9udC13ZWlnaHQ6IDQwMDtcclxuXHRtYXJnaW4tYm90dG9tOiAxNHJweDtcclxuXHR9XHJcblx0LmhlaWdodC10aXRsZSB7XHJcblx0ZmxvYXQ6IGxlZnQ7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0Zm9udC1zaXplOiAyOHJweDtcclxuXHRjb2xvcjogI2UwM2Q0MTtcclxuXHRtYXJnaW4tYm90dG9tOiAxNHJweDtcclxuXHR9XHJcblx0Lm1pZGRsZS10aXRsZSB7XHJcblx0ZmxvYXQ6IGxlZnQ7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0Zm9udC1zaXplOiAyOHJweDtcclxuXHRjb2xvcjogI2Y4MDtcclxuXHRtYXJnaW4tYm90dG9tOiAxNHJweDtcclxuXHR9XHJcblx0Lnpxdy1ib3gge1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdG92ZXJmbG93OiBoaWRkZW47XHJcblx0bWFyZ2luLWJvdHRvbTogNjBycHg7XHJcblx0fVxyXG5cdC5wb3B1cC1ib3gtdG9wIHtcclxuXHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0bGVmdDogMDtcclxuXHR0b3A6IDA7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0Y29sb3I6ICM0MTgwZjE7XHJcblx0Zm9udC1zaXplOiAzNnJweDtcclxuXHRoZWlnaHQ6IDEwMHJweDtcclxuXHRsaW5lLWhlaWdodDogMTAwcnB4O1xyXG5cdGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcblx0ei1pbmRleDogMzk7XHJcblx0cGFkZGluZzogMCAzNHJweDtcclxuXHRib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG5cdGJvcmRlci1yYWRpdXM6IDE2cnB4O1xyXG5cdH1cclxuXHQucG9wLWNvbGVzIHtcclxuXHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0dG9wOiAtOTJycHg7XHJcblx0cmlnaHQ6IDA7XHJcblx0d2lkdGg6IDgwcnB4O1xyXG5cdGhlaWdodDogODBycHg7XHJcblx0fVxyXG48L3N0eWxlPiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///54\n");
 
 /***/ }),
 /* 55 */
@@ -3770,7 +3810,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Dow
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("/* WEBPACK VAR INJECTION */(function(__f__) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0; //\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\nvar _default =\n{\n  components: {},\n\n\n  data: function data() {\n    return {\n      daytime: {},\n      txtList: [] };\n\n  },\n  onLoad: function onLoad() {\n\n  },\n  onShow: function onShow() {\n    this.getLocalShop();\n    var that = this;\n    that.daytime = uni.getStorageSync('daytime');\n    uni.setNavigationBarColor({\n      frontColor: that.daytime ? '#000000' : '#ffffff',\n      backgroundColor: that.daytime ? '#EDEEED' : '#0E0E0E',\n      animation: {\n        duration: 1,\n        timingFunc: 'easeIn' } });\n\n\n  },\n  methods: {\n    getLocalShop: function getLocalShop() {\n      var that = this;\n      uni.request({\n        url: 'https://r.inews.qq.com/i/getONSDict?wuji_appid=disease_map&wuji_appkey=92551f09b33a401b987afd65dc72b6a2&query_key=datashows,h5_config&jsonp_callback',\n        method: 'GET',\n        success: function success(res) {\n          that.txtList = res.data.data.datashows.data;\n          __f__(\"log\", '数据', that.txtList, \" at pages/INFO/txt.vue:51\");\n        },\n        fail: function fail() {\n\n        } });\n\n    } } };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/lib/format-log.js */ 55)[\"default\"]))//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vcGFnZXMvSU5GTy90eHQudnVlIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7QUFnQkE7QUFDQSxnQkFEQTs7O0FBSUEsTUFKQSxrQkFJQTtBQUNBO0FBQ0EsaUJBREE7QUFFQSxpQkFGQTs7QUFJQSxHQVRBO0FBVUEsUUFWQSxvQkFVQTs7QUFFQSxHQVpBO0FBYUEsUUFiQSxvQkFhQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0Esc0RBREE7QUFFQSwyREFGQTtBQUdBO0FBQ0EsbUJBREE7QUFFQSw0QkFGQSxFQUhBOzs7QUFRQSxHQXpCQTtBQTBCQTtBQUNBLGdCQURBLDBCQUNBO0FBQ0E7QUFDQTtBQUNBLG1LQURBO0FBRUEscUJBRkE7QUFHQTtBQUNBO0FBQ0E7QUFDQSxTQU5BO0FBT0EsWUFQQSxrQkFPQTs7QUFFQSxTQVRBOztBQVdBLEtBZEEsRUExQkEsRSIsImZpbGUiOiI2MC5qcyIsInNvdXJjZXNDb250ZW50IjpbIjx0ZW1wbGF0ZT5cclxuICAgIDx2aWV3IGNsYXNzPVwiY29udGVudFwiPlxyXG4gICAgICAgIDx2aWV3IGNsYXNzPVwiY29udGVudC1ib3hcIiA6Y2xhc3M9XCJkYXl0aW1lPydkYXl0aW1lMTYnOiduaWdodGltZTE2J1wiPlxyXG4gICAgICAgICAgICA8YmxvY2sgdi1mb3I9XCIoaXRlbSwgaW5kZXgpIGluIHR4dExpc3RcIiA6a2V5PVwiaW5kZXhcIj5cclxuICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwiY29udGVudC1ib3gtaXRlbVwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwiY29udGVudC1ib3gtaXRlbS10aXRsZVwiPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICB7e2l0ZW0udGl0bGV9fVxyXG4gICAgICAgICAgICAgICAgICAgIDwvdmlldz5cbiAgICAgICAgICAgICAgICAgICAgPHRleHQgY2xhc3M9XCJjb250ZW50LWJveC1pdGVtLXR4dFwiIDpjbGFzcz1cImRheXRpbWU/J2RheXRpbWUxNic6J25pZ2h0aW1lMTYnXCIgPnt7aXRlbS5jb250ZW50fX08L3RleHQ+XHJcbiAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcbiAgICAgICAgICAgIDwvYmxvY2s+XHJcbiAgICAgICAgPC92aWV3PlxyXG4gICAgPC92aWV3PlxyXG48L3RlbXBsYXRlPlxyXG5cclxuPHNjcmlwdD5cclxuICAgIGV4cG9ydCBkZWZhdWx0IHtcclxuICAgICAgICBjb21wb25lbnRzOiB7XHJcblxyXG4gICAgICAgIH0sXHJcbiAgICAgICAgZGF0YSgpIHtcclxuICAgICAgICAgICAgcmV0dXJuIHtcclxuICAgICAgICAgICAgICAgIGRheXRpbWU6IHt9LFxyXG4gICAgICAgICAgICAgICAgdHh0TGlzdDogW10sXHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9LFxyXG4gICAgICAgIG9uTG9hZCgpIHtcclxuXHJcbiAgICAgICAgfSxcclxuICAgICAgICBvblNob3coKSB7XHJcbiAgICAgICAgICAgIHRoaXMuZ2V0TG9jYWxTaG9wKClcclxuICAgICAgICAgICAgbGV0IHRoYXQgPSB0aGlzO1xyXG4gICAgICAgICAgICB0aGF0LmRheXRpbWUgPSB1bmkuZ2V0U3RvcmFnZVN5bmMoJ2RheXRpbWUnKTtcclxuICAgICAgICAgICAgdW5pLnNldE5hdmlnYXRpb25CYXJDb2xvcih7XHJcbiAgICAgICAgICAgICAgICBmcm9udENvbG9yOiB0aGF0LmRheXRpbWUgPyAnIzAwMDAwMCcgOiAnI2ZmZmZmZicsXHJcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kQ29sb3I6IHRoYXQuZGF5dGltZSA/ICcjRURFRUVEJyA6ICcjMEUwRTBFJyxcclxuICAgICAgICAgICAgICAgIGFuaW1hdGlvbjoge1xyXG4gICAgICAgICAgICAgICAgICAgIGR1cmF0aW9uOiAxLFxyXG4gICAgICAgICAgICAgICAgICAgIHRpbWluZ0Z1bmM6ICdlYXNlSW4nXHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIH0pXHJcbiAgICAgICAgfSxcclxuICAgICAgICBtZXRob2RzOiB7XHJcbiAgICAgICAgICAgIGdldExvY2FsU2hvcCgpIHtcclxuICAgICAgICAgICAgICAgIGxldCB0aGF0ID0gdGhpcztcclxuICAgICAgICAgICAgICAgIHVuaS5yZXF1ZXN0KHtcclxuICAgICAgICAgICAgICAgICAgICB1cmw6ICdodHRwczovL3IuaW5ld3MucXEuY29tL2kvZ2V0T05TRGljdD93dWppX2FwcGlkPWRpc2Vhc2VfbWFwJnd1amlfYXBwa2V5PTkyNTUxZjA5YjMzYTQwMWI5ODdhZmQ2NWRjNzJiNmEyJnF1ZXJ5X2tleT1kYXRhc2hvd3MsaDVfY29uZmlnJmpzb25wX2NhbGxiYWNrJyxcclxuICAgICAgICAgICAgICAgICAgICBtZXRob2Q6ICdHRVQnLFxyXG4gICAgICAgICAgICAgICAgICAgIHN1Y2Nlc3M6IHJlcyA9PiB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHRoYXQudHh0TGlzdCA9IHJlcy5kYXRhLmRhdGEuZGF0YXNob3dzLmRhdGE7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvbnNvbGUubG9nKCfmlbDmja4nLCB0aGF0LnR4dExpc3QpXHJcbiAgICAgICAgICAgICAgICAgICAgfSxcclxuICAgICAgICAgICAgICAgICAgICBmYWlsKCkge1xyXG5cclxuICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICB9KVxyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG48L3NjcmlwdD5cclxuXHJcbjxzdHlsZT5cclxucGFnZSB7XHJcbndpZHRoOiAxMDAlO1xyXG5oZWlnaHQ6IGF1dG87XHJcbn1cclxuXHJcbi5jb250ZW50IHtcclxud2lkdGg6IDc1MHJweDtcclxuaGVpZ2h0OiBhdXRvO1xyXG5tYXJnaW46IDA7XHJcbnBhZGRpbmc6IDA7XHJcbn1cclxuXHJcbi5jb250ZW50LWJveCB7XHJcbndpZHRoOiAxMDAlO1xyXG5oZWlnaHQ6IGF1dG87XHJcbm92ZXJmbG93OiBoaWRkZW47XHJcbnBhZGRpbmc6IDAgNDBycHggMTYwcnB4O1xyXG5ib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG59XHJcblxyXG4uY29udGVudC1ib3gtaXRlbSB7XHJcbmZsb2F0OiBsZWZ0O1xyXG53aWR0aDogMTAwJTtcclxuaGVpZ2h0OiBhdXRvO1xyXG5vdmVyZmxvdzogaGlkZGVuO1xyXG59XHJcblxyXG4uY29udGVudC1ib3gtaXRlbS10aXRsZSB7XHJcbmZsb2F0OiBsZWZ0O1xyXG53aWR0aDogMTAwJTtcclxuY29sb3I6ICMwMDVkZmY7XHJcbmZvbnQtd2VpZ2h0OiA1MDA7XHJcbmZvbnQtc2l6ZTogMzZycHg7XHJcbm1hcmdpbjogNzBycHggMCAzOHJweCAwO1xyXG59XHJcbi5jb250ZW50LWJveC1pdGVtLXR4dCB7XHJcbmZsb2F0OiBsZWZ0O1xyXG53aWR0aDogMTAwJTtcclxuY29sb3I6ICMyMjI7XHJcbmxpbmUtaGVpZ2h0OiA1MnJweDtcclxuZm9udC13ZWlnaHQ6IDQwMDtcclxuZm9udC1zaXplOiAyNnJweDtcclxufVxyXG48L3N0eWxlPlxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///60\n");
+eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0; //\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\nvar _default =\n{\n  components: {},\n\n\n  data: function data() {\n    return {\n      daytime: true,\n      txtList: [] };\n\n  },\n  onLoad: function onLoad() {\n\n  },\n  onShow: function onShow() {\n    this.getLocalShop();\n    //let that = this;\n    //that.daytime = uni.getStorageSync('daytime');\n    uni.setNavigationBarColor({\n      frontColor: this.daytime ? '#000000' : '#ffffff',\n      backgroundColor: this.daytime ? '#EDEEED' : '#0E0E0E',\n      animation: {\n        duration: 1,\n        timingFunc: 'easeIn' } });\n\n\n  },\n  methods: {\n    getLocalShop: function getLocalShop() {\n      var that = this;\n      uni.request({\n        url: 'https://r.inews.qq.com/i/getONSDict?wuji_appid=disease_map&wuji_appkey=92551f09b33a401b987afd65dc72b6a2&query_key=datashows,h5_config&jsonp_callback',\n        method: 'GET',\n        success: function success(res) {\n          that.txtList = res.data.data.datashows.data;\n          //console.log('数据', that.txtList)\n        },\n        fail: function fail() {\n\n        } });\n\n    } } };exports.default = _default;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vcGFnZXMvSU5GTy90eHQudnVlIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7QUFnQkE7QUFDQSxnQkFEQTs7O0FBSUEsTUFKQSxrQkFJQTtBQUNBO0FBQ0EsbUJBREE7QUFFQSxpQkFGQTs7QUFJQSxHQVRBO0FBVUEsUUFWQSxvQkFVQTs7QUFFQSxHQVpBO0FBYUEsUUFiQSxvQkFhQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0Esc0RBREE7QUFFQSwyREFGQTtBQUdBO0FBQ0EsbUJBREE7QUFFQSw0QkFGQSxFQUhBOzs7QUFRQSxHQXpCQTtBQTBCQTtBQUNBLGdCQURBLDBCQUNBO0FBQ0E7QUFDQTtBQUNBLG1LQURBO0FBRUEscUJBRkE7QUFHQTtBQUNBO0FBQ0E7QUFDQSxTQU5BO0FBT0EsWUFQQSxrQkFPQTs7QUFFQSxTQVRBOztBQVdBLEtBZEEsRUExQkEsRSIsImZpbGUiOiI2MC5qcyIsInNvdXJjZXNDb250ZW50IjpbIjx0ZW1wbGF0ZT5cclxuICAgIDx2aWV3IGNsYXNzPVwiY29udGVudFwiPlxyXG4gICAgICAgIDx2aWV3IGNsYXNzPVwiY29udGVudC1ib3hcIiA6Y2xhc3M9XCJkYXl0aW1lPydkYXl0aW1lMTYnOiduaWdodGltZTE2J1wiPlxyXG4gICAgICAgICAgICA8YmxvY2sgdi1mb3I9XCIoaXRlbSwgaW5kZXgpIGluIHR4dExpc3RcIiA6a2V5PVwiaW5kZXhcIj5cclxuICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwiY29udGVudC1ib3gtaXRlbVwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwiY29udGVudC1ib3gtaXRlbS10aXRsZVwiPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICB7e2l0ZW0udGl0bGV9fVxyXG4gICAgICAgICAgICAgICAgICAgIDwvdmlldz5cbiAgICAgICAgICAgICAgICAgICAgPHRleHQgY2xhc3M9XCJjb250ZW50LWJveC1pdGVtLXR4dFwiIDpjbGFzcz1cImRheXRpbWU/J2RheXRpbWUxNic6J25pZ2h0aW1lMTYnXCIgPnt7aXRlbS5jb250ZW50fX08L3RleHQ+XHJcbiAgICAgICAgICAgICAgICA8L3ZpZXc+XHJcbiAgICAgICAgICAgIDwvYmxvY2s+XHJcbiAgICAgICAgPC92aWV3PlxyXG4gICAgPC92aWV3PlxyXG48L3RlbXBsYXRlPlxyXG5cclxuPHNjcmlwdD5cclxuICAgIGV4cG9ydCBkZWZhdWx0IHtcclxuICAgICAgICBjb21wb25lbnRzOiB7XHJcblxyXG4gICAgICAgIH0sXHJcbiAgICAgICAgZGF0YSgpIHtcclxuICAgICAgICAgICAgcmV0dXJuIHtcclxuICAgICAgICAgICAgICAgIGRheXRpbWU6IHRydWUsXHJcbiAgICAgICAgICAgICAgICB0eHRMaXN0OiBbXSxcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH0sXHJcbiAgICAgICAgb25Mb2FkKCkge1xyXG5cclxuICAgICAgICB9LFxyXG4gICAgICAgIG9uU2hvdygpIHtcclxuICAgICAgICAgICAgdGhpcy5nZXRMb2NhbFNob3AoKTtcclxuICAgICAgICAgICAgLy9sZXQgdGhhdCA9IHRoaXM7XHJcbiAgICAgICAgICAgIC8vdGhhdC5kYXl0aW1lID0gdW5pLmdldFN0b3JhZ2VTeW5jKCdkYXl0aW1lJyk7XHJcbiAgICAgICAgICAgIHVuaS5zZXROYXZpZ2F0aW9uQmFyQ29sb3Ioe1xyXG4gICAgICAgICAgICAgICAgZnJvbnRDb2xvcjogdGhpcy5kYXl0aW1lID8gJyMwMDAwMDAnIDogJyNmZmZmZmYnLFxyXG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZENvbG9yOiB0aGlzLmRheXRpbWUgPyAnI0VERUVFRCcgOiAnIzBFMEUwRScsXHJcbiAgICAgICAgICAgICAgICBhbmltYXRpb246IHtcclxuICAgICAgICAgICAgICAgICAgICBkdXJhdGlvbjogMSxcclxuICAgICAgICAgICAgICAgICAgICB0aW1pbmdGdW5jOiAnZWFzZUluJ1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9KVxyXG4gICAgICAgIH0sXHJcbiAgICAgICAgbWV0aG9kczoge1xyXG4gICAgICAgICAgICBnZXRMb2NhbFNob3AoKSB7XHJcbiAgICAgICAgICAgICAgICBsZXQgdGhhdCA9IHRoaXM7XHJcbiAgICAgICAgICAgICAgICB1bmkucmVxdWVzdCh7XHJcbiAgICAgICAgICAgICAgICAgICAgdXJsOiAnaHR0cHM6Ly9yLmluZXdzLnFxLmNvbS9pL2dldE9OU0RpY3Q/d3VqaV9hcHBpZD1kaXNlYXNlX21hcCZ3dWppX2FwcGtleT05MjU1MWYwOWIzM2E0MDFiOTg3YWZkNjVkYzcyYjZhMiZxdWVyeV9rZXk9ZGF0YXNob3dzLGg1X2NvbmZpZyZqc29ucF9jYWxsYmFjaycsXHJcbiAgICAgICAgICAgICAgICAgICAgbWV0aG9kOiAnR0VUJyxcclxuICAgICAgICAgICAgICAgICAgICBzdWNjZXNzOiByZXMgPT4ge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICB0aGF0LnR4dExpc3QgPSByZXMuZGF0YS5kYXRhLmRhdGFzaG93cy5kYXRhO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAvL2NvbnNvbGUubG9nKCfmlbDmja4nLCB0aGF0LnR4dExpc3QpXHJcbiAgICAgICAgICAgICAgICAgICAgfSxcclxuICAgICAgICAgICAgICAgICAgICBmYWlsKCkge1xyXG5cclxuICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICB9KVxyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG48L3NjcmlwdD5cclxuXHJcbjxzdHlsZT5cclxucGFnZSB7XHJcbndpZHRoOiAxMDAlO1xyXG5oZWlnaHQ6IGF1dG87XHJcbn1cclxuXHJcbi5jb250ZW50IHtcclxud2lkdGg6IDc1MHJweDtcclxuaGVpZ2h0OiBhdXRvO1xyXG5tYXJnaW46IDA7XHJcbnBhZGRpbmc6IDA7XHJcbn1cclxuXHJcbi5jb250ZW50LWJveCB7XHJcbndpZHRoOiAxMDAlO1xyXG5oZWlnaHQ6IGF1dG87XHJcbm92ZXJmbG93OiBoaWRkZW47XHJcbnBhZGRpbmc6IDAgNDBycHggMTYwcnB4O1xyXG5ib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG59XHJcblxyXG4uY29udGVudC1ib3gtaXRlbSB7XHJcbmZsb2F0OiBsZWZ0O1xyXG53aWR0aDogMTAwJTtcclxuaGVpZ2h0OiBhdXRvO1xyXG5vdmVyZmxvdzogaGlkZGVuO1xyXG59XHJcblxyXG4uY29udGVudC1ib3gtaXRlbS10aXRsZSB7XHJcbmZsb2F0OiBsZWZ0O1xyXG53aWR0aDogMTAwJTtcclxuY29sb3I6ICMwMDVkZmY7XHJcbmZvbnQtd2VpZ2h0OiA1MDA7XHJcbmZvbnQtc2l6ZTogMzZycHg7XHJcbm1hcmdpbjogNzBycHggMCAzOHJweCAwO1xyXG59XHJcbi5jb250ZW50LWJveC1pdGVtLXR4dCB7XHJcbmZsb2F0OiBsZWZ0O1xyXG53aWR0aDogMTAwJTtcclxuY29sb3I6ICMyMjI7XHJcbmxpbmUtaGVpZ2h0OiA1MnJweDtcclxuZm9udC13ZWlnaHQ6IDQwMDtcclxuZm9udC1zaXplOiAyNnJweDtcclxufVxyXG48L3N0eWxlPlxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///60\n");
 
 /***/ }),
 /* 61 */
@@ -3843,40 +3883,42 @@ var render = function() {
             staticClass: _vm._$s(3, "sc", "top-box-title"),
             attrs: { _i: 3 }
           }),
-          _c(
-            "view",
-            {
-              staticClass: _vm._$s(4, "sc", "top-box-right"),
-              attrs: { _i: 4 }
-            },
-            [
-              _c(
-                "picker",
+          _vm._$s(4, "i", _vm.mydatas.areaTree != null)
+            ? _c(
+                "view",
                 {
-                  attrs: {
-                    value: _vm._$s(5, "a-value", _vm.index),
-                    range: _vm._$s(
-                      5,
-                      "a-range",
-                      _vm.mydatas.areaTree[0].children
-                    ),
-                    _i: 5
-                  },
-                  on: {
-                    change: function($event) {
-                      return _vm.bindPickerChange($event)
-                    }
-                  }
+                  staticClass: _vm._$s(4, "sc", "top-box-right"),
+                  attrs: { _i: 4 }
                 },
                 [
-                  _c("view", {
-                    staticClass: _vm._$s(6, "sc", "uni-input"),
-                    attrs: { _i: 6 }
-                  })
+                  _c(
+                    "picker",
+                    {
+                      attrs: {
+                        value: _vm._$s(5, "a-value", _vm.index),
+                        range: _vm._$s(
+                          5,
+                          "a-range",
+                          _vm.mydatas.areaTree[0].children
+                        ),
+                        _i: 5
+                      },
+                      on: {
+                        change: function($event) {
+                          return _vm.bindPickerChange($event)
+                        }
+                      }
+                    },
+                    [
+                      _c("view", {
+                        staticClass: _vm._$s(6, "sc", "uni-input"),
+                        attrs: { _i: 6 }
+                      })
+                    ]
+                  )
                 ]
               )
-            ]
-          ),
+            : _vm._e(),
           _c(
             "view",
             { staticClass: _vm._$s(7, "sc", "top-box-but"), attrs: { _i: 7 } },
@@ -3994,116 +4036,147 @@ var render = function() {
                     attrs: { _i: 23 }
                   })
                 ]
-              ),
-              _c(
-                "view",
-                { staticClass: _vm._$s(24, "sc", "t_item"), attrs: { _i: 24 } },
-                [
-                  _c(
-                    "view",
-                    {
-                      staticClass: _vm._$s(25, "sc", "t_item-addnum"),
-                      attrs: { _i: 25 }
-                    },
-                    [
-                      _c("text", [
-                        _vm._$s(27, "i", _vm.mydata.today.confirm > 0)
-                          ? _c("text")
-                          : _vm._e(),
-                        _vm._v(
-                          _vm._$s(26, "t1-0", _vm._s(_vm.mydata.today.confirm))
-                        )
-                      ])
-                    ]
-                  ),
-                  _c(
-                    "view",
-                    {
-                      staticClass: _vm._$s(28, "sc", "t_item-nownum"),
-                      attrs: { _i: 28 }
-                    },
-                    [
-                      _vm._v(
-                        _vm._$s(28, "t0-0", _vm._s(_vm.mydata.total.confirm))
-                      )
-                    ]
-                  ),
-                  _c("view", {
-                    staticClass: _vm._$s(29, "sc", "t_item-nowtxt"),
-                    attrs: { _i: 29 }
-                  })
-                ]
-              ),
-              _c(
-                "view",
-                { staticClass: _vm._$s(30, "sc", "t_item"), attrs: { _i: 30 } },
-                [
-                  _c(
-                    "view",
-                    {
-                      staticClass: _vm._$s(31, "sc", "t_item-addnum"),
-                      attrs: { _i: 31 }
-                    },
-                    [
-                      _c("text", [
-                        _vm._$s(33, "i", _vm.mydata.today.confirmCuts > 0)
-                          ? _c("text")
-                          : _vm._e(),
-                        _vm._v(
-                          _vm._$s(
-                            32,
-                            "t1-0",
-                            _vm._s(_vm.mydata.today.confirmCuts)
-                          )
-                        )
-                      ])
-                    ]
-                  ),
-                  _c(
-                    "view",
-                    {
-                      staticClass: _vm._$s(34, "sc", "t_item-nownum"),
-                      attrs: { _i: 34 }
-                    },
-                    [_vm._v(_vm._$s(34, "t0-0", _vm._s(_vm.mydata.total.dead)))]
-                  ),
-                  _c("view", {
-                    staticClass: _vm._$s(35, "sc", "t_item-nowtxt"),
-                    attrs: { _i: 35 }
-                  })
-                ]
               )
             ]
           )
         ]
       ),
+      _vm._$s(24, "i", _vm.mydata.total != null)
+        ? _c(
+            "view",
+            {
+              staticClass: _vm._$s(24, "sc", "t_item-top"),
+              class: _vm._$s(24, "c", _vm.daytime ? "daytime16" : "nightime16"),
+              attrs: { _i: 24 }
+            },
+            [
+              _c(
+                "view",
+                {
+                  staticClass: _vm._$s(25, "sc", "t_item-box"),
+                  attrs: { _i: 25 }
+                },
+                [
+                  _c(
+                    "view",
+                    {
+                      staticClass: _vm._$s(26, "sc", "t_item"),
+                      attrs: { _i: 26 }
+                    },
+                    [
+                      _c(
+                        "view",
+                        {
+                          staticClass: _vm._$s(27, "sc", "t_item-addnum"),
+                          attrs: { _i: 27 }
+                        },
+                        [
+                          _c("text", [
+                            _vm._$s(29, "i", _vm.mydata.today.confirm > 0)
+                              ? _c("text")
+                              : _vm._e(),
+                            _vm._v(
+                              _vm._$s(
+                                28,
+                                "t1-0",
+                                _vm._s(_vm.mydata.today.confirm)
+                              )
+                            )
+                          ])
+                        ]
+                      ),
+                      _c(
+                        "view",
+                        {
+                          staticClass: _vm._$s(30, "sc", "t_item-nownum"),
+                          attrs: { _i: 30 }
+                        },
+                        [
+                          _vm._v(
+                            _vm._$s(
+                              30,
+                              "t0-0",
+                              _vm._s(_vm.mydata.total.confirm)
+                            )
+                          )
+                        ]
+                      ),
+                      _c("view", {
+                        staticClass: _vm._$s(31, "sc", "t_item-nowtxt"),
+                        attrs: { _i: 31 }
+                      })
+                    ]
+                  ),
+                  _c(
+                    "view",
+                    {
+                      staticClass: _vm._$s(32, "sc", "t_item"),
+                      attrs: { _i: 32 }
+                    },
+                    [
+                      _c(
+                        "view",
+                        {
+                          staticClass: _vm._$s(33, "sc", "t_item-addnum"),
+                          attrs: { _i: 33 }
+                        },
+                        [
+                          _c("text", [
+                            _vm._$s(35, "i", _vm.mydata.today.confirmCuts > 0)
+                              ? _c("text")
+                              : _vm._e(),
+                            _vm._v(
+                              _vm._$s(
+                                34,
+                                "t1-0",
+                                _vm._s(_vm.mydata.today.confirmCuts)
+                              )
+                            )
+                          ])
+                        ]
+                      ),
+                      _c(
+                        "view",
+                        {
+                          staticClass: _vm._$s(36, "sc", "t_item-nownum"),
+                          attrs: { _i: 36 }
+                        },
+                        [
+                          _vm._v(
+                            _vm._$s(36, "t0-0", _vm._s(_vm.mydata.total.dead))
+                          )
+                        ]
+                      ),
+                      _c("view", {
+                        staticClass: _vm._$s(37, "sc", "t_item-nowtxt"),
+                        attrs: { _i: 37 }
+                      })
+                    ]
+                  )
+                ]
+              )
+            ]
+          )
+        : _vm._e(),
       _c(
         "view",
         {
-          staticClass: _vm._$s(36, "sc", "citylist"),
+          staticClass: _vm._$s(38, "sc", "citylist"),
           class: _vm._$s(
-            36,
+            38,
             "c",
             _vm.daytime ? "daytimetop16" : "nightimetop16"
           ),
-          attrs: { _i: 36 }
+          attrs: { _i: 38 }
         },
         [
           _c(
             "view",
             {
-              staticClass: _vm._$s(37, "sc", "citylist-title"),
-              attrs: { _i: 37 }
+              staticClass: _vm._$s(39, "sc", "citylist-title"),
+              attrs: { _i: 39 }
             },
             [
-              _c("text", {
-                staticClass: _vm._$s(38, "sc", "item"),
-                attrs: { _i: 38 }
-              }),
-              _c("text", {
-                staticClass: _vm._$s(39, "sc", "item"),
-                attrs: { _i: 39 }
-              }),
               _c("text", {
                 staticClass: _vm._$s(40, "sc", "item"),
                 attrs: { _i: 40 }
@@ -4119,70 +4192,49 @@ var render = function() {
               _c("text", {
                 staticClass: _vm._$s(43, "sc", "item"),
                 attrs: { _i: 43 }
+              }),
+              _c("text", {
+                staticClass: _vm._$s(44, "sc", "item"),
+                attrs: { _i: 44 }
+              }),
+              _c("text", {
+                staticClass: _vm._$s(45, "sc", "item"),
+                attrs: { _i: 45 }
               })
             ]
           ),
           _c(
             "view",
             {
-              staticClass: _vm._$s(44, "sc", "citylist-box"),
-              attrs: { _i: 44 }
+              staticClass: _vm._$s(46, "sc", "citylist-box"),
+              attrs: { _i: 46 }
             },
             [
               _vm._l(
-                _vm._$s(45, "f", { forItems: _vm.mydata.children }),
+                _vm._$s(47, "f", { forItems: _vm.mydata.children }),
                 function(item, index, $20, $30) {
                   return [
                     _c(
                       "view",
                       {
-                        key: _vm._$s(45, "f", {
+                        key: _vm._$s(47, "f", {
                           forIndex: $20,
                           keyIndex: 0,
                           key: index + "_0"
                         }),
                         staticClass: _vm._$s(
-                          "46-" + $30,
+                          "48-" + $30,
                           "sc",
                           "citylist-box-item"
                         ),
                         class: _vm._$s(
-                          "46-" + $30,
+                          "48-" + $30,
                           "c",
                           _vm.daytime ? "daytimebot16" : " nightimebot16"
                         ),
-                        attrs: { _i: "46-" + $30 }
+                        attrs: { _i: "48-" + $30 }
                       },
                       [
-                        _c(
-                          "view",
-                          {
-                            staticClass: _vm._$s("47-" + $30, "sc", "item"),
-                            attrs: { _i: "47-" + $30 }
-                          },
-                          [
-                            _c(
-                              "text",
-                              {
-                                staticClass: _vm._$s(
-                                  "48-" + $30,
-                                  "sc",
-                                  "item-name"
-                                ),
-                                attrs: { _i: "48-" + $30 }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._$s(
-                                    "48-" + $30,
-                                    "t0-0",
-                                    _vm._s(item.name)
-                                  )
-                                )
-                              ]
-                            )
-                          ]
-                        ),
                         _c(
                           "view",
                           {
@@ -4205,7 +4257,7 @@ var render = function() {
                                   _vm._$s(
                                     "50-" + $30,
                                     "t0-0",
-                                    _vm._s(item.today.confirm)
+                                    _vm._s(item.name)
                                   )
                                 )
                               ]
@@ -4234,7 +4286,7 @@ var render = function() {
                                   _vm._$s(
                                     "52-" + $30,
                                     "t0-0",
-                                    _vm._s(item.total.nowConfirm)
+                                    _vm._s(item.today.confirm)
                                   )
                                 )
                               ]
@@ -4263,7 +4315,7 @@ var render = function() {
                                   _vm._$s(
                                     "54-" + $30,
                                     "t0-0",
-                                    _vm._s(item.total.confirm)
+                                    _vm._s(item.total.nowConfirm)
                                   )
                                 )
                               ]
@@ -4292,7 +4344,7 @@ var render = function() {
                                   _vm._$s(
                                     "56-" + $30,
                                     "t0-0",
-                                    _vm._s(item.total.heal)
+                                    _vm._s(item.total.confirm)
                                   )
                                 )
                               ]
@@ -4320,6 +4372,35 @@ var render = function() {
                                 _vm._v(
                                   _vm._$s(
                                     "58-" + $30,
+                                    "t0-0",
+                                    _vm._s(item.total.heal)
+                                  )
+                                )
+                              ]
+                            )
+                          ]
+                        ),
+                        _c(
+                          "view",
+                          {
+                            staticClass: _vm._$s("59-" + $30, "sc", "item"),
+                            attrs: { _i: "59-" + $30 }
+                          },
+                          [
+                            _c(
+                              "text",
+                              {
+                                staticClass: _vm._$s(
+                                  "60-" + $30,
+                                  "sc",
+                                  "item-name"
+                                ),
+                                attrs: { _i: "60-" + $30 }
+                              },
+                              [
+                                _vm._v(
+                                  _vm._$s(
+                                    "60-" + $30,
                                     "t0-0",
                                     _vm._s(item.total.dead)
                                   )
@@ -4367,7 +4448,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Dow
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0; //\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\nvar _default =\n{\n  components: {},\n\n\n  data: function data() {\n    return {\n      daytime: '',\n      index: 0,\n      mydata: {},\n      mydatas: {} };\n\n  },\n  onLoad: function onLoad(option) {\n    var that = this;\n    var item = JSON.parse(decodeURIComponent(option.item));\n    that.mydata = item;\n    //console.log('当前地区',that.mydata)\n    uni.setNavigationBarTitle({\n      title: that.mydata.name + '疫情' });\n\n  },\n  onShow: function onShow() {\n    this.getLocalShop();\n    var that = this;\n    that.daytime = uni.getStorageSync('daytime');\n    uni.setNavigationBarColor({\n      frontColor: that.daytime ? '#000000' : '#ffffff',\n      backgroundColor: that.daytime ? '#EDEEED' : '#0E0E0E',\n      animation: {\n        duration: 1,\n        timingFunc: 'easeIn' } });\n\n\n  },\n  methods: {\n    bindPickerChange: function bindPickerChange(e) {\n      var that = this;\n\n\n\n      that.index = e.target.value;\n      that.mydata = that.mydatas.areaTree[0].children[e.target.value];\n      uni.setNavigationBarTitle({\n        title: that.mydata.name + '疫情' });\n\n    },\n    getLocalShop: function getLocalShop() {var _this = this;\n      var that = this;\n      uni.request({\n        url: 'https://api.inews.qq.com/newsqa/v1/query/inner/publish/modules/list?modules=statisGradeCityDetail,diseaseh5Shelf',\n        method: 'POST',\n        success: function success(res) {\n          //console.log(res.data)\n          that.mydatas = res.data.data.diseaseh5Shelf;\n          for (var i = 0; i < that.mydatas.areaTree[0].children.length; i++) {\n            if (that.mydata.name == that.mydatas.areaTree[0].children[i].name) {\n              _this.index = i;\n            }\n          }\n          var timestamp = (Date.parse(new Date()) - new Date(that.mydatas.lastUpdateTime).\n          valueOf()) / 1000;\n        },\n        fail: function fail() {\n\n        } });\n\n    },\n    formatSecond: function formatSecond(second) {\n      var days = Math.floor(second / 86400);\n      var hours = Math.floor(second % 86400 / 3600);\n      var minutes = Math.floor(second % 86400 % 3600 / 60);\n      var seconds = Math.floor(second % 86400 % 3600 % 60);\n      var forMatDate = {\n        days: days,\n        hours: hours,\n        minutes: minutes,\n        seconds: seconds };\n\n      return forMatDate;\n    } } };exports.default = _default;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vcGFnZXMvSU5GTy9jb3JvbmF2aXJ1cy52dWUiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQTBHQTtBQUNBLGdCQURBOzs7QUFJQSxNQUpBLGtCQUlBO0FBQ0E7QUFDQSxpQkFEQTtBQUVBLGNBRkE7QUFHQSxnQkFIQTtBQUlBLGlCQUpBOztBQU1BLEdBWEE7QUFZQSxRQVpBLGtCQVlBLE1BWkEsRUFZQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxvQ0FEQTs7QUFHQSxHQXBCQTtBQXFCQSxRQXJCQSxvQkFxQkE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLHNEQURBO0FBRUEsMkRBRkE7QUFHQTtBQUNBLG1CQURBO0FBRUEsNEJBRkEsRUFIQTs7O0FBUUEsR0FqQ0E7QUFrQ0E7QUFDQTtBQUNBOzs7O0FBSUE7QUFDQTtBQUNBO0FBQ0Esc0NBREE7O0FBR0EsS0FYQTtBQVlBLGdCQVpBLDBCQVlBO0FBQ0E7QUFDQTtBQUNBLCtIQURBO0FBRUEsc0JBRkE7QUFHQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxpQkFEQSxNQUNBLElBREE7QUFFQSxTQWJBO0FBY0EsWUFkQSxrQkFjQTs7QUFFQSxTQWhCQTs7QUFrQkEsS0FoQ0E7QUFpQ0EsZ0JBakNBLHdCQWlDQSxNQWpDQSxFQWlDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxrQkFEQTtBQUVBLG9CQUZBO0FBR0Esd0JBSEE7QUFJQSx3QkFKQTs7QUFNQTtBQUNBLEtBN0NBLEVBbENBLEUiLCJmaWxlIjoiNjUuanMiLCJzb3VyY2VzQ29udGVudCI6WyI8dGVtcGxhdGU+XG4gICAgPHZpZXcgY2xhc3M9XCJjb250ZW50XCIgOmNsYXNzPVwiZGF5dGltZT8nZGF5dGltZSc6J25pZ2h0aW1lJ1wiPlxuICAgICAgICA8dmlldyBjbGFzcz1cInRvcC1ib3hcIj5cbiAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidG9wLWJveC1iZ1wiPjwvdmlldz5cbiAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidG9wLWJveC10aXRsZVwiPlxuICAgICAgICAgICAgICAgIOaWsOWei+WGoOeKtueXheavkuiCuueCjlxuICAgICAgICAgICAgPC92aWV3PlxuICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0b3AtYm94LXJpZ2h0XCI+XG4gICAgICAgICAgICAgICA8cGlja2VyIEBjaGFuZ2U9XCJiaW5kUGlja2VyQ2hhbmdlKCRldmVudClcIiA6dmFsdWU9XCJpbmRleFwiIHJhbmdlLWtleT1cIm5hbWVcIiA6cmFuZ2U9XCJteWRhdGFzLmFyZWFUcmVlWzBdLmNoaWxkcmVuXCI+XG4gICAgICAgICAgICAgICAgICAgIDwhLS0gPHZpZXcgY2xhc3M9XCJ1bmktaW5wdXRcIj7liIfmjaLvvJp7e215ZGF0YXMuYXJlYVRyZWVbMF0uY2hpbGRyZW5baW5kZXhdLm5hbWV9fTwvdmlldz4gLS0+XG4gICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidW5pLWlucHV0XCI+5YiH5o2i55yB5biCPC92aWV3PlxuICAgICAgICAgICAgICAgIDwvcGlja2VyPlxuICAgICAgICAgICAgPC92aWV3PlxuICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0b3AtYm94LWJ1dFwiPlxuICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidG9wLWJveC1idXQtbGVmdFwiPlxuICAgICAgICAgICAgICAgICAgICB7e215ZGF0YS5uYW1lfX1cbiAgICAgICAgICAgICAgICA8L3ZpZXc+XG4gICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0b3AtYm94LWJ1dC1yaWdodFwiPlxuICAgICAgICAgICAgICAgICAgICDlrp7ml7bnlqvmg4VcbiAgICAgICAgICAgICAgICA8L3ZpZXc+XG4gICAgICAgICAgICA8L3ZpZXc+XG4gICAgICAgICAgICA8dmlldyBjbGFzcz1cInRvcC1ib3gtYm90XCI+XG4gICAgICAgICAgICAgICAg5pWw5o2u5p2l5rqQ77ya5Zu95a625Y+K5ZCE5Zyw5Y2r5YGl5aeU5q+P5pel5L+h5oGv5Y+R5biDXG4gICAgICAgICAgICA8L3ZpZXc+XG4gICAgICAgIDwvdmlldz5cbiAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tdG9wXCIgOmNsYXNzPVwiZGF5dGltZT8nZGF5dGltZTE2JzonbmlnaHRpbWUxNidcIj5cbiAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLWJveFwiPlxuICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLWJveC10aXRsZVwiPlxuICAgICAgICAgICAgICAgICAgICDnu5/orqHmiKrmraI8dGV4dCA6Y2xhc3M9XCJkYXl0aW1lPydkYXl0aW1ldGV4dCc6J25pZ2h0aW1ldGV4dCdcIj57e215ZGF0YXMubGFzdFVwZGF0ZVRpbWV9fTwvdGV4dD5cbiAgICAgICAgICAgICAgICA8L3ZpZXc+XG4gICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW1cIiBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6ICNmZmZhZjc7IHBhZGRpbmctdG9wOiAzMHJweDsgYm94LXNpemluZzogYm9yZGVyLWJveDtcIj5cbiAgICAgICAgICAgICAgICAgICAgPCEtLSA8dmlldyBjbGFzcz1cInRfaXRlbS1hZGRudW1cIj7ovoPmmKjml6XvvJo8dGV4dCBzdHlsZT1cImNvbG9yOiAjZTU3NjMxO1wiPjx0ZXh0IHYtaWY9XCJteWRhdGEudG9kYXkubm93Q29uZmlybSA+IDBcIj4rPC90ZXh0PiA8L3RleHQ+PC92aWV3PiAtLT5cbiAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tbm93bnVtXCIgc3R5bGU9XCJjb2xvcjogI2U1NzYzMTtcIj57e215ZGF0YS50b3RhbC5ub3dDb25maXJtfX08L3ZpZXc+XG4gICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLW5vd3R4dFwiPueOsOacieehruivijwvdmlldz5cbiAgICAgICAgICAgICAgICA8L3ZpZXc+XG4gICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW1cIiBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6ICNmZWY3ZmY7XCI+XG4gICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLWFkZG51bVwiPui+g+aYqOaXpe+8mjx0ZXh0IHN0eWxlPVwiY29sb3I6ICNhZTNhYzY7XCI+PHRleHQgdi1pZj1cIm15ZGF0YS50b2RheS53enpfYWRkID4gMFwiPis8L3RleHQ+e3tteWRhdGEudG9kYXkud3p6X2FkZH19PC90ZXh0Pjwvdmlldz5cbiAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tbm93bnVtXCIgc3R5bGU9XCJjb2xvcjogI2FlM2FjNjtcIj57e215ZGF0YS50b3RhbC53enp9fTwvdmlldz5cbiAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tbm93dHh0XCI+5pys5Zyf5peg55eH54q2PC92aWV3PlxuICAgICAgICAgICAgICAgIDwvdmlldz5cbiAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2ZmZjhmODtcIj5cbiAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tYWRkbnVtXCI+6L6D5pio5pel77yaPHRleHQgc3R5bGU9XCJjb2xvcjogI2JlMjEyMTtcIj48dGV4dCB2LWlmPVwibXlkYXRhLnRvZGF5LmNvbmZpcm0gPiAwXCI+KzwvdGV4dD57e215ZGF0YS50b2RheS5jb25maXJtfX08L3RleHQ+PC92aWV3PlxuICAgICAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1ub3dudW1cIiBzdHlsZT1cImNvbG9yOiAjYmUyMTIxO1wiPnt7bXlkYXRhLnRvdGFsLmNvbmZpcm19fTwvdmlldz5cbiAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tbm93dHh0XCI+57Sv6K6h56Gu6K+KPC92aWV3PlxuICAgICAgICAgICAgICAgIDwvdmlldz5cbiAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2YzZjZmODtcIj5cbiAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJ0X2l0ZW0tYWRkbnVtXCI+6L6D5pio5pel77yaPHRleHQgc3R5bGU9XCJjb2xvcjogIzRlNWE2NTtcIj48dGV4dCB2LWlmPVwibXlkYXRhLnRvZGF5LmNvbmZpcm1DdXRzID4gMFwiPis8L3RleHQ+e3tteWRhdGEudG9kYXkuY29uZmlybUN1dHN9fTwvdGV4dD48L3ZpZXc+XG4gICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwidF9pdGVtLW5vd251bVwiIHN0eWxlPVwiY29sb3I6ICM0ZTVhNjU7XCI+e3tteWRhdGEudG90YWwuZGVhZH19PC92aWV3PlxuICAgICAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cInRfaXRlbS1ub3d0eHRcIj7ntK/orqHmrbvkuqE8L3ZpZXc+XG4gICAgICAgICAgICAgICAgPC92aWV3PlxuICAgICAgICAgICAgPC92aWV3PlxuICAgICAgICA8L3ZpZXc+XG4gICAgICAgIDx2aWV3IGNsYXNzPVwiY2l0eWxpc3RcIiA6Y2xhc3M9XCJkYXl0aW1lPydkYXl0aW1ldG9wMTYnOiduaWdodGltZXRvcDE2J1wiPlxuICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJjaXR5bGlzdC10aXRsZVwiPlxuICAgICAgICAgICAgICAgIDx0ZXh0IGNsYXNzPVwiaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2Y1ZjVmNTsgY29sb3I6ICMyMjIyMjI7XCI+5Zyw5Yy6PC90ZXh0PlxuICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgIDx0ZXh0IGNsYXNzPVwiaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2ZjZjJlODsgY29sb3I6ICNmZjVkMDA7XCI+5paw5aKe56Gu6K+KPC90ZXh0PlxuICAgICAgICAgICAgICAgIDx0ZXh0IGNsYXNzPVwiaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2ZjZjJlODsgY29sb3I6ICNmZjVkMDA7XCI+546w5pyJ56Gu6K+KPC90ZXh0PlxuICAgICAgICAgICAgICAgIDx0ZXh0IGNsYXNzPVwiaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2ZkZWVlZTsgY29sb3I6ICNmNTUyNTM7XCI+57Sv6K6h56Gu6K+KPC90ZXh0PlxuICAgICAgICAgICAgICAgIDx0ZXh0IGNsYXNzPVwiaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2U5ZjdlYzsgY29sb3I6ICMxNzhiMDU7XCI+5rK75oSIPC90ZXh0PlxuICAgICAgICAgICAgICAgIDx0ZXh0IGNsYXNzPVwiaXRlbVwiIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogI2YzZjZmODsgY29sb3I6ICM0ZTVhNjU7XCI+5q275LqhPC90ZXh0PlxuICAgICAgICAgICAgPC92aWV3PlxuICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJjaXR5bGlzdC1ib3hcIj5cbiAgICAgICAgICAgICAgICA8YmxvY2sgdi1mb3I9XCIoaXRlbSwgaW5kZXgpIGluIG15ZGF0YS5jaGlsZHJlblwiIDprZXk9J2luZGV4Jz5cbiAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJjaXR5bGlzdC1ib3gtaXRlbVwiIDpjbGFzcz1cImRheXRpbWU/J2RheXRpbWVib3QxNic6JyBuaWdodGltZWJvdDE2J1wiPlxuICAgICAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJpdGVtXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPHRleHQgY2xhc3M9XCJpdGVtLW5hbWVcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge3tpdGVtLm5hbWV9fVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvdGV4dD5cbiAgICAgICAgICAgICAgICAgICAgICAgIDwvdmlldz5cbiAgICAgICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwiaXRlbVwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx0ZXh0IGNsYXNzPVwiaXRlbS1uYW1lXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHt7aXRlbS50b2RheS5jb25maXJtfX1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3RleHQ+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L3ZpZXc+XG4gICAgICAgICAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cIml0ZW1cIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dGV4dCBjbGFzcz1cIml0ZW0tbmFtZVwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7e2l0ZW0udG90YWwubm93Q29uZmlybX19XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC90ZXh0PlxuICAgICAgICAgICAgICAgICAgICAgICAgPC92aWV3PlxuICAgICAgICAgICAgICAgICAgICAgICAgPHZpZXcgY2xhc3M9XCJpdGVtXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPHRleHQgY2xhc3M9XCJpdGVtLW5hbWVcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge3tpdGVtLnRvdGFsLmNvbmZpcm19fVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvdGV4dD5cbiAgICAgICAgICAgICAgICAgICAgICAgIDwvdmlldz5cbiAgICAgICAgICAgICAgICAgICAgICAgIDx2aWV3IGNsYXNzPVwiaXRlbVwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx0ZXh0IGNsYXNzPVwiaXRlbS1uYW1lXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHt7aXRlbS50b3RhbC5oZWFsfX1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3RleHQ+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L3ZpZXc+XG4gICAgICAgICAgICAgICAgICAgICAgICA8dmlldyBjbGFzcz1cIml0ZW1cIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dGV4dCBjbGFzcz1cIml0ZW0tbmFtZVwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7e2l0ZW0udG90YWwuZGVhZH19XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC90ZXh0PlxuICAgICAgICAgICAgICAgICAgICAgICAgPC92aWV3PlxuICAgICAgICAgICAgICAgICAgICA8L3ZpZXc+XG4gICAgICAgICAgICAgICAgPC9ibG9jaz5cbiAgICAgICAgICAgIDwvdmlldz5cbiAgICAgICAgICAgIFxuICAgICAgICA8L3ZpZXc+XG4gICAgICAgIFxuICAgIDwvdmlldz5cbjwvdGVtcGxhdGU+XG5cbjxzY3JpcHQ+XG4gICAgZXhwb3J0IGRlZmF1bHQge1xuICAgICAgICBjb21wb25lbnRzOiB7XG4gICAgICAgICAgICBcbiAgICAgICAgfSxcclxuICAgICAgICBkYXRhKCkge1xyXG4gICAgICAgICAgICByZXR1cm4ge1xuICAgICAgICAgICAgICAgIGRheXRpbWU6JycsXG4gICAgICAgICAgICAgICAgaW5kZXg6IDAsXG4gICAgICAgICAgICAgICAgbXlkYXRhOnt9LFxuICAgICAgICAgICAgICAgIG15ZGF0YXM6e31cbiAgICAgICAgICAgIH1cclxuICAgICAgICB9LFxyXG4gICAgICAgIG9uTG9hZChvcHRpb24pIHtcbiAgICAgICAgICAgIGxldCB0aGF0ID0gdGhpcztcbiAgICAgICAgICAgIGxldCBpdGVtID0gSlNPTi5wYXJzZShkZWNvZGVVUklDb21wb25lbnQob3B0aW9uLml0ZW0pKTtcbiAgICAgICAgICAgIHRoYXQubXlkYXRhID0gaXRlbTtcbiAgICAgICAgICAgIC8vY29uc29sZS5sb2coJ+W9k+WJjeWcsOWMuicsdGhhdC5teWRhdGEpXG4gICAgICAgICAgICB1bmkuc2V0TmF2aWdhdGlvbkJhclRpdGxlKHtcbiAgICAgICAgICAgIOOAgOOAgHRpdGxlOnRoYXQubXlkYXRhLm5hbWUrJ+eWq+aDhSdcbiAgICAgICAgICAgIH0pIFxuICAgICAgICB9LFxyXG4gICAgICAgIG9uU2hvdygpIHtcbiAgICAgICAgICAgIHRoaXMuZ2V0TG9jYWxTaG9wKClcbiAgICAgICAgICAgIGxldCB0aGF0ID0gdGhpcztcbiAgICAgICAgICAgIHRoYXQuZGF5dGltZSA9IHVuaS5nZXRTdG9yYWdlU3luYygnZGF5dGltZScpO1xuICAgICAgICAgICAgdW5pLnNldE5hdmlnYXRpb25CYXJDb2xvcih7XG4gICAgICAgICAgICAgICAgZnJvbnRDb2xvcjogdGhhdC5kYXl0aW1lPycjMDAwMDAwJzonI2ZmZmZmZicsXG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZENvbG9yOiB0aGF0LmRheXRpbWU/JyNFREVFRUQnOicjMEUwRTBFJyxcbiAgICAgICAgICAgICAgICBhbmltYXRpb246IHtcbiAgICAgICAgICAgICAgICAgICAgZHVyYXRpb246IDEsXG4gICAgICAgICAgICAgICAgICAgIHRpbWluZ0Z1bmM6ICdlYXNlSW4nXG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfSlcbiAgICAgICAgfSxcclxuICAgICAgICBtZXRob2RzOiB7XG4gICAgICAgICAgICBiaW5kUGlja2VyQ2hhbmdlOiBmdW5jdGlvbihlKSB7XG4gICAgICAgICAgICAgICAgbGV0IHRoYXQgPSB0aGlzXG4gICAgICAgICAgICAgICAgXG4gICAgICAgICAgICBcbiAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgIHRoYXQuaW5kZXggPSBlLnRhcmdldC52YWx1ZVxuICAgICAgICAgICAgICAgIHRoYXQubXlkYXRhID0gdGhhdC5teWRhdGFzLmFyZWFUcmVlWzBdLmNoaWxkcmVuW2UudGFyZ2V0LnZhbHVlXTtcbiAgICAgICAgICAgICAgICB1bmkuc2V0TmF2aWdhdGlvbkJhclRpdGxlKHtcbiAgICAgICAgICAgICAgICDjgIDjgIB0aXRsZTp0aGF0Lm15ZGF0YS5uYW1lKyfnlqvmg4UnXG4gICAgICAgICAgICAgICAgfSkgXG4gICAgICAgICAgICB9LFxyXG4gICAgICAgICAgICBnZXRMb2NhbFNob3AoKSB7XG4gICAgICAgICAgICAgICAgbGV0IHRoYXQgPSB0aGlzO1xuICAgICAgICAgICAgICAgIHVuaS5yZXF1ZXN0KHtcbiAgICAgICAgICAgICAgICAgICB1cmw6J2h0dHBzOi8vYXBpLmluZXdzLnFxLmNvbS9uZXdzcWEvdjEvcXVlcnkvaW5uZXIvcHVibGlzaC9tb2R1bGVzL2xpc3Q/bW9kdWxlcz1zdGF0aXNHcmFkZUNpdHlEZXRhaWwsZGlzZWFzZWg1U2hlbGYnLFxuICAgICAgICAgICAgICAgICAgIG1ldGhvZDogJ1BPU1QnLFxuICAgICAgICAgICAgICAgICAgIHN1Y2Nlc3M6IHJlcyA9PiB7XG4gICAgICAgICAgICAgICAgICAgICAgIC8vY29uc29sZS5sb2cocmVzLmRhdGEpXG4gICAgICAgICAgICAgICAgICAgICAgIHRoYXQubXlkYXRhcyA9IHJlcy5kYXRhLmRhdGEuZGlzZWFzZWg1U2hlbGY7XG4gICAgICAgICAgICAgICAgICAgICAgIGZvciAodmFyIGkgPSAwOyBpIDwgdGhhdC5teWRhdGFzLmFyZWFUcmVlWzBdLmNoaWxkcmVuLmxlbmd0aDsgaSsrKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICBpZiAodGhhdC5teWRhdGEubmFtZSA9PSB0aGF0Lm15ZGF0YXMuYXJlYVRyZWVbMF0uY2hpbGRyZW5baV0ubmFtZSkge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRoaXMuaW5kZXggPSBpO1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgICAgIGxldCB0aW1lc3RhbXAgPSAoKERhdGUucGFyc2UobmV3IERhdGUoKSkpIC0gKG5ldyBEYXRlKHRoYXQubXlkYXRhcy5sYXN0VXBkYXRlVGltZSkpXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAudmFsdWVPZigpKSAvIDEwMDA7XG4gICAgICAgICAgICAgICAgICAgfSxcbiAgICAgICAgICAgICAgICAgICBmYWlsKCkge1xuICAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICB9KVxuICAgICAgICAgICAgfSxcbiAgICAgICAgICAgIGZvcm1hdFNlY29uZChzZWNvbmQpIHtcbiAgICAgICAgICAgICAgICBjb25zdCBkYXlzID0gTWF0aC5mbG9vcihzZWNvbmQgLyA4NjQwMCk7XG4gICAgICAgICAgICAgICAgY29uc3QgaG91cnMgPSBNYXRoLmZsb29yKChzZWNvbmQgJSA4NjQwMCkgLyAzNjAwKTtcbiAgICAgICAgICAgICAgICBjb25zdCBtaW51dGVzID0gTWF0aC5mbG9vcigoKHNlY29uZCAlIDg2NDAwKSAlIDM2MDApIC8gNjApO1xuICAgICAgICAgICAgICAgIGNvbnN0IHNlY29uZHMgPSBNYXRoLmZsb29yKCgoc2Vjb25kICUgODY0MDApICUgMzYwMCkgJSA2MCk7XG4gICAgICAgICAgICAgICAgY29uc3QgZm9yTWF0RGF0ZSA9IHtcbiAgICAgICAgICAgICAgICAgIGRheXM6IGRheXMsXG4gICAgICAgICAgICAgICAgICBob3VyczogaG91cnMsXG4gICAgICAgICAgICAgICAgICBtaW51dGVzOiBtaW51dGVzLFxuICAgICAgICAgICAgICAgICAgc2Vjb25kczogc2Vjb25kc1xuICAgICAgICAgICAgICAgIH07XG4gICAgICAgICAgICAgICAgcmV0dXJuIGZvck1hdERhdGU7XG4gICAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICB9XHJcbjwvc2NyaXB0PlxuXG48c3R5bGU+XG4gICAgcGFnZSB7XG4gICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICAgIC8qIG92ZXJmbG93OiBhdXRvOyAqL1xuICAgIH1cbiAgICAuY29udGVudCB7XG4gICAgICAgIHdpZHRoOiA3NTBycHg7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgICAgbWluLWhlaWdodDogMTAwdmg7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbiAgICB9XG4gICAgLmJveCB7XG4gICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICAgIC8qIG92ZXJmbG93OiBoaWRkZW47ICovXG4gICAgICAgIHBhZGRpbmc6IDAgMzBycHg7XG4gICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gICAgfVxuICAgIC50b3AtYm94IHtcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgaGVpZ2h0OiA0MDBycHg7XG4gICAgICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XG4gICAgfVxuICAgIC50b3AtYm94LWJnIHtcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICAgICAgbGVmdDogMDtcbiAgICAgICAgICAgIHRvcDogMDtcbiAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKC4uLy4uL3N0YXRpYy9hcmVhX2hlYWRfYmcucG5nKTtcbiAgICAgICAgICAgIGJhY2tncm91bmQtc2l6ZTogMTAwJSAxMDAlO1xuICAgIH1cbiAgICAudF9pdGVtLXRvcCB7XG4gICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gICAgICAgIHBhZGRpbmctYm90dG9tOiA1MHJweDtcbiAgICB9XG4gICAgLnRfaXRlbS1ib3gtdGl0bGUge1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgZm9udC1zaXplOiAyOHJweDtcbiAgICAgICAgY29sb3I6ICM2NjY7XG4gICAgICAgIHBhZGRpbmc6IDI1cnB4IDBycHg7XG4gICAgfVxuICAgIC50X2l0ZW0tYm94LXRpdGxlIHRleHQge1xuICAgICAgICBjb2xvcjogIzIyMjtcbiAgICB9XG4gICAgLnRfaXRlbS1ib3gge1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgICBcbiAgICAgICAgcGFkZGluZzogMCAzMHJweDtcbiAgICAgICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICB9XG4gICAgLnRfaXRlbSB7XG4gICAgICAgIGZsb2F0OiBsZWZ0O1xuICAgICAgICB3aWR0aDogMjQuNCU7XG4gICAgICAgIGhlaWdodDogMTUwcnB4O1xuICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gICAgICAgIG1hcmdpbjogLjMlO1xuICAgICAgICB0cmFuc2Zvcm06IHNjYWxlKC45Nyk7XG4gICAgfVxuICAgIC50X2l0ZW0tYWRkbnVtIHtcbiAgICAgICAgZmxvYXQ6IGxlZnQ7XG4gICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICBjb2xvcjogIzY2NjtcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICBmb250LXNpemU6IDI4cnB4O1xuICAgICAgICBtYXJnaW46IDVycHggYXV0byAwO1xuICAgIH1cbiAgICAudF9pdGVtLW5vd251bSB7XG4gICAgICAgIGZsb2F0OiBsZWZ0O1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgY29sb3I6ICMwMDA7XG4gICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiA0OHJweDtcbiAgICB9XG4gICAgLnRfaXRlbS1ub3d0eHQge1xuICAgICAgICBmbG9hdDogbGVmdDtcbiAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgIGNvbG9yOiAjMDAwO1xuICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICAgIGZvbnQtc2l6ZTogMjhycHg7XG4gICAgfVxuICAgIC5jaXR5bGlzdCB7XG4gICAgICAgIGZsb2F0OiBsZWZ0O1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgICBwYWRkaW5nOiAwIDE4cnB4O1xuICAgICAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICAgIH1cbiAgICAuY2l0eWxpc3QtdGl0bGUge1xuICAgICAgICBwb3NpdGlvbjogc3RpY2t5O1xuICAgICAgICB0b3A6IDA7XG4gICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICBoZWlnaHQ6IDgwcnB4O1xuICAgICAgICBsaW5lLWhlaWdodDogODBycHg7XG4gICAgfVxuICAgIC5jaXR5bGlzdC10aXRsZSAuaXRlbSB7XG4gICAgICAgIGZsb2F0OiBsZWZ0O1xuICAgICAgICB3aWR0aDogMTYuNiU7XG4gICAgICAgIGhlaWdodDogODBycHg7XG4gICAgICAgIGxpbmUtaGVpZ2h0OiA4MHJweDtcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMjhycHg7XG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gICAgfVxuICAgIC5jaXR5bGlzdC1ib3gge1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICAgICAgcGFkZGluZzogMCAxMHJweDtcbiAgICAgICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICB9XG4gICAgLmNpdHlsaXN0LWJveC1pdGVtIHtcbiAgICAgICAgZmxvYXQ6IGxlZnQ7XG4gICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICBoZWlnaHQ6IDEwMHJweDtcbiAgICAgICAgZm9udC1zaXplOiAyOHJweDtcbiAgICAgICAgYm9yZGVyLWJvdHRvbTogMXJweCBzb2xpZCAjZjNmM2YzO1xuICAgICAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgIH1cbiAgICAuY2l0eWxpc3QtYm94LWl0ZW0gLml0ZW06Zmlyc3QtY2hpbGQge1xuICAgICAgICBjb2xvcjogIzQxODBmMTtcbiAgICAgICAgZm9udC1zaXplOiAzMHJweDtcbiAgICB9XG4gICAgLmNpdHlsaXN0LWJveC1pdGVtIC5pdGVtIC5pdGVtLW5hbWUge1xuICAgICAgICBkaXNwbGF5OnRhYmxlLWNlbGw7XG4gICAgICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gICAgfVxuICAgIC5jaXR5bGlzdC1ib3gtaXRlbSAuaXRlbSB7XG4gICAgICAgIGZsb2F0OiBsZWZ0O1xuICAgICAgICB3aWR0aDogMTYuNiU7XG4gICAgICAgIGhlaWdodDogMTAwcnB4O1xuICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICAgIGRpc3BsYXk6dGFibGU7XG4gICAgfVxuICAgIC50b3AtYm94LXRpdGxlIHtcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICBsZWZ0OiA0NHJweDtcbiAgICAgICAgdG9wOiA2NnJweDtcbiAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgIGNvbG9yOiAjZmZlOWFhO1xuICAgICAgICBmb250LXNpemU6IDU2cnB4O1xuICAgIH1cbiAgICAudG9wLWJveC1yaWdodCB7XG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgICAgIHJpZ2h0OiAyMHJweDtcbiAgICAgICAgICAgIHRvcDogNzZycHg7XG4gICAgICAgICAgICBjb2xvcjogI2ZmZjtcbiAgICAgICAgICAgIHdpZHRoOiAxODBycHg7XG4gICAgICAgICAgICBoZWlnaHQ6IDYwcnB4O1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDYwcnB4O1xuICAgICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICAgICAgZm9udC1zaXplOiAzNnJweDtcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDIwcnB4O1xuICAgICAgICAgICAgYm9yZGVyOiAycnB4IHNvbGlkICNmZmY7XG4gICAgfVxuICAgIC50b3AtYm94LWJ1dCB7XG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgbGVmdDogNDRycHg7XG4gICAgICAgIHRvcDogMTYwcnB4O1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgY29sb3I6ICNmZmU5YWE7XG4gICAgICAgIGZvbnQtc2l6ZTogNzJycHg7XG4gICAgfVxuICAgIC50b3AtYm94LWJ1dC1sZWZ0ICxcbiAgICAudG9wLWJveC1idXQtcmlnaHQge1xuICAgICAgICBmbG9hdDogbGVmdDtcbiAgICAgICAgXG4gICAgfVxuICAgIC50b3AtYm94LWJ1dC1sZWZ0IHtcbiAgICAgICAgbWluLXdpZHRoOiAxODBycHg7XG4gICAgICAgICAgICBoZWlnaHQ6IDEwMHJweDtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxMDBycHg7XG4gICAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICAgICAgICAgICAgY29sb3I6ICMwMDU2ZWU7XG4gICAgICAgICAgICBwYWRkaW5nOiAwIDEycnB4O1xuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMTVycHg7XG4gICAgICAgICAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgICAgICAgICAgbWFyZ2luLXJpZ2h0OiAxNXJweDtcbiAgICAgICAgICAgIG1hcmdpbi10b3A6IDE2cnB4O1xuICAgIH1cbiAgICAudG9wLWJveC1idXQtcmlnaHQge1xuICAgICAgICBjb2xvcjogI2ZmZjtcbiAgICAgICAgZm9udC1zaXplOiA4OHJweDtcbiAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgfVxuICAgIC50b3AtYm94LWJvdCB7XG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgbGVmdDogNDRycHg7XG4gICAgICAgIGJvdHRvbTogMzhycHg7XG4gICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICBjb2xvcjogI2ZmZjtcbiAgICAgICAgZm9udC1zaXplOiAzNnJweDtcbiAgICB9XG48L3N0eWxlPlxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///65\n");
+eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0; //\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\nvar _default =\n{\n  components: {},\n\n\n  data: function data() {\n    return {\n      daytime: true,\n      index: 0,\n      mydata: {},\n      mydatas: {} };\n\n  },\n  onLoad: function onLoad(option) {\n    this.getLocalShop();\n    var that = this;\n    var item = JSON.parse(decodeURIComponent(option.item));\n    that.mydata = item;\n    //console.log('当前地区',that.mydata)\n    uni.setNavigationBarTitle({\n      title: that.mydata.name + '疫情' });\n\n  },\n  onShow: function onShow() {\n    var that = this;\n    //that.daytime = uni.getStorageSync('daytime');\n    uni.setNavigationBarColor({\n      frontColor: that.daytime ? '#000000' : '#ffffff',\n      backgroundColor: that.daytime ? '#EDEEED' : '#0E0E0E',\n      animation: {\n        duration: 1,\n        timingFunc: 'easeIn' } });\n\n\n  },\n  methods: {\n    bindPickerChange: function bindPickerChange(e) {\n      var that = this;\n      that.index = e.target.value;\n      that.mydata = that.mydatas.areaTree[0].children[e.target.value];\n      uni.setNavigationBarTitle({\n        title: that.mydata.name + '疫情' });\n\n    },\n    getLocalShop: function getLocalShop() {var _this = this;\n      var that = this;\n      uni.request({\n        url: 'https://api.inews.qq.com/newsqa/v1/query/inner/publish/modules/list?modules=statisGradeCityDetail,diseaseh5Shelf',\n        method: 'POST',\n        success: function success(res) {\n          //console.log(res.data)\n          that.mydatas = res.data.data.diseaseh5Shelf;\n          for (var i = 0; i < that.mydatas.areaTree[0].children.length; i++) {\n            if (that.mydata.name == that.mydatas.areaTree[0].children[i].name) {\n              _this.index = i;\n            }\n          }\n          var timestamp = (Date.parse(new Date()) - new Date(that.mydatas.lastUpdateTime).\n          valueOf()) / 1000;\n        },\n        fail: function fail() {\n\n        } });\n\n    },\n    formatSecond: function formatSecond(second) {\n      var days = Math.floor(second / 86400);\n      var hours = Math.floor(second % 86400 / 3600);\n      var minutes = Math.floor(second % 86400 % 3600 / 60);\n      var seconds = Math.floor(second % 86400 % 3600 % 60);\n      var forMatDate = {\n        days: days,\n        hours: hours,\n        minutes: minutes,\n        seconds: seconds };\n\n      return forMatDate;\n    } } };exports.default = _default;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vcGFnZXMvSU5GTy9jb3JvbmF2aXJ1cy52dWUiXSwibmFtZXMiOlsiY29tcG9uZW50cyIsImRhdGEiLCJkYXl0aW1lIiwiaW5kZXgiLCJteWRhdGEiLCJteWRhdGFzIiwib25Mb2FkIiwib3B0aW9uIiwiZ2V0TG9jYWxTaG9wIiwidGhhdCIsIml0ZW0iLCJKU09OIiwicGFyc2UiLCJkZWNvZGVVUklDb21wb25lbnQiLCJ1bmkiLCJzZXROYXZpZ2F0aW9uQmFyVGl0bGUiLCJ0aXRsZSIsIm5hbWUiLCJvblNob3ciLCJzZXROYXZpZ2F0aW9uQmFyQ29sb3IiLCJmcm9udENvbG9yIiwiYmFja2dyb3VuZENvbG9yIiwiYW5pbWF0aW9uIiwiZHVyYXRpb24iLCJ0aW1pbmdGdW5jIiwibWV0aG9kcyIsImJpbmRQaWNrZXJDaGFuZ2UiLCJlIiwidGFyZ2V0IiwidmFsdWUiLCJhcmVhVHJlZSIsImNoaWxkcmVuIiwicmVxdWVzdCIsInVybCIsIm1ldGhvZCIsInN1Y2Nlc3MiLCJyZXMiLCJkaXNlYXNlaDVTaGVsZiIsImkiLCJsZW5ndGgiLCJ0aW1lc3RhbXAiLCJEYXRlIiwibGFzdFVwZGF0ZVRpbWUiLCJ2YWx1ZU9mIiwiZmFpbCIsImZvcm1hdFNlY29uZCIsInNlY29uZCIsImRheXMiLCJNYXRoIiwiZmxvb3IiLCJob3VycyIsIm1pbnV0ZXMiLCJzZWNvbmRzIiwiZm9yTWF0RGF0ZSJdLCJtYXBwaW5ncyI6IndGQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVtQjtBQUNYQSxZQUFVLEVBQUUsRUFERDs7O0FBSVhDLE1BSlcsa0JBSUo7QUFDSCxXQUFPO0FBQ0hDLGFBQU8sRUFBQyxJQURMO0FBRUhDLFdBQUssRUFBRSxDQUZKO0FBR0hDLFlBQU0sRUFBQyxFQUhKO0FBSUhDLGFBQU8sRUFBQyxFQUpMLEVBQVA7O0FBTUgsR0FYVTtBQVlYQyxRQVpXLGtCQVlKQyxNQVpJLEVBWUk7QUFDcEIsU0FBS0MsWUFBTDtBQUNTLFFBQUlDLElBQUksR0FBRyxJQUFYO0FBQ0EsUUFBSUMsSUFBSSxHQUFHQyxJQUFJLENBQUNDLEtBQUwsQ0FBV0Msa0JBQWtCLENBQUNOLE1BQU0sQ0FBQ0csSUFBUixDQUE3QixDQUFYO0FBQ0FELFFBQUksQ0FBQ0wsTUFBTCxHQUFjTSxJQUFkO0FBQ0E7QUFDQUksT0FBRyxDQUFDQyxxQkFBSixDQUEwQjtBQUN4QkMsV0FBSyxFQUFDUCxJQUFJLENBQUNMLE1BQUwsQ0FBWWEsSUFBWixHQUFpQixJQURDLEVBQTFCOztBQUdILEdBckJVO0FBc0JYQyxRQXRCVyxvQkFzQkY7QUFDTCxRQUFJVCxJQUFJLEdBQUcsSUFBWDtBQUNBO0FBQ0FLLE9BQUcsQ0FBQ0sscUJBQUosQ0FBMEI7QUFDdEJDLGdCQUFVLEVBQUVYLElBQUksQ0FBQ1AsT0FBTCxHQUFhLFNBQWIsR0FBdUIsU0FEYjtBQUV0Qm1CLHFCQUFlLEVBQUVaLElBQUksQ0FBQ1AsT0FBTCxHQUFhLFNBQWIsR0FBdUIsU0FGbEI7QUFHdEJvQixlQUFTLEVBQUU7QUFDUEMsZ0JBQVEsRUFBRSxDQURIO0FBRVBDLGtCQUFVLEVBQUUsUUFGTCxFQUhXLEVBQTFCOzs7QUFRSCxHQWpDVTtBQWtDWEMsU0FBTyxFQUFFO0FBQ0xDLG9CQUFnQixFQUFFLDBCQUFTQyxDQUFULEVBQVk7QUFDMUIsVUFBSWxCLElBQUksR0FBRyxJQUFYO0FBQ0FBLFVBQUksQ0FBQ04sS0FBTCxHQUFhd0IsQ0FBQyxDQUFDQyxNQUFGLENBQVNDLEtBQXRCO0FBQ0FwQixVQUFJLENBQUNMLE1BQUwsR0FBY0ssSUFBSSxDQUFDSixPQUFMLENBQWF5QixRQUFiLENBQXNCLENBQXRCLEVBQXlCQyxRQUF6QixDQUFrQ0osQ0FBQyxDQUFDQyxNQUFGLENBQVNDLEtBQTNDLENBQWQ7QUFDQWYsU0FBRyxDQUFDQyxxQkFBSixDQUEwQjtBQUN4QkMsYUFBSyxFQUFDUCxJQUFJLENBQUNMLE1BQUwsQ0FBWWEsSUFBWixHQUFpQixJQURDLEVBQTFCOztBQUdILEtBUkk7QUFTTFQsZ0JBVEssMEJBU1U7QUFDWCxVQUFJQyxJQUFJLEdBQUcsSUFBWDtBQUNBSyxTQUFHLENBQUNrQixPQUFKLENBQVk7QUFDVEMsV0FBRyxFQUFDLGtIQURLO0FBRVRDLGNBQU0sRUFBRSxNQUZDO0FBR1RDLGVBQU8sRUFBRSxpQkFBQUMsR0FBRyxFQUFJO0FBQ1o7QUFDQTNCLGNBQUksQ0FBQ0osT0FBTCxHQUFlK0IsR0FBRyxDQUFDbkMsSUFBSixDQUFTQSxJQUFULENBQWNvQyxjQUE3QjtBQUNBLGVBQUssSUFBSUMsQ0FBQyxHQUFHLENBQWIsRUFBZ0JBLENBQUMsR0FBRzdCLElBQUksQ0FBQ0osT0FBTCxDQUFheUIsUUFBYixDQUFzQixDQUF0QixFQUF5QkMsUUFBekIsQ0FBa0NRLE1BQXRELEVBQThERCxDQUFDLEVBQS9ELEVBQW1FO0FBQy9ELGdCQUFJN0IsSUFBSSxDQUFDTCxNQUFMLENBQVlhLElBQVosSUFBb0JSLElBQUksQ0FBQ0osT0FBTCxDQUFheUIsUUFBYixDQUFzQixDQUF0QixFQUF5QkMsUUFBekIsQ0FBa0NPLENBQWxDLEVBQXFDckIsSUFBN0QsRUFBbUU7QUFDL0QsbUJBQUksQ0FBQ2QsS0FBTCxHQUFhbUMsQ0FBYjtBQUNIO0FBQ0o7QUFDRCxjQUFJRSxTQUFTLEdBQUcsQ0FBRUMsSUFBSSxDQUFDN0IsS0FBTCxDQUFXLElBQUk2QixJQUFKLEVBQVgsQ0FBRCxHQUE0QixJQUFJQSxJQUFKLENBQVNoQyxJQUFJLENBQUNKLE9BQUwsQ0FBYXFDLGNBQXRCLENBQUQ7QUFDdkNDLGlCQUR1QyxFQUE1QixJQUNFLElBRGxCO0FBRUgsU0FiUTtBQWNUQyxZQWRTLGtCQWNGOztBQUVOLFNBaEJRLEVBQVo7O0FBa0JILEtBN0JJO0FBOEJMQyxnQkE5Qkssd0JBOEJRQyxNQTlCUixFQThCZ0I7QUFDakIsVUFBTUMsSUFBSSxHQUFHQyxJQUFJLENBQUNDLEtBQUwsQ0FBV0gsTUFBTSxHQUFHLEtBQXBCLENBQWI7QUFDQSxVQUFNSSxLQUFLLEdBQUdGLElBQUksQ0FBQ0MsS0FBTCxDQUFZSCxNQUFNLEdBQUcsS0FBVixHQUFtQixJQUE5QixDQUFkO0FBQ0EsVUFBTUssT0FBTyxHQUFHSCxJQUFJLENBQUNDLEtBQUwsQ0FBYUgsTUFBTSxHQUFHLEtBQVYsR0FBbUIsSUFBcEIsR0FBNEIsRUFBdkMsQ0FBaEI7QUFDQSxVQUFNTSxPQUFPLEdBQUdKLElBQUksQ0FBQ0MsS0FBTCxDQUFhSCxNQUFNLEdBQUcsS0FBVixHQUFtQixJQUFwQixHQUE0QixFQUF2QyxDQUFoQjtBQUNBLFVBQU1PLFVBQVUsR0FBRztBQUNqQk4sWUFBSSxFQUFFQSxJQURXO0FBRWpCRyxhQUFLLEVBQUVBLEtBRlU7QUFHakJDLGVBQU8sRUFBRUEsT0FIUTtBQUlqQkMsZUFBTyxFQUFFQSxPQUpRLEVBQW5COztBQU1BLGFBQU9DLFVBQVA7QUFDSCxLQTFDSSxFQWxDRSxFIiwiZmlsZSI6IjY1LmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cblxuICAgIGV4cG9ydCBkZWZhdWx0IHtcbiAgICAgICAgY29tcG9uZW50czoge1xuICAgICAgICAgICAgXG4gICAgICAgIH0sXG4gICAgICAgIGRhdGEoKSB7XG4gICAgICAgICAgICByZXR1cm4ge1xuICAgICAgICAgICAgICAgIGRheXRpbWU6dHJ1ZSxcbiAgICAgICAgICAgICAgICBpbmRleDogMCxcbiAgICAgICAgICAgICAgICBteWRhdGE6e30sXG4gICAgICAgICAgICAgICAgbXlkYXRhczp7fVxuICAgICAgICAgICAgfVxuICAgICAgICB9LFxuICAgICAgICBvbkxvYWQob3B0aW9uKSB7XG5cdFx0XHR0aGlzLmdldExvY2FsU2hvcCgpXG4gICAgICAgICAgICBsZXQgdGhhdCA9IHRoaXM7XG4gICAgICAgICAgICBsZXQgaXRlbSA9IEpTT04ucGFyc2UoZGVjb2RlVVJJQ29tcG9uZW50KG9wdGlvbi5pdGVtKSk7XG4gICAgICAgICAgICB0aGF0Lm15ZGF0YSA9IGl0ZW07XG4gICAgICAgICAgICAvL2NvbnNvbGUubG9nKCflvZPliY3lnLDljLonLHRoYXQubXlkYXRhKVxuICAgICAgICAgICAgdW5pLnNldE5hdmlnYXRpb25CYXJUaXRsZSh7XG4gICAgICAgICAgICDjgIDjgIB0aXRsZTp0aGF0Lm15ZGF0YS5uYW1lKyfnlqvmg4UnXG4gICAgICAgICAgICB9KSBcbiAgICAgICAgfSxcbiAgICAgICAgb25TaG93KCkge1xuICAgICAgICAgICAgbGV0IHRoYXQgPSB0aGlzO1xuICAgICAgICAgICAgLy90aGF0LmRheXRpbWUgPSB1bmkuZ2V0U3RvcmFnZVN5bmMoJ2RheXRpbWUnKTtcbiAgICAgICAgICAgIHVuaS5zZXROYXZpZ2F0aW9uQmFyQ29sb3Ioe1xuICAgICAgICAgICAgICAgIGZyb250Q29sb3I6IHRoYXQuZGF5dGltZT8nIzAwMDAwMCc6JyNmZmZmZmYnLFxuICAgICAgICAgICAgICAgIGJhY2tncm91bmRDb2xvcjogdGhhdC5kYXl0aW1lPycjRURFRUVEJzonIzBFMEUwRScsXG4gICAgICAgICAgICAgICAgYW5pbWF0aW9uOiB7XG4gICAgICAgICAgICAgICAgICAgIGR1cmF0aW9uOiAxLFxuICAgICAgICAgICAgICAgICAgICB0aW1pbmdGdW5jOiAnZWFzZUluJ1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH0pXG4gICAgICAgIH0sXG4gICAgICAgIG1ldGhvZHM6IHtcbiAgICAgICAgICAgIGJpbmRQaWNrZXJDaGFuZ2U6IGZ1bmN0aW9uKGUpIHtcbiAgICAgICAgICAgICAgICBsZXQgdGhhdCA9IHRoaXNcbiAgICAgICAgICAgICAgICB0aGF0LmluZGV4ID0gZS50YXJnZXQudmFsdWVcbiAgICAgICAgICAgICAgICB0aGF0Lm15ZGF0YSA9IHRoYXQubXlkYXRhcy5hcmVhVHJlZVswXS5jaGlsZHJlbltlLnRhcmdldC52YWx1ZV07XG4gICAgICAgICAgICAgICAgdW5pLnNldE5hdmlnYXRpb25CYXJUaXRsZSh7XG4gICAgICAgICAgICAgICAg44CA44CAdGl0bGU6dGhhdC5teWRhdGEubmFtZSsn55ar5oOFJ1xuICAgICAgICAgICAgICAgIH0pIFxuICAgICAgICAgICAgfSxcbiAgICAgICAgICAgIGdldExvY2FsU2hvcCgpIHtcbiAgICAgICAgICAgICAgICBsZXQgdGhhdCA9IHRoaXM7XG4gICAgICAgICAgICAgICAgdW5pLnJlcXVlc3Qoe1xuICAgICAgICAgICAgICAgICAgIHVybDonaHR0cHM6Ly9hcGkuaW5ld3MucXEuY29tL25ld3NxYS92MS9xdWVyeS9pbm5lci9wdWJsaXNoL21vZHVsZXMvbGlzdD9tb2R1bGVzPXN0YXRpc0dyYWRlQ2l0eURldGFpbCxkaXNlYXNlaDVTaGVsZicsXG4gICAgICAgICAgICAgICAgICAgbWV0aG9kOiAnUE9TVCcsXG4gICAgICAgICAgICAgICAgICAgc3VjY2VzczogcmVzID0+IHtcbiAgICAgICAgICAgICAgICAgICAgICAgLy9jb25zb2xlLmxvZyhyZXMuZGF0YSlcbiAgICAgICAgICAgICAgICAgICAgICAgdGhhdC5teWRhdGFzID0gcmVzLmRhdGEuZGF0YS5kaXNlYXNlaDVTaGVsZjtcbiAgICAgICAgICAgICAgICAgICAgICAgZm9yICh2YXIgaSA9IDA7IGkgPCB0aGF0Lm15ZGF0YXMuYXJlYVRyZWVbMF0uY2hpbGRyZW4ubGVuZ3RoOyBpKyspIHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmICh0aGF0Lm15ZGF0YS5uYW1lID09IHRoYXQubXlkYXRhcy5hcmVhVHJlZVswXS5jaGlsZHJlbltpXS5uYW1lKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdGhpcy5pbmRleCA9IGk7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgICAgbGV0IHRpbWVzdGFtcCA9ICgoRGF0ZS5wYXJzZShuZXcgRGF0ZSgpKSkgLSAobmV3IERhdGUodGhhdC5teWRhdGFzLmxhc3RVcGRhdGVUaW1lKSlcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIC52YWx1ZU9mKCkpIC8gMTAwMDtcbiAgICAgICAgICAgICAgICAgICB9LFxuICAgICAgICAgICAgICAgICAgIGZhaWwoKSB7XG4gICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH0pXG4gICAgICAgICAgICB9LFxuICAgICAgICAgICAgZm9ybWF0U2Vjb25kKHNlY29uZCkge1xuICAgICAgICAgICAgICAgIGNvbnN0IGRheXMgPSBNYXRoLmZsb29yKHNlY29uZCAvIDg2NDAwKTtcbiAgICAgICAgICAgICAgICBjb25zdCBob3VycyA9IE1hdGguZmxvb3IoKHNlY29uZCAlIDg2NDAwKSAvIDM2MDApO1xuICAgICAgICAgICAgICAgIGNvbnN0IG1pbnV0ZXMgPSBNYXRoLmZsb29yKCgoc2Vjb25kICUgODY0MDApICUgMzYwMCkgLyA2MCk7XG4gICAgICAgICAgICAgICAgY29uc3Qgc2Vjb25kcyA9IE1hdGguZmxvb3IoKChzZWNvbmQgJSA4NjQwMCkgJSAzNjAwKSAlIDYwKTtcbiAgICAgICAgICAgICAgICBjb25zdCBmb3JNYXREYXRlID0ge1xuICAgICAgICAgICAgICAgICAgZGF5czogZGF5cyxcbiAgICAgICAgICAgICAgICAgIGhvdXJzOiBob3VycyxcbiAgICAgICAgICAgICAgICAgIG1pbnV0ZXM6IG1pbnV0ZXMsXG4gICAgICAgICAgICAgICAgICBzZWNvbmRzOiBzZWNvbmRzXG4gICAgICAgICAgICAgICAgfTtcbiAgICAgICAgICAgICAgICByZXR1cm4gZm9yTWF0RGF0ZTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgIH1cbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///65\n");
 
 /***/ }),
 /* 66 */
