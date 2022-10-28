@@ -16,7 +16,7 @@
 			}
 		},
 		onLoad() {
-			this.timer=setInterval(()=>{this.gotopages()}, 2000);
+			this.timer=setInterval(()=>{this.gotopages()}, 1500);
 		},
 		onUnload() {
 			clearInterval(this.timer);

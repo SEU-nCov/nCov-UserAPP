@@ -13,8 +13,9 @@
 			    </u-grid-item>
 			</u-grid>
 		</div>
-		<div style="background-color:#3490FD;border-bottom: 1px solid lightgray;">
-			<u-subsection :list="infolist" :current="curNow" bgColor="#3490FD" fontSize="14px" inactiveColor="white" height="200" @change="sectionChange"></u-subsection>
+		<div style="background-color:#3490FD;">
+			<!--u-subsection :list="infolist" :current="curNow" bgColor="#3490FD" fontSize="14px" inactiveColor="white" height="200" @change="sectionChange"></u-subsection-->
+			<u-tabs :list="infolist2" :current="curNow" lineColor="white" :scrollable="false" :activeStyle="{color:'white',fontSize:'14px'}" :inactiveStyle="{color:'white',fontSize:'14px'}" :lineWidth="50" @change="sectionChange"></u-tabs>
 		</div>
 		<view v-if="curNow==0">
 			<view class="content" :class="daytime?'daytime':'nightime'">
@@ -199,13 +200,13 @@
 			    </uni-popup>
 			</view>
 		</view>
-		<view v-if="curNow===1">
+		<view v-if="curNow==1">
 			1
 		</view>
-		<view v-if="curNow===2">
+		<view v-if="curNow==2">
 			2
 		</view>
-		<view v-if="curNow===3">
+		<view v-if="curNow==3">
 			3
 		</view>
 	</view>
@@ -217,6 +218,7 @@
 		data() {
 			return {
 				infolist: ['国内疫情', '国外疫情', '核酸检测点','防疫政策'],
+				infolist2: [{name:'国内疫情'}, {name:'国外疫情'},{name:'核酸检测'},{name:'国内疫情'}],
 				curNow: 0,
 				titlelist: [{
 						name: 'scan',
@@ -265,27 +267,29 @@
 		},
 		methods: {
 			sectionChange(index) {
-				this.curNow = index;
+				this.curNow = index.index;
 			},
 			typechange(name){
 				switch (name){
 					case 0:{
-						console.log("扫一扫");
 						uni.scanCode({ success: function (res) {  
 							console.log('条码类型：' + res.scanType);
 							console.log('条码内容：' + res.result); }});
 						break;
 					}case 1:{
-						console.log("身份码");
 						uni.navigateTo({
 							url:"../../pages/INFO/identitycard"
 						})
 						break;
 					}case 2:{
-						console.log("健康码");
+						uni.navigateTo({
+							url:"../../pages/INFO/healthcard"
+						})
 						break;
 					}case 3:{
-						console.log("行程卡");
+						uni.navigateTo({
+							url:"../../pages/INFO/travelcard"
+						})
 						break;
 					}
 				}

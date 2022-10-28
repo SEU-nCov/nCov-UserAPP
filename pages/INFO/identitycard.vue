@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view style="background-color:#EDEDED;position:absolute;width:100%;height:100%;">
 		<u-notice-bar :text="notice"></u-notice-bar>
 		<view class="bg">
 			<view class="cover">
@@ -9,10 +9,10 @@
 				<div><text class="identity">身份证：{{this.identity | hide}}</text></div>
 				<view style="display:flex;align-items:center;justify-content:center;padding-top: 150rpx;">
 					<view class="square" style="display:inline-block;text-align:center;">
-						<view style="display:inline-block;height:200rpx;line-height:200rpx;font-size:23px;font-weight: 600;">{{this.timer}}</view>
+						<view style="display:inline-block;height:200rpx;line-height:200rpx;font-size:28px;font-weight: 600;">{{this.timer}}</view>
 						<view>
 							<!--view style="position:absolute;background-color:#89B1E4;width:460rpx;height:460rpx;border-radius:5px;margin-left:-22rpx;margin-top:-22rpx;;"></view-->
-							<view style="display:inline-block;background-color:#89B1E4;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-70rpx;"></view><!--view>给她看改成-70rpx,实装用-65rpx</view-->
+							<view style="display:inline-block;background-color:#89B1E4;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-65rpx;"></view><!--view>给她看改成-70rpx,实装用-65rpx</view-->
 							<view style="display:inline-block;margin-top:-400rpx;"><uqrcode ref="uqrcode" canvas-id="qrcode" :value="this.identity" :options="{ margin:10 }"></uqrcode></view>
 						</view>
 						<view style="display:inline-block;text-align:center;font-size:15px;padding-top:65rpx;"><text style="color:red;">*</text><text>请展示身份码</text></view>

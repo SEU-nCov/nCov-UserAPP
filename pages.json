@@ -25,7 +25,10 @@
 			"path": "pages/SELF/selfinfo"
 		},
 		{
-            "path" : "pages/INFO/identitycard"
+            "path" : "pages/INFO/identitycard",
+			"style": {
+				"navigationBarTitleText": "身份码"
+			}
         },
 		{
 		    "path" : "pages/LOGIN/login"
@@ -36,6 +39,15 @@
 		{
 		    "path" : "pages/LOGIN/forget"
 		}
+        ,{
+            "path" : "pages/INFO/healthcard",
+			"style": {
+				"navigationBarTitleText": "健康码"
+			}
+        }
+        ,{
+            "path" : "pages/INFO/travelcard"
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
