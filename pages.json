@@ -48,6 +48,14 @@
         ,{
             "path" : "pages/INFO/travelcard"
         }
+        ,{
+            "path" : "pages/INFO/checknuclein",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "健康码"
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

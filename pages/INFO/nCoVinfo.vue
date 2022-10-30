@@ -15,7 +15,7 @@
 		</div>
 		<div style="background-color:#3490FD;">
 			<!--u-subsection :list="infolist" :current="curNow" bgColor="#3490FD" fontSize="14px" inactiveColor="white" height="200" @change="sectionChange"></u-subsection-->
-			<u-tabs :list="infolist2" :current="curNow" lineColor="white" :scrollable="false" :activeStyle="{color:'white',fontSize:'14px'}" :inactiveStyle="{color:'white',fontSize:'14px'}" :lineWidth="50" @change="sectionChange"></u-tabs>
+			<u-tabs :list="infolist" :current="curNow" lineColor="white" :scrollable="false" :activeStyle="{color:'white',fontSize:'14px'}" :inactiveStyle="{color:'white',fontSize:'14px'}" :lineWidth="50" @change="sectionChange"></u-tabs>
 		</div>
 		<view v-if="curNow==0">
 			<view class="content" :class="daytime?'daytime':'nightime'">
@@ -126,17 +126,20 @@
 			                    <view class="item" @click="advSearch(index,item, 2)">
 			                        {{item.total.nowConfirm}}
 			                    </view>
-			                    <view class="item" @click="advSearch(index,item, 2)" v-if="item.today.confirm>=1000" style="margin-top:-2rpx;">
+			                    <view class="item" @click="advSearch(index,item, 2)" v-if="item.today.confirm>=1000" style="margin-top:-5rpx;">
 			                        {{item.total.confirm}}
-			                        <view class="item-confirm">
-			                            <view style="margin-top:-5rpx;"><text>较昨日：+{{item.today.confirm}}</text></view>
+			                        <view class="item-confirm" style="white-space:pre-wrap;text-align:center;">
+			                            <view style="margin-top:-5rpx;"><text>较昨日：\n+{{item.today.confirm}}</text></view>
 			                        </view>
 			                    </view>
-								<view class="item" @click="advSearch(index,item, 2)" v-else-if="item.today.confirm>0" style="margin-top:2rpx;">
+								<view class="item" @click="advSearch(index,item, 2)" v-else-if="item.today.confirm>0" style="margin-top:5rpx;">
 								    {{item.total.confirm}}
 								    <view class="item-confirm">
 										<view><text>较昨日：+</text>{{item.today.confirm}}</view>
 								    </view>
+								</view>
+								<view class="item" @click="advSearch(index,item, 2)" v-else-if="item.today.confirm==0" style="line-height:80rpx;">
+								    {{item.total.confirm}}
 								</view>
 			                    <view class="item" @click="advSearch(index,item, 2)">
 			                        {{item.total.heal}}
@@ -217,8 +220,7 @@
 	export default {
 		data() {
 			return {
-				infolist: ['国内疫情', '国外疫情', '核酸检测点','防疫政策'],
-				infolist2: [{name:'国内疫情'}, {name:'国外疫情'},{name:'核酸检测'},{name:'国内疫情'}],
+				infolist: [{name:'国内疫情'}, {name:'国外疫情'},{name:'核酸检测'},{name:'防疫政策'}],
 				curNow: 0,
 				titlelist: [{
 						name: 'scan',

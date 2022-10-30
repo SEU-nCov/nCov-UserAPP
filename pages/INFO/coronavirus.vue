@@ -25,7 +25,7 @@
         </view>
         <view class="t_item-top" :class="daytime?'daytime16':'nightime16'">
             <view class="t_item-box">
-                <view class="t_item-box-title">
+                <view class="t_item-box-title" style="margin-left:2%;">
                     统计截止<text :class="daytime?'daytimetext':'nightimetext'">{{mydatas.lastUpdateTime}}</text>
                 </view>
                 <view class="t_item" style="background-color: #fffaf7; padding-top: 30rpx; box-sizing: border-box;">
