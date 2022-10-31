@@ -14,8 +14,10 @@
 		<view style="display:block;text-align:center;align-items:center;align-content:center;">
 			<view class="border"  style="display:inline-block;align-items:center;align-content:center;">
 				<view style="display:inline-block;height:200rpx;line-height:200rpx;font-size:40px;font-weight:600;">{{this.timer}}</view>
-				<ayQrcode style="display:inline-block;margin-top:15rpx;" ref="qrcode" :modal="modal_qr" :url="rurl" @hideQrcode="hideQrcode" themeColor="#2F7931" :is_themeImg="true"
-              themeImg="../../static/school.png" :h_w_img="40"  :height="250" :width="250" />
+				<ayQrcode v-if="platform=='ios'" style="display:inline-block;margin-top:15rpx;margin-left:-50rpx;" ref="qrcode" qrcode_id="qrcode_id" :modal="modal_qr" :url="rurl" @hideQrcode="hideQrcode" themeColor="#2F7931" :is_themeImg="true"
+				themeImg="../../static/school.png" :h_w_img="40"  :height="250" :width="250" />
+				<ayQrcode v-if="platform=='android'" style="display:inline-block;margin-top:15rpx;" ref="qrcode" qrcode_id="qrcode_id" :modal="modal_qr" :url="rurl" @hideQrcode="hideQrcode" themeColor="#2F7931" :is_themeImg="true"
+				themeImg="../../static/school.png" :h_w_img="40"  :height="250" :width="250" />
 			</view>
 		</view>
 		<view style="display:block;padding-top:40rpx;"></view>
@@ -24,10 +26,12 @@
 				<view style="display:block;padding-top:20rpx;">
 					<view style="width:90%;margin-left:5%;text-align:left;background-color:white;border-radius:5px;white-space:pre-wrap;">
 						<view style="width:95%;margin-left:2.5%;">
-							<view class="card">
+							<view class="card"><!--view>目前没有判断是否核酸信息为空，后续如果需要可以补</view-->
 								<text style="color:gray;">采样点：</text><text style="position:sticky;left:30%;">{{mydata[0].addr}}\n</text>
 								<text style="color:gray;">检测时间：</text><text style="position:sticky;left:28%;">{{mydata[0].time}}\n</text>
-								<text style="color:gray;">检测结果：</text><text style="position:sticky;left:28%;">{{mydata[0].result}}\n</text>
+								<text style="color:gray;">检测结果：</text>
+									<text v-if="mydata[0].result==='阴性'" style="position:sticky;left:28%;color:limegreen;font-weight:600;">{{mydata[0].result}}\n</text>
+									<text v-if="mydata[0].result==='阳性'" style="position:sticky;left:28%;color:orange;font-weight:600;">{{mydata[0].result}}\n</text>
 							</view>
 							<view style="padding-top:10rpx;padding-bottom:15rpx;padding-left:2%;">
 								<text style="font-size:12px;color:gray;">数据来源：江苏省卫生健康委员会，反映近30天最近一次核酸检测情况，数据在不断汇聚和完善中。</text>
@@ -111,8 +115,16 @@
 		components: {
 			ayQrcode,
 		},
+		onLoad() {
+			let that = this;
+			that.getTime();
+			setInterval(() => {that.getTime()},1000)
+			that.showQrcode();//一加载生成二维码
+			that.platform=uni.getSystemInfoSync().platform;
+		},
 		data() {
 			return {
+				platform:'111111',
 				notice:'若您有近7天中高风险区旅居史(含境外)，请及时进行信息更新和风险报备。',
 				modal_qr: true,
 				rurl: '321088200012018529|321088200012018529|321088200012018529|321088200012018529|321088200012018529', //要生成的二维码值
@@ -129,13 +141,6 @@
 				{name:'新冠Vero(北京生物)3',time:'2021-12-26',institute:'南京同仁医院'}],
 				mydata:[{addr:'东南大学-高校',time:'2022-10-29 19:26:33',result:'阴性'},],
 			}
-		},
-		onLoad() {
-			let that = this;
-			that.getTime();
-			setInterval(() => {that.getTime()},1000)
-			that.showQrcode();//一加载生成二维码
-
 		},
 		methods: {
 			getTime(){

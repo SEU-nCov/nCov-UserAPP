@@ -568,7 +568,7 @@
 	color: #666;
 	float: left;
 	background: #fff;
-	margin-bottom: 90rpx;
+	margin-bottom: 10rpx;
 	}
 	
 	.item-confirm {

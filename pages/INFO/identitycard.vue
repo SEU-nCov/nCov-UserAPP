@@ -16,8 +16,8 @@
 					<view class="square" style="display:inline-block;text-align:center;">
 						<view style="display:inline-block;height:200rpx;line-height:200rpx;font-size:28px;font-weight: 600;">{{this.timer}}</view>
 						<view>
-							<!--view style="position:absolute;background-color:#89B1E4;width:460rpx;height:460rpx;border-radius:5px;margin-left:-22rpx;margin-top:-22rpx;;"></view-->
-							<view style="display:inline-block;background-color:#89B1E4;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-65rpx;"></view><!--view>给她看改成-70rpx,实装用-65rpx</view-->
+							<view v-if="platform=='ios'" style="display:inline-block;background-color:#89B1E4;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-70rpx;"></view>
+							<view v-if="platform=='android'" style="display:inline-block;background-color:#89B1E4;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-65rpx;"></view>
 							<view style="display:inline-block;margin-top:-400rpx;"><uqrcode ref="uqrcode" canvas-id="qrcode" :value="this.identity" :options="{ margin:10 }"></uqrcode></view>
 						</view>
 						<view style="display:inline-block;text-align:center;font-size:15px;padding-top:65rpx;"><text style="color:red;">*</text><text>请展示身份码</text></view>
@@ -79,8 +79,8 @@
 				<swiper-item v-for="(item,index) in relative" :key="index">
 					<view style="text-align:center;padding-top:8%;font-weight:600;">亲友码</view>
 					<view style="height:800rpx;width:100%;display:inline-block;align-items:center;justify-content:center;text-align:center;padding-top:7%;">
-						<!--view style="position:absolute;background-color:#89B1E4;width:460rpx;height:460rpx;border-radius:5px;margin-left:-22rpx;margin-top:-22rpx;;"></view-->
-						<view style="display:inline-block;background-color:skyblue;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-65rpx;"></view><!--view>给她看改成-70rpx,实装用-65rpx</view-->
+						<view v-if="platform=='ios'" style="display:inline-block;background-color:skyblue;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-70rpx;"></view>
+						<view v-if="platform=='android'" style="display:inline-block;background-color:skyblue;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-65rpx;"></view>
 						<view style="display:inline-block;margin-top:-400rpx;"><uqrcode ref="uqrcode" :canvas-id="item.user_id" :value="item.user_identity" :options="{ margin:10 }"></uqrcode></view>
 						<u-gap height="30" bgColor="white"></u-gap>
 						<view><text style="color:red;">*</text>当前展码：{{item.user_name}}</view>
@@ -102,13 +102,15 @@
         },
 		onLoad() {
 			this.getTime();
-			setInterval(() => {this.getTime()},1000)
+			setInterval(() => {this.getTime()},1000);
+			this.platform = uni.getSystemInfoSync().platform;
 		},
 		onShow() {
 			that = this;
 		},
 		data() {
 			return {
+				platform:'',
 				title:'请填写亲友信息',
 				mshow: false,
 				pshow: false,
