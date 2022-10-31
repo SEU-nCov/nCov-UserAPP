@@ -46,7 +46,11 @@
 			}
         }
         ,{
-            "path" : "pages/INFO/travelcard"
+            "path" : "pages/INFO/travelcard",
+			"style" :
+			{
+			    "navigationBarTitleText": "行程卡"
+			}
         }
         ,{
             "path" : "pages/INFO/checknuclein",

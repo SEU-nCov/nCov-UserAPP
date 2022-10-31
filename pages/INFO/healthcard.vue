@@ -12,7 +12,7 @@
 		</view>
 		<u-notice-bar :text="notice"></u-notice-bar>
 		<view style="display:block;text-align:center;align-items:center;align-content:center;">
-			<view class="border"  style="display:inline-block;align-items:center;align-content:center;">
+			<view class="border" style="display:inline-block;align-items:center;align-content:center;">
 				<view style="display:inline-block;height:200rpx;line-height:200rpx;font-size:40px;font-weight:600;">{{this.timer}}</view>
 				<ayQrcode v-if="platform=='ios'" style="display:inline-block;margin-top:15rpx;margin-left:-50rpx;" ref="qrcode" qrcode_id="qrcode_id" :modal="modal_qr" :url="rurl" @hideQrcode="hideQrcode" themeColor="#2F7931" :is_themeImg="true"
 				themeImg="../../static/school.png" :h_w_img="40"  :height="250" :width="250" />
@@ -183,8 +183,7 @@
 				let str = num;
 				str = num.toString().replace(/^(\d{3})\d{4}(\d{4})/,'$1***$2')
 				return str;
-			}
-			
+			}	
 		}
 	}
 </script>

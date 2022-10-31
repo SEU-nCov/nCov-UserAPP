@@ -3,6 +3,7 @@
 		<view class="bg">
 			<view class="cover">
 				<div style="height:70rpx"></div>
+				<button class="switch" @click="switchpeople">切换用户</button>
 				<div><text class="name">核酸检测结果</text></div>
 				<div style="height:15rpx"></div>
 				<div><text class="identity">身份证号：{{this.identity | hide}}</text></div>
@@ -31,11 +32,18 @@
 				</view>
 			</view>
 		</view>
+		<u-picker :show="show" :columns="columns" :closeOnClickOverlay="true" @confirm="confirm" @cancel="cancel"></u-picker>
 	</view>
 </template>
 
 <script>
 	export default {
+		onLoad() {
+			let str='宗琦薇';
+			this.columns[0][0]=str;
+			let strr='时屿轩';
+			this.columns[0][1]=strr;
+		},
 		data() {
 			return {
 				identity:'321088200012018529',
@@ -48,10 +56,21 @@
 				{name:'宗琦薇7',addr:'东南大学-高校',time:'2022-10-24 19:26:33',result:'阴性'},
 				{name:'宗琦薇8',addr:'东南大学-高校',time:'2022-10-24 19:26:33',result:'阴性'}],
 				//mydata:[],
+				columns:[[]],
+				show:false,
 			}
 		},
 		methods: {
-			
+			switchpeople(){
+				this.show=true;
+			},
+			cancel(){
+				this.show=false;
+			},
+			confirm() {
+				this.show=false;
+				//等待接口
+			},
 		},
 		filters: {
 			hide(num){
@@ -68,7 +87,7 @@
 		height: 300rpx;
 		width: 100%;
 		z-index: -1;
-		background-image: url("../../static/nanjing.png");
+		background-image: url("../../static/nanjing.jpg");
 		background-color:rgb();
 		background-size: 100% 100%;
 	}
@@ -98,5 +117,19 @@
 		background-size: 100% 100%;
 		padding-left:5%;
 		padding-right:5%;
+	}
+	.switch{
+		float:right;
+		margin-right:5%;
+		width:25%;
+		height:60rpx;
+		line-height:60rpx;
+		font-size:14px;
+		color:white;
+		background-color:rgb(0,0,0,0);
+		border:1px solid white;
+	}
+	button:after{
+		border:none;
 	}
 </style>
