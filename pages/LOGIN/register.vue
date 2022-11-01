@@ -30,7 +30,7 @@
 						<view class="login-form-items-title">
 							<text>验证码</text><text style="color:red">*</text>
 						</view>
-						<input v-model="verifyCode" type="password" class="login-input" placeholder="请输入验证码">
+						<input v-model="verifyCode" type="text" class="login-input" placeholder="请输入验证码">
 						<button class="send" @click="verify">发送</button>
 					</view>
 				</view>
@@ -92,7 +92,7 @@
 			verify(){
 				if(checkPhone(this.phone)){
 					uni.request({
-						url:this.$BASE_URL.BASE_URL+'/sendSMS',
+						url:this.$BASE_URL.BASE_URL+'/getSMN',
 						method:'POST',
 						header:{
 							'Content-Type': 'application/json',
@@ -121,7 +121,7 @@
 			register(){
 				if(checkPwd(this.password)){
 					if(checkidentity(this.identity)){
-						//if(this.temp==this.verifyCode){
+						if(this.temp==this.verifyCode){
 							uni.request({
 								url:this.$BASE_URL.BASE_URL+'/userRegister',
 								method:'POST',
@@ -171,13 +171,12 @@
 									}
 								}
 							})							
-						/*}
-						else{
+						}else{
 							uni.showToast({
 								icon:"none",
 								title:"请输入正确的验证码"
 							})						
-						}*/
+						}
 					}					
 				}
 			}

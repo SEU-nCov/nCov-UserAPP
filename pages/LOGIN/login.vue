@@ -198,9 +198,9 @@
 			return{
 				showservice: false,
 				showprivacy: false,
-				check:false,
-				password: '',
-				phone: '',
+				check:true,
+				password: 'zongqiwei2333',
+				phone: '18362075861',
 			};
 		},
 		methods:{
@@ -229,9 +229,6 @@
 				})
 			},
 			login(){
-				uni.switchTab({
-					url:"../INFO/nCoVinfo"
-				})
 				if(this.check==false){
 					uni.showToast({
 						icon:"none",
@@ -253,7 +250,9 @@
 								this.$user.memberObj.user_id=res.data.data.user_id;
 								this.$user.memberObj.user_phone=res.data.data.phone;
 								this.$user.memberObj.user_name=res.data.data.user_name;
-								this.$user.memberObj.user_identity=res.data.data.user_identity;
+								this.$user.memberObj.user_identity=res.data.data.user_identify;
+								this.$user.memberObj.user_codecolor=res.data.data.user_signcolor;
+								this.$user.memberObj.user_timeleft=res.data.data.sign_timeleft;
 								uni.switchTab({
 									url:"../INFO/nCoVinfo"
 								})

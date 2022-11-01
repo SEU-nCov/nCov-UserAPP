@@ -26,7 +26,7 @@
 						<view class="login-form-items-title">
 							<text>验证码</text><text style="color:red">*</text>
 						</view>
-						<input v-model="verifyCode" type="password" class="login-input" placeholder="请输入验证码">
+						<input v-model="verifyCode" type="text" class="login-input" placeholder="请输入验证码">
 						<button class="send" @click="verify">发送</button>
 					</view>
 				</view>
@@ -86,7 +86,7 @@
 			verify(){
 				if(checkPhone(this.phone)){
 					uni.request({
-						url:this.$BASE_URL.BASE_URL+'/sendSMS',
+						url:this.$BASE_URL.BASE_URL+'/getSMN',
 						method:'POST',
 						header:{
 							'Content-Type': 'application/json',
@@ -117,7 +117,7 @@
 					if(checkdual(this.passWord,this.repassWord)){
 						if(this.verifyCode==this.temp){
 							uni.request({
-								url:this.$BASE_URL.BASE_URL+'/changePassword',
+								url:this.$BASE_URL.BASE_URL+'/userChangePassword',
 								method:'POST',
 								header:{
 									'Content-Type': 'application/json',

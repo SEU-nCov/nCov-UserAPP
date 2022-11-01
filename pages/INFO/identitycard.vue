@@ -18,7 +18,7 @@
 						<view>
 							<view v-if="platform=='ios'" style="display:inline-block;background-color:#89B1E4;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-70rpx;"></view>
 							<view v-if="platform=='android'" style="display:inline-block;background-color:#89B1E4;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-65rpx;"></view>
-							<view style="display:inline-block;margin-top:-400rpx;"><uqrcode ref="uqrcode" canvas-id="qrcode" :value="this.identity" :options="{ margin:10 }"></uqrcode></view>
+							<view style="display:inline-block;margin-top:-400rpx;"><uqrcode ref="uqrcode" canvas-id="qrcode" :value="this.rurl" :options="{ margin:10 }"></uqrcode></view>
 						</view>
 						<view style="display:inline-block;text-align:center;font-size:15px;padding-top:65rpx;"><text style="color:red;">*</text><text>请展示身份码</text></view>
 						<view class="tail" style="white-space:pre;">
@@ -74,14 +74,14 @@
 				<!-- #endif -->				
 			</view>
 		</u-modal>
-		<u-popup :show="pshow" mode="center" :round="5" :customStyle="{width:600+'rpx',height:800+'rpx'}"  @close="close">
+		<u-popup v-if="relative[0]!=null" :show="pshow" mode="center" :round="5" :customStyle="{width:600+'rpx',height:800+'rpx'}"  @close="close">
 			<swiper style="height:100%;width:100%;">
 				<swiper-item v-for="(item,index) in relative" :key="index">
 					<view style="text-align:center;padding-top:8%;font-weight:600;">亲友码</view>
 					<view style="height:800rpx;width:100%;display:inline-block;align-items:center;justify-content:center;text-align:center;padding-top:7%;">
 						<view v-if="platform=='ios'" style="display:inline-block;background-color:skyblue;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-70rpx;"></view>
 						<view v-if="platform=='android'" style="display:inline-block;background-color:skyblue;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-65rpx;"></view>
-						<view style="display:inline-block;margin-top:-400rpx;"><uqrcode ref="uqrcode" :canvas-id="item.user_id" :value="item.user_identity" :options="{ margin:10 }"></uqrcode></view>
+						<view style="display:inline-block;margin-top:-400rpx;"><uqrcode ref="uqrcode" :canvas-id="item.user_identify" :value="item.user_identify" :options="{ margin:10 }"></uqrcode></view>
 						<u-gap height="30" bgColor="white"></u-gap>
 						<view><text style="color:red;">*</text>当前展码：{{item.user_name}}</view>
 						<u-gap height="20" bgColor="white"></u-gap>
@@ -104,6 +104,7 @@
 			this.getTime();
 			setInterval(() => {this.getTime()},1000);
 			this.platform = uni.getSystemInfoSync().platform;
+			this.getrelative();
 		},
 		onShow() {
 			that = this;
@@ -115,17 +116,43 @@
 				mshow: false,
 				pshow: false,
 				notice:'温馨提示：请注意核对当前展码用户信息，是否与核酸检测用户一致，以免发生错误。',
-				identity: '321088200012018529',
+				identity: this.$user.memberObj.user_identity,
 				timer: '',
-				name:'宗琦薇',
+				name:this.$user.memberObj.user_name,
+				//rurl待定
+				rurl:'321088200012018529',
 				rname:'',
 				ridentity:'',
 				rphone:'',
-				relative:[{user_id:'1',user_name:'宗琦薇1',user_identity:'111111111111111111'},
-				{user_id:'2',user_name:'宗琦薇2',user_identity:'321088200012018527'},],
+				relative:[],
 			}
 		},
 		methods: {
+			getrelative(){
+				//获取亲友
+				uni.request({
+					url:this.$BASE_URL.BASE_URL+'/getRelativebyid',
+					method:'POST',
+					header:{
+						'Content-Type': 'application/json',
+					},
+					data:{
+						'user_id':this.$user.memberObj.user_id,
+					},
+					success: (res) => {
+						if(res.data.code==200){
+							that.relative=JSON.parse(JSON.stringify(res.data.data));
+						} else if(res.data.code==201){
+							that.relative[0]=null;
+						} else{
+							uni.showToast({
+								icon:"none",
+								title:"获取亲友失败"
+							})
+						}
+					}
+				});
+			},
 			getTime(){
 				let time = new Date();
 				let year = time.getFullYear();
@@ -153,10 +180,37 @@
 			},
 			confirm(){
 				this.mshow=false;
-				uni.showToast({
-					icon:"none",
-					title:"添加亲友成功，可使用亲友展码功能查看亲友身份码",
-				})
+				//添加亲友
+				uni.request({
+					url:this.$BASE_URL.BASE_URL+'/addRelativebyid',
+					method:'POST',
+					header:{
+						'Content-Type': 'application/json',
+					},
+					data:{
+						'user_name':this.rname,
+						'user_identify':this.ridentity,
+						'phone':this.rphone,
+						'user_id':this.$user.memberObj.user_id,
+					},
+					success: (res) => {
+						if(res.data.code==200){
+							this.rname='';
+							this.ridentity='';
+							this.rphone='';
+							uni.showToast({
+								icon:"none",
+								title:"添加亲友成功，可使用亲友展码功能查看亲友身份码",
+							})
+							that.getrelative();
+						} else{
+							uni.showToast({
+								icon:"none",
+								title:"添加亲友失败，请重试"
+							})
+						}
+					}
+				});
 			},
 			cancel(){
 				this.mshow=false;

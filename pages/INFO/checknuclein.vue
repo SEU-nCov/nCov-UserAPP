@@ -1,6 +1,6 @@
 <template>
 	<view style="background-color:#EDEDED;position:absolute;width:100%;height:100%;">
-		<view class="bg">
+		<view class="bg" :key="change">
 			<view class="cover">
 				<div style="height:70rpx"></div>
 				<button class="switch" @click="switchpeople">切换用户</button>
@@ -12,11 +12,11 @@
 			<view v-if="this.mydata[0]!=null">
 				<view v-for="(item,index) in mydata" :key="index">
 					<view class="card">
-						<text style="color:gray;">姓名：</text><text style="position:sticky;left:28%;">{{item.name}}\n</text>
-						<text style="color:gray;">采样点：</text><text style="position:sticky;left:28%;">{{item.addr}}\n</text>
-						<text style="color:gray;">检测时间：</text><text style="position:sticky;left:28%;">{{item.time}}\n</text>
-						<text style="color:gray;">检测结果：</text><text v-if="item.result=='阴性'" style="position:sticky;left:28%;color:limegreen;font-weight:600;">{{item.result}}\n</text>
-						<text v-if="item.result=='阳性'" style="position:sticky;left:28%;color:orange;font-weight:600;">{{item.result}}\n</text>
+						<text style="color:gray;">姓名：</text><text style="position:sticky;left:28%;">{{item.user_name}}\n</text>
+						<text style="color:gray;">采样点：</text><text style="position:sticky;left:28%;">{{item.nat_pointname}}\n</text>
+						<text style="color:gray;">检测时间：</text><text style="position:sticky;left:28%;">{{item.nat_time | cut}}\n</text>
+						<text style="color:gray;">检测结果：</text><text v-if="item.nat_result=='阴性'" style="position:sticky;left:28%;color:limegreen;font-weight:600;">{{item.nat_result}}\n</text>
+						<text v-if="item.nat_result=='阳性'" style="position:sticky;left:28%;color:orange;font-weight:600;">{{item.nat_result}}\n</text>
 					</view>
 					<u-gap height="20" bgColor="#EDEDED"></u-gap>
 				</view>
@@ -37,39 +37,99 @@
 </template>
 
 <script>
+	let that = null
 	export default {
+		onShow() {
+			that = this;
+		},
 		onLoad() {
-			let str='宗琦薇';
-			this.columns[0][0]=str;
-			let strr='时屿轩';
-			this.columns[0][1]=strr;
+			//获取亲友
+			uni.request({
+				url:this.$BASE_URL.BASE_URL+'/getRelativebyid',
+				method:'POST',
+				header:{
+					'Content-Type': 'application/json',
+				},
+				data:{
+					'user_id':this.$user.memberObj.user_id,
+				},
+				success: (res) => {
+					if(res.data.code==200){
+						let that = this;
+						that.relativedata=JSON.parse(JSON.stringify(res.data.data));
+						that.update();
+					} else if(res.data.code==201){
+						that.columns[0].push('暂无亲友');
+					} else{
+						uni.showToast({
+							icon:"none",
+							title:"获取亲友失败"
+						})
+					}
+				},
+			});
+			//this.update();
 		},
 		data() {
 			return {
-				identity:'321088200012018529',
-				mydata:[{name:'宗琦薇1',addr:'东南大学-高校',time:'2022-10-29 19:26:33',result:'阴性'},
-				{name:'宗琦薇2',addr:'东南大学-高校',time:'2022-10-27 19:26:33',result:'阴性'},
-				{name:'宗琦薇3',addr:'东南大学-高校',time:'2022-10-26 19:26:33',result:'阳性'},
-				{name:'宗琦薇4',addr:'东南大学-高校',time:'2022-10-25 19:26:33',result:'阴性'},
-				{name:'宗琦薇5',addr:'东南大学-高校',time:'2022-10-24 19:26:33',result:'阴性'},
-				{name:'宗琦薇6',addr:'东南大学-高校',time:'2022-10-24 19:26:33',result:'阴性'},
-				{name:'宗琦薇7',addr:'东南大学-高校',time:'2022-10-24 19:26:33',result:'阴性'},
-				{name:'宗琦薇8',addr:'东南大学-高校',time:'2022-10-24 19:26:33',result:'阴性'}],
-				//mydata:[],
-				columns:[[]],
+				identity:this.$user.memberObj.user_identity,
+				mydata:this.$user.memberObj.user_nat,
+				relativedata:[],
+				columns:[['本人']],
 				show:false,
+				change:true,
 			}
 		},
 		methods: {
+			update(){
+				let that = this;
+				for(let i=0;i<that.relativedata.length;i++){
+					that.columns[0].push(that.relativedata[i].user_name);
+				}
+			},
 			switchpeople(){
 				this.show=true;
 			},
 			cancel(){
 				this.show=false;
 			},
-			confirm() {
+			confirm(e) {
+				if(that.columns[0][1]=='暂无亲友'){
+					this.mydata=this.$user.memberObj.user_nat;
+				} else {
+					let num = e.indexs[0];
+					if(num==0){
+						this.mydata=this.$user.memberObj.user_nat;
+					} else {
+						let id = this.relativedata[num-1].user_id;
+						uni.request({
+							url:this.$BASE_URL.BASE_URL+'/getNatResultbyid',
+							method:'POST',
+							header:{
+								'Content-Type': 'application/json',
+							},
+							data:{
+								'user_id':id,
+							},
+							success: (res) => {
+								//console.log(res.data.code);
+								if(res.data.code==200){
+									let that = this;
+									that.mydata=JSON.parse(JSON.stringify(res.data.data));
+								} else if(res.data.code==201){
+									that.mydata=[];
+								} else{
+									uni.showToast({
+										icon:"none",
+										title:"error"
+									})
+								}
+							}
+						});
+					}
+				}
+				e.indexs[0]=0;
 				this.show=false;
-				//等待接口
 			},
 		},
 		filters: {
@@ -77,6 +137,10 @@
 				let str = num;
 				str = num.toString().replace(/^(.{6})(?:\w+)(.{4})$/ , '$1********$2')
 				return str;
+			},
+			cut(value){
+				var temp = value.substring(0,value.lastIndexOf('.'))
+				return temp.replace(/T/g,' ');
 			}
 		},
 	}
