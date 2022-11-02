@@ -12,28 +12,27 @@
 			        <text class="grid-text">{{listItem.title}}</text>
 			    </u-grid-item>
 			</u-grid>
+		<view class="top-box" style="border-top:1px solid white;">
+			<view class="top-box-bg"></view>
+			<view class="top-box-title">
+				新型冠状病毒肺炎
+			</view>
+			<view class="top-box-but">
+				疫情实时追踪
+			</view>
+			<view class="top-box-bot">
+				数据来源：国家及各地卫健委每日信息发布<image @click="gocortxt" src="../../static/yiwen.png" mode=""></image>
+			</view>
+		</view>
 		</div>
-		<div style="background-color:#3490FD;">
-			<!--u-subsection :list="infolist" :current="curNow" bgColor="#3490FD" fontSize="14px" inactiveColor="white" height="200" @change="sectionChange"></u-subsection-->
+		<div style="background-color:#2A88FA;">
 			<u-tabs :list="infolist" :current="curNow" lineColor="white" :scrollable="false" :activeStyle="{color:'white',fontSize:'14px'}" :inactiveStyle="{color:'white',fontSize:'14px'}" :lineWidth="50" @change="sectionChange"></u-tabs>
 		</div>
 		<view v-if="curNow==0">
 			<view class="content" :class="daytime?'daytime':'nightime'">
-			    <view class="top-box">
-			        <view class="top-box-bg"></view>
-			        <view class="top-box-title">
-			            新型冠状病毒肺炎
-			        </view>
-			        <view class="top-box-but">
-			            疫情实时追踪
-			        </view>
-			        <view class="top-box-bot">
-			            数据来源：国家及各地卫健委每日信息发布<image @click="gocortxt" src="../../static/yiwen.png" mode=""></image>
-			        </view>
-			    </view>
 			    <view class="t_item-top" :class="daytime?'daytime16':'nightime16'">
 			        <view class="t_item-box" v-if="mydata.chinaAdd!=null && mydata.chinaTotal!=null">
-			            <view class="t_item-box-title" >
+			            <view class="t_item-box-title">
 			                统计截止<text :class="daytime?'daytimetext':'nightimetext'">{{mydata.lastUpdateTime}}</text> ；更新于<text v-if="time.days >0" :class="daytime?'daytimetext':'nightimetext'">{{time.days}}天</text><text v-if="time.hours>0" :class="daytime?'daytimetext':'nightimetext'">{{time.hours}}小时</text>  <text :class="daytime?'daytimetext':'nightimetext'">{{time.minutes}}分钟</text>前
 			            </view>
 			            <view class="t_item" style="background-color: #fffaf7;">
@@ -179,8 +178,6 @@
 			            愿疫情早日散去，山河无恙，天下太平。
 			        </view>
 			    </view>
-			    
-			    
 			    <uni-popup ref="popup" type="center" class="popup-center">
 			        <view class="popup-box">
 			            <image class="pop-coles" src="../../static/pop-coles.png" mode="" @click="closeCommon"></image>
@@ -204,7 +201,111 @@
 			</view>
 		</view>
 		<view v-if="curNow==1">
-			1
+			<view class="t_content-f">
+				<view class="t_item-top-f" :class="daytime?'daytime16':'nightime16'">
+					<view class="t_item-box-f">
+						<view class="t_item-box-title-f" style="margin-left:3%;">
+							统计截止<text :class="daytime?'daytimetext':'nightimetext'">{{this.overseaLastUpdateTime}}</text>；更新于<text v-if="ftime.days >0" :class="daytime?'daytimetext':'nightimetext'">{{ftime.days}}天</text><text v-if="ftime.hours>0" :class="daytime?'daytimetext':'nightimetext'">{{ftime.hours}}小时</text>  <text :class="daytime?'daytimetext':'nightimetext'">{{ftime.minutes}}分钟</text>前
+						</view>
+						<view class="t_item-f" style="background-color: #fffaf7;">
+							<view class="t_item-addnum-f">较昨日：<text style="color: #e57631;"><text v-if="overseadata[0].compare>0">+</text>{{overseadata[0].compare}}</text></view>
+							<view class="t_item-nownum-f" style="color: #e57631;">{{overseadata[0].num}}</view>
+							<view class="t_item-nowtxt-f">累计确诊</view>
+						</view>
+						
+						<view class="t_item-f" style="background-color: #fef7ff;">
+							<view class="t_item-addnum-f">较昨日：<text style="color: #ae3ac6;"><text v-if="overseadata[1].compare>0">+</text>{{overseadata[1].compare}}</text></view>
+							<view class="t_item-nownum-f" style="color: #ae3ac6;">{{overseadata[1].num}}</view>
+							<view class="t_item-nowtxt-f">现有确诊</view>
+						</view>
+					</view>
+				</view>
+				<view class="t_item-top-f" style="padding-bottom: 20px;" :class="daytime?'daytime16':'nightime16'">
+					<view class="t_item-box-f">
+						<view class="t_item-f" style="background-color: #fff8f8;">
+							<view class="t_item-addnum-f">较昨日：<text style="color: #be2121;"><text v-if="overseadata[2].compare>0">+</text>{{overseadata[2].compare}}</text></view>
+							<view class="t_item-nownum-f" style="color: #be2121;">{{overseadata[2].num}}</view>
+							<view class="t_item-nowtxt-f">累计治愈</view>
+						</view>
+						<view class="t_item-f" style="background-color: #f3f6f8;">
+							<view class="t_item-addnum-f">较昨日：<text style="color: #4e5a65;"><text v-if="overseadata[3].compare>0">+</text>{{overseadata[3].compare}}</text></view>
+							<view class="t_item-nownum-f" style="color: #4e5a65;">{{overseadata[3].num}}</view>
+							<view class="t_item-nowtxt-f">累计死亡</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="citylist-f" :class="daytime?'daytimetop16':'nightimetop16'">
+			    <view class="citylist-name">
+			        <view class="citylist-name-left">
+			            <view class="title" style="padding-left:15rpx;" :class="daytime?'daytimetext':'nightimetext'">
+			                全球疫情
+			            </view>
+			            <view class="txt" style="padding-left:15rpx;">
+			                7:00-10:00为更新高峰，数据如有滞后请谅解。
+			            </view>
+			        </view>
+			    </view>
+				<view class="citylist-title-f">
+					<text class="item-f" style="background-color: #f5f5f5; color: #222222;">地区</text>
+					<text class="item-f" style="background-color: #fcf2e8; color: #ff5d00;">新增</text>
+					<text class="item-f" style="background-color: #fdeeee; color: #f55253;">累计</text>
+					<text class="item-f" style="background-color: #e9f7ec; color: #178b05;">治愈</text>
+					<text class="item-f" style="background-color: #f3f6f8; color: #4e5a65;">死亡</text>
+				</view>
+				<view class="citylist-box-f">
+					<block v-for="(item, index) in foreigndata" :key='index'>
+						<view class="citylist-box-item-f" :class="daytime?'daytimebot16':' nightimebot16'">
+							<view class="item-f" v-if="item.children[0]!=null" @click="advSearch(index,item, 2)">
+								{{item.name}}
+							</view>
+							<view class="item-f" v-if="item.children[0]==null" style="color:black;" @click="advSearch(index,item, 2)">
+								{{item.name}}
+							</view>
+							<view class="item-f" @click="advSearch(index,item, 2)" v-if="item.today.confirm!=null">
+								{{item.today.confirm}}
+							</view>
+							<view class="item-f" @click="advSearch(index,item, 2)" v-if="item.today.confirm==null">
+								0
+							</view>
+							<view class="item-f" @click="advSearch(index,item, 2)">
+								{{item.total.confirm}}
+							</view>
+							<view class="item-f" @click="advSearch(index,item, 2)">
+								{{item.total.heal}}
+							</view>
+							<view class="item-f" @click="advSearch(index,item, 2)">
+								{{item.total.dead}}
+							</view>
+						</view>
+						
+						<view class="product-box-left-item-sub-f" v-if="flag[index]">
+							<block v-for="(items, indexs) in item.children" :key="indexs" >
+								<view class="product-box-left-item-f" :class="daytime?'daytimebot16':' nightimebot16'">
+									<view class="product-box-left-item-item-f">
+										{{items.name}}
+									</view>
+									<view class="product-box-left-item-item-f">
+										{{items.today.confirm}}
+									</view>
+									<view class="product-box-left-item-item-f">
+										{{items.total.confirm}}
+									</view>
+									<view class="product-box-left-item-item-f">
+										{{items.total.heal}}
+									</view>
+									<view class="product-box-left-item-item-f">
+										{{items.total.dead}}
+									</view>
+								</view>
+							</block>
+						</view>    
+					</block>
+				</view>
+				<view class="zqw" :class="daytime?'daytimetop16':'nightimetop16'" @click="popzqw">
+				        愿疫情早日散去，山河无恙，天下太平。
+				</view>
+			</view>
 		</view>
 		<view v-if="curNow==2">
 			2
@@ -245,17 +346,20 @@
 				},
 				mydata: {},
 				time: {},
+				ftime: {},
 				flag:[],
 				daytime:true,
 				arealist:[],
 				middlelist:[],
 				heightlist:[],
+				foreigndata: {},
+				overseaLastUpdateTime:'',
+				overseadata:[{name:'累计确诊',num:'',compare:''},{name:'累计治愈',num:'',compare:''},{name:'累计死亡',num:'',compare:''},{name:'累计治愈',num:'',compare:''}],
 			}
 		},
-		onLoad() {
-		    this.getLocalShop();
-		},
 		onShow() {
+			this.getLocalShop();
+			this.getForeignShop();
 		    let that = this;
 		    //that.daytime = uni.getStorageSync('daytime');
 		    uni.setNavigationBarColor({
@@ -345,6 +449,44 @@
 			        }
 			    })
 			},
+			getForeignShop() {
+			    let that = this;
+			    uni.request({
+			        url: 'https://c.m.163.com/ug/api/wuhan/app/data/list-total',
+			        method: 'GET',
+			        success: res => {
+			            that.foreigndata = res.data.data.areaTree;
+						that.overseaLastUpdateTime = res.data.data.overseaLastUpdateTime;
+						let num=0;let numadd=0;let dead=0;let deadadd=0;
+						let heal=0;let healadd=0;let current=0;let currentadd=0;
+						for(let i=0;i<that.foreigndata.length;i++){
+							if(that.foreigndata[i].name!='中国'){
+								num+=that.foreigndata[i].total.confirm;
+								numadd+=that.foreigndata[i].today.confirm;
+								dead+=that.foreigndata[i].total.dead;
+								deadadd+=that.foreigndata[i].today.dead;
+								heal+=that.foreigndata[i].total.heal;
+								healadd+=that.foreigndata[i].today.heal;
+							}
+						}
+						current=num-dead-heal;
+						currentadd=numadd-deadadd-healadd;
+						that.overseadata[0].num=num;
+						that.overseadata[1].num=current;
+						that.overseadata[2].num=heal;
+						that.overseadata[3].num=dead;
+						that.overseadata[0].compare=numadd;
+						that.overseadata[1].compare=currentadd;
+						that.overseadata[2].compare=healadd;
+						that.overseadata[3].compare=deadadd;
+						let timestamp = ((Date.parse(new Date())) - (new Date(that.overseaLastUpdateTime)).valueOf()) / 1000;
+						that.ftime = this.formatSecond(timestamp)
+			        },
+			        fail() {
+			
+			        }
+			    })
+			},
 			formatSecond(second) {
 			    const days = Math.floor(second / 86400);
 			    const hours = Math.floor((second % 86400) / 3600);
@@ -391,7 +533,7 @@
 	}
 	
 	.t_item-top {
-	position: absolute;
+	position: sticky;
 	width: 100%;
 	left: 0;
 	top: 352rpx;
@@ -400,9 +542,6 @@
 	overflow: hidden;
 	background-color: #fff;
 	padding-bottom: 30rpx;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	padding-bottom: 50rpx;
 	}
 	
 	.t_item-box-title {
@@ -461,9 +600,9 @@
 	}
 	
 	.citylist {
-	position: absolute;
+	position: sticky;
 	left: 0;
-	top: 936rpx;
+	top: 0;
 	float: left;
 	width: 100%;
 	height: auto;
@@ -559,6 +698,127 @@
 	box-sizing: border-box;
 	}
 	
+	/*******************************************/
+	.citylist-f {
+	position: sticky;
+	left: 0;
+	top: 0;
+	float: left;
+	width: 100%;
+	height: auto;
+	background-color: #fff;
+	box-sizing: border-box;
+	}
+	
+	.citylist-title-f {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	height: 80rpx;
+	line-height: 80rpx;
+	}
+	
+	.citylist-title-f .item-f {
+	float: left;
+	width: 20%;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	background-color: #fff;
+	}
+	
+	.citylist-title-f .item-f:nth-child(1) {
+	width: 20%;
+	}
+	.citylist-title-f .item-f:nth-child(2) {
+	width: 18%;
+	}
+	.citylist-title-f .item-f:nth-child(3) {
+	width: 22%;
+	}
+	.citylist-title-f .item-f:nth-child(4) {
+	width: 22%;
+	}
+	.citylist-title-f .item-f:last-child {
+	width: 18%;
+	}
+	
+	.citylist-box-f {
+	width: 100%;
+	box-sizing: border-box;
+	}
+	
+	.citylist-box-item-f {
+	float: left;
+	width: 100%;
+	height: 125rpx;//29w
+	font-size: 28rpx;
+	border-bottom: 1rpx solid #f3f3f3;
+	box-sizing: border-box;
+	overflow: hidden;
+	}
+	
+	.citylist-box-item-f .item-f:first-child {
+	color: #4180f1;
+	font-size: 15px;
+	}
+	
+	.citylist-box-item-f .item-f {
+	float: left;
+	width: 20%;
+	text-align: center;
+	}
+	
+	.citylist-box-item-f .item-f:nth-child(2) {
+	width: 18%;
+	}
+	.citylist-box-item-f .item-f:nth-child(3) {
+	width: 22%;
+	}
+	.citylist-box-item-f .item-f:nth-child(4) {
+	width: 22%;
+	}
+	.citylist-box-item-f .item-f:last-child {
+	width: 18%;
+	}
+	
+	.citylist-box-item-f .item-f:nth-child(1),
+	.citylist-box-item-f .item-f:nth-child(2),
+	.citylist-box-item-f .item-f:nth-child(3),
+	.citylist-box-item-f .item-f:nth-child(4),
+	.citylist-box-item-f .item-f:nth-child(5){
+	line-height: 120rpx;
+	}
+	
+	.product-box-left-item-f {
+	float: left;
+	width: 100%;
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 28rpx;
+	color: #666;
+	overflow:scroll;
+	border-bottom: 1rpx solid #f2f7f7;
+	}
+	.product-box-left-item-item-f {
+	float: left;
+	width: 18%;
+	text-align: center;
+	}
+	.product-box-left-item-item-f:nth-child(1){
+	width: 20%;
+	}
+	.product-box-left-item-item-f:nth-child(3){
+	width: 22%;
+	}
+	.product-box-left-item-item-f:nth-child(4){
+	width: 22%;
+	}
+	.product-box-left-item-item-f:nth-child(5){
+	width: 18%;
+	}
+	/*******************************************/
+	
 	.zqw {
 	width: 100%;
 	height: 120rpx;
@@ -586,6 +846,7 @@
 	min-height: 60rpx;
 	line-height: 60rpx;
 	font-size: 28rpx;
+	overflow:scroll;
 	color: #666;
 	border-bottom: 1rpx solid #f2f7f7;
 	}
@@ -609,7 +870,7 @@
 	.top-box {
 	position: relative;
 	width: 100%;
-	height: 400rpx;
+	height: 350rpx;
 	/* overflow: hidden; */
 	/* background-size: cover; */
 	}
@@ -647,7 +908,7 @@
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-	bottom: 90rpx;
+	bottom: 50rpx;
 	width: 100%;
 	text-align: center;
 	color: #fff;
@@ -697,15 +958,15 @@
 	position: relative;
 	}
 	.popup-box-box {
-	 width: 100%;
-	        height: 450rpx;
-	        border-radius: 16rpx;
-	        background-color: #fff;
-	        overflow-x: hidden;
-	        overflow-y: scroll;
-	        z-index: 29;
-	        padding: 40rpx;
-	        box-sizing: border-box;
+	width: 100%;
+	height: 450rpx;
+	border-radius: 16rpx;
+	background-color: #fff;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	z-index: 29;
+	padding: 40rpx;
+	box-sizing: border-box;
 	}
 	.popup-box-box-item {
 	float: left;
@@ -754,5 +1015,63 @@
 	right: 0;
 	width: 80rpx;
 	height: 80rpx;
+	}
+	
+	/************************************/
+	/************************************/
+	
+	.t_item-top-f {
+	    width: 100%;
+	    height: 30%;
+	    overflow: hidden;
+	    background-color: #fff;
+	    padding-bottom: 10rpx;
+	}
+	.t_item-box-title-f {
+	    width: 100%;
+	    font-size: 28rpx;
+	    color: #666;
+	    padding: 25rpx 0rpx;
+	}
+	.t_item-box-title-f text {
+	    color: #222;
+	}
+	.t_item-box-f {
+	    width: 100%;
+	    height: auto;
+	    padding: 0 10rpx;
+	    box-sizing: border-box;
+	}
+	.t_item-f {
+		border-radius: 5px;
+	    float: left;
+	    width: 49%;
+	    height: 150rpx;
+	    text-align: center;
+	    background-color: #fff;
+	    margin: .3%;
+	    transform: scale(.97);
+	}
+	.t_item-addnum-f {
+	    float: left;
+	    width: 100%;
+	    color: #666;
+	    text-align: center;
+	    font-size: 28rpx;
+	    margin: 5rpx auto 0;
+	}
+	.t_item-nownum-f {
+	    float: left;
+	    width: 100%;
+	    color: #000;
+	    text-align: center;
+	    font-size: 48rpx;
+	}
+	.t_item-nowtxt-f {
+	    float: left;
+	    width: 100%;
+	    color: #000;
+	    text-align: center;
+	    font-size: 28rpx;
 	}
 </style>

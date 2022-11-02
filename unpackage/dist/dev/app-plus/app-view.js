@@ -1058,16 +1058,57 @@ var render = function() {
               )
             }),
             1
+          ),
+          _c(
+            "uni-view",
+            {
+              staticClass: _vm._$g(6, "sc"),
+              staticStyle: { "border-top": "1px solid white" },
+              attrs: { _i: 6 }
+            },
+            [
+              _c("uni-view", {
+                staticClass: _vm._$g(7, "sc"),
+                attrs: { _i: 7 }
+              }),
+              _c(
+                "uni-view",
+                { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
+                [_vm._v("新型冠状病毒肺炎")]
+              ),
+              _c(
+                "uni-view",
+                { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
+                [_vm._v("疫情实时追踪")]
+              ),
+              _c(
+                "uni-view",
+                { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
+                [
+                  _vm._v("数据来源：国家及各地卫健委每日信息发布"),
+                  _c("v-uni-image", {
+                    attrs: { src: _vm._$g(11, "a-src"), mode: "", _i: 11 },
+                    on: {
+                      click: function($event) {
+                        return _vm.$handleViewEvent($event)
+                      }
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
           )
         ],
         1
       ),
       _c(
         "div",
-        { staticStyle: { "background-color": "#3490FD" }, attrs: { _i: 6 } },
+        { staticStyle: { "background-color": "#2A88FA" }, attrs: { _i: 12 } },
         [
           _c("u-tabs", {
-            attrs: { _i: 7 },
+            attrs: { _i: 13 },
             on: {
               change: function($event) {
                 return _vm.$handleViewEvent($event)
@@ -1077,60 +1118,19 @@ var render = function() {
         ],
         1
       ),
-      _vm._$g(8, "i")
+      _vm._$g(14, "i")
         ? _c(
             "uni-view",
-            { attrs: { _i: 8 } },
+            { attrs: { _i: 14 } },
             [
               _c(
                 "uni-view",
                 {
-                  staticClass: _vm._$g(9, "sc"),
-                  class: _vm._$g(9, "c"),
-                  attrs: { _i: 9 }
+                  staticClass: _vm._$g(15, "sc"),
+                  class: _vm._$g(15, "c"),
+                  attrs: { _i: 15 }
                 },
                 [
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
-                    [
-                      _c("uni-view", {
-                        staticClass: _vm._$g(11, "sc"),
-                        attrs: { _i: 11 }
-                      }),
-                      _c(
-                        "uni-view",
-                        { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
-                        [_vm._v("新型冠状病毒肺炎")]
-                      ),
-                      _c(
-                        "uni-view",
-                        { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
-                        [_vm._v("疫情实时追踪")]
-                      ),
-                      _c(
-                        "uni-view",
-                        { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
-                        [
-                          _vm._v("数据来源：国家及各地卫健委每日信息发布"),
-                          _c("v-uni-image", {
-                            attrs: {
-                              src: _vm._$g(15, "a-src"),
-                              mode: "",
-                              _i: 15
-                            },
-                            on: {
-                              click: function($event) {
-                                return _vm.$handleViewEvent($event)
-                              }
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
                   _c(
                     "uni-view",
                     {
@@ -2498,13 +2498,738 @@ var render = function() {
           )
         : _vm._e(),
       _vm._$g(127, "i")
-        ? _c("uni-view", { attrs: { _i: 127 } }, [_vm._v("1")])
+        ? _c(
+            "uni-view",
+            { attrs: { _i: 127 } },
+            [
+              _c(
+                "uni-view",
+                { staticClass: _vm._$g(128, "sc"), attrs: { _i: 128 } },
+                [
+                  _c(
+                    "uni-view",
+                    {
+                      staticClass: _vm._$g(129, "sc"),
+                      class: _vm._$g(129, "c"),
+                      attrs: { _i: 129 }
+                    },
+                    [
+                      _c(
+                        "uni-view",
+                        { staticClass: _vm._$g(130, "sc"), attrs: { _i: 130 } },
+                        [
+                          _c(
+                            "uni-view",
+                            {
+                              staticClass: _vm._$g(131, "sc"),
+                              staticStyle: { "margin-left": "3%" },
+                              attrs: { _i: 131 }
+                            },
+                            [
+                              _vm._v("统计截止"),
+                              _c(
+                                "v-uni-text",
+                                {
+                                  class: _vm._$g(132, "c"),
+                                  attrs: { _i: 132 }
+                                },
+                                [_vm._v(_vm._$g(132, "t0-0"))]
+                              ),
+                              _vm._v("；更新于"),
+                              _vm._$g(133, "i")
+                                ? _c(
+                                    "v-uni-text",
+                                    {
+                                      class: _vm._$g(133, "c"),
+                                      attrs: { _i: 133 }
+                                    },
+                                    [_vm._v(_vm._$g(133, "t0-0") + "天")]
+                                  )
+                                : _vm._e(),
+                              _vm._$g(134, "i")
+                                ? _c(
+                                    "v-uni-text",
+                                    {
+                                      class: _vm._$g(134, "c"),
+                                      attrs: { _i: 134 }
+                                    },
+                                    [_vm._v(_vm._$g(134, "t0-0") + "小时")]
+                                  )
+                                : _vm._e(),
+                              _c(
+                                "v-uni-text",
+                                {
+                                  class: _vm._$g(135, "c"),
+                                  attrs: { _i: 135 }
+                                },
+                                [_vm._v(_vm._$g(135, "t0-0") + "分钟")]
+                              ),
+                              _vm._v("前")
+                            ],
+                            1
+                          ),
+                          _c(
+                            "uni-view",
+                            {
+                              staticClass: _vm._$g(136, "sc"),
+                              staticStyle: { "background-color": "#fffaf7" },
+                              attrs: { _i: 136 }
+                            },
+                            [
+                              _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g(137, "sc"),
+                                  attrs: { _i: 137 }
+                                },
+                                [
+                                  _vm._v("较昨日："),
+                                  _c(
+                                    "v-uni-text",
+                                    {
+                                      staticStyle: { color: "#e57631" },
+                                      attrs: { _i: 138 }
+                                    },
+                                    [
+                                      _vm._$g(139, "i")
+                                        ? _c(
+                                            "v-uni-text",
+                                            { attrs: { _i: 139 } },
+                                            [_vm._v("+")]
+                                          )
+                                        : _vm._e(),
+                                      _vm._v(_vm._$g(138, "t1-0"))
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g(140, "sc"),
+                                  staticStyle: { color: "#e57631" },
+                                  attrs: { _i: 140 }
+                                },
+                                [_vm._v(_vm._$g(140, "t0-0"))]
+                              ),
+                              _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g(141, "sc"),
+                                  attrs: { _i: 141 }
+                                },
+                                [_vm._v("累计确诊")]
+                              )
+                            ],
+                            1
+                          ),
+                          _c(
+                            "uni-view",
+                            {
+                              staticClass: _vm._$g(142, "sc"),
+                              staticStyle: { "background-color": "#fef7ff" },
+                              attrs: { _i: 142 }
+                            },
+                            [
+                              _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g(143, "sc"),
+                                  attrs: { _i: 143 }
+                                },
+                                [
+                                  _vm._v("较昨日："),
+                                  _c(
+                                    "v-uni-text",
+                                    {
+                                      staticStyle: { color: "#ae3ac6" },
+                                      attrs: { _i: 144 }
+                                    },
+                                    [
+                                      _vm._$g(145, "i")
+                                        ? _c(
+                                            "v-uni-text",
+                                            { attrs: { _i: 145 } },
+                                            [_vm._v("+")]
+                                          )
+                                        : _vm._e(),
+                                      _vm._v(_vm._$g(144, "t1-0"))
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g(146, "sc"),
+                                  staticStyle: { color: "#ae3ac6" },
+                                  attrs: { _i: 146 }
+                                },
+                                [_vm._v(_vm._$g(146, "t0-0"))]
+                              ),
+                              _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g(147, "sc"),
+                                  attrs: { _i: 147 }
+                                },
+                                [_vm._v("现有确诊")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _c(
+                    "uni-view",
+                    {
+                      staticClass: _vm._$g(148, "sc"),
+                      class: _vm._$g(148, "c"),
+                      staticStyle: { "padding-bottom": "20px" },
+                      attrs: { _i: 148 }
+                    },
+                    [
+                      _c(
+                        "uni-view",
+                        { staticClass: _vm._$g(149, "sc"), attrs: { _i: 149 } },
+                        [
+                          _c(
+                            "uni-view",
+                            {
+                              staticClass: _vm._$g(150, "sc"),
+                              staticStyle: { "background-color": "#fff8f8" },
+                              attrs: { _i: 150 }
+                            },
+                            [
+                              _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g(151, "sc"),
+                                  attrs: { _i: 151 }
+                                },
+                                [
+                                  _vm._v("较昨日："),
+                                  _c(
+                                    "v-uni-text",
+                                    {
+                                      staticStyle: { color: "#be2121" },
+                                      attrs: { _i: 152 }
+                                    },
+                                    [
+                                      _vm._$g(153, "i")
+                                        ? _c(
+                                            "v-uni-text",
+                                            { attrs: { _i: 153 } },
+                                            [_vm._v("+")]
+                                          )
+                                        : _vm._e(),
+                                      _vm._v(_vm._$g(152, "t1-0"))
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g(154, "sc"),
+                                  staticStyle: { color: "#be2121" },
+                                  attrs: { _i: 154 }
+                                },
+                                [_vm._v(_vm._$g(154, "t0-0"))]
+                              ),
+                              _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g(155, "sc"),
+                                  attrs: { _i: 155 }
+                                },
+                                [_vm._v("累计治愈")]
+                              )
+                            ],
+                            1
+                          ),
+                          _c(
+                            "uni-view",
+                            {
+                              staticClass: _vm._$g(156, "sc"),
+                              staticStyle: { "background-color": "#f3f6f8" },
+                              attrs: { _i: 156 }
+                            },
+                            [
+                              _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g(157, "sc"),
+                                  attrs: { _i: 157 }
+                                },
+                                [
+                                  _vm._v("较昨日："),
+                                  _c(
+                                    "v-uni-text",
+                                    {
+                                      staticStyle: { color: "#4e5a65" },
+                                      attrs: { _i: 158 }
+                                    },
+                                    [
+                                      _vm._$g(159, "i")
+                                        ? _c(
+                                            "v-uni-text",
+                                            { attrs: { _i: 159 } },
+                                            [_vm._v("+")]
+                                          )
+                                        : _vm._e(),
+                                      _vm._v(_vm._$g(158, "t1-0"))
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g(160, "sc"),
+                                  staticStyle: { color: "#4e5a65" },
+                                  attrs: { _i: 160 }
+                                },
+                                [_vm._v(_vm._$g(160, "t0-0"))]
+                              ),
+                              _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g(161, "sc"),
+                                  attrs: { _i: 161 }
+                                },
+                                [_vm._v("累计死亡")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _c(
+                "uni-view",
+                {
+                  staticClass: _vm._$g(162, "sc"),
+                  class: _vm._$g(162, "c"),
+                  attrs: { _i: 162 }
+                },
+                [
+                  _c(
+                    "uni-view",
+                    { staticClass: _vm._$g(163, "sc"), attrs: { _i: 163 } },
+                    [
+                      _c(
+                        "uni-view",
+                        { staticClass: _vm._$g(164, "sc"), attrs: { _i: 164 } },
+                        [
+                          _c(
+                            "uni-view",
+                            {
+                              staticClass: _vm._$g(165, "sc"),
+                              class: _vm._$g(165, "c"),
+                              staticStyle: { "padding-left": "15rpx" },
+                              attrs: { _i: 165 }
+                            },
+                            [_vm._v("全球疫情")]
+                          ),
+                          _c(
+                            "uni-view",
+                            {
+                              staticClass: _vm._$g(166, "sc"),
+                              staticStyle: { "padding-left": "15rpx" },
+                              attrs: { _i: 166 }
+                            },
+                            [
+                              _vm._v(
+                                "7:00-10:00为更新高峰，数据如有滞后请谅解。"
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _c(
+                    "uni-view",
+                    { staticClass: _vm._$g(167, "sc"), attrs: { _i: 167 } },
+                    [
+                      _c(
+                        "v-uni-text",
+                        {
+                          staticClass: _vm._$g(168, "sc"),
+                          staticStyle: {
+                            "background-color": "#f5f5f5",
+                            color: "#222222"
+                          },
+                          attrs: { _i: 168 }
+                        },
+                        [_vm._v("地区")]
+                      ),
+                      _c(
+                        "v-uni-text",
+                        {
+                          staticClass: _vm._$g(169, "sc"),
+                          staticStyle: {
+                            "background-color": "#fcf2e8",
+                            color: "#ff5d00"
+                          },
+                          attrs: { _i: 169 }
+                        },
+                        [_vm._v("新增")]
+                      ),
+                      _c(
+                        "v-uni-text",
+                        {
+                          staticClass: _vm._$g(170, "sc"),
+                          staticStyle: {
+                            "background-color": "#fdeeee",
+                            color: "#f55253"
+                          },
+                          attrs: { _i: 170 }
+                        },
+                        [_vm._v("累计")]
+                      ),
+                      _c(
+                        "v-uni-text",
+                        {
+                          staticClass: _vm._$g(171, "sc"),
+                          staticStyle: {
+                            "background-color": "#e9f7ec",
+                            color: "#178b05"
+                          },
+                          attrs: { _i: 171 }
+                        },
+                        [_vm._v("治愈")]
+                      ),
+                      _c(
+                        "v-uni-text",
+                        {
+                          staticClass: _vm._$g(172, "sc"),
+                          staticStyle: {
+                            "background-color": "#f3f6f8",
+                            color: "#4e5a65"
+                          },
+                          attrs: { _i: 172 }
+                        },
+                        [_vm._v("死亡")]
+                      )
+                    ],
+                    1
+                  ),
+                  _c(
+                    "uni-view",
+                    { staticClass: _vm._$g(173, "sc"), attrs: { _i: 173 } },
+                    [
+                      _vm._l(_vm._$g(174, "f"), function(
+                        item,
+                        index,
+                        $23,
+                        $33
+                      ) {
+                        return [
+                          _c(
+                            "uni-view",
+                            {
+                              key: item["k0"],
+                              staticClass: _vm._$g("175-" + $33, "sc"),
+                              class: _vm._$g("175-" + $33, "c"),
+                              attrs: { _i: "175-" + $33 }
+                            },
+                            [
+                              _vm._$g("176-" + $33, "i")
+                                ? _c(
+                                    "uni-view",
+                                    {
+                                      staticClass: _vm._$g("176-" + $33, "sc"),
+                                      attrs: { _i: "176-" + $33 },
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.$handleViewEvent($event)
+                                        }
+                                      }
+                                    },
+                                    [_vm._v(_vm._$g("176-" + $33, "t0-0"))]
+                                  )
+                                : _vm._e(),
+                              _vm._$g("177-" + $33, "i")
+                                ? _c(
+                                    "uni-view",
+                                    {
+                                      staticClass: _vm._$g("177-" + $33, "sc"),
+                                      staticStyle: { color: "black" },
+                                      attrs: { _i: "177-" + $33 },
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.$handleViewEvent($event)
+                                        }
+                                      }
+                                    },
+                                    [_vm._v(_vm._$g("177-" + $33, "t0-0"))]
+                                  )
+                                : _vm._e(),
+                              _vm._$g("178-" + $33, "i")
+                                ? _c(
+                                    "uni-view",
+                                    {
+                                      staticClass: _vm._$g("178-" + $33, "sc"),
+                                      attrs: { _i: "178-" + $33 },
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.$handleViewEvent($event)
+                                        }
+                                      }
+                                    },
+                                    [_vm._v(_vm._$g("178-" + $33, "t0-0"))]
+                                  )
+                                : _vm._e(),
+                              _vm._$g("179-" + $33, "i")
+                                ? _c(
+                                    "uni-view",
+                                    {
+                                      staticClass: _vm._$g("179-" + $33, "sc"),
+                                      attrs: { _i: "179-" + $33 },
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.$handleViewEvent($event)
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("0")]
+                                  )
+                                : _vm._e(),
+                              _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g("180-" + $33, "sc"),
+                                  attrs: { _i: "180-" + $33 },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.$handleViewEvent($event)
+                                    }
+                                  }
+                                },
+                                [_vm._v(_vm._$g("180-" + $33, "t0-0"))]
+                              ),
+                              _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g("181-" + $33, "sc"),
+                                  attrs: { _i: "181-" + $33 },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.$handleViewEvent($event)
+                                    }
+                                  }
+                                },
+                                [_vm._v(_vm._$g("181-" + $33, "t0-0"))]
+                              ),
+                              _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g("182-" + $33, "sc"),
+                                  attrs: { _i: "182-" + $33 },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.$handleViewEvent($event)
+                                    }
+                                  }
+                                },
+                                [_vm._v(_vm._$g("182-" + $33, "t0-0"))]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._$g("183-" + $33, "i")
+                            ? _c(
+                                "uni-view",
+                                {
+                                  key: item["k1"],
+                                  staticClass: _vm._$g("183-" + $33, "sc"),
+                                  attrs: { _i: "183-" + $33 }
+                                },
+                                [
+                                  _vm._l(
+                                    _vm._$g(184 + "-" + $33, "f"),
+                                    function(items, indexs, $24, $34) {
+                                      return [
+                                        _c(
+                                          "uni-view",
+                                          {
+                                            key: items["k0"],
+                                            staticClass: _vm._$g(
+                                              "185-" + $33 + "-" + $34,
+                                              "sc"
+                                            ),
+                                            class: _vm._$g(
+                                              "185-" + $33 + "-" + $34,
+                                              "c"
+                                            ),
+                                            attrs: {
+                                              _i: "185-" + $33 + "-" + $34
+                                            }
+                                          },
+                                          [
+                                            _c(
+                                              "uni-view",
+                                              {
+                                                staticClass: _vm._$g(
+                                                  "186-" + $33 + "-" + $34,
+                                                  "sc"
+                                                ),
+                                                attrs: {
+                                                  _i: "186-" + $33 + "-" + $34
+                                                }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._$g(
+                                                    "186-" + $33 + "-" + $34,
+                                                    "t0-0"
+                                                  )
+                                                )
+                                              ]
+                                            ),
+                                            _c(
+                                              "uni-view",
+                                              {
+                                                staticClass: _vm._$g(
+                                                  "187-" + $33 + "-" + $34,
+                                                  "sc"
+                                                ),
+                                                attrs: {
+                                                  _i: "187-" + $33 + "-" + $34
+                                                }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._$g(
+                                                    "187-" + $33 + "-" + $34,
+                                                    "t0-0"
+                                                  )
+                                                )
+                                              ]
+                                            ),
+                                            _c(
+                                              "uni-view",
+                                              {
+                                                staticClass: _vm._$g(
+                                                  "188-" + $33 + "-" + $34,
+                                                  "sc"
+                                                ),
+                                                attrs: {
+                                                  _i: "188-" + $33 + "-" + $34
+                                                }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._$g(
+                                                    "188-" + $33 + "-" + $34,
+                                                    "t0-0"
+                                                  )
+                                                )
+                                              ]
+                                            ),
+                                            _c(
+                                              "uni-view",
+                                              {
+                                                staticClass: _vm._$g(
+                                                  "189-" + $33 + "-" + $34,
+                                                  "sc"
+                                                ),
+                                                attrs: {
+                                                  _i: "189-" + $33 + "-" + $34
+                                                }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._$g(
+                                                    "189-" + $33 + "-" + $34,
+                                                    "t0-0"
+                                                  )
+                                                )
+                                              ]
+                                            ),
+                                            _c(
+                                              "uni-view",
+                                              {
+                                                staticClass: _vm._$g(
+                                                  "190-" + $33 + "-" + $34,
+                                                  "sc"
+                                                ),
+                                                attrs: {
+                                                  _i: "190-" + $33 + "-" + $34
+                                                }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._$g(
+                                                    "190-" + $33 + "-" + $34,
+                                                    "t0-0"
+                                                  )
+                                                )
+                                              ]
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      ]
+                                    }
+                                  )
+                                ],
+                                2
+                              )
+                            : _vm._e()
+                        ]
+                      })
+                    ],
+                    2
+                  ),
+                  _c(
+                    "uni-view",
+                    {
+                      staticClass: _vm._$g(191, "sc"),
+                      class: _vm._$g(191, "c"),
+                      attrs: { _i: 191 },
+                      on: {
+                        click: function($event) {
+                          return _vm.$handleViewEvent($event)
+                        }
+                      }
+                    },
+                    [_vm._v("愿疫情早日散去，山河无恙，天下太平。")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
         : _vm._e(),
-      _vm._$g(128, "i")
-        ? _c("uni-view", { attrs: { _i: 128 } }, [_vm._v("2")])
+      _vm._$g(192, "i")
+        ? _c("uni-view", { attrs: { _i: 192 } }, [_vm._v("2")])
         : _vm._e(),
-      _vm._$g(129, "i")
-        ? _c("uni-view", { attrs: { _i: 129 } }, [_vm._v("3")])
+      _vm._$g(193, "i")
+        ? _c("uni-view", { attrs: { _i: 193 } }, [_vm._v("3")])
         : _vm._e()
     ],
     1
@@ -4127,7 +4852,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ../../static/head_bg
 exports = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-exports.push([module.i, "\n.grid-text {\n\tfont-size: 14px;\n\tcolor: white;\n\tpadding: 0rpx 0 40rpx 0rpx;\n}\n.content {\nposition: relative;\nwidth: 750rpx;\nheight: auto;\nmargin: 0;\npadding: 0;\nbackground-color: #fff;\n}\n.box {\nwidth: 100%;\nheight: auto;\n/* overflow: hidden; */\npadding: 0 30rpx;\nbox-sizing: border-box;\nbackground-color: #fff;\n}\n.t_item-top {\nposition: absolute;\nwidth: 100%;\nleft: 0;\ntop: 352rpx;\nwidth: 100%;\nheight: auto;\noverflow: hidden;\nbackground-color: #fff;\npadding-bottom: 30rpx;\nborder-top-left-radius: 5px;\nborder-top-right-radius: 5px;\npadding-bottom: 50rpx;\n}\n.t_item-box-title {\nwidth: 100%;\nfont-size: 28rpx;\ncolor: #666;\npadding: 25rpx 0rpx;\n}\n.t_item-box-title uni-text {\ncolor: #222;\n}\n.t_item-box {\nwidth: 100%;\nheight: auto;\npadding: 0 30rpx;\nbox-sizing: border-box;\n}\n.t_item {\nfloat: left;\nwidth: 32.7%;\nheight: 150rpx;\ntext-align: center;\nbackground-color: #fff;\nmargin: .3%;\n-webkit-transform: scale(.97);\n        transform: scale(.97);\nborder-radius: 12rpx;\n}\n.t_item-addnum {\npadding-top: 3px;\nfloat: left;\nwidth: 100%;\ncolor: #666;\ntext-align: center;\nfont-size: 28rpx;\nmargin: 5rpx auto 0;\n}\n.t_item-nownum {\nfloat: left;\nwidth: 100%;\ncolor: #000;\ntext-align: center;\nfont-size: 40rpx;\nfont-weight: 500;\n}\n.t_item-nowtxt {\nfloat: left;\nwidth: 100%;\ncolor: #000;\ntext-align: center;\nfont-size: 28rpx;\n}\n.citylist {\nposition: absolute;\nleft: 0;\ntop: 936rpx;\nfloat: left;\nwidth: 100%;\nheight: auto;\nbackground-color: #fff;\nbox-sizing: border-box;\n}\n.citylist-title {\nposition: -webkit-sticky;\nposition: sticky;\ntop: 0;\nwidth: 100%;\nheight: 80rpx;\nline-height: 80rpx;\n}\n.citylist-title .item {\nfloat: left;\nwidth: 15%;\nheight: 80rpx;\nline-height: 80rpx;\ntext-align: center;\nbackground-color: #fff;\n}\n.citylist-title .item:nth-child(1) {\nwidth: 19%;\n}\n.citylist-title .item:nth-child(2) {\nwidth: 18%;\n}\n.citylist-title .item:nth-child(3) {\nwidth: 20%;\n}\n.citylist-title .item:nth-child(4) {\nwidth: 16%;\n}\n.citylist-title .item:nth-child(5) {\nwidth: 16%;\n}\n.citylist-title .item:last-child {\nwidth: 11%;\n}\n.citylist-box {\nwidth: 100%;\nbox-sizing: border-box;\n}\n.citylist-box-item {\nfloat: left;\nwidth: 100%;\nheight: 125rpx;/*29w */\nfont-size: 28rpx;\nborder-bottom: 1rpx solid #f3f3f3;\nbox-sizing: border-box;\noverflow: hidden;\n}\n.citylist-box-item .item:first-child {\ncolor: #4180f1;\nfont-size: 15px;\n}\n.citylist-box-item .item {\nfloat: left;\nwidth: 16%;\ntext-align: center;\n}\n.citylist-box-item .item:nth-child(1) {\nwidth: 19%;\n}\n.citylist-box-item .item:nth-child(2) {\nwidth: 18%;\n}\n.citylist-box-item .item:nth-child(3) {\nwidth: 20%;\n}\n.citylist-box-item .item:last-child {\nwidth: 11%;\n}\n.citylist-box-item .item:nth-child(1),\n.citylist-box-item .item:nth-child(2),\n.citylist-box-item .item:nth-child(4),\n.citylist-box-item .item:nth-child(5),\n.citylist-box-item .item:nth-child(6) {\nline-height: 120rpx;\n}\n.citylist-box-item .item:nth-child(3) {\npadding-top: 20rpx;\nbox-sizing: border-box;\n}\n.zqw {\nwidth: 100%;\nheight: 120rpx;\nline-height: 120rpx;\nfont-size: 28rpx;\ntext-align: center;\ncolor: #666;\nfloat: left;\nbackground: #fff;\nmargin-bottom: 10rpx;\n}\n.item-confirm {\nwidth: 100%;\ntext-align: center;\ncolor: #737373;\nfont-size: 22rpx;\nfont-weight: 400;\nmargin-top: 8rpx;\n}\n.product-box-left-item {\nfloat: left;\nwidth: 100%;\nmin-height: 60rpx;\nline-height: 60rpx;\nfont-size: 28rpx;\ncolor: #666;\nborder-bottom: 1rpx solid #f2f7f7;\n}\n.product-box-left-item-item {\nfloat: left;\nwidth: 18%;\ntext-align: center;\n}\n.product-box-left-item-item:nth-child(1){\nwidth: 19%;\n}\n.product-box-left-item-item:nth-child(3){\nwidth: 20%;\n}\n.product-box-left-item-item:nth-child(4){\nwidth: 16%;\n}\n.product-box-left-item-item:nth-child(5){\nwidth: 16%;\n}\n.top-box {\nposition: relative;\nwidth: 100%;\nheight: 400rpx;\n/* overflow: hidden; */\n/* background-size: cover; */\n}\n.top-box-bg {\nposition: absolute;\nleft: 0;\ntop: 0;\nwidth: 100%;\nheight: 100%;\nbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\nbackground-size: 100% 100%;\n}\n.top-box-title {\nposition: absolute;\nleft: 50%;\ntop: 66rpx;\nwidth: 100%;\ntext-align: center;\n-webkit-transform: translateX(-50%);\n        transform: translateX(-50%);\ncolor: #ffe9aa;\nfont-size: 56rpx;\n}\n.top-box-but {\nposition: absolute;\nleft: 50%;\n-webkit-transform: translateX(-50%);\n        transform: translateX(-50%);\ntop: 140rpx;\nwidth: 100%;\ntext-align: center;\ncolor: #fff;\nfont-size: 72rpx;\nfont-weight: bold;\n}\n.top-box-bot {\nposition: absolute;\nleft: 50%;\n-webkit-transform: translateX(-50%);\n        transform: translateX(-50%);\nbottom: 90rpx;\nwidth: 100%;\ntext-align: center;\ncolor: #fff;\nfont-size: 28rpx;\n}\n.top-box-bot uni-image {\nwidth: 28rpx;\nheight: 28rpx;\nmargin-left: 12rpx;\n}\n.citylist-name {\nwidth: 100%;\noverflow: hidden;\n}\n.citylist-name-left {\nfloat: left;\nmargin: 14rpx 0 32rpx 0;\n}\n.citylist-name-left .title {\nfont-size: 30rpx;\npadding-top: 10rpx;\ncolor: #000;\n}\n.citylist-name-left .txt {\nfont-size: 28rpx;\ncolor: #666;\n}\n.citylist-name-right {\nfloat: right;\nwidth: 124rpx;\nheight: 50rpx;\nline-height: 50rpx;\ntext-align: center;\ncolor: #4180f1;\nborder: 2rpx solid #4180f1;\nborder-radius: 36rpx;\nfont-size: 24rpx;\nmargin-top: 35rpx;\nmargin-right:15rpx;\n}\n.popup-center {\n}\n.popup-box {\nwidth: 600rpx;\nheight: auto;\nposition: relative;\n}\n.popup-box-box {\n width: 100%;\n        height: 450rpx;\n        border-radius: 16rpx;\n        background-color: #fff;\n        overflow-x: hidden;\n        overflow-y: scroll;\n        z-index: 29;\n        padding: 40rpx;\n        box-sizing: border-box;\n}\n.popup-box-box-item {\nfloat: left;\nwidth: 100%;\nfont-size: 24rpx;\nfont-weight: 400;\nmargin-bottom: 14rpx;\n}\n.height-title {\nfloat: left;\nwidth: 100%;\nfont-size: 28rpx;\ncolor: #e03d41;\nmargin-bottom: 14rpx;\n}\n.middle-title {\nfloat: left;\nwidth: 100%;\nfont-size: 28rpx;\ncolor: #f80;\nmargin-bottom: 14rpx;\n}\n.zqw-box {\nwidth: 100%;\noverflow: hidden;\nmargin-bottom: 60rpx;\n}\n.popup-box-top {\nposition: absolute;\nleft: 0;\ntop: 0;\nwidth: 100%;\ncolor: #4180f1;\nfont-size: 36rpx;\nheight: 100rpx;\nline-height: 100rpx;\nbackground-color: #fff;\nz-index: 39;\npadding: 0 34rpx;\nbox-sizing: border-box;\nborder-radius: 16rpx;\n}\n.pop-coles {\nposition: absolute;\ntop: -92rpx;\nright: 0;\nwidth: 80rpx;\nheight: 80rpx;\n}\n", ""]);
+exports.push([module.i, "\n.grid-text {\n\tfont-size: 14px;\n\tcolor: white;\n\tpadding: 0rpx 0 40rpx 0rpx;\n}\n.content {\nposition: relative;\nwidth: 750rpx;\nheight: auto;\nmargin: 0;\npadding: 0;\nbackground-color: #fff;\n}\n.box {\nwidth: 100%;\nheight: auto;\n/* overflow: hidden; */\npadding: 0 30rpx;\nbox-sizing: border-box;\nbackground-color: #fff;\n}\n.t_item-top {\nposition: -webkit-sticky;\nposition: sticky;\nwidth: 100%;\nleft: 0;\ntop: 352rpx;\nwidth: 100%;\nheight: auto;\noverflow: hidden;\nbackground-color: #fff;\npadding-bottom: 30rpx;\n}\n.t_item-box-title {\nwidth: 100%;\nfont-size: 28rpx;\ncolor: #666;\npadding: 25rpx 0rpx;\n}\n.t_item-box-title uni-text {\ncolor: #222;\n}\n.t_item-box {\nwidth: 100%;\nheight: auto;\npadding: 0 30rpx;\nbox-sizing: border-box;\n}\n.t_item {\nfloat: left;\nwidth: 32.7%;\nheight: 150rpx;\ntext-align: center;\nbackground-color: #fff;\nmargin: .3%;\n-webkit-transform: scale(.97);\n        transform: scale(.97);\nborder-radius: 12rpx;\n}\n.t_item-addnum {\npadding-top: 3px;\nfloat: left;\nwidth: 100%;\ncolor: #666;\ntext-align: center;\nfont-size: 28rpx;\nmargin: 5rpx auto 0;\n}\n.t_item-nownum {\nfloat: left;\nwidth: 100%;\ncolor: #000;\ntext-align: center;\nfont-size: 40rpx;\nfont-weight: 500;\n}\n.t_item-nowtxt {\nfloat: left;\nwidth: 100%;\ncolor: #000;\ntext-align: center;\nfont-size: 28rpx;\n}\n.citylist {\nposition: -webkit-sticky;\nposition: sticky;\nleft: 0;\ntop: 0;\nfloat: left;\nwidth: 100%;\nheight: auto;\nbackground-color: #fff;\nbox-sizing: border-box;\n}\n.citylist-title {\nposition: -webkit-sticky;\nposition: sticky;\ntop: 0;\nwidth: 100%;\nheight: 80rpx;\nline-height: 80rpx;\n}\n.citylist-title .item {\nfloat: left;\nwidth: 15%;\nheight: 80rpx;\nline-height: 80rpx;\ntext-align: center;\nbackground-color: #fff;\n}\n.citylist-title .item:nth-child(1) {\nwidth: 19%;\n}\n.citylist-title .item:nth-child(2) {\nwidth: 18%;\n}\n.citylist-title .item:nth-child(3) {\nwidth: 20%;\n}\n.citylist-title .item:nth-child(4) {\nwidth: 16%;\n}\n.citylist-title .item:nth-child(5) {\nwidth: 16%;\n}\n.citylist-title .item:last-child {\nwidth: 11%;\n}\n.citylist-box {\nwidth: 100%;\nbox-sizing: border-box;\n}\n.citylist-box-item {\nfloat: left;\nwidth: 100%;\nheight: 125rpx;/*29w */\nfont-size: 28rpx;\nborder-bottom: 1rpx solid #f3f3f3;\nbox-sizing: border-box;\noverflow: hidden;\n}\n.citylist-box-item .item:first-child {\ncolor: #4180f1;\nfont-size: 15px;\n}\n.citylist-box-item .item {\nfloat: left;\nwidth: 16%;\ntext-align: center;\n}\n.citylist-box-item .item:nth-child(1) {\nwidth: 19%;\n}\n.citylist-box-item .item:nth-child(2) {\nwidth: 18%;\n}\n.citylist-box-item .item:nth-child(3) {\nwidth: 20%;\n}\n.citylist-box-item .item:last-child {\nwidth: 11%;\n}\n.citylist-box-item .item:nth-child(1),\n.citylist-box-item .item:nth-child(2),\n.citylist-box-item .item:nth-child(4),\n.citylist-box-item .item:nth-child(5),\n.citylist-box-item .item:nth-child(6) {\nline-height: 120rpx;\n}\n.citylist-box-item .item:nth-child(3) {\npadding-top: 20rpx;\nbox-sizing: border-box;\n}\n/*******************************************/\n.citylist-f {\nposition: -webkit-sticky;\nposition: sticky;\nleft: 0;\ntop: 0;\nfloat: left;\nwidth: 100%;\nheight: auto;\nbackground-color: #fff;\nbox-sizing: border-box;\n}\n.citylist-title-f {\nposition: -webkit-sticky;\nposition: sticky;\ntop: 0;\nwidth: 100%;\nheight: 80rpx;\nline-height: 80rpx;\n}\n.citylist-title-f .item-f {\nfloat: left;\nwidth: 20%;\nheight: 80rpx;\nline-height: 80rpx;\ntext-align: center;\nbackground-color: #fff;\n}\n.citylist-title-f .item-f:nth-child(1) {\nwidth: 20%;\n}\n.citylist-title-f .item-f:nth-child(2) {\nwidth: 18%;\n}\n.citylist-title-f .item-f:nth-child(3) {\nwidth: 22%;\n}\n.citylist-title-f .item-f:nth-child(4) {\nwidth: 22%;\n}\n.citylist-title-f .item-f:last-child {\nwidth: 18%;\n}\n.citylist-box-f {\nwidth: 100%;\nbox-sizing: border-box;\n}\n.citylist-box-item-f {\nfloat: left;\nwidth: 100%;\nheight: 125rpx;/*29w */\nfont-size: 28rpx;\nborder-bottom: 1rpx solid #f3f3f3;\nbox-sizing: border-box;\noverflow: hidden;\n}\n.citylist-box-item-f .item-f:first-child {\ncolor: #4180f1;\nfont-size: 15px;\n}\n.citylist-box-item-f .item-f {\nfloat: left;\nwidth: 20%;\ntext-align: center;\n}\n.citylist-box-item-f .item-f:nth-child(2) {\nwidth: 18%;\n}\n.citylist-box-item-f .item-f:nth-child(3) {\nwidth: 22%;\n}\n.citylist-box-item-f .item-f:nth-child(4) {\nwidth: 22%;\n}\n.citylist-box-item-f .item-f:last-child {\nwidth: 18%;\n}\n.citylist-box-item-f .item-f:nth-child(1),\n.citylist-box-item-f .item-f:nth-child(2),\n.citylist-box-item-f .item-f:nth-child(3),\n.citylist-box-item-f .item-f:nth-child(4),\n.citylist-box-item-f .item-f:nth-child(5){\nline-height: 120rpx;\n}\n.product-box-left-item-f {\nfloat: left;\nwidth: 100%;\nheight: 60rpx;\nline-height: 60rpx;\nfont-size: 28rpx;\ncolor: #666;\noverflow:scroll;\nborder-bottom: 1rpx solid #f2f7f7;\n}\n.product-box-left-item-item-f {\nfloat: left;\nwidth: 18%;\ntext-align: center;\n}\n.product-box-left-item-item-f:nth-child(1){\nwidth: 20%;\n}\n.product-box-left-item-item-f:nth-child(3){\nwidth: 22%;\n}\n.product-box-left-item-item-f:nth-child(4){\nwidth: 22%;\n}\n.product-box-left-item-item-f:nth-child(5){\nwidth: 18%;\n}\n/*******************************************/\n.zqw {\nwidth: 100%;\nheight: 120rpx;\nline-height: 120rpx;\nfont-size: 28rpx;\ntext-align: center;\ncolor: #666;\nfloat: left;\nbackground: #fff;\nmargin-bottom: 10rpx;\n}\n.item-confirm {\nwidth: 100%;\ntext-align: center;\ncolor: #737373;\nfont-size: 22rpx;\nfont-weight: 400;\nmargin-top: 8rpx;\n}\n.product-box-left-item {\nfloat: left;\nwidth: 100%;\nmin-height: 60rpx;\nline-height: 60rpx;\nfont-size: 28rpx;\noverflow:scroll;\ncolor: #666;\nborder-bottom: 1rpx solid #f2f7f7;\n}\n.product-box-left-item-item {\nfloat: left;\nwidth: 18%;\ntext-align: center;\n}\n.product-box-left-item-item:nth-child(1){\nwidth: 19%;\n}\n.product-box-left-item-item:nth-child(3){\nwidth: 20%;\n}\n.product-box-left-item-item:nth-child(4){\nwidth: 16%;\n}\n.product-box-left-item-item:nth-child(5){\nwidth: 16%;\n}\n.top-box {\nposition: relative;\nwidth: 100%;\nheight: 350rpx;\n/* overflow: hidden; */\n/* background-size: cover; */\n}\n.top-box-bg {\nposition: absolute;\nleft: 0;\ntop: 0;\nwidth: 100%;\nheight: 100%;\nbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\nbackground-size: 100% 100%;\n}\n.top-box-title {\nposition: absolute;\nleft: 50%;\ntop: 66rpx;\nwidth: 100%;\ntext-align: center;\n-webkit-transform: translateX(-50%);\n        transform: translateX(-50%);\ncolor: #ffe9aa;\nfont-size: 56rpx;\n}\n.top-box-but {\nposition: absolute;\nleft: 50%;\n-webkit-transform: translateX(-50%);\n        transform: translateX(-50%);\ntop: 140rpx;\nwidth: 100%;\ntext-align: center;\ncolor: #fff;\nfont-size: 72rpx;\nfont-weight: bold;\n}\n.top-box-bot {\nposition: absolute;\nleft: 50%;\n-webkit-transform: translateX(-50%);\n        transform: translateX(-50%);\nbottom: 50rpx;\nwidth: 100%;\ntext-align: center;\ncolor: #fff;\nfont-size: 28rpx;\n}\n.top-box-bot uni-image {\nwidth: 28rpx;\nheight: 28rpx;\nmargin-left: 12rpx;\n}\n.citylist-name {\nwidth: 100%;\noverflow: hidden;\n}\n.citylist-name-left {\nfloat: left;\nmargin: 14rpx 0 32rpx 0;\n}\n.citylist-name-left .title {\nfont-size: 30rpx;\npadding-top: 10rpx;\ncolor: #000;\n}\n.citylist-name-left .txt {\nfont-size: 28rpx;\ncolor: #666;\n}\n.citylist-name-right {\nfloat: right;\nwidth: 124rpx;\nheight: 50rpx;\nline-height: 50rpx;\ntext-align: center;\ncolor: #4180f1;\nborder: 2rpx solid #4180f1;\nborder-radius: 36rpx;\nfont-size: 24rpx;\nmargin-top: 35rpx;\nmargin-right:15rpx;\n}\n.popup-center {\n}\n.popup-box {\nwidth: 600rpx;\nheight: auto;\nposition: relative;\n}\n.popup-box-box {\nwidth: 100%;\nheight: 450rpx;\nborder-radius: 16rpx;\nbackground-color: #fff;\noverflow-x: hidden;\noverflow-y: scroll;\nz-index: 29;\npadding: 40rpx;\nbox-sizing: border-box;\n}\n.popup-box-box-item {\nfloat: left;\nwidth: 100%;\nfont-size: 24rpx;\nfont-weight: 400;\nmargin-bottom: 14rpx;\n}\n.height-title {\nfloat: left;\nwidth: 100%;\nfont-size: 28rpx;\ncolor: #e03d41;\nmargin-bottom: 14rpx;\n}\n.middle-title {\nfloat: left;\nwidth: 100%;\nfont-size: 28rpx;\ncolor: #f80;\nmargin-bottom: 14rpx;\n}\n.zqw-box {\nwidth: 100%;\noverflow: hidden;\nmargin-bottom: 60rpx;\n}\n.popup-box-top {\nposition: absolute;\nleft: 0;\ntop: 0;\nwidth: 100%;\ncolor: #4180f1;\nfont-size: 36rpx;\nheight: 100rpx;\nline-height: 100rpx;\nbackground-color: #fff;\nz-index: 39;\npadding: 0 34rpx;\nbox-sizing: border-box;\nborder-radius: 16rpx;\n}\n.pop-coles {\nposition: absolute;\ntop: -92rpx;\nright: 0;\nwidth: 80rpx;\nheight: 80rpx;\n}\n/************************************/\n/************************************/\n.t_item-top-f {\n    width: 100%;\n    height: 30%;\n    overflow: hidden;\n    background-color: #fff;\n    padding-bottom: 10rpx;\n}\n.t_item-box-title-f {\n    width: 100%;\n    font-size: 28rpx;\n    color: #666;\n    padding: 25rpx 0rpx;\n}\n.t_item-box-title-f uni-text {\n    color: #222;\n}\n.t_item-box-f {\n    width: 100%;\n    height: auto;\n    padding: 0 10rpx;\n    box-sizing: border-box;\n}\n.t_item-f {\n\tborder-radius: 5px;\n    float: left;\n    width: 49%;\n    height: 150rpx;\n    text-align: center;\n    background-color: #fff;\n    margin: .3%;\n    -webkit-transform: scale(.97);\n            transform: scale(.97);\n}\n.t_item-addnum-f {\n    float: left;\n    width: 100%;\n    color: #666;\n    text-align: center;\n    font-size: 28rpx;\n    margin: 5rpx auto 0;\n}\n.t_item-nownum-f {\n    float: left;\n    width: 100%;\n    color: #000;\n    text-align: center;\n    font-size: 48rpx;\n}\n.t_item-nowtxt-f {\n    float: left;\n    width: 100%;\n    color: #000;\n    text-align: center;\n    font-size: 28rpx;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -5804,137 +6529,144 @@ var render = function() {
         ],
         1
       ),
-      _c(
-        "u-popup",
-        {
-          attrs: { _i: 39 },
-          on: {
-            close: function($event) {
-              return _vm.$handleViewEvent($event)
-            }
-          }
-        },
-        [
-          _c(
-            "v-uni-swiper",
+      _vm._$g(39, "i")
+        ? _c(
+            "u-popup",
             {
-              staticStyle: { height: "100%", width: "100%" },
-              attrs: { _i: 40 }
+              attrs: { _i: 39 },
+              on: {
+                close: function($event) {
+                  return _vm.$handleViewEvent($event)
+                }
+              }
             },
-            _vm._l(_vm._$g(41, "f"), function(item, index, $20, $30) {
-              return _c(
-                "v-uni-swiper-item",
-                { key: item, attrs: { _i: "41-" + $30 } },
-                [
-                  _c(
-                    "uni-view",
-                    {
-                      staticStyle: {
-                        "text-align": "center",
-                        "padding-top": "8%",
-                        "font-weight": "600"
-                      },
-                      attrs: { _i: "42-" + $30 }
-                    },
-                    [_vm._v("亲友码")]
-                  ),
-                  _c(
-                    "uni-view",
-                    {
-                      staticStyle: {
-                        height: "800rpx",
-                        width: "100%",
-                        display: "inline-block",
-                        "align-items": "center",
-                        "justify-content": "center",
-                        "text-align": "center",
-                        "padding-top": "7%"
-                      },
-                      attrs: { _i: "43-" + $30 }
-                    },
+            [
+              _c(
+                "v-uni-swiper",
+                {
+                  staticStyle: { height: "100%", width: "100%" },
+                  attrs: { _i: 40 }
+                },
+                _vm._l(_vm._$g(41, "f"), function(item, index, $20, $30) {
+                  return _c(
+                    "v-uni-swiper-item",
+                    { key: item, attrs: { _i: "41-" + $30 } },
                     [
-                      _vm._$g("44-" + $30, "i")
-                        ? _c("uni-view", {
-                            staticStyle: {
-                              display: "inline-block",
-                              "background-color": "skyblue",
-                              width: "460rpx",
-                              height: "460rpx",
-                              "border-radius": "5px",
-                              "margin-bottom": "-70rpx"
-                            },
-                            attrs: { _i: "44-" + $30 }
-                          })
-                        : _vm._e(),
-                      _vm._$g("45-" + $30, "i")
-                        ? _c("uni-view", {
-                            staticStyle: {
-                              display: "inline-block",
-                              "background-color": "skyblue",
-                              width: "460rpx",
-                              height: "460rpx",
-                              "border-radius": "5px",
-                              "margin-bottom": "-65rpx"
-                            },
-                            attrs: { _i: "45-" + $30 }
-                          })
-                        : _vm._e(),
                       _c(
                         "uni-view",
                         {
                           staticStyle: {
-                            display: "inline-block",
-                            "margin-top": "-400rpx"
+                            "text-align": "center",
+                            "padding-top": "8%",
+                            "font-weight": "600"
                           },
-                          attrs: { _i: "46-" + $30 }
+                          attrs: { _i: "42-" + $30 }
                         },
-                        [
-                          _c("uqrcode", {
-                            ref: "uqrcode",
-                            refInFor: true,
-                            attrs: { _i: "47-" + $30 }
-                          })
-                        ],
-                        1
+                        [_vm._v("亲友码")]
                       ),
-                      _c("u-gap", { attrs: { _i: "48-" + $30 } }),
-                      _c(
-                        "uni-view",
-                        { attrs: { _i: "49-" + $30 } },
-                        [
-                          _c(
-                            "v-uni-text",
-                            {
-                              staticStyle: { color: "red" },
-                              attrs: { _i: "50-" + $30 }
-                            },
-                            [_vm._v("*")]
-                          ),
-                          _vm._v("当前展码：" + _vm._$g("49-" + $30, "t1-0"))
-                        ],
-                        1
-                      ),
-                      _c("u-gap", { attrs: { _i: "51-" + $30 } }),
                       _c(
                         "uni-view",
                         {
-                          staticStyle: { color: "gray", "font-size": "14px" },
-                          attrs: { _i: "52-" + $30 }
+                          staticStyle: {
+                            height: "800rpx",
+                            width: "100%",
+                            display: "inline-block",
+                            "align-items": "center",
+                            "justify-content": "center",
+                            "text-align": "center",
+                            "padding-top": "7%"
+                          },
+                          attrs: { _i: "43-" + $30 }
                         },
-                        [_vm._v("左右滑动切换")]
+                        [
+                          _vm._$g("44-" + $30, "i")
+                            ? _c("uni-view", {
+                                staticStyle: {
+                                  display: "inline-block",
+                                  "background-color": "skyblue",
+                                  width: "460rpx",
+                                  height: "460rpx",
+                                  "border-radius": "5px",
+                                  "margin-bottom": "-70rpx"
+                                },
+                                attrs: { _i: "44-" + $30 }
+                              })
+                            : _vm._e(),
+                          _vm._$g("45-" + $30, "i")
+                            ? _c("uni-view", {
+                                staticStyle: {
+                                  display: "inline-block",
+                                  "background-color": "skyblue",
+                                  width: "460rpx",
+                                  height: "460rpx",
+                                  "border-radius": "5px",
+                                  "margin-bottom": "-65rpx"
+                                },
+                                attrs: { _i: "45-" + $30 }
+                              })
+                            : _vm._e(),
+                          _c(
+                            "uni-view",
+                            {
+                              staticStyle: {
+                                display: "inline-block",
+                                "margin-top": "-400rpx"
+                              },
+                              attrs: { _i: "46-" + $30 }
+                            },
+                            [
+                              _c("uqrcode", {
+                                ref: "uqrcode",
+                                refInFor: true,
+                                attrs: { _i: "47-" + $30 }
+                              })
+                            ],
+                            1
+                          ),
+                          _c("u-gap", { attrs: { _i: "48-" + $30 } }),
+                          _c(
+                            "uni-view",
+                            { attrs: { _i: "49-" + $30 } },
+                            [
+                              _c(
+                                "v-uni-text",
+                                {
+                                  staticStyle: { color: "red" },
+                                  attrs: { _i: "50-" + $30 }
+                                },
+                                [_vm._v("*")]
+                              ),
+                              _vm._v(
+                                "当前展码：" + _vm._$g("49-" + $30, "t1-0")
+                              )
+                            ],
+                            1
+                          ),
+                          _c("u-gap", { attrs: { _i: "51-" + $30 } }),
+                          _c(
+                            "uni-view",
+                            {
+                              staticStyle: {
+                                color: "gray",
+                                "font-size": "14px"
+                              },
+                              attrs: { _i: "52-" + $30 }
+                            },
+                            [_vm._v("左右滑动切换")]
+                          )
+                        ],
+                        1
                       )
                     ],
                     1
                   )
-                ],
+                }),
                 1
               )
-            }),
+            ],
             1
           )
-        ],
-        1
-      )
+        : _vm._e()
     ],
     1
   )
@@ -11074,7 +11806,7 @@ var render = function() {
                       _c("v-uni-input", {
                         staticClass: _vm._$g(28, "sc"),
                         attrs: {
-                          type: "password",
+                          type: "text",
                           placeholder: "请输入验证码",
                           _i: 28
                         },
@@ -11471,7 +12203,7 @@ var render = function() {
                       _c("v-uni-input", {
                         staticClass: _vm._$g(24, "sc"),
                         attrs: {
-                          type: "password",
+                          type: "text",
                           placeholder: "请输入验证码",
                           _i: 24
                         },
@@ -11902,6 +12634,68 @@ var render = function() {
                       }
                     }
                   })
+                : _vm._e(),
+              _vm._$g(14, "i")
+                ? _c("ayQrcode", {
+                    ref: "qrcode",
+                    staticStyle: {
+                      display: "inline-block",
+                      "margin-top": "15rpx",
+                      "margin-left": "-50rpx"
+                    },
+                    attrs: { _i: 14 },
+                    on: {
+                      hideQrcode: function($event) {
+                        return _vm.$handleViewEvent($event)
+                      }
+                    }
+                  })
+                : _vm._e(),
+              _vm._$g(15, "i")
+                ? _c("ayQrcode", {
+                    ref: "qrcode",
+                    staticStyle: {
+                      display: "inline-block",
+                      "margin-top": "15rpx"
+                    },
+                    attrs: { _i: 15 },
+                    on: {
+                      hideQrcode: function($event) {
+                        return _vm.$handleViewEvent($event)
+                      }
+                    }
+                  })
+                : _vm._e(),
+              _vm._$g(16, "i")
+                ? _c("ayQrcode", {
+                    ref: "qrcode",
+                    staticStyle: {
+                      display: "inline-block",
+                      "margin-top": "15rpx",
+                      "margin-left": "-50rpx"
+                    },
+                    attrs: { _i: 16 },
+                    on: {
+                      hideQrcode: function($event) {
+                        return _vm.$handleViewEvent($event)
+                      }
+                    }
+                  })
+                : _vm._e(),
+              _vm._$g(17, "i")
+                ? _c("ayQrcode", {
+                    ref: "qrcode",
+                    staticStyle: {
+                      display: "inline-block",
+                      "margin-top": "15rpx"
+                    },
+                    attrs: { _i: 17 },
+                    on: {
+                      hideQrcode: function($event) {
+                        return _vm.$handleViewEvent($event)
+                      }
+                    }
+                  })
                 : _vm._e()
             ],
             1
@@ -11911,25 +12705,25 @@ var render = function() {
       ),
       _c("uni-view", {
         staticStyle: { display: "block", "padding-top": "40rpx" },
-        attrs: { _i: 14 }
+        attrs: { _i: 18 }
       }),
       _c(
         "v-uni-swiper",
         {
-          staticClass: _vm._$g(15, "sc"),
+          staticClass: _vm._$g(19, "sc"),
           staticStyle: { "background-color": "#EDEDED", height: "750rpx" },
-          attrs: { "indicator-dots": false, current: 1, _i: 15 }
+          attrs: { "indicator-dots": false, current: 1, _i: 19 }
         },
         [
           _c(
             "v-uni-swiper-item",
-            { attrs: { _i: 16 } },
+            { attrs: { _i: 20 } },
             [
               _c(
                 "uni-view",
                 {
                   staticStyle: { display: "block", "padding-top": "20rpx" },
-                  attrs: { _i: 17 }
+                  attrs: { _i: 21 }
                 },
                 [
                   _c(
@@ -11943,102 +12737,174 @@ var render = function() {
                         "border-radius": "5px",
                         "white-space": "pre-wrap"
                       },
-                      attrs: { _i: 18 }
+                      attrs: { _i: 22 }
                     },
                     [
                       _c(
                         "uni-view",
                         {
                           staticStyle: { width: "95%", "margin-left": "2.5%" },
-                          attrs: { _i: 19 }
+                          attrs: { _i: 23 }
                         },
                         [
-                          _c(
-                            "uni-view",
-                            {
-                              staticClass: _vm._$g(20, "sc"),
-                              attrs: { _i: 20 }
-                            },
-                            [
-                              _c(
-                                "v-uni-text",
+                          _vm._$g(24, "i")
+                            ? _c(
+                                "uni-view",
                                 {
-                                  staticStyle: { color: "gray" },
-                                  attrs: { _i: 21 }
-                                },
-                                [_vm._v("采样点：")]
-                              ),
-                              _c(
-                                "v-uni-text",
-                                {
-                                  staticStyle: {
-                                    position: "sticky",
-                                    left: "30%"
-                                  },
-                                  attrs: { _i: 22 }
-                                },
-                                [_vm._v(_vm._$g(22, "t0-0") + "\\n")]
-                              ),
-                              _c(
-                                "v-uni-text",
-                                {
-                                  staticStyle: { color: "gray" },
-                                  attrs: { _i: 23 }
-                                },
-                                [_vm._v("检测时间：")]
-                              ),
-                              _c(
-                                "v-uni-text",
-                                {
-                                  staticStyle: {
-                                    position: "sticky",
-                                    left: "28%"
-                                  },
+                                  staticClass: _vm._$g(24, "sc"),
                                   attrs: { _i: 24 }
                                 },
-                                [_vm._v(_vm._$g(24, "t0-0") + "\\n")]
-                              ),
-                              _c(
-                                "v-uni-text",
-                                {
-                                  staticStyle: { color: "gray" },
-                                  attrs: { _i: 25 }
-                                },
-                                [_vm._v("检测结果：")]
-                              ),
-                              _vm._$g(26, "i")
-                                ? _c(
+                                [
+                                  _c(
+                                    "v-uni-text",
+                                    {
+                                      staticStyle: { color: "gray" },
+                                      attrs: { _i: 25 }
+                                    },
+                                    [_vm._v("采样点：")]
+                                  ),
+                                  _c(
                                     "v-uni-text",
                                     {
                                       staticStyle: {
                                         position: "sticky",
-                                        left: "28%",
-                                        color: "limegreen",
-                                        "font-weight": "600"
+                                        left: "30%"
                                       },
                                       attrs: { _i: 26 }
                                     },
                                     [_vm._v(_vm._$g(26, "t0-0") + "\\n")]
-                                  )
-                                : _vm._e(),
-                              _vm._$g(27, "i")
-                                ? _c(
+                                  ),
+                                  _c(
+                                    "v-uni-text",
+                                    {
+                                      staticStyle: { color: "gray" },
+                                      attrs: { _i: 27 }
+                                    },
+                                    [_vm._v("检测时间：")]
+                                  ),
+                                  _c(
+                                    "v-uni-text",
+                                    {
+                                      staticStyle: {
+                                        position: "sticky",
+                                        left: "28%"
+                                      },
+                                      attrs: { _i: 28 }
+                                    },
+                                    [_vm._v(_vm._$g(28, "t0-0") + "\\n")]
+                                  ),
+                                  _c(
+                                    "v-uni-text",
+                                    {
+                                      staticStyle: { color: "gray" },
+                                      attrs: { _i: 29 }
+                                    },
+                                    [_vm._v("检测结果：")]
+                                  ),
+                                  _vm._$g(30, "i")
+                                    ? _c(
+                                        "v-uni-text",
+                                        {
+                                          staticStyle: {
+                                            position: "sticky",
+                                            left: "28%",
+                                            color: "limegreen",
+                                            "font-weight": "600"
+                                          },
+                                          attrs: { _i: 30 }
+                                        },
+                                        [_vm._v(_vm._$g(30, "t0-0") + "\\n")]
+                                      )
+                                    : _vm._e(),
+                                  _vm._$g(31, "i")
+                                    ? _c(
+                                        "v-uni-text",
+                                        {
+                                          staticStyle: {
+                                            position: "sticky",
+                                            left: "28%",
+                                            color: "orange",
+                                            "font-weight": "600"
+                                          },
+                                          attrs: { _i: 31 }
+                                        },
+                                        [_vm._v(_vm._$g(31, "t0-0") + "\\n")]
+                                      )
+                                    : _vm._e()
+                                ],
+                                1
+                              )
+                            : _vm._e(),
+                          _vm._$g(32, "i")
+                            ? _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g(32, "sc"),
+                                  attrs: { _i: 32 }
+                                },
+                                [
+                                  _c(
+                                    "v-uni-text",
+                                    {
+                                      staticStyle: { color: "gray" },
+                                      attrs: { _i: 33 }
+                                    },
+                                    [_vm._v("采样点：")]
+                                  ),
+                                  _c(
+                                    "v-uni-text",
+                                    {
+                                      staticStyle: {
+                                        position: "sticky",
+                                        left: "29%"
+                                      },
+                                      attrs: { _i: 34 }
+                                    },
+                                    [_vm._v("暂无\\n")]
+                                  ),
+                                  _c(
+                                    "v-uni-text",
+                                    {
+                                      staticStyle: { color: "gray" },
+                                      attrs: { _i: 35 }
+                                    },
+                                    [_vm._v("检测时间：")]
+                                  ),
+                                  _c(
+                                    "v-uni-text",
+                                    {
+                                      staticStyle: {
+                                        position: "sticky",
+                                        left: "28%"
+                                      },
+                                      attrs: { _i: 36 }
+                                    },
+                                    [_vm._v("暂无\\n")]
+                                  ),
+                                  _c(
+                                    "v-uni-text",
+                                    {
+                                      staticStyle: { color: "gray" },
+                                      attrs: { _i: 37 }
+                                    },
+                                    [_vm._v("检测结果：")]
+                                  ),
+                                  _c(
                                     "v-uni-text",
                                     {
                                       staticStyle: {
                                         position: "sticky",
                                         left: "28%",
-                                        color: "orange",
                                         "font-weight": "600"
                                       },
-                                      attrs: { _i: 27 }
+                                      attrs: { _i: 38 }
                                     },
-                                    [_vm._v(_vm._$g(27, "t0-0") + "\\n")]
+                                    [_vm._v("暂无\\n")]
                                   )
-                                : _vm._e()
-                            ],
-                            1
-                          ),
+                                ],
+                                1
+                              )
+                            : _vm._e(),
                           _c(
                             "uni-view",
                             {
@@ -12047,7 +12913,7 @@ var render = function() {
                                 "padding-bottom": "15rpx",
                                 "padding-left": "2%"
                               },
-                              attrs: { _i: 28 }
+                              attrs: { _i: 39 }
                             },
                             [
                               _c(
@@ -12057,7 +12923,7 @@ var render = function() {
                                     "font-size": "12px",
                                     color: "gray"
                                   },
-                                  attrs: { _i: 29 }
+                                  attrs: { _i: 40 }
                                 },
                                 [
                                   _vm._v(
@@ -12088,7 +12954,7 @@ var render = function() {
                         "white-space": "pre-wrap",
                         "margin-top": "-20rpx"
                       },
-                      attrs: { _i: 30 }
+                      attrs: { _i: 41 }
                     },
                     [
                       _c(
@@ -12099,7 +12965,7 @@ var render = function() {
                             "margin-left": "2.5%",
                             "margin-top": "50rpx"
                           },
-                          attrs: { _i: 31 },
+                          attrs: { _i: 42 },
                           on: {
                             click: function($event) {
                               return _vm.$handleViewEvent($event)
@@ -12115,16 +12981,16 @@ var render = function() {
                                 "justify-content": "center",
                                 "align-items": "center"
                               },
-                              attrs: { _i: 32 }
+                              attrs: { _i: 43 }
                             },
                             [
                               _c(
                                 "uni-view",
                                 {
                                   staticStyle: { "margin-top": "5rpx" },
-                                  attrs: { _i: 33 }
+                                  attrs: { _i: 44 }
                                 },
-                                [_c("u-icon", { attrs: { _i: 34 } })],
+                                [_c("u-icon", { attrs: { _i: 45 } })],
                                 1
                               ),
                               _c(
@@ -12135,7 +13001,7 @@ var render = function() {
                                     "font-weight": "600",
                                     "white-space": "pre-wrap"
                                   },
-                                  attrs: { _i: 35 }
+                                  attrs: { _i: 46 }
                                 },
                                 [_vm._v("核酸检测所有信息")]
                               )
@@ -12156,34 +13022,34 @@ var render = function() {
           ),
           _c(
             "v-uni-swiper-item",
-            { attrs: { _i: 36 } },
+            { attrs: { _i: 47 } },
             [
               _c(
                 "uni-view",
                 {
                   staticStyle: { display: "block", "padding-top": "20rpx" },
-                  attrs: { _i: 37 }
+                  attrs: { _i: 48 }
                 },
                 [
-                  _vm._$g(38, "i")
+                  _vm._$g(49, "i")
                     ? _c(
                         "uni-view",
                         {
-                          staticClass: _vm._$g(38, "sc"),
+                          staticClass: _vm._$g(49, "sc"),
                           staticStyle: {
                             float: "left",
                             "margin-left": "5%",
                             "text-align": "center",
                             "white-space": "pre-wrap"
                           },
-                          attrs: { _i: 38 }
+                          attrs: { _i: 49 }
                         },
                         [
                           _c(
                             "uni-view",
                             {
                               staticStyle: { "padding-top": "30rpx" },
-                              attrs: { _i: 39 }
+                              attrs: { _i: 50 }
                             },
                             [
                               _c(
@@ -12194,7 +13060,7 @@ var render = function() {
                                     "font-weight": "600",
                                     "font-size": "18px"
                                   },
-                                  attrs: { _i: 40 }
+                                  attrs: { _i: 51 }
                                 },
                                 [_vm._v("核酸(省内)\\n")]
                               )
@@ -12205,10 +13071,84 @@ var render = function() {
                             "uni-view",
                             {
                               staticStyle: { "padding-top": "20rpx" },
-                              attrs: { _i: 41 }
+                              attrs: { _i: 52 }
                             },
                             [
-                              _vm._$g(42, "i")
+                              _c(
+                                "v-uni-text",
+                                {
+                                  staticStyle: {
+                                    color: "limegreen",
+                                    "font-weight": "600",
+                                    "font-size": "35px"
+                                  },
+                                  attrs: { _i: 53 }
+                                },
+                                [_vm._v("暂无\\n")]
+                              )
+                            ],
+                            1
+                          ),
+                          _c(
+                            "uni-view",
+                            {
+                              staticStyle: {
+                                "padding-top": "35rpx",
+                                "padding-left": "23%"
+                              },
+                              attrs: { _i: 54 }
+                            },
+                            [_c("u-icon", { attrs: { _i: 55 } })],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    : _vm._e(),
+                  _vm._$g(56, "i")
+                    ? _c(
+                        "uni-view",
+                        {
+                          staticClass: _vm._$g(56, "sc"),
+                          staticStyle: {
+                            float: "left",
+                            "margin-left": "5%",
+                            "text-align": "center",
+                            "white-space": "pre-wrap"
+                          },
+                          attrs: { _i: 56 }
+                        },
+                        [
+                          _c(
+                            "uni-view",
+                            {
+                              staticStyle: { "padding-top": "30rpx" },
+                              attrs: { _i: 57 }
+                            },
+                            [
+                              _c(
+                                "v-uni-text",
+                                {
+                                  staticStyle: {
+                                    color: "limegreen",
+                                    "font-weight": "600",
+                                    "font-size": "18px"
+                                  },
+                                  attrs: { _i: 58 }
+                                },
+                                [_vm._v("核酸(省内)\\n")]
+                              )
+                            ],
+                            1
+                          ),
+                          _c(
+                            "uni-view",
+                            {
+                              staticStyle: { "padding-top": "20rpx" },
+                              attrs: { _i: 59 }
+                            },
+                            [
+                              _vm._$g(60, "i")
                                 ? _c(
                                     "v-uni-text",
                                     {
@@ -12217,12 +13157,12 @@ var render = function() {
                                         "font-weight": "600",
                                         "font-size": "35px"
                                       },
-                                      attrs: { _i: 42 }
+                                      attrs: { _i: 60 }
                                     },
                                     [_vm._v("阴性\\n")]
                                   )
                                 : _vm._e(),
-                              _vm._$g(43, "i")
+                              _vm._$g(61, "i")
                                 ? _c(
                                     "v-uni-text",
                                     {
@@ -12233,12 +13173,12 @@ var render = function() {
                                         "font-size": "35px",
                                         display: "table-cell"
                                       },
-                                      attrs: { _i: 43 }
+                                      attrs: { _i: 61 }
                                     },
                                     [_vm._v("48")]
                                   )
                                 : _vm._e(),
-                              _vm._$g(44, "i")
+                              _vm._$g(62, "i")
                                 ? _c(
                                     "v-uni-text",
                                     {
@@ -12251,7 +13191,7 @@ var render = function() {
                                         "vertical-align": "top",
                                         "padding-top": "15rpx"
                                       },
-                                      attrs: { _i: 44 }
+                                      attrs: { _i: 62 }
                                     },
                                     [_vm._v("小时\\n阴性")]
                                   )
@@ -12266,34 +13206,34 @@ var render = function() {
                                 "padding-top": "35rpx",
                                 "padding-left": "23%"
                               },
-                              attrs: { _i: 45 }
+                              attrs: { _i: 63 }
                             },
-                            [_c("u-icon", { attrs: { _i: 46 } })],
+                            [_c("u-icon", { attrs: { _i: 64 } })],
                             1
                           )
                         ],
                         1
                       )
                     : _vm._e(),
-                  _vm._$g(47, "i")
+                  _vm._$g(65, "i")
                     ? _c(
                         "uni-view",
                         {
-                          staticClass: _vm._$g(47, "sc"),
+                          staticClass: _vm._$g(65, "sc"),
                           staticStyle: {
                             float: "left",
                             "margin-left": "5%",
                             "text-align": "center",
                             "white-space": "pre-wrap"
                           },
-                          attrs: { _i: 47 }
+                          attrs: { _i: 65 }
                         },
                         [
                           _c(
                             "uni-view",
                             {
                               staticStyle: { "padding-top": "30rpx" },
-                              attrs: { _i: 48 }
+                              attrs: { _i: 66 }
                             },
                             [
                               _c(
@@ -12304,7 +13244,7 @@ var render = function() {
                                     "font-weight": "600",
                                     "font-size": "18px"
                                   },
-                                  attrs: { _i: 49 }
+                                  attrs: { _i: 67 }
                                 },
                                 [_vm._v("核酸(省内)\\n")]
                               )
@@ -12315,7 +13255,7 @@ var render = function() {
                             "uni-view",
                             {
                               staticStyle: { "padding-top": "20rpx" },
-                              attrs: { _i: 50 }
+                              attrs: { _i: 68 }
                             },
                             [
                               _c(
@@ -12326,7 +13266,7 @@ var render = function() {
                                     "font-weight": "600",
                                     "font-size": "35px"
                                   },
-                                  attrs: { _i: 51 }
+                                  attrs: { _i: 69 }
                                 },
                                 [_vm._v("阳性\\n")]
                               )
@@ -12340,9 +13280,9 @@ var render = function() {
                                 "padding-top": "35rpx",
                                 "padding-left": "23%"
                               },
-                              attrs: { _i: 52 }
+                              attrs: { _i: 70 }
                             },
-                            [_c("u-icon", { attrs: { _i: 53 } })],
+                            [_c("u-icon", { attrs: { _i: 71 } })],
                             1
                           )
                         ],
@@ -12352,20 +13292,20 @@ var render = function() {
                   _c(
                     "uni-view",
                     {
-                      staticClass: _vm._$g(54, "sc"),
+                      staticClass: _vm._$g(72, "sc"),
                       staticStyle: {
                         float: "right",
                         "margin-right": "5%",
                         "text-align": "center"
                       },
-                      attrs: { _i: 54 }
+                      attrs: { _i: 72 }
                     },
                     [
                       _c(
                         "uni-view",
                         {
                           staticStyle: { "padding-top": "30rpx" },
-                          attrs: { _i: 55 }
+                          attrs: { _i: 73 }
                         },
                         [
                           _c(
@@ -12376,7 +13316,7 @@ var render = function() {
                                 "font-weight": "600",
                                 "font-size": "18px"
                               },
-                              attrs: { _i: 56 }
+                              attrs: { _i: 74 }
                             },
                             [_vm._v("新冠疫苗\\n")]
                           )
@@ -12390,10 +13330,10 @@ var render = function() {
                             "padding-top": "30rpx",
                             "line-height": "36px"
                           },
-                          attrs: { _i: 57 }
+                          attrs: { _i: 75 }
                         },
                         [
-                          _vm._$g(58, "i")
+                          _vm._$g(76, "i")
                             ? _c(
                                 "v-uni-text",
                                 {
@@ -12402,12 +13342,12 @@ var render = function() {
                                     "font-weight": "600",
                                     "font-size": "30px"
                                   },
-                                  attrs: { _i: 58 }
+                                  attrs: { _i: 76 }
                                 },
                                 [_vm._v("已接种\\n")]
                               )
                             : _vm._e(),
-                          _vm._$g(59, "i")
+                          _vm._$g(77, "i")
                             ? _c(
                                 "v-uni-text",
                                 {
@@ -12416,12 +13356,12 @@ var render = function() {
                                     "font-weight": "600",
                                     "font-size": "30px"
                                   },
-                                  attrs: { _i: 59 }
+                                  attrs: { _i: 77 }
                                 },
                                 [_vm._v("未接种\\n")]
                               )
                             : _vm._e(),
-                          _vm._$g(60, "i")
+                          _vm._$g(78, "i")
                             ? _c(
                                 "v-uni-text",
                                 {
@@ -12431,7 +13371,7 @@ var render = function() {
                                     "font-size": "23px",
                                     "line-height": "40px"
                                   },
-                                  attrs: { _i: 60 }
+                                  attrs: { _i: 78 }
                                 },
                                 [_vm._v("已加强接种\\n")]
                               )
@@ -12446,9 +13386,9 @@ var render = function() {
                             "padding-top": "35rpx",
                             "padding-left": "23%"
                           },
-                          attrs: { _i: 61 }
+                          attrs: { _i: 79 }
                         },
-                        [_c("u-icon", { attrs: { _i: 62 } })],
+                        [_c("u-icon", { attrs: { _i: 80 } })],
                         1
                       )
                     ],
@@ -12464,7 +13404,7 @@ var render = function() {
                         "font-size": "14px",
                         color: "#3c9cff"
                       },
-                      attrs: { _i: 63 }
+                      attrs: { _i: 81 }
                     },
                     [
                       _vm._v(
@@ -12472,7 +13412,7 @@ var render = function() {
                       )
                     ]
                   ),
-                  _c("u-divider", { attrs: { _i: 64 } }),
+                  _c("u-divider", { attrs: { _i: 82 } }),
                   _c(
                     "uni-view",
                     {
@@ -12481,7 +13421,7 @@ var render = function() {
                         color: "gray",
                         "font-size": "14px"
                       },
-                      attrs: { _i: 65 }
+                      attrs: { _i: 83 }
                     },
                     [_vm._v("--- 服务热线：12345 ---")]
                   )
@@ -12490,20 +13430,20 @@ var render = function() {
               ),
               _c("uni-view", {
                 staticStyle: { display: "block", "padding-top": "40rpx" },
-                attrs: { _i: 66 }
+                attrs: { _i: 84 }
               })
             ],
             1
           ),
           _c(
             "v-uni-swiper-item",
-            { attrs: { _i: 67 } },
+            { attrs: { _i: 85 } },
             [
               _c(
                 "uni-view",
                 {
                   staticStyle: { display: "block", "padding-top": "20rpx" },
-                  attrs: { _i: 68 }
+                  attrs: { _i: 86 }
                 },
                 [
                   _c(
@@ -12517,91 +13457,148 @@ var render = function() {
                         "border-radius": "5px",
                         "white-space": "pre-wrap"
                       },
-                      attrs: { _i: 69 }
+                      attrs: { _i: 87 }
                     },
                     [
                       _c(
                         "uni-view",
                         {
                           staticStyle: { width: "95%", "margin-left": "2.5%" },
-                          attrs: { _i: 70 }
+                          attrs: { _i: 88 }
                         },
                         [
-                          _vm._l(_vm._$g(71, "f"), function(
+                          _vm._l(_vm._$g(89, "f"), function(
                             item,
                             index,
                             $20,
                             $30
                           ) {
-                            return _c(
-                              "uni-view",
-                              { key: item, attrs: { _i: "71-" + $30 } },
-                              [
-                                _c(
+                            return _vm._$g("89-" + $30, "i")
+                              ? _c(
                                   "uni-view",
-                                  {
-                                    staticClass: _vm._$g("72-" + $30, "sc"),
-                                    attrs: { _i: "72-" + $30 }
-                                  },
+                                  { key: item, attrs: { _i: "89-" + $30 } },
                                   [
                                     _c(
-                                      "v-uni-text",
+                                      "uni-view",
                                       {
-                                        staticStyle: { color: "gray" },
-                                        attrs: { _i: "73-" + $30 }
+                                        staticClass: _vm._$g("90-" + $30, "sc"),
+                                        attrs: { _i: "90-" + $30 }
                                       },
-                                      [_vm._v("疫苗名称：")]
-                                    ),
-                                    _c(
-                                      "v-uni-text",
-                                      { attrs: { _i: "74-" + $30 } },
                                       [
-                                        _vm._v(
-                                          _vm._$g("74-" + $30, "t0-0") + "\\n"
+                                        _c(
+                                          "v-uni-text",
+                                          {
+                                            staticStyle: { color: "gray" },
+                                            attrs: { _i: "91-" + $30 }
+                                          },
+                                          [_vm._v("疫苗名称：")]
+                                        ),
+                                        _c(
+                                          "v-uni-text",
+                                          { attrs: { _i: "92-" + $30 } },
+                                          [
+                                            _vm._v(
+                                              _vm._$g("92-" + $30, "t0-0") +
+                                                "\\n"
+                                            )
+                                          ]
+                                        ),
+                                        _c(
+                                          "v-uni-text",
+                                          {
+                                            staticStyle: { color: "gray" },
+                                            attrs: { _i: "93-" + $30 }
+                                          },
+                                          [_vm._v("接种日期：")]
+                                        ),
+                                        _c(
+                                          "v-uni-text",
+                                          { attrs: { _i: "94-" + $30 } },
+                                          [
+                                            _vm._v(
+                                              _vm._$g("94-" + $30, "t0-0") +
+                                                "\\n"
+                                            )
+                                          ]
+                                        ),
+                                        _c(
+                                          "v-uni-text",
+                                          {
+                                            staticStyle: { color: "gray" },
+                                            attrs: { _i: "95-" + $30 }
+                                          },
+                                          [_vm._v("接种单位：")]
+                                        ),
+                                        _c(
+                                          "v-uni-text",
+                                          { attrs: { _i: "96-" + $30 } },
+                                          [
+                                            _vm._v(
+                                              _vm._$g("96-" + $30, "t0-0") +
+                                                "\\n"
+                                            )
+                                          ]
                                         )
-                                      ]
-                                    ),
-                                    _c(
-                                      "v-uni-text",
-                                      {
-                                        staticStyle: { color: "gray" },
-                                        attrs: { _i: "75-" + $30 }
-                                      },
-                                      [_vm._v("接种日期：")]
-                                    ),
-                                    _c(
-                                      "v-uni-text",
-                                      { attrs: { _i: "76-" + $30 } },
-                                      [
-                                        _vm._v(
-                                          _vm._$g("76-" + $30, "t0-0") + "\\n"
-                                        )
-                                      ]
-                                    ),
-                                    _c(
-                                      "v-uni-text",
-                                      {
-                                        staticStyle: { color: "gray" },
-                                        attrs: { _i: "77-" + $30 }
-                                      },
-                                      [_vm._v("接种单位：")]
-                                    ),
-                                    _c(
-                                      "v-uni-text",
-                                      { attrs: { _i: "78-" + $30 } },
-                                      [
-                                        _vm._v(
-                                          _vm._$g("78-" + $30, "t0-0") + "\\n"
-                                        )
-                                      ]
+                                      ],
+                                      1
                                     )
                                   ],
                                   1
                                 )
-                              ],
-                              1
-                            )
+                              : _vm._e()
                           }),
+                          _vm._$g(97, "i")
+                            ? _c(
+                                "uni-view",
+                                { attrs: { _i: 97 } },
+                                [
+                                  _c(
+                                    "uni-view",
+                                    {
+                                      staticClass: _vm._$g(98, "sc"),
+                                      attrs: { _i: 98 }
+                                    },
+                                    [
+                                      _c(
+                                        "v-uni-text",
+                                        {
+                                          staticStyle: { color: "gray" },
+                                          attrs: { _i: 99 }
+                                        },
+                                        [_vm._v("疫苗名称：")]
+                                      ),
+                                      _c("v-uni-text", { attrs: { _i: 100 } }, [
+                                        _vm._v("暂无\\n")
+                                      ]),
+                                      _c(
+                                        "v-uni-text",
+                                        {
+                                          staticStyle: { color: "gray" },
+                                          attrs: { _i: 101 }
+                                        },
+                                        [_vm._v("接种日期：")]
+                                      ),
+                                      _c("v-uni-text", { attrs: { _i: 102 } }, [
+                                        _vm._v("暂无\\n")
+                                      ]),
+                                      _c(
+                                        "v-uni-text",
+                                        {
+                                          staticStyle: { color: "gray" },
+                                          attrs: { _i: 103 }
+                                        },
+                                        [_vm._v("接种单位：")]
+                                      ),
+                                      _c("v-uni-text", { attrs: { _i: 104 } }, [
+                                        _vm._v("暂无\\n")
+                                      ])
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            : _vm._e(),
                           _c(
                             "uni-view",
                             {
@@ -12610,7 +13607,7 @@ var render = function() {
                                 "padding-bottom": "15rpx",
                                 "padding-left": "2%"
                               },
-                              attrs: { _i: 79 }
+                              attrs: { _i: 105 }
                             },
                             [
                               _c(
@@ -12620,7 +13617,7 @@ var render = function() {
                                     "font-size": "12px",
                                     color: "gray"
                                   },
-                                  attrs: { _i: 80 }
+                                  attrs: { _i: 106 }
                                 },
                                 [
                                   _vm._v(
@@ -13554,7 +14551,11 @@ var render = function() {
     [
       _c(
         "uni-view",
-        { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
+        {
+          key: _vm._$g(1, "a-key"),
+          staticClass: _vm._$g(1, "sc"),
+          attrs: { _i: 1 }
+        },
         [
           _c(
             "uni-view",
