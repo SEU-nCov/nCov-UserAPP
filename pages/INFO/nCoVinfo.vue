@@ -308,10 +308,72 @@
 			</view>
 		</view>
 		<view v-if="curNow==2">
-			2
+			<view class="shadow">
+				<view style="width:90%;margin-left:5%;padding-top:50rpx;">
+					<u-subsection :list="list" :current="current" mode="button" @change="queryChange"></u-subsection>
+					<u-gap height="20" bgColor="white"></u-gap>
+					<uni-data-picker  style="white-space:pre-wrap;height:100rpx;" v-show="ifshow"   placeholder="      请选择地址      " popup-title="请 选 择 城 市" collection="opendb-city-china"
+						field="code as value, name as text" orderby="value asc" :step-searh="true" self-field="code"
+						parent-field="parent_code" @change="onchange">
+					</uni-data-picker>
+					<u-collapse :border="false">
+						<u-collapse-item v-if="current==0" v-for="(item,index) in natdata" :key="index" :title="item.nat_pointname">
+							<view style="width:100%;">
+								<view style="float:left;display:inline;line-height:50rpx;">
+									<text>{{item.nat_pointname}}</text>
+								</view>
+								<view style="float:right;display:inline;">
+									<u-icon name="map" color="#2979ff" size="25" @click="callmap(item)"></u-icon>
+								</view>
+							</view>
+						</u-collapse-item>
+						<u-collapse-item v-if="current==1" v-for="(item,index) in vaccinedata" :key="index" :title="item.vac_pointname">
+							<view style="width:100%;">
+								<view style="float:left;display:inline;line-height:50rpx;">
+									<text>{{item.vac_pointname}}</text>
+								</view>
+								<view style="float:right;display:inline;">
+									<u-icon name="map" color="#2979ff" size="25" @click="callmap(item.vac_pointname,item.longitude,item.latitude)"></u-icon>
+								</view>
+							</view>
+						</u-collapse-item>
+					</u-collapse>
+				</view>
+			</view>
+			<u-gap height="20" bgColor="rgb(0,0,0,0)"></u-gap>
 		</view>
 		<view v-if="curNow==3">
-			3
+			<view class="shadow">
+				<view style="width:90%;margin-left:5%;padding-top:50rpx;">
+					<view style="margin-left:3%;">
+						<text style="color:#2A88FA;font-weight:600;font-size:20px;">防疫政策查询</text>
+					</view>
+					<u-gap height="20" bgColor="white"></u-gap>
+					<view style="width:100%;height:100rpx;">
+						<view style="width:50%;float:left;display:inline;">
+							<uni-data-picker  style="white-space:pre-wrap;" v-show="ifshow"   placeholder="      请选择出发地" popup-title="请 选 择 城 市" collection="opendb-city-china"
+							field="code as value, name as text" orderby="value asc" :step-searh="true" self-field="code"
+							parent-field="parent_code" @change="onchanges">
+							</uni-data-picker>
+						</view>
+						<view style="width:50%;float:right;display:inline;">
+							<uni-data-picker  style="white-space:pre-wrap;" v-show="ifshow"   placeholder="      请选择目的地" popup-title="请 选 择 城 市" collection="opendb-city-china"
+							field="code as value, name as text" orderby="value asc" :step-searh="true" self-field="code"
+							parent-field="parent_code" @change="onchanged">
+							</uni-data-picker>
+						</view>
+					</view>
+					<u-collapse :border="false">
+						<u-collapse-item :title="from_city+'出行政策'">
+							{{this.policydata.from_policy}}
+						</u-collapse-item>
+						<u-collapse-item :title="to_city+'出行政策'">
+							{{this.policydata.to_policy}}
+						</u-collapse-item>
+					</u-collapse>
+				</view>
+			</view>
+			<u-gap height="20" bgColor="rgb(0,0,0,0)"></u-gap>
 		</view>
 	</view>
 </template>
@@ -321,6 +383,12 @@
 	export default {
 		data() {
 			return {
+				city:'南京市',
+				from_city:'南京市',
+				to_city:'杭州市',
+				current:0,
+				list:['核酸检测点','疫苗接种点'],
+				ifshow:1,
 				infolist: [{name:'国内疫情'}, {name:'国外疫情'},{name:'核酸检测'},{name:'防疫政策'}],
 				curNow: 0,
 				titlelist: [{
@@ -353,6 +421,9 @@
 				middlelist:[],
 				heightlist:[],
 				foreigndata: {},
+				vaccinedata:[],
+				natdata:[],
+				policydata:[],
 				overseaLastUpdateTime:'',
 				overseadata:[{name:'累计确诊',num:'',compare:''},{name:'累计治愈',num:'',compare:''},{name:'累计死亡',num:'',compare:''},{name:'累计治愈',num:'',compare:''}],
 			}
@@ -360,6 +431,8 @@
 		onShow() {
 			this.getLocalShop();
 			this.getForeignShop();
+			this.getaddr();
+			this.getpolicy();
 		    let that = this;
 		    //that.daytime = uni.getStorageSync('daytime');
 		    uni.setNavigationBarColor({
@@ -372,6 +445,41 @@
 		    })
 		},
 		methods: {
+			queryChange(index){
+				this.current=index;
+			},
+			onchange(e){
+				const val = e.detail.value;
+				this.city = val[1].text;
+				this.getaddr();
+			},
+			onchanges(e){
+				const val = e.detail.value;
+				this.from_city = val[1].text;
+				this.getpolicy();
+			},
+			onchanged(e){
+				const val = e.detail.value;
+				this.to_city = val[1].text;
+				this.getpolicy();
+			},
+			getpolicy(){
+				let that = this;
+				uni.request({
+				    url: this.$BASE_URL.BASE_URL+'/getTravelPolicy',
+				    method: 'POST',
+					header:{
+						'Content-Type': 'application/json',
+					},
+					data:{
+						'from_city':this.from_city,
+						'to_city':this.to_city,
+					},
+				    success: res => {
+				        that.policydata=JSON.parse(JSON.stringify(res.data.data));
+				    }
+				});
+			},
 			sectionChange(index) {
 				this.curNow = index.index;
 			},
@@ -417,6 +525,48 @@
 			        this.$forceUpdate();
 			    }
 			},
+			callmap(item){
+				let name=item.nat_pointname;
+				let long=item.longitude;
+				let lati=item.latitude;
+				
+				uni.getLocation({
+					type: 'wgs84',
+					success: function(res) {
+						var packageName = 'com.autonavi.minimap';
+						var main = plus.android.runtimeMainActivity();
+						var packageManager = main.getPackageManager();
+						var PackageManager = plus.android.importClass(packageManager)
+						var packageInfo = packageManager.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
+						if (packageInfo) {
+							var Uri = plus.android.importClass("android.net.Uri");
+							var url = "amapuri://route/plan?sourceApplication=maxuslife" +
+								"&sid=A&slat="+ res.latitude +"&slon="+ res.longitude + "&sname=您的位置" +
+								"&did=B&dlat="+ lati +"&dlon=" + long +"&dname=" + name + "&dev=0&t=0";
+							var Intent = plus.android.importClass('android.content.Intent');
+							var intent = new Intent();
+							intent.setAction(Intent.ACTION_VIEW);
+							intent.addCategory(Intent.CATEGORY_DEFAULT);
+							var uri = Uri.parse(url);
+							//将功能Scheme以URI的方式传入data  
+							intent.setData(uri);
+							intent.setPackage("com.autonavi.minimap");
+							var main = plus.android.runtimeMainActivity();
+							main.startActivity(intent);
+						} else {
+							// alert('未安装' + packageName + '')
+							uni.showModal({
+								content:'目前仅支持高德地图导航，请先下载高德地图',
+								showCancel: false,
+								success:function(res){
+									if(res.confirm){
+									}
+								}
+							});
+						}
+					}
+				});
+			},
 			popzqw() {
 			    uni.showToast({
 			        title: '愿你我都能守住岁月，待到春光灿烂之时。',
@@ -430,6 +580,35 @@
 			    uni.navigateTo({
 			        url: 'coronavirus?item=' + item
 			    })
+			},
+			getaddr(){
+			    let that = this;
+			    uni.request({
+			        url: this.$BASE_URL.BASE_URL+'/getNatPointbycity',
+			        method: 'POST',
+					header:{
+						'Content-Type': 'application/json',
+					},
+					data:{
+						'city_name':this.city,
+					},
+			        success: res => {
+			            that.natdata=JSON.parse(JSON.stringify(res.data.data));
+			        }
+			    });
+				uni.request({
+				    url: this.$BASE_URL.BASE_URL+'/getVacPointbycity',
+				    method: 'POST',
+					header:{
+						'Content-Type': 'application/json',
+					},
+					data:{
+						'city_name':this.city,
+					},
+				    success: res => {
+				        that.vaccinedata=JSON.parse(JSON.stringify(res.data.data));
+				    }
+				});
 			},
 			getLocalShop() {
 			    let that = this;
@@ -1073,5 +1252,19 @@
 	    color: #000;
 	    text-align: center;
 	    font-size: 28rpx;
+	}
+	.shadow{
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		width:90%;
+		margin-top:50rpx;
+		margin-left:5%;
+		border-radius:5px;
+	}
+	.tip{
+		width:90%;
+		margin-left:5%;
+		margin-top:20rpx;
+		height:80rpx;
+		border-bottom:0.5px solid lightgray;;
 	}
 </style>

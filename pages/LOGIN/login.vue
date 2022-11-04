@@ -229,9 +229,9 @@
 				})
 			},
 			login(){
-				uni.switchTab({
+				/*uni.switchTab({
 					url:"../INFO/nCoVinfo"
-				})
+				})*/
 				if(this.check==false){
 					uni.showToast({
 						icon:"none",

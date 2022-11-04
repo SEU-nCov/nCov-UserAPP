@@ -46,7 +46,7 @@
 	export default {
 		data() {
 			return {
-				phone:'15150805183',
+				phone:this.$user.memberObj.user_phone,
 				place:'江苏省南京市，江苏省扬州市',
 			}
 		},
