@@ -7,6 +7,7 @@ export default {
 		user_codecolor:'',
 		user_timeleft:'',
 		user_nat:[],
+		user_pic:'',
     },
     setMemberObj(data){
         this.memberObj = Object.assign({},this.memberObj,data) 

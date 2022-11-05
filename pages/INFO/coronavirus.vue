@@ -66,7 +66,7 @@
                 <text class="item" style="background-color: #f3f6f8; color: #4e5a65;">死亡</text>
             </view>
             <view class="citylist-box">
-                <block v-for="(item, index) in mydata.children" :key='index'>
+                <block v-for="(item, index) in mydata.children" :key="index">
                     <view class="citylist-box-item" :class="daytime?'daytimebot16':' nightimebot16'">
                         <view class="item">
                             <text class="item-name">

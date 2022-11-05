@@ -117,7 +117,7 @@
 			            <text class="item" style="background-color: #f5f5f5; color: #222222;">详情</text>
 			        </view>
 			        <view class="citylist-box" v-if="mydata.areaTree!=null">
-			            <block v-for="(item, index) in mydata.areaTree[0].children" :key='index'>
+			            <block v-for="(item, index) in mydata.areaTree[0].children" :key="index">
 			                <view class="citylist-box-item" :class="daytime?'daytimebot16':' nightimebot16'">
 			                    <view class="item" @click="advSearch(index,item, 2)">
 			                        {{item.name}}
@@ -254,7 +254,7 @@
 					<text class="item-f" style="background-color: #f3f6f8; color: #4e5a65;">死亡</text>
 				</view>
 				<view class="citylist-box-f">
-					<block v-for="(item, index) in foreigndata" :key='index'>
+					<block v-for="(item, index) in foreigndata" :key="index">
 						<view class="citylist-box-item-f" :class="daytime?'daytimebot16':' nightimebot16'">
 							<view class="item-f" v-if="item.children[0]!=null" @click="advSearch(index,item, 2)">
 								{{item.name}}
@@ -312,7 +312,7 @@
 				<view style="width:90%;margin-left:5%;padding-top:50rpx;">
 					<u-subsection :list="list" :current="current" mode="button" @change="queryChange"></u-subsection>
 					<u-gap height="20" bgColor="white"></u-gap>
-					<uni-data-picker  style="white-space:pre-wrap;height:100rpx;" v-show="ifshow"   placeholder="      请选择地址      " popup-title="请 选 择 城 市" collection="opendb-city-china"
+					<uni-data-picker  style="white-space:pre-wrap;height:100rpx;" placeholder="      请选择地址      " popup-title="请 选 择 城 市" collection="opendb-city-china"
 						field="code as value, name as text" orderby="value asc" :step-searh="true" self-field="code"
 						parent-field="parent_code" @change="onchange">
 					</uni-data-picker>
@@ -327,7 +327,7 @@
 								</view>
 							</view>
 						</u-collapse-item>
-						<u-collapse-item v-if="current==1" v-for="(item,index) in vaccinedata" :key="index" :title="item.vac_pointname">
+						<u-collapse-item v-if="current==1" v-for="(item,indexs) in vaccinedata" :key="indexs" :title="item.vac_pointname">
 							<view style="width:100%;">
 								<view style="float:left;display:inline;line-height:50rpx;">
 									<text>{{item.vac_pointname}}</text>
@@ -338,9 +338,10 @@
 							</view>
 						</u-collapse-item>
 					</u-collapse>
+					<u-gap height="20" bgColor="white"></u-gap>
 				</view>
 			</view>
-			<u-gap height="20" bgColor="rgb(0,0,0,0)"></u-gap>
+			<u-gap height="20" bgColor="(255,255,255,0)"></u-gap>
 		</view>
 		<view v-if="curNow==3">
 			<view class="shadow">
@@ -351,19 +352,19 @@
 					<u-gap height="20" bgColor="white"></u-gap>
 					<view style="width:100%;height:100rpx;">
 						<view style="width:50%;float:left;display:inline;">
-							<uni-data-picker  style="white-space:pre-wrap;" v-show="ifshow"   placeholder="      请选择出发地" popup-title="请 选 择 城 市" collection="opendb-city-china"
+							<uni-data-picker  style="white-space:pre-wrap;" placeholder="      请选择出发地" popup-title="请 选 择 城 市" collection="opendb-city-china"
 							field="code as value, name as text" orderby="value asc" :step-searh="true" self-field="code"
 							parent-field="parent_code" @change="onchanges">
 							</uni-data-picker>
 						</view>
 						<view style="width:50%;float:right;display:inline;">
-							<uni-data-picker  style="white-space:pre-wrap;" v-show="ifshow"   placeholder="      请选择目的地" popup-title="请 选 择 城 市" collection="opendb-city-china"
+							<uni-data-picker  style="white-space:pre-wrap;" placeholder="      请选择目的地" popup-title="请 选 择 城 市" collection="opendb-city-china"
 							field="code as value, name as text" orderby="value asc" :step-searh="true" self-field="code"
 							parent-field="parent_code" @change="onchanged">
 							</uni-data-picker>
 						</view>
 					</view>
-					<u-collapse :border="false">
+					<u-collapse :border="false" ref="policy">
 						<u-collapse-item :title="from_city+'出行政策'">
 							{{this.policydata.from_policy}}
 						</u-collapse-item>
@@ -371,9 +372,10 @@
 							{{this.policydata.to_policy}}
 						</u-collapse-item>
 					</u-collapse>
+					<u-gap height="20" bgColor="white"></u-gap>
 				</view>
 			</view>
-			<u-gap height="20" bgColor="rgb(0,0,0,0)"></u-gap>
+			<u-gap height="20" bgColor="rgb(255,255,255,0)"></u-gap>
 		</view>
 	</view>
 </template>
@@ -388,7 +390,6 @@
 				to_city:'杭州市',
 				current:0,
 				list:['核酸检测点','疫苗接种点'],
-				ifshow:1,
 				infolist: [{name:'国内疫情'}, {name:'国外疫情'},{name:'核酸检测'},{name:'防疫政策'}],
 				curNow: 0,
 				titlelist: [{
@@ -457,11 +458,17 @@
 				const val = e.detail.value;
 				this.from_city = val[1].text;
 				this.getpolicy();
+				this.$nextTick(()=>{
+					this.$refs.policy.init();
+				});
 			},
 			onchanged(e){
 				const val = e.detail.value;
 				this.to_city = val[1].text;
 				this.getpolicy();
+				this.$nextTick(()=>{
+					this.$refs.policy.init();
+				});
 			},
 			getpolicy(){
 				let that = this;
