@@ -1,9 +1,9 @@
 <template>
 	<view style="background-color:#EDEDED;position:absolute;width:100%;height:100%;">
-		<view style="text-align: center; ">
-			<image class="image" :src="pic" @click="alterHeade"></image>
+		<view class="bg">
+			<image class="image" style="z-index:1;" :src="pic" @click="alterHeade"></image>
 		</view>
-		<view style="margin-top:80rpx;">
+		<view style="margin-top:20rpx;">
 			<uni-list-item>
 				<view slot="body">
 					<text class="title">手机号</text>
@@ -45,12 +45,12 @@
 					<text class="title">暂无亲友信息</text>
 				</view>
 			</uni-list-item>
-			<u-swipe-action>
+			<u-swipe-action style="touch-action:none;">
 				<u-swipe-action-item @click="delrela(item)" v-for="(item,index) in this.options" :key="index" :options="item.option">
 					<view class="swipe-action u-border-top" :class="[index === options.length - 1 && 'u-border-bottom']">
 						<view class="swipe-action__content">
 							<text class="swipe-action__content__text">{{item.name}}</text>
-							<text class="swipe-action__content__text">{{item.identity}}</text>
+							<text class="swipe-action__content__text" style="color:gray">{{item.identity}}</text>
 						</view>
 					</view>
 				</u-swipe-action-item>
@@ -68,18 +68,24 @@
 				</view>
 			</uni-list-item>
 		</view>
+		<u-gap v-if="platform=='ios'" height="50" bgColor="#ededed"></u-gap>
+		<u-gap height="10" bgColor="#ededed"></u-gap>
 	</view>
 </template>
 
 <script>
 	let that = null
 	export default{
+		onLoad() {
+			this.platform = uni.getSystemInfoSync().platform;
+		},
 		onShow() {
 			that = this;
 			this.getrela();
 		},
 		data(){
 			return {
+				platform:'',
 				isnone:0,
 				relativedata:[],
 				options:[],
@@ -113,7 +119,10 @@
 										},
 										success: (res) => {
 											that.$user.memberObj.user_pic=image;
-											console.log(that.$user.memberObj.user_pic);
+											uni.showToast({
+												icon:"none",
+												title:"更换成功！"
+											})
 											uni.reLaunch({
 												url:"./selfinfo",
 											});
@@ -227,11 +236,20 @@
 </script>
 
 <style lang="scss">
+	.bg{
+		text-align:center;
+		vertical-align:center;
+		height: 500rpx;
+		width: 100%;
+		z-index: -999;
+		background-image: url("../../static/infobg.jpg");
+		background-size: 100% 100%;
+	}
 	.image{
 		width:200rpx;
 		height:200rpx;
 		z-index: 10;
-		margin-top: 80rpx;
+		margin-top: 150rpx;
 		border-radius:50%;
 	}
 	.title{

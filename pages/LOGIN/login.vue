@@ -200,7 +200,7 @@
 				showprivacy: false,
 				check:true,
 				password: 'zongqiwei2333',
-				phone: '18362075861',
+				phone: '15150805183',
 			};
 		},
 		methods:{
@@ -256,6 +256,7 @@
 								this.$user.memberObj.user_identity=res.data.data.user_identify;
 								this.$user.memberObj.user_codecolor=res.data.data.user_signcolor;
 								this.$user.memberObj.user_timeleft=res.data.data.sign_timeleft;
+								this.$user.memberObj.user_pic=res.data.data.picture_url;
 								uni.switchTab({
 									url:"../INFO/nCoVinfo"
 								})
