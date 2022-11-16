@@ -381,7 +381,12 @@
 </template>
 
 <script>
-	
+	let it=null;
+	function getValue( key, str ) {
+		var reg = key + '(.*?)' + ',';
+	    var m = str.match(reg);
+	    return m[1];
+	 }
 	export default {
 		data() {
 			return {
@@ -434,6 +439,7 @@
 			this.getForeignShop();
 			this.getaddr();
 			this.getpolicy();
+			it=this;
 		    let that = this;
 		    //that.daytime = uni.getStorageSync('daytime');
 		    uni.setNavigationBarColor({
@@ -493,9 +499,29 @@
 			typechange(name){
 				switch (name){
 					case 0:{
-						uni.scanCode({ success: function (res) {  
-							console.log('条码类型：' + res.scanType);
-							console.log('条码内容：' + res.result); }});
+						uni.scanCode({
+							success: function (res) {
+								var title=getValue("title:",res.result);
+								var area_code=getValue("area_code:",res.result);
+								var street_id=getValue("street_id:",res.result);
+								uni.request({
+								    url: it.$BASE_URL.BASE_URL+'/addTravelRecord',
+								    method: 'POST',
+									header:{
+										'Content-Type': 'application/json',
+									},
+									data:{
+										'user_id':it.$user.memberObj.user_id,
+										'area_code':area_code,
+										'street_id':street_id,
+									},
+								    success: res => {
+								        uni.navigateTo({
+								        	url:"../../pages/INFO/healthcard"
+								        })
+								    }
+								});
+						}});
 						break;
 					}case 1:{
 						uni.navigateTo({

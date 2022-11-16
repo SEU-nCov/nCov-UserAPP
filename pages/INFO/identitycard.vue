@@ -81,7 +81,7 @@
 					<view style="height:800rpx;width:100%;display:inline-block;align-items:center;justify-content:center;text-align:center;padding-top:7%;">
 						<view v-if="platform=='ios'" style="display:inline-block;background-color:skyblue;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-70rpx;"></view>
 						<view v-if="platform=='android'" style="display:inline-block;background-color:skyblue;width:460rpx;height:460rpx;border-radius:5px;margin-bottom:-65rpx;"></view>
-						<view style="display:inline-block;margin-top:-400rpx;"><uqrcode ref="uqrcode" :canvas-id="item.user_identify" :value="item.user_identify" :options="{ margin:10 }"></uqrcode></view>
+						<view style="display:inline-block;margin-top:-400rpx;"><uqrcode ref="uqrcode" :canvas-id="item.user_identify" :value="'id:'+item.user_id+',name:'+item.user_name+',iden:'+item.user_identify+','" :options="{ margin:10 }"></uqrcode></view>
 						<u-gap height="30" bgColor="white"></u-gap>
 						<view><text style="color:red;">*</text>当前展码：{{item.user_name}}</view>
 						<u-gap height="20" bgColor="white"></u-gap>
@@ -119,8 +119,7 @@
 				identity: this.$user.memberObj.user_identity,
 				timer: '',
 				name:this.$user.memberObj.user_name,
-				//rurl待定
-				rurl:'321088200012018529',
+				rurl:'id:'+this.$user.memberObj.user_id+',name:'+this.$user.memberObj.user_name+',iden:'+this.$user.memberObj.user_identity+',',
 				rname:'',
 				ridentity:'',
 				rphone:'',

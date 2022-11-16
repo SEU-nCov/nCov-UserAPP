@@ -18,7 +18,7 @@
 					<u-gap height="10" bgColor="white"></u-gap>
 					<view style="margin-left:10%;width:80%;">
 						<text style="color:gray;font-size:14px;">您于前7天内到达或途径：</text>
-						<text style="color:black;font-size:14px;font-weight:600;">{{this.place}}</text>
+						<text style="color:black;font-size:14px;font-weight:600;">{{this.placedata}}</text>
 					</view>
 				</view>
 			</view>
@@ -44,14 +44,38 @@
 
 <script>
 	export default {
+		onShow() {
+			this.getTravel();
+		},
 		data() {
 			return {
 				phone:this.$user.memberObj.user_phone,
-				place:'江苏省南京市，江苏省扬州市',
+				placedata:'',
 			}
 		},
 		methods: {
-			
+			getTravel(){
+				let that = this;
+				uni.request({
+				    url: this.$BASE_URL.BASE_URL+'/getTravelRecordbyuid',
+				    method: 'POST',
+					header:{
+						'Content-Type': 'application/json',
+					},
+					data:{
+						'user_id':this.$user.memberObj.user_id,
+					},
+				    success: res => {
+						var place=JSON.parse(JSON.stringify(res.data.data));
+						var obj='';
+						for(var i=0;i<place.length;i++){
+							obj+=place[i];
+							if(i!=place.length-1) obj+='，';
+						}
+						that.placedata=obj;
+				    }
+				});
+			}
 		},
 		filters: {
 			hidephone(num){

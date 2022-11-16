@@ -113,14 +113,14 @@
 				<view style="display:block;padding-top:20rpx;">
 					<view style="width:90%;margin-left:5%;text-align:left;background-color:white;border-radius:5px;white-space:pre-wrap;">
 						<view style="width:95%;margin-left:2.5%;">
-							<view v-if="this.vaccinedata[0]!=null" v-for="(item,index) in vaccinedata" :key="index">
+							<view v-if="vaccinedata[0]!=null" v-for="(item,index) in vaccinedata" :key="index">
 								<view class="card">
 									<text style="color:gray;">疫苗名称：</text><text>{{item.vac_name}}\n</text>
 									<text style="color:gray;">接种日期：</text><text>{{item.vac_time | cut}}\n</text>
 									<text style="color:gray;">接种单位：</text><text>{{item.vac_pointname}}\n</text>
 								</view>
 							</view>
-							<view v-if="this.vaccinedata[0]==null">
+							<view v-if="vaccinedata[0]==null">
 								<view class="card">
 									<text style="color:gray;">疫苗名称：</text><text>暂无\n</text>
 									<text style="color:gray;">接种日期：</text><text>暂无\n</text>
@@ -139,6 +139,7 @@
 </template>
 
 <script>
+	const sha256 = require("js-sha256").sha256;
 	import ayQrcode from "@/components/ay-qrcode/ay-qrcode.vue";
 	import moment from 'moment';
 	export default {
@@ -231,20 +232,19 @@
 				platform:'',
 				notice:'若您有近7天中高风险区旅居史(含境外)，请及时进行信息更新和风险报备。',
 				modal_qr: true,
-				//还剩个rurl没改
-				rurl: '321088200012018529|321088200012018529|321088200012018529|321088200012018529|321088200012018529', //要生成的二维码值
+				rurl: sha256(this.$user.memberObj.user_identity), //要生成的二维码值
 				user_name:this.$user.memberObj.user_name,
 				user_color:this.$user.memberObj.user_codecolor,
 				color:'',
 				user_phone:this.$user.memberObj.user_phone,
 				user_identity:this.$user.memberObj.user_identity,
-				timer:'',
+				timer:'',//不带年份
 				expire: '', //核酸是否是48小时有效阴性
 				isgreen: '', //核酸是否是阴性
 				vaccine: '', //0未接种，1已接种，2为接种3针加强接种
 				vaccinedata:[],
 				natdata:[],
-				date:'',
+				date:'',//带年份
 			}
 		},
 		methods: {
