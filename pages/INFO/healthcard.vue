@@ -135,6 +135,14 @@
 				</view>
 			</swiper-item>
 		</swiper>
+		<u-popup :show="show" :overlay="false" :round="10" mode="bottom" @close="closepp" @open="openpp">
+			<view style="background-color:skyblue;height:150rpx;border-top-left-radius:10px;border-top-right-radius:10px;">
+				<view style="margin-left:5%;margin-top:2%;">
+					<text style="color:white;line-height:60rpx;">地点：{{this.text}}</text>
+					<text style="color:white;white-space:pre-wrap;line-height:60rpx;">\n时间：{{this.date}}</text>
+				</view>
+			</view>
+		</u-popup>
 	</view>
 </template>
 
@@ -145,6 +153,16 @@
 	export default {
 		components: {
 			ayQrcode,
+		},
+		onHide() {
+			this.show=false;
+		},
+		onShow() {
+			if(this.$dest.memberObj.dest_if==1){
+				this.text=this.$dest.memberObj.dest_name;
+				this.openpp();
+				this.$dest.memberObj.dest_if=0;
+			}
 		},
 		onLoad() {
 			let that = this;
@@ -229,6 +247,8 @@
 		},
 		data() {
 			return {
+				text:'默认文字',
+				show:false,
 				platform:'',
 				notice:'若您有近7天中高风险区旅居史(含境外)，请及时进行信息更新和风险报备。',
 				modal_qr: true,
@@ -248,6 +268,12 @@
 			}
 		},
 		methods: {
+			closepp(){
+				this.show=false;
+			},
+			openpp(){
+				this.show=true;
+			},
 			getTime(){
 				let time = new Date();
 				let year = time.getFullYear();

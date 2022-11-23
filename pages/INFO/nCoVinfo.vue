@@ -502,6 +502,8 @@
 						uni.scanCode({
 							success: function (res) {
 								var title=getValue("title:",res.result);
+								it.$dest.memberObj.dest_name=title;
+								it.$dest.memberObj.dest_if=1;
 								var area_code=getValue("area_code:",res.result);
 								var street_id=getValue("street_id:",res.result);
 								uni.request({

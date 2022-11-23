@@ -66,13 +66,18 @@
 						'user_id':this.$user.memberObj.user_id,
 					},
 				    success: res => {
-						var place=JSON.parse(JSON.stringify(res.data.data));
-						var obj='';
-						for(var i=0;i<place.length;i++){
-							obj+=place[i];
-							if(i!=place.length-1) obj+='，';
+						if(res.data.code==200){
+							var place=JSON.parse(JSON.stringify(res.data.data));
+							var obj='';
+							for(var i=0;i<place.length;i++){
+								obj+=place[i];
+								if(i!=place.length-1) obj+='，';
+							}
+							that.placedata=obj;
 						}
-						that.placedata=obj;
+						else if(res.data.code==201){
+							that.placedata='暂未有行程记录';
+						}
 				    }
 				});
 			}

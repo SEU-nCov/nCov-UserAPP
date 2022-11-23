@@ -17099,6 +17099,8 @@ try {
     uIcon: __webpack_require__(/*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 33)
       .default,
     uDivider: __webpack_require__(/*! @/uni_modules/uview-ui/components/u-divider/u-divider.vue */ 392)
+      .default,
+    uPopup: __webpack_require__(/*! @/uni_modules/uview-ui/components/u-popup/u-popup.vue */ 269)
       .default
   }
 } catch (e) {
@@ -18288,6 +18290,68 @@ var render = function() {
                       )
                     ],
                     1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _c(
+        "u-popup",
+        {
+          attrs: { _i: 107 },
+          on: {
+            close: function($event) {
+              return _vm.$handleViewEvent($event)
+            },
+            open: function($event) {
+              return _vm.$handleViewEvent($event)
+            }
+          }
+        },
+        [
+          _c(
+            "uni-view",
+            {
+              staticStyle: {
+                "background-color": "skyblue",
+                height: "150rpx",
+                "border-top-left-radius": "10px",
+                "border-top-right-radius": "10px"
+              },
+              attrs: { _i: 108 }
+            },
+            [
+              _c(
+                "uni-view",
+                {
+                  staticStyle: { "margin-left": "5%", "margin-top": "2%" },
+                  attrs: { _i: 109 }
+                },
+                [
+                  _c(
+                    "v-uni-text",
+                    {
+                      staticStyle: { color: "white", "line-height": "60rpx" },
+                      attrs: { _i: 110 }
+                    },
+                    [_vm._v("地点：" + _vm._$g(110, "t0-0"))]
+                  ),
+                  _c(
+                    "v-uni-text",
+                    {
+                      staticStyle: {
+                        color: "white",
+                        "white-space": "pre-wrap",
+                        "line-height": "60rpx"
+                      },
+                      attrs: { _i: 111 }
+                    },
+                    [_vm._v("\\n时间：" + _vm._$g(111, "t0-0"))]
                   )
                 ],
                 1
