@@ -170,9 +170,11 @@
 		&__title {
 			font-size: 16px;
 			font-weight: bold;
-			color: $u-content-color;
+			color: white;
 			text-align: center;
-			padding-top: 25px;
+			padding-top: 15px;
+			padding-bottom:15px;
+			background-color: royalblue;
 		}
 
 		&__content {

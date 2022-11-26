@@ -143,6 +143,85 @@
 				</view>
 			</view>
 		</u-popup>
+		<u-modal :show="modshow" title="信息申报" width="700rpx" height="95%" @close="modalclose" @confirm="conf">
+			<view class="slot-content" style="width:100%;max-height:1000rpx;">
+				<scroll-view scroll-y="true" style="height:950rpx;width:100%;white-space:pre-wrap;line-height:50rpx;">
+					<u-gap height="10"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">填报人姓名：\n</text>
+					<u-gap height="10"></u-gap>
+					<u--textarea :placeholder="user_name" disabled autoHeight></u--textarea>
+					<u-gap height="10"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">证件号：\n</text>
+					<u-gap height="10"></u-gap>
+					<u--textarea :placeholder="user_identity" disabled autoHeight></u--textarea>
+					<u-gap height="20"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">1.您是从哪里来江苏的？\n</text>
+					<text style="color:red;">(已在江苏居住7天以上请选择现居住地)\n</text>
+					<u-gap height="10"></u-gap>
+					<uni-data-picker  style="white-space:pre-wrap;" placeholder="请选择地点" popup-title="请 选 择 城 市" collection="opendb-city-china"
+					field="code as value, name as text" orderby="value asc" :step-searh="true" self-field="code"
+					parent-field="parent_code" v-model="position">
+					</uni-data-picker>
+					<u-gap height="20"></u-gap>
+					<u-line></u-line>
+					<u-gap height="10"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">2.现居住地址(选择到乡镇/街道)：\n</text>
+					<u-gap height="10"></u-gap>
+					<view>
+						<view style="width:65%;float:left;">
+							<uni-data-picker  style="white-space:pre-wrap;" placeholder="请选择城市" popup-title="请 选 择 城 市" collection="jiangsu-city-china"
+							field="code as value, name as text" orderby="value asc" :step-searh="true" self-field="code"
+							parent-field="parent_code" @change="lookforstreet">
+							</uni-data-picker>
+						</view>
+						<view style="width:35%;float:right;">
+							<uni-data-picker  style="white-space:pre-wrap;" placeholder="请选择街道" popup-title="请 选 择 街 道"
+							:localdata="streetdata_picker" v-model="now_street">
+							</uni-data-picker>
+						</view>
+					</view>
+					<u-gap height="50"></u-gap>
+					<u-line></u-line>
+					<u-gap height="10"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">3.现详细地址(具体到门牌号码)：\n</text>
+					<u-gap height="10"></u-gap>
+					<u--textarea v-model="detail_location" placeholder="请输入详细地址" autoHeight></u--textarea>
+					<u-gap height="15"></u-gap>
+					<u-line></u-line>
+					<u-gap height="10"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">4.7天内是否接触过发热咳嗽人员？\n</text>
+					<u-gap height="10"></u-gap>
+					<u-radio-group v-model="four" placement="row" style="width:200rpx;">
+						<u-radio :customStyle="{marginBottom: '20rpx',width: '200rpx'}" v-for="(item, index) in fourlist" :key="index"
+						  :label="item.name" :name="item.name"></u-radio>
+					</u-radio-group>
+					<u-line></u-line>
+					<u-gap height="10"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">5.是否有发热、干咳、乏力、鼻塞流涕、咽痛、嗅觉/味觉减退、结膜炎、肌痛、腹泻等症状？\n</text>
+					<u-gap height="10"></u-gap>
+					<u-radio-group v-model="five" placement="row" style="width:200rpx;">
+						<u-radio :customStyle="{marginBottom: '20rpx',width: '200rpx'}" v-for="(item, index) in fivelist" :key="index"
+						  :label="item.name" :name="item.name"></u-radio>
+					</u-radio-group>
+					<u-line></u-line>
+					<u-gap height="10"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">6.是否同行人员无手机号，如儿童、老人、海外归国人员？\n</text>
+					<u-gap height="10"></u-gap>
+					<u-radio-group v-model="six" placement="row" style="width:200rpx;">
+						<u-radio :customStyle="{marginBottom: '20rpx',width: '200rpx'}" v-for="(item, index) in sixlist" :key="index"
+						  :label="item.name" :name="item.name"></u-radio>
+					</u-radio-group>
+					<u-line></u-line>
+					<u-gap height="10"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">知情同意：\n</text>
+					<u-gap height="10"></u-gap>
+					<text style="text-align:left;">根据《中华人民共和国传染病防治法》和《江苏省人民代表大会常务委员会关于依法防控新型冠状病毒感染肺炎疫情切实保障人民群众生命健康安全的决定》等有关法律规定，请您如实填报各项信息。瞒报信息可能造成您的不便，甚至可能承担相关法律责任，敬请配合!“健康码”的申报信息有效期为14天，请您于14天后按提示更新相关信息，否则将影响正常使用!\n本系统实行对你填报信息真实校验，登录本系统即为授权。\n</text>
+					<text style="text-align:left;color: #3c9cff;">数据来源：全国一体化政务服务平台、个人申报信息和江苏省公共管理机构。\n</text>
+					<u-gap height="10"></u-gap>
+					<radio style="transform:scale(0.9)" @click="change" :checked="check">本人知情同意</radio>
+				</scroll-view> 
+			</view>
+		</u-modal>
 	</view>
 </template>
 
@@ -162,6 +241,12 @@
 				this.text=this.$dest.memberObj.dest_name;
 				this.openpp();
 				this.$dest.memberObj.dest_if=0;
+			}
+			const dat1 = moment(this.$user.memberObj.user_timeleft);
+			const dat2 = moment(this.now);
+			const dat3 = dat2.diff(dat1,'days');
+			if(dat3>14){
+				this.modalopen();
 			}
 		},
 		onLoad() {
@@ -247,6 +332,19 @@
 		},
 		data() {
 			return {
+				position:'',
+				fourlist:[{name:'是'},{name:'否'}],
+				four:'',
+				fivelist:[{name:'是'},{name:'否'}],
+				five:'',
+				sixlist:[{name:'是'},{name:'否'}],
+				six:'',
+				check:false,
+				now_city:'',
+				streetdata_picker:[],
+				now_street:'',
+				detail_location:'',
+				modshow:false,
 				text:'默认文字',
 				show:false,
 				platform:'',
@@ -268,6 +366,118 @@
 			}
 		},
 		methods: {
+			modalopen(){
+				this.modshow=true;
+			},
+			modalclose(){
+				this.modshow=false;
+			},
+			lookforstreet(e){
+				const val = e.detail.value;
+				this.now_city = val[2].text;
+				uni.request({
+					url:this.$BASE_URL.BASE_URL+'/getTownbyarea',
+					method:'POST',
+					header:{
+						'Content-Type': 'application/json',
+					},
+					data:{
+						'area_name':this.now_city,
+					},
+					success: (res) => {
+						//console.log(res.data.code);
+						if(res.data.code==200){
+							let that = this;
+							that.streetdata_picker=[];
+							let streetdata=JSON.parse(JSON.stringify(res.data.data));
+							for(let i=0;i<streetdata.length;i++){
+								let struct={value:'',text:''};
+								struct.value=streetdata[i].town_name;
+								struct.text=streetdata[i].town_name;
+								that.streetdata_picker.push(struct);
+							}
+						}
+					}
+				});
+			},
+			conf(){
+				let it = this;
+				if(this.position!='' || this.four!='' || this.five!='' || this.six!='' || this.detail_location!='' || this.now_street!=''){
+					if(this.four=='否' && this.five=='否'){
+						uni.request({
+							url:this.$BASE_URL.BASE_URL+'/declareHealthCode',
+							method:'POST',
+							header:{
+								'Content-Type': 'application/json',
+							},
+							data:{
+								'user_id':this.$user.memberObj.user_id,
+								'area_name':this.now_city,
+								'town_name':this.now_street,
+								'detail_location':this.detail_location,
+							},
+							success: (res) => {
+								if(res.data.code==200){
+									it.$user.memberObj.user_timeleft=it.date;
+									this.modalclose();
+									uni.showModal({
+										title:'提示',
+										content:'申报成功',
+										showCancel: false,
+										success:function(res){
+											if(res.confirm){
+												uni.redirectTo({
+													url:"./healthcard",
+												});
+											}
+										}
+									});
+								}
+							}
+						});
+					} else {
+						//有症状和密接直接黄码
+						uni.request({
+							url:this.$BASE_URL.BASE_URL+'/admin/setYellowCode',
+							method:'POST',
+							header:{
+								'Content-Type': 'application/json',
+							},
+							data:{
+								'user_id':this.$user.memberObj.user_id,
+							},
+							success: (res) => {
+								if(res.data.code==200){
+									it.$user.memberObj.user_timeleft=it.date;
+									it.$user.memberObj.user_codecolor=1;
+									this.modalclose();
+									uni.showModal({
+										title:'提示',
+										content:'申报成功',
+										showCancel: false,
+										success:function(res){
+											if(res.confirm){
+												uni.redirectTo({
+													url:"./healthcard",
+												});
+											}
+										}
+									});
+								}
+							}
+						});
+					}
+				} else {
+					uni.showToast({
+						icon:"none",
+						title:"请按要求填写"
+					})
+				}
+			},
+			change(){
+				if(this.check==true) this.check=false;
+				else this.check=true;
+			},
 			closepp(){
 				this.show=false;
 			},

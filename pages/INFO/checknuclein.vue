@@ -152,7 +152,6 @@
 		width: 100%;
 		z-index: -1;
 		background-image: url("../../static/nanjing.jpg");
-		background-color:rgb();
 		background-size: 100% 100%;
 	}
 	.cover{

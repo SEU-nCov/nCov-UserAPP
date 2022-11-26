@@ -312,7 +312,7 @@
 				<view style="width:90%;margin-left:5%;padding-top:50rpx;">
 					<u-subsection :list="list" :current="current" mode="button" @change="queryChange"></u-subsection>
 					<u-gap height="20" bgColor="white"></u-gap>
-					<uni-data-picker  style="white-space:pre-wrap;height:100rpx;" placeholder="      请选择地址      " popup-title="请 选 择 城 市" collection="opendb-city-china"
+					<uni-data-picker  style="white-space:pre-wrap;height:100rpx;" placeholder="      请选择地址      " popup-title="请 选 择 城 市" collection="open-city-china"
 						field="code as value, name as text" orderby="value asc" :step-searh="true" self-field="code"
 						parent-field="parent_code" @change="onchange">
 					</uni-data-picker>
@@ -352,13 +352,13 @@
 					<u-gap height="20" bgColor="white"></u-gap>
 					<view style="width:100%;height:100rpx;">
 						<view style="width:50%;float:left;display:inline;">
-							<uni-data-picker  style="white-space:pre-wrap;" placeholder="      请选择出发地" popup-title="请 选 择 城 市" collection="opendb-city-china"
+							<uni-data-picker  style="white-space:pre-wrap;" placeholder="      请选择出发地" popup-title="请 选 择 城 市" collection="open-city-china"
 							field="code as value, name as text" orderby="value asc" :step-searh="true" self-field="code"
 							parent-field="parent_code" @change="onchanges">
 							</uni-data-picker>
 						</view>
 						<view style="width:50%;float:right;display:inline;">
-							<uni-data-picker  style="white-space:pre-wrap;" placeholder="      请选择目的地" popup-title="请 选 择 城 市" collection="opendb-city-china"
+							<uni-data-picker  style="white-space:pre-wrap;" placeholder="      请选择目的地" popup-title="请 选 择 城 市" collection="open-city-china"
 							field="code as value, name as text" orderby="value asc" :step-searh="true" self-field="code"
 							parent-field="parent_code" @change="onchanged">
 							</uni-data-picker>
