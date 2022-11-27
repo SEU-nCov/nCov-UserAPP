@@ -103,6 +103,23 @@
 						</view>
 						<view style="padding-top:35rpx;padding-left:23%;"><u-icon name="arrow-left-double" color="gray" size="14" label="左滑查看"></u-icon></view>
 					</view>
+					<view style="display:block;width:90%;margin-left:5%;height:50rpx;">
+						<view style="width:50%;float:left;padding-top:40rpx;">
+							<button @click="appeal" style="border-top-right-radius:0;border-bottom-right-radius:0;height:90rpx;">
+								<view style="vertical-align:middle;text-align: center;justify-content: center;align-items: center;line-height:20rpx;margin-top:20rpx;margin-left:25rpx;">
+									<u-icon name="info-circle" color="skyblue" size="25" label="健康码申诉" labelSize="16" labelColor="black"></u-icon>
+								</view>
+							</button>
+						</view>
+						<view style="width:50%;float:right;padding-top:40rpx;">
+							<button @click="consult" style="border-top-left-radius:0;border-bottom-left-radius:0;height:90rpx;border-left:#EDEDED 2px solid;">
+								<view style="vertical-align:middle;text-align: center;justify-content: center;align-items: center;line-height:20rpx;margin-top:20rpx;margin-left:40rpx;">
+									<u-icon name="more-circle" color="forestgreen" size="25" label="健康咨询" labelSize="16" labelColor="black"></u-icon>
+								</view>
+							</button>
+						</view>
+					</view>
+					<u-gap height="40"></u-gap>
 					<view style="display:block;text-align:center;margin:350rpx 20px 0 20px;font-size:14px;color:#3c9cff;">数据来源：全国一体化政务服务平台、个人申报信息和江苏省公共管理机构。</view>
 					<u-divider text=""></u-divider>
 					<view style="text-align:center;color:gray;font-size:14px;">--- 服务热线：12345 ---</view>
@@ -222,6 +239,54 @@
 				</scroll-view> 
 			</view>
 		</u-modal>
+		<u-modal :show="a_modshow" :closeOnClickOverlay="true" title="健康码申诉" width="700rpx" @close="a_modalclose" @confirm="a_conf">
+			<view class="slot-content" style="width:100%;max-height:1000rpx;">
+				<view style="white-space:pre-wrap;line-height:50rpx;">
+					<u-gap height="10"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">申诉人姓名：\n</text>
+					<u-gap height="10"></u-gap>
+					<u--textarea :placeholder="user_name" disabled autoHeight></u--textarea>
+					<u-gap height="10"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">证件号：\n</text>
+					<u-gap height="10"></u-gap>
+					<u--textarea :placeholder="user_identity" disabled autoHeight></u--textarea>
+					<u-gap height="10"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">手机号：\n</text>
+					<u-gap height="10"></u-gap>
+					<u--textarea :placeholder="user_phone" disabled autoHeight></u--textarea>
+					<u-gap height="20"></u-gap>
+					<u-line></u-line>
+					<u-gap height="10"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">申诉理由：\n</text>
+					<u-gap height="10"></u-gap>
+					<u--textarea v-model="a_reason" placeholder="请输入详细理由" count></u--textarea>
+				</view>
+			</view>
+		</u-modal>
+		<u-modal :show="c_modshow" :closeOnClickOverlay="true" title="健康咨询" width="700rpx" @close="c_modalclose" @confirm="c_conf">
+			<view class="slot-content" style="width:100%;max-height:1000rpx;">
+				<view style="white-space:pre-wrap;line-height:50rpx;">
+					<u-gap height="10"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">咨询人姓名：\n</text>
+					<u-gap height="10"></u-gap>
+					<u--textarea :placeholder="user_name" disabled autoHeight></u--textarea>
+					<u-gap height="10"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">证件号：\n</text>
+					<u-gap height="10"></u-gap>
+					<u--textarea :placeholder="user_identity" disabled autoHeight></u--textarea>
+					<u-gap height="10"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">手机号：\n</text>
+					<u-gap height="10"></u-gap>
+					<u--textarea :placeholder="user_phone" disabled autoHeight></u--textarea>
+					<u-gap height="20"></u-gap>
+					<u-line></u-line>
+					<u-gap height="10"></u-gap>
+					<text style="color:red;">*</text><text style="text-align:left;">咨询问题：\n</text>
+					<u-gap height="10"></u-gap>
+					<u--textarea v-model="c_question" placeholder="请输入咨询问题" count></u--textarea>
+				</view>
+			</view>
+		</u-modal>
 	</view>
 </template>
 
@@ -332,6 +397,10 @@
 		},
 		data() {
 			return {
+				c_question:'',
+				c_modshow:false,
+				a_reason:'',
+				a_modshow:false,
 				position:'',
 				fourlist:[{name:'是'},{name:'否'}],
 				four:'',
@@ -366,6 +435,115 @@
 			}
 		},
 		methods: {
+			appeal(){
+				if(this.user_color==0){
+					uni.showToast({
+						icon:"none",
+						title:"绿码无需申诉"
+					})
+				} else {
+					this.a_modalopen();
+				}
+			},
+			a_conf(){
+				let that = this;
+				if(this.a_reason!=''){
+					uni.request({
+						url:this.$BASE_URL.BASE_URL+"/addUserappeal",
+						method:"POST",
+						header:{
+							'Content-Type': 'application/json',
+						},
+						data:{
+							'user_id':this.$user.memberObj.user_id,
+							'appeal_reason':this.a_reason,
+						},
+						success: (res) => {
+							if(res.data.code==200){
+								that.a_modalclose();
+								uni.showModal({
+									title:'提示',
+									content:'您的申诉已经提交，我们将在72小时内处理您的申诉',
+									showCancel: false,
+									success:function(res){
+										if(res.confirm){
+											that.a_reason='';
+										}
+									}
+								});
+							}
+							else{
+								uni.showToast({
+									icon:"none",
+									title:"error"
+								})
+							}
+						}
+					})
+				} else {
+					uni.showToast({
+						icon:"none",
+						title:"必须填写申诉理由"
+					})
+				}
+			},
+			consult(){
+				this.c_modalopen();
+			},
+			c_conf(){
+				let that = this;
+				if(this.c_question!=''){
+					uni.request({
+						url:this.$BASE_URL.BASE_URL+"/addUserappeal",
+						method:"POST",
+						header:{
+							'Content-Type': 'application/json',
+						},
+						data:{
+							'user_id':this.$user.memberObj.user_id,
+							'appeal_reason':this.a_reason,
+						},
+						success: (res) => {
+							if(res.data.code==200){
+								that.c_modalclose();
+								uni.showModal({
+									title:'提示',
+									content:'您的健康咨询已经提交，我们将在72小时内给予您反馈',
+									showCancel: false,
+									success:function(res){
+										if(res.confirm){
+											that.c_question='';
+										}
+									}
+								});
+							}
+							else{
+								uni.showToast({
+									icon:"none",
+									title:"error"
+								})
+							}
+						}
+					})
+				} else {
+					uni.showToast({
+						icon:"none",
+						title:"请输入要咨询的问题"
+					})
+				}
+			},
+			c_modalopen(){
+				this.c_modshow=true;
+			},
+			c_modalclose(){
+				this.c_modshow=false;
+			},
+			a_modalopen(){
+				this.a_modshow=true;
+			},
+			a_modalclose(){
+				this.a_modshow=false;
+			},
 			modalopen(){
 				this.modshow=true;
 			},
@@ -577,5 +755,8 @@
 		padding-top:5rpx;
 		padding-bottom:5rpx;
 		font-size:15px;
+	}
+	button:after{
+		border:none;
 	}
 </style>

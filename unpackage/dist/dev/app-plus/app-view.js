@@ -17098,13 +17098,13 @@ try {
       .default,
     uIcon: __webpack_require__(/*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 33)
       .default,
+    uGap: __webpack_require__(/*! @/uni_modules/uview-ui/components/u-gap/u-gap.vue */ 81).default,
     uDivider: __webpack_require__(/*! @/uni_modules/uview-ui/components/u-divider/u-divider.vue */ 392)
       .default,
     uPopup: __webpack_require__(/*! @/uni_modules/uview-ui/components/u-popup/u-popup.vue */ 269)
       .default,
     uModal: __webpack_require__(/*! @/uni_modules/uview-ui/components/u-modal/u-modal.vue */ 266)
       .default,
-    uGap: __webpack_require__(/*! @/uni_modules/uview-ui/components/u-gap/u-gap.vue */ 81).default,
     "u-Textarea": __webpack_require__(/*! @/uni_modules/uview-ui/components/u--textarea/u--textarea.vue */ 400)
       .default,
     uniDataPicker: __webpack_require__(/*! @/uni_modules/uni-data-picker/components/uni-data-picker/uni-data-picker.vue */ 89)
@@ -18069,12 +18069,129 @@ var render = function() {
                     {
                       staticStyle: {
                         display: "block",
+                        width: "90%",
+                        "margin-left": "5%",
+                        height: "50rpx"
+                      },
+                      attrs: { _i: 81 }
+                    },
+                    [
+                      _c(
+                        "uni-view",
+                        {
+                          staticStyle: {
+                            width: "50%",
+                            float: "left",
+                            "padding-top": "40rpx"
+                          },
+                          attrs: { _i: 82 }
+                        },
+                        [
+                          _c(
+                            "v-uni-button",
+                            {
+                              staticStyle: {
+                                "border-top-right-radius": "0",
+                                "border-bottom-right-radius": "0",
+                                height: "90rpx"
+                              },
+                              attrs: { _i: 83 },
+                              on: {
+                                click: function($event) {
+                                  return _vm.$handleViewEvent($event)
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "uni-view",
+                                {
+                                  staticStyle: {
+                                    "vertical-align": "middle",
+                                    "text-align": "center",
+                                    "justify-content": "center",
+                                    "align-items": "center",
+                                    "line-height": "20rpx",
+                                    "margin-top": "20rpx",
+                                    "margin-left": "25rpx"
+                                  },
+                                  attrs: { _i: 84 }
+                                },
+                                [_c("u-icon", { attrs: { _i: 85 } })],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _c(
+                        "uni-view",
+                        {
+                          staticStyle: {
+                            width: "50%",
+                            float: "right",
+                            "padding-top": "40rpx"
+                          },
+                          attrs: { _i: 86 }
+                        },
+                        [
+                          _c(
+                            "v-uni-button",
+                            {
+                              staticStyle: {
+                                "border-top-left-radius": "0",
+                                "border-bottom-left-radius": "0",
+                                height: "90rpx",
+                                "border-left": "#EDEDED 2px solid"
+                              },
+                              attrs: { _i: 87 },
+                              on: {
+                                click: function($event) {
+                                  return _vm.$handleViewEvent($event)
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "uni-view",
+                                {
+                                  staticStyle: {
+                                    "vertical-align": "middle",
+                                    "text-align": "center",
+                                    "justify-content": "center",
+                                    "align-items": "center",
+                                    "line-height": "20rpx",
+                                    "margin-top": "20rpx",
+                                    "margin-left": "40rpx"
+                                  },
+                                  attrs: { _i: 88 }
+                                },
+                                [_c("u-icon", { attrs: { _i: 89 } })],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _c("u-gap", { attrs: { _i: 90 } }),
+                  _c(
+                    "uni-view",
+                    {
+                      staticStyle: {
+                        display: "block",
                         "text-align": "center",
                         margin: "350rpx 20px 0 20px",
                         "font-size": "14px",
                         color: "#3c9cff"
                       },
-                      attrs: { _i: 81 }
+                      attrs: { _i: 91 }
                     },
                     [
                       _vm._v(
@@ -18082,7 +18199,7 @@ var render = function() {
                       )
                     ]
                   ),
-                  _c("u-divider", { attrs: { _i: 82 } }),
+                  _c("u-divider", { attrs: { _i: 92 } }),
                   _c(
                     "uni-view",
                     {
@@ -18091,7 +18208,7 @@ var render = function() {
                         color: "gray",
                         "font-size": "14px"
                       },
-                      attrs: { _i: 83 }
+                      attrs: { _i: 93 }
                     },
                     [_vm._v("--- 服务热线：12345 ---")]
                   )
@@ -18100,20 +18217,20 @@ var render = function() {
               ),
               _c("uni-view", {
                 staticStyle: { display: "block", "padding-top": "40rpx" },
-                attrs: { _i: 84 }
+                attrs: { _i: 94 }
               })
             ],
             1
           ),
           _c(
             "v-uni-swiper-item",
-            { attrs: { _i: 85 } },
+            { attrs: { _i: 95 } },
             [
               _c(
                 "uni-view",
                 {
                   staticStyle: { display: "block", "padding-top": "20rpx" },
-                  attrs: { _i: 86 }
+                  attrs: { _i: 96 }
                 },
                 [
                   _c(
@@ -18127,48 +18244,51 @@ var render = function() {
                         "border-radius": "5px",
                         "white-space": "pre-wrap"
                       },
-                      attrs: { _i: 87 }
+                      attrs: { _i: 97 }
                     },
                     [
                       _c(
                         "uni-view",
                         {
                           staticStyle: { width: "95%", "margin-left": "2.5%" },
-                          attrs: { _i: 88 }
+                          attrs: { _i: 98 }
                         },
                         [
-                          _vm._l(_vm._$g(89, "f"), function(
+                          _vm._l(_vm._$g(99, "f"), function(
                             item,
                             index,
                             $20,
                             $30
                           ) {
-                            return _vm._$g("89-" + $30, "i")
+                            return _vm._$g("99-" + $30, "i")
                               ? _c(
                                   "uni-view",
-                                  { key: item, attrs: { _i: "89-" + $30 } },
+                                  { key: item, attrs: { _i: "99-" + $30 } },
                                   [
                                     _c(
                                       "uni-view",
                                       {
-                                        staticClass: _vm._$g("90-" + $30, "sc"),
-                                        attrs: { _i: "90-" + $30 }
+                                        staticClass: _vm._$g(
+                                          "100-" + $30,
+                                          "sc"
+                                        ),
+                                        attrs: { _i: "100-" + $30 }
                                       },
                                       [
                                         _c(
                                           "v-uni-text",
                                           {
                                             staticStyle: { color: "gray" },
-                                            attrs: { _i: "91-" + $30 }
+                                            attrs: { _i: "101-" + $30 }
                                           },
                                           [_vm._v("疫苗名称：")]
                                         ),
                                         _c(
                                           "v-uni-text",
-                                          { attrs: { _i: "92-" + $30 } },
+                                          { attrs: { _i: "102-" + $30 } },
                                           [
                                             _vm._v(
-                                              _vm._$g("92-" + $30, "t0-0") +
+                                              _vm._$g("102-" + $30, "t0-0") +
                                                 "\\n"
                                             )
                                           ]
@@ -18177,16 +18297,16 @@ var render = function() {
                                           "v-uni-text",
                                           {
                                             staticStyle: { color: "gray" },
-                                            attrs: { _i: "93-" + $30 }
+                                            attrs: { _i: "103-" + $30 }
                                           },
                                           [_vm._v("接种日期：")]
                                         ),
                                         _c(
                                           "v-uni-text",
-                                          { attrs: { _i: "94-" + $30 } },
+                                          { attrs: { _i: "104-" + $30 } },
                                           [
                                             _vm._v(
-                                              _vm._$g("94-" + $30, "t0-0") +
+                                              _vm._$g("104-" + $30, "t0-0") +
                                                 "\\n"
                                             )
                                           ]
@@ -18195,16 +18315,16 @@ var render = function() {
                                           "v-uni-text",
                                           {
                                             staticStyle: { color: "gray" },
-                                            attrs: { _i: "95-" + $30 }
+                                            attrs: { _i: "105-" + $30 }
                                           },
                                           [_vm._v("接种单位：")]
                                         ),
                                         _c(
                                           "v-uni-text",
-                                          { attrs: { _i: "96-" + $30 } },
+                                          { attrs: { _i: "106-" + $30 } },
                                           [
                                             _vm._v(
-                                              _vm._$g("96-" + $30, "t0-0") +
+                                              _vm._$g("106-" + $30, "t0-0") +
                                                 "\\n"
                                             )
                                           ]
@@ -18217,49 +18337,49 @@ var render = function() {
                                 )
                               : _vm._e()
                           }),
-                          _vm._$g(97, "i")
+                          _vm._$g(107, "i")
                             ? _c(
                                 "uni-view",
-                                { attrs: { _i: 97 } },
+                                { attrs: { _i: 107 } },
                                 [
                                   _c(
                                     "uni-view",
                                     {
-                                      staticClass: _vm._$g(98, "sc"),
-                                      attrs: { _i: 98 }
+                                      staticClass: _vm._$g(108, "sc"),
+                                      attrs: { _i: 108 }
                                     },
                                     [
                                       _c(
                                         "v-uni-text",
                                         {
                                           staticStyle: { color: "gray" },
-                                          attrs: { _i: 99 }
+                                          attrs: { _i: 109 }
                                         },
                                         [_vm._v("疫苗名称：")]
                                       ),
-                                      _c("v-uni-text", { attrs: { _i: 100 } }, [
+                                      _c("v-uni-text", { attrs: { _i: 110 } }, [
                                         _vm._v("暂无\\n")
                                       ]),
                                       _c(
                                         "v-uni-text",
                                         {
                                           staticStyle: { color: "gray" },
-                                          attrs: { _i: 101 }
+                                          attrs: { _i: 111 }
                                         },
                                         [_vm._v("接种日期：")]
                                       ),
-                                      _c("v-uni-text", { attrs: { _i: 102 } }, [
+                                      _c("v-uni-text", { attrs: { _i: 112 } }, [
                                         _vm._v("暂无\\n")
                                       ]),
                                       _c(
                                         "v-uni-text",
                                         {
                                           staticStyle: { color: "gray" },
-                                          attrs: { _i: 103 }
+                                          attrs: { _i: 113 }
                                         },
                                         [_vm._v("接种单位：")]
                                       ),
-                                      _c("v-uni-text", { attrs: { _i: 104 } }, [
+                                      _c("v-uni-text", { attrs: { _i: 114 } }, [
                                         _vm._v("暂无\\n")
                                       ])
                                     ],
@@ -18277,7 +18397,7 @@ var render = function() {
                                 "padding-bottom": "15rpx",
                                 "padding-left": "2%"
                               },
-                              attrs: { _i: 105 }
+                              attrs: { _i: 115 }
                             },
                             [
                               _c(
@@ -18287,7 +18407,7 @@ var render = function() {
                                     "font-size": "12px",
                                     color: "gray"
                                   },
-                                  attrs: { _i: 106 }
+                                  attrs: { _i: 116 }
                                 },
                                 [
                                   _vm._v(
@@ -18316,7 +18436,7 @@ var render = function() {
       _c(
         "u-popup",
         {
-          attrs: { _i: 107 },
+          attrs: { _i: 117 },
           on: {
             close: function($event) {
               return _vm.$handleViewEvent($event)
@@ -18336,23 +18456,23 @@ var render = function() {
                 "border-top-left-radius": "10px",
                 "border-top-right-radius": "10px"
               },
-              attrs: { _i: 108 }
+              attrs: { _i: 118 }
             },
             [
               _c(
                 "uni-view",
                 {
                   staticStyle: { "margin-left": "5%", "margin-top": "2%" },
-                  attrs: { _i: 109 }
+                  attrs: { _i: 119 }
                 },
                 [
                   _c(
                     "v-uni-text",
                     {
                       staticStyle: { color: "white", "line-height": "60rpx" },
-                      attrs: { _i: 110 }
+                      attrs: { _i: 120 }
                     },
-                    [_vm._v("地点：" + _vm._$g(110, "t0-0"))]
+                    [_vm._v("地点：" + _vm._$g(120, "t0-0"))]
                   ),
                   _c(
                     "v-uni-text",
@@ -18362,9 +18482,9 @@ var render = function() {
                         "white-space": "pre-wrap",
                         "line-height": "60rpx"
                       },
-                      attrs: { _i: 111 }
+                      attrs: { _i: 121 }
                     },
-                    [_vm._v("\\n时间：" + _vm._$g(111, "t0-0"))]
+                    [_vm._v("\\n时间：" + _vm._$g(121, "t0-0"))]
                   )
                 ],
                 1
@@ -18378,7 +18498,7 @@ var render = function() {
       _c(
         "u-modal",
         {
-          attrs: { _i: 112 },
+          attrs: { _i: 122 },
           on: {
             close: function($event) {
               return _vm.$handleViewEvent($event)
@@ -18392,9 +18512,9 @@ var render = function() {
           _c(
             "uni-view",
             {
-              staticClass: _vm._$g(113, "sc"),
+              staticClass: _vm._$g(123, "sc"),
               staticStyle: { width: "100%", "max-height": "1000rpx" },
-              attrs: { _i: 113 }
+              attrs: { _i: 123 }
             },
             [
               _c(
@@ -18406,41 +18526,9 @@ var render = function() {
                     "white-space": "pre-wrap",
                     "line-height": "50rpx"
                   },
-                  attrs: { "scroll-y": "true", _i: 114 }
+                  attrs: { "scroll-y": "true", _i: 124 }
                 },
                 [
-                  _c("u-gap", { attrs: { _i: 115 } }),
-                  _c(
-                    "v-uni-text",
-                    { staticStyle: { color: "red" }, attrs: { _i: 116 } },
-                    [_vm._v("*")]
-                  ),
-                  _c(
-                    "v-uni-text",
-                    {
-                      staticStyle: { "text-align": "left" },
-                      attrs: { _i: 117 }
-                    },
-                    [_vm._v("填报人姓名：\\n")]
-                  ),
-                  _c("u-gap", { attrs: { _i: 118 } }),
-                  _c("u--textarea", { attrs: { _i: 119 } }),
-                  _c("u-gap", { attrs: { _i: 120 } }),
-                  _c(
-                    "v-uni-text",
-                    { staticStyle: { color: "red" }, attrs: { _i: 121 } },
-                    [_vm._v("*")]
-                  ),
-                  _c(
-                    "v-uni-text",
-                    {
-                      staticStyle: { "text-align": "left" },
-                      attrs: { _i: 122 }
-                    },
-                    [_vm._v("证件号：\\n")]
-                  ),
-                  _c("u-gap", { attrs: { _i: 123 } }),
-                  _c("u--textarea", { attrs: { _i: 124 } }),
                   _c("u-gap", { attrs: { _i: 125 } }),
                   _c(
                     "v-uni-text",
@@ -18453,54 +18541,86 @@ var render = function() {
                       staticStyle: { "text-align": "left" },
                       attrs: { _i: 127 }
                     },
-                    [_vm._v("1.您是从哪里来江苏的？\\n")]
+                    [_vm._v("填报人姓名：\\n")]
                   ),
+                  _c("u-gap", { attrs: { _i: 128 } }),
+                  _c("u--textarea", { attrs: { _i: 129 } }),
+                  _c("u-gap", { attrs: { _i: 130 } }),
                   _c(
                     "v-uni-text",
-                    { staticStyle: { color: "red" }, attrs: { _i: 128 } },
-                    [_vm._v("(已在江苏居住7天以上请选择现居住地)\\n")]
-                  ),
-                  _c("u-gap", { attrs: { _i: 129 } }),
-                  _c("uni-data-picker", {
-                    staticStyle: { "white-space": "pre-wrap" },
-                    attrs: { _i: 130 },
-                    model: {
-                      value: _vm._$g(130, "v-model"),
-                      callback: function() {},
-                      expression: "position"
-                    }
-                  }),
-                  _c("u-gap", { attrs: { _i: 131 } }),
-                  _c("u-line", { attrs: { _i: 132 } }),
-                  _c("u-gap", { attrs: { _i: 133 } }),
-                  _c(
-                    "v-uni-text",
-                    { staticStyle: { color: "red" }, attrs: { _i: 134 } },
+                    { staticStyle: { color: "red" }, attrs: { _i: 131 } },
                     [_vm._v("*")]
                   ),
                   _c(
                     "v-uni-text",
                     {
                       staticStyle: { "text-align": "left" },
-                      attrs: { _i: 135 }
+                      attrs: { _i: 132 }
+                    },
+                    [_vm._v("证件号：\\n")]
+                  ),
+                  _c("u-gap", { attrs: { _i: 133 } }),
+                  _c("u--textarea", { attrs: { _i: 134 } }),
+                  _c("u-gap", { attrs: { _i: 135 } }),
+                  _c(
+                    "v-uni-text",
+                    { staticStyle: { color: "red" }, attrs: { _i: 136 } },
+                    [_vm._v("*")]
+                  ),
+                  _c(
+                    "v-uni-text",
+                    {
+                      staticStyle: { "text-align": "left" },
+                      attrs: { _i: 137 }
+                    },
+                    [_vm._v("1.您是从哪里来江苏的？\\n")]
+                  ),
+                  _c(
+                    "v-uni-text",
+                    { staticStyle: { color: "red" }, attrs: { _i: 138 } },
+                    [_vm._v("(已在江苏居住7天以上请选择现居住地)\\n")]
+                  ),
+                  _c("u-gap", { attrs: { _i: 139 } }),
+                  _c("uni-data-picker", {
+                    staticStyle: { "white-space": "pre-wrap" },
+                    attrs: { _i: 140 },
+                    model: {
+                      value: _vm._$g(140, "v-model"),
+                      callback: function() {},
+                      expression: "position"
+                    }
+                  }),
+                  _c("u-gap", { attrs: { _i: 141 } }),
+                  _c("u-line", { attrs: { _i: 142 } }),
+                  _c("u-gap", { attrs: { _i: 143 } }),
+                  _c(
+                    "v-uni-text",
+                    { staticStyle: { color: "red" }, attrs: { _i: 144 } },
+                    [_vm._v("*")]
+                  ),
+                  _c(
+                    "v-uni-text",
+                    {
+                      staticStyle: { "text-align": "left" },
+                      attrs: { _i: 145 }
                     },
                     [_vm._v("2.现居住地址(选择到乡镇/街道)：\\n")]
                   ),
-                  _c("u-gap", { attrs: { _i: 136 } }),
+                  _c("u-gap", { attrs: { _i: 146 } }),
                   _c(
                     "uni-view",
-                    { attrs: { _i: 137 } },
+                    { attrs: { _i: 147 } },
                     [
                       _c(
                         "uni-view",
                         {
                           staticStyle: { width: "65%", float: "left" },
-                          attrs: { _i: 138 }
+                          attrs: { _i: 148 }
                         },
                         [
                           _c("uni-data-picker", {
                             staticStyle: { "white-space": "pre-wrap" },
-                            attrs: { _i: 139 },
+                            attrs: { _i: 149 },
                             on: {
                               change: function($event) {
                                 return _vm.$handleViewEvent($event)
@@ -18514,14 +18634,14 @@ var render = function() {
                         "uni-view",
                         {
                           staticStyle: { width: "35%", float: "right" },
-                          attrs: { _i: 140 }
+                          attrs: { _i: 150 }
                         },
                         [
                           _c("uni-data-picker", {
                             staticStyle: { "white-space": "pre-wrap" },
-                            attrs: { _i: 141 },
+                            attrs: { _i: 151 },
                             model: {
-                              value: _vm._$g(141, "v-model"),
+                              value: _vm._$g(151, "v-model"),
                               callback: function() {},
                               expression: "now_street"
                             }
@@ -18532,79 +18652,79 @@ var render = function() {
                     ],
                     1
                   ),
-                  _c("u-gap", { attrs: { _i: 142 } }),
-                  _c("u-line", { attrs: { _i: 143 } }),
-                  _c("u-gap", { attrs: { _i: 144 } }),
+                  _c("u-gap", { attrs: { _i: 152 } }),
+                  _c("u-line", { attrs: { _i: 153 } }),
+                  _c("u-gap", { attrs: { _i: 154 } }),
                   _c(
                     "v-uni-text",
-                    { staticStyle: { color: "red" }, attrs: { _i: 145 } },
+                    { staticStyle: { color: "red" }, attrs: { _i: 155 } },
                     [_vm._v("*")]
                   ),
                   _c(
                     "v-uni-text",
                     {
                       staticStyle: { "text-align": "left" },
-                      attrs: { _i: 146 }
+                      attrs: { _i: 156 }
                     },
                     [_vm._v("3.现详细地址(具体到门牌号码)：\\n")]
                   ),
-                  _c("u-gap", { attrs: { _i: 147 } }),
+                  _c("u-gap", { attrs: { _i: 157 } }),
                   _c("u--textarea", {
-                    attrs: { _i: 148 },
+                    attrs: { _i: 158 },
                     model: {
-                      value: _vm._$g(148, "v-model"),
+                      value: _vm._$g(158, "v-model"),
                       callback: function() {},
                       expression: "detail_location"
                     }
                   }),
-                  _c("u-gap", { attrs: { _i: 149 } }),
-                  _c("u-line", { attrs: { _i: 150 } }),
-                  _c("u-gap", { attrs: { _i: 151 } }),
+                  _c("u-gap", { attrs: { _i: 159 } }),
+                  _c("u-line", { attrs: { _i: 160 } }),
+                  _c("u-gap", { attrs: { _i: 161 } }),
                   _c(
                     "v-uni-text",
-                    { staticStyle: { color: "red" }, attrs: { _i: 152 } },
+                    { staticStyle: { color: "red" }, attrs: { _i: 162 } },
                     [_vm._v("*")]
                   ),
                   _c(
                     "v-uni-text",
                     {
                       staticStyle: { "text-align": "left" },
-                      attrs: { _i: 153 }
+                      attrs: { _i: 163 }
                     },
                     [_vm._v("4.7天内是否接触过发热咳嗽人员？\\n")]
                   ),
-                  _c("u-gap", { attrs: { _i: 154 } }),
+                  _c("u-gap", { attrs: { _i: 164 } }),
                   _c(
                     "u-radio-group",
                     {
                       staticStyle: { width: "200rpx" },
-                      attrs: { _i: 155 },
+                      attrs: { _i: 165 },
                       model: {
-                        value: _vm._$g(155, "v-model"),
+                        value: _vm._$g(165, "v-model"),
                         callback: function() {},
                         expression: "four"
                       }
                     },
-                    _vm._l(_vm._$g(156, "f"), function(item, index, $21, $31) {
+                    _vm._l(_vm._$g(166, "f"), function(item, index, $21, $31) {
                       return _c("u-radio", {
                         key: item,
-                        attrs: { _i: "156-" + $31 }
+                        attrs: { _i: "166-" + $31 }
                       })
                     }),
                     1
                   ),
-                  _c("u-line", { attrs: { _i: 157 } }),
-                  _c("u-gap", { attrs: { _i: 158 } }),
+                  _c("u-line", { attrs: { _i: 167 } }),
+                  _c("u-gap", { attrs: { _i: 168 } }),
                   _c(
                     "v-uni-text",
-                    { staticStyle: { color: "red" }, attrs: { _i: 159 } },
+                    { staticStyle: { color: "red" }, attrs: { _i: 169 } },
                     [_vm._v("*")]
                   ),
                   _c(
                     "v-uni-text",
                     {
                       staticStyle: { "text-align": "left" },
-                      attrs: { _i: 160 }
+                      attrs: { _i: 170 }
                     },
                     [
                       _vm._v(
@@ -18612,38 +18732,38 @@ var render = function() {
                       )
                     ]
                   ),
-                  _c("u-gap", { attrs: { _i: 161 } }),
+                  _c("u-gap", { attrs: { _i: 171 } }),
                   _c(
                     "u-radio-group",
                     {
                       staticStyle: { width: "200rpx" },
-                      attrs: { _i: 162 },
+                      attrs: { _i: 172 },
                       model: {
-                        value: _vm._$g(162, "v-model"),
+                        value: _vm._$g(172, "v-model"),
                         callback: function() {},
                         expression: "five"
                       }
                     },
-                    _vm._l(_vm._$g(163, "f"), function(item, index, $22, $32) {
+                    _vm._l(_vm._$g(173, "f"), function(item, index, $22, $32) {
                       return _c("u-radio", {
                         key: item,
-                        attrs: { _i: "163-" + $32 }
+                        attrs: { _i: "173-" + $32 }
                       })
                     }),
                     1
                   ),
-                  _c("u-line", { attrs: { _i: 164 } }),
-                  _c("u-gap", { attrs: { _i: 165 } }),
+                  _c("u-line", { attrs: { _i: 174 } }),
+                  _c("u-gap", { attrs: { _i: 175 } }),
                   _c(
                     "v-uni-text",
-                    { staticStyle: { color: "red" }, attrs: { _i: 166 } },
+                    { staticStyle: { color: "red" }, attrs: { _i: 176 } },
                     [_vm._v("*")]
                   ),
                   _c(
                     "v-uni-text",
                     {
                       staticStyle: { "text-align": "left" },
-                      attrs: { _i: 167 }
+                      attrs: { _i: 177 }
                     },
                     [
                       _vm._v(
@@ -18651,47 +18771,47 @@ var render = function() {
                       )
                     ]
                   ),
-                  _c("u-gap", { attrs: { _i: 168 } }),
+                  _c("u-gap", { attrs: { _i: 178 } }),
                   _c(
                     "u-radio-group",
                     {
                       staticStyle: { width: "200rpx" },
-                      attrs: { _i: 169 },
+                      attrs: { _i: 179 },
                       model: {
-                        value: _vm._$g(169, "v-model"),
+                        value: _vm._$g(179, "v-model"),
                         callback: function() {},
                         expression: "six"
                       }
                     },
-                    _vm._l(_vm._$g(170, "f"), function(item, index, $23, $33) {
+                    _vm._l(_vm._$g(180, "f"), function(item, index, $23, $33) {
                       return _c("u-radio", {
                         key: item,
-                        attrs: { _i: "170-" + $33 }
+                        attrs: { _i: "180-" + $33 }
                       })
                     }),
                     1
                   ),
-                  _c("u-line", { attrs: { _i: 171 } }),
-                  _c("u-gap", { attrs: { _i: 172 } }),
+                  _c("u-line", { attrs: { _i: 181 } }),
+                  _c("u-gap", { attrs: { _i: 182 } }),
                   _c(
                     "v-uni-text",
-                    { staticStyle: { color: "red" }, attrs: { _i: 173 } },
+                    { staticStyle: { color: "red" }, attrs: { _i: 183 } },
                     [_vm._v("*")]
                   ),
                   _c(
                     "v-uni-text",
                     {
                       staticStyle: { "text-align": "left" },
-                      attrs: { _i: 174 }
+                      attrs: { _i: 184 }
                     },
                     [_vm._v("知情同意：\\n")]
                   ),
-                  _c("u-gap", { attrs: { _i: 175 } }),
+                  _c("u-gap", { attrs: { _i: 185 } }),
                   _c(
                     "v-uni-text",
                     {
                       staticStyle: { "text-align": "left" },
-                      attrs: { _i: 176 }
+                      attrs: { _i: 186 }
                     },
                     [
                       _vm._v(
@@ -18703,7 +18823,7 @@ var render = function() {
                     "v-uni-text",
                     {
                       staticStyle: { "text-align": "left", color: "#3c9cff" },
-                      attrs: { _i: 177 }
+                      attrs: { _i: 187 }
                     },
                     [
                       _vm._v(
@@ -18711,12 +18831,12 @@ var render = function() {
                       )
                     ]
                   ),
-                  _c("u-gap", { attrs: { _i: 178 } }),
+                  _c("u-gap", { attrs: { _i: 188 } }),
                   _c(
                     "v-uni-radio",
                     {
                       staticStyle: { transform: "scale(0.9)" },
-                      attrs: { checked: _vm._$g(179, "a-checked"), _i: 179 },
+                      attrs: { checked: _vm._$g(189, "a-checked"), _i: 189 },
                       on: {
                         click: function($event) {
                           return _vm.$handleViewEvent($event)
@@ -18725,6 +18845,234 @@ var render = function() {
                     },
                     [_vm._v("本人知情同意")]
                   )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _c(
+        "u-modal",
+        {
+          attrs: { _i: 190 },
+          on: {
+            close: function($event) {
+              return _vm.$handleViewEvent($event)
+            },
+            confirm: function($event) {
+              return _vm.$handleViewEvent($event)
+            }
+          }
+        },
+        [
+          _c(
+            "uni-view",
+            {
+              staticClass: _vm._$g(191, "sc"),
+              staticStyle: { width: "100%", "max-height": "1000rpx" },
+              attrs: { _i: 191 }
+            },
+            [
+              _c(
+                "uni-view",
+                {
+                  staticStyle: {
+                    "white-space": "pre-wrap",
+                    "line-height": "50rpx"
+                  },
+                  attrs: { _i: 192 }
+                },
+                [
+                  _c("u-gap", { attrs: { _i: 193 } }),
+                  _c(
+                    "v-uni-text",
+                    { staticStyle: { color: "red" }, attrs: { _i: 194 } },
+                    [_vm._v("*")]
+                  ),
+                  _c(
+                    "v-uni-text",
+                    {
+                      staticStyle: { "text-align": "left" },
+                      attrs: { _i: 195 }
+                    },
+                    [_vm._v("申诉人姓名：\\n")]
+                  ),
+                  _c("u-gap", { attrs: { _i: 196 } }),
+                  _c("u--textarea", { attrs: { _i: 197 } }),
+                  _c("u-gap", { attrs: { _i: 198 } }),
+                  _c(
+                    "v-uni-text",
+                    { staticStyle: { color: "red" }, attrs: { _i: 199 } },
+                    [_vm._v("*")]
+                  ),
+                  _c(
+                    "v-uni-text",
+                    {
+                      staticStyle: { "text-align": "left" },
+                      attrs: { _i: 200 }
+                    },
+                    [_vm._v("证件号：\\n")]
+                  ),
+                  _c("u-gap", { attrs: { _i: 201 } }),
+                  _c("u--textarea", { attrs: { _i: 202 } }),
+                  _c("u-gap", { attrs: { _i: 203 } }),
+                  _c(
+                    "v-uni-text",
+                    { staticStyle: { color: "red" }, attrs: { _i: 204 } },
+                    [_vm._v("*")]
+                  ),
+                  _c(
+                    "v-uni-text",
+                    {
+                      staticStyle: { "text-align": "left" },
+                      attrs: { _i: 205 }
+                    },
+                    [_vm._v("手机号：\\n")]
+                  ),
+                  _c("u-gap", { attrs: { _i: 206 } }),
+                  _c("u--textarea", { attrs: { _i: 207 } }),
+                  _c("u-gap", { attrs: { _i: 208 } }),
+                  _c("u-line", { attrs: { _i: 209 } }),
+                  _c("u-gap", { attrs: { _i: 210 } }),
+                  _c(
+                    "v-uni-text",
+                    { staticStyle: { color: "red" }, attrs: { _i: 211 } },
+                    [_vm._v("*")]
+                  ),
+                  _c(
+                    "v-uni-text",
+                    {
+                      staticStyle: { "text-align": "left" },
+                      attrs: { _i: 212 }
+                    },
+                    [_vm._v("申诉理由：\\n")]
+                  ),
+                  _c("u-gap", { attrs: { _i: 213 } }),
+                  _c("u--textarea", {
+                    attrs: { _i: 214 },
+                    model: {
+                      value: _vm._$g(214, "v-model"),
+                      callback: function() {},
+                      expression: "a_reason"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _c(
+        "u-modal",
+        {
+          attrs: { _i: 215 },
+          on: {
+            close: function($event) {
+              return _vm.$handleViewEvent($event)
+            },
+            confirm: function($event) {
+              return _vm.$handleViewEvent($event)
+            }
+          }
+        },
+        [
+          _c(
+            "uni-view",
+            {
+              staticClass: _vm._$g(216, "sc"),
+              staticStyle: { width: "100%", "max-height": "1000rpx" },
+              attrs: { _i: 216 }
+            },
+            [
+              _c(
+                "uni-view",
+                {
+                  staticStyle: {
+                    "white-space": "pre-wrap",
+                    "line-height": "50rpx"
+                  },
+                  attrs: { _i: 217 }
+                },
+                [
+                  _c("u-gap", { attrs: { _i: 218 } }),
+                  _c(
+                    "v-uni-text",
+                    { staticStyle: { color: "red" }, attrs: { _i: 219 } },
+                    [_vm._v("*")]
+                  ),
+                  _c(
+                    "v-uni-text",
+                    {
+                      staticStyle: { "text-align": "left" },
+                      attrs: { _i: 220 }
+                    },
+                    [_vm._v("咨询人姓名：\\n")]
+                  ),
+                  _c("u-gap", { attrs: { _i: 221 } }),
+                  _c("u--textarea", { attrs: { _i: 222 } }),
+                  _c("u-gap", { attrs: { _i: 223 } }),
+                  _c(
+                    "v-uni-text",
+                    { staticStyle: { color: "red" }, attrs: { _i: 224 } },
+                    [_vm._v("*")]
+                  ),
+                  _c(
+                    "v-uni-text",
+                    {
+                      staticStyle: { "text-align": "left" },
+                      attrs: { _i: 225 }
+                    },
+                    [_vm._v("证件号：\\n")]
+                  ),
+                  _c("u-gap", { attrs: { _i: 226 } }),
+                  _c("u--textarea", { attrs: { _i: 227 } }),
+                  _c("u-gap", { attrs: { _i: 228 } }),
+                  _c(
+                    "v-uni-text",
+                    { staticStyle: { color: "red" }, attrs: { _i: 229 } },
+                    [_vm._v("*")]
+                  ),
+                  _c(
+                    "v-uni-text",
+                    {
+                      staticStyle: { "text-align": "left" },
+                      attrs: { _i: 230 }
+                    },
+                    [_vm._v("手机号：\\n")]
+                  ),
+                  _c("u-gap", { attrs: { _i: 231 } }),
+                  _c("u--textarea", { attrs: { _i: 232 } }),
+                  _c("u-gap", { attrs: { _i: 233 } }),
+                  _c("u-line", { attrs: { _i: 234 } }),
+                  _c("u-gap", { attrs: { _i: 235 } }),
+                  _c(
+                    "v-uni-text",
+                    { staticStyle: { color: "red" }, attrs: { _i: 236 } },
+                    [_vm._v("*")]
+                  ),
+                  _c(
+                    "v-uni-text",
+                    {
+                      staticStyle: { "text-align": "left" },
+                      attrs: { _i: 237 }
+                    },
+                    [_vm._v("咨询问题：\\n")]
+                  ),
+                  _c("u-gap", { attrs: { _i: 238 } }),
+                  _c("u--textarea", {
+                    attrs: { _i: 239 },
+                    model: {
+                      value: _vm._$g(239, "v-model"),
+                      callback: function() {},
+                      expression: "c_question"
+                    }
+                  })
                 ],
                 1
               )
@@ -19885,7 +20233,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../Download/HBuilderX.3.4.7.20220422/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.title{\n\tfont-size:20px;\n\tfont-weight:600;\n\tcolor:#B7F5FE;\n}\n.subtitle{\n\tfont-size:16px;\n\tcolor:white;\n}\n.border{\n\tmargin-top:40rpx;\n\theight:800rpx;\n\tborder-radius: 6px;\n\tbox-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);\n\twidth:90%;\n\tz-index: 102;\n\tbackground-color: white;\n}\n.dblock{\n\tborder-radius: 5px;\n\theight:300rpx;\n\twidth:41%;\n\tbackground-color:white;\n\tbox-shadow: 0 0 5px limegreen;\n\tborder:4px solid limegreen;\n}\n.nonedblock{\n\tborder-radius: 5px;\n\theight:300rpx;\n\twidth:41%;\n\tbackground-color:white;\n\tbox-shadow: 0 0 5px orange;\n\tborder:4px solid orange;\n}\n.card{\n\tborder-bottom:1px solid lightgray;\n\tline-height:60rpx;\n\tpadding-left:2%;\n\tpadding-top:5rpx;\n\tpadding-bottom:5rpx;\n\tfont-size:15px;\n}\n", ""]);
+exports.push([module.i, "\n.title{\n\tfont-size:20px;\n\tfont-weight:600;\n\tcolor:#B7F5FE;\n}\n.subtitle{\n\tfont-size:16px;\n\tcolor:white;\n}\n.border{\n\tmargin-top:40rpx;\n\theight:800rpx;\n\tborder-radius: 6px;\n\tbox-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);\n\twidth:90%;\n\tz-index: 102;\n\tbackground-color: white;\n}\n.dblock{\n\tborder-radius: 5px;\n\theight:300rpx;\n\twidth:41%;\n\tbackground-color:white;\n\tbox-shadow: 0 0 5px limegreen;\n\tborder:4px solid limegreen;\n}\n.nonedblock{\n\tborder-radius: 5px;\n\theight:300rpx;\n\twidth:41%;\n\tbackground-color:white;\n\tbox-shadow: 0 0 5px orange;\n\tborder:4px solid orange;\n}\n.card{\n\tborder-bottom:1px solid lightgray;\n\tline-height:60rpx;\n\tpadding-left:2%;\n\tpadding-top:5rpx;\n\tpadding-bottom:5rpx;\n\tfont-size:15px;\n}\nuni-button:after{\n\tborder:none;\n}\n", ""]);
 // Exports
 module.exports = exports;
 

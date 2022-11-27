@@ -198,9 +198,9 @@
 			return{
 				showservice: false,
 				showprivacy: false,
-				check:true,
-				password: 'zongqiwei2333',
-				phone: '15150805183',
+				check:false,
+				password: '',
+				phone: '',
 			};
 		},
 		methods:{
